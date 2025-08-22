@@ -1,6 +1,6 @@
 {
   "$schema": "node_modules/wrangler/config-schema.json",
-  "name": "mcacc-collars",
+  "name": "website",
   // Update to today's date
   "compatibility_date": "2025-08-22",
   "assets": {
