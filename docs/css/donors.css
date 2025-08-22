@@ -1,0 +1,55 @@
+/* ------------ Donor page ------------ */
+
+/* no borders for the lengths */
+table#costs-collars tr.short td, table#costs-collars tr.short th,
+table#costs-leashes tr.row1 td, table#costs-leashes tr.row1 th {border-bottom-style: none;}
+table#costs-collars tr.long td, table#costs-collars tr.long th,
+table#costs-leashes tr.row2 td, table#costs-leashes tr.row2 th {border-top-style: none;}
+
+table#costs-collars th.len,
+table#costs-leashes th.len {border-right-style: none;}
+table#costs-collars td.len-fromto,
+table#costs-leashes td.len-fromto {border-left-style: none;}
+
+/* no borders between (leash) width and duty */
+table#costs-leashes th.width {border-right-style: none;}
+table#costs-leashes th.duty, table#costs-leashes thead th.width + th {border-left-style: none;}
+
+/* Format */
+table#costs-collars th.len, table#costs-collars td.cost,
+table#costs-leashes th.len, table#costs-leashes td.cost, table#costs-leashes tbody th.duty {text-align: right;}
+table#costs-collars th.len,
+table#costs-leashes th.len {font-style: italic;}
+table#costs-collars td.len-fromto,
+table#costs-leashes td.len-fromto {font-size: 92%;}
+table#costs-collars th.len,
+table#costs-leashes th.len {font-weight: normal;}
+
+table#costs-collars th, table#costs-collars td,
+table#costs-leashes th, table#costs-leashes td {
+	padding-left: .3em;
+	padding-right: .3em;
+	padding-top: .15em;
+	padding-bottom: .15em;}
+
+/* Make collar row heading left-justified */
+table#costs-collars th.size {text-align: left;}
+/* Make leash row heading centered */
+table#costs-leashes th.width {text-align: center;}
+
+/**********/
+table#donations {
+	width: 92%;
+	margin-left: 4%;}
+
+#donations td, #donations th {border: 1px solid #ddd;}
+
+#donations tr:nth-child(even){background-color: #f2f2f2;}
+
+#donations th {text-align: left;}
+/************/
+
+span.pay-addr {font-family: courier, monospace, sans-serif;
+	font-weight: bold;
+	font-size: 88%;}
+

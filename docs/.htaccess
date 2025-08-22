@@ -1,0 +1,16 @@
+RewriteEngine On
+RewriteCond %{HTTP_HOST} ^mcacc-collars.charity$ [NC]
+RewriteRule ^(.*)$ https://www.mcacc-collars.charity/$1 [R=301,L]
+
+#
+RewriteCond %{HTTP_HOST} ^mcacc-collars.webs.nf$ [NC,OR]
+RewriteCond %{HTTP_HOST} ^www.mcacc-collars.webs.nf$ [NC]
+RewriteRule ^(.*)$ https://www.mcacc-collars.charity/$1 [R=301,L]
+
+#
+RewriteCond %{HTTP:X-Forwarded-Proto} !https
+RewriteCond %{HTTPS} off
+RewriteCond %{HTTP:CF-Visitor} !{"scheme":"https"}
+RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [R=301,L]
+
+

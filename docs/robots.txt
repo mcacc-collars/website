@@ -1,0 +1,11 @@
+User-agent: *
+
+# Allow everything.
+#     /, /donors/, /shelter/ and /resources/ have "noindex"
+
+
+# Nothing in /files/ is useful (except one custom pdf for Juki DU-1181N)
+Disallow: /files/
+Allow: /files/instruction_7K_english.pdf
+
+Sitemap: https://www.mcacc-collars.charity/sitemap.xml
