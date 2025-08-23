@@ -3,7 +3,7 @@
   // Change to your project name (or repo name?)
   "name": "website",
   // Update to today's date
-  "compatibility_date": "2025-08-22",
+  "compatibility_date": "2025-08-23",
   "assets": {
     "directory": "./docs"
   }

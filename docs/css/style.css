@@ -4,7 +4,7 @@ footer {font-style: italic;
 		text-align: right;
 		font-size: 92%;
 		margin-top: 1em;}
-.smaller {font-size: 92%;}
+.smaller {font-size: 90%;}
 .archived {font-size: smaller;}
 .archived a {font-style: italic;}
 
@@ -15,15 +15,19 @@ a.fn {font-size: 88%;
 	top: -0.17em;
 	right: -0.01em;}
 
+/* Images will left-align with the page, but have centered text beneath, and
+ * responsive to small screens (shrink to fit) */
 div.image {text-align: left; margin-left: 4%;}
-div.image p {text-align: center; width: inherit;}
+div.image > div {display: inline-block; text-align: center;}
+img {max-width: 100%; height: auto; float: left; padding: 1px;}
 
 /* footnote section */
 section#fn > hr {margin-top: 1.75em;}
 section#fn > p:first-of-type {margin-top: .75em;}
 section#fn > h2 {display: none;}
 
-/* Indent the nested sections (the div container which immediately follows the first h1-6 of the section) */
+/* Indent the nested sections (the div container which immediately follows the
+ *  first h1-6 of the section) */
 section > h2:first-child + div,
 section > h3:first-child + div,
 section > h4:first-child + div,
