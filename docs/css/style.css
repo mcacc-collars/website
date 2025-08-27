@@ -1,9 +1,56 @@
-body {margin-left: 2%; margin-right: 2%;}
+/* The light/dark/nocturnal modes are defined as custom properties. */
+:root {
+	--bg-color:   #FFFFFF; /* white */
+	--text-color: #000000; /* black */
+	--a-link:     #0000FF; /* blue */
+	--a-visited:  #800080; /* purple */
+	--a-hover:    #4169E1; /* royalBlue */
+	--a-active:   #FF0000; /* red */
+	--heading-opacity: 0.94;
+	--hr-color:   #A4A4A4; /* light gray */}
+
+.darkmode {
+	--bg-color:   #121212; /* almost black */
+	--text-color: #FFFFFF; /* white */
+	--a-link:     #1E90FF; /* dodgerBlue */
+	--a-visited:  #6A5ACD; /* slateBlue */
+	--a-hover:    #4169E1; /* royalBlue */
+	--a-active:   #FF0000; /* red */
+	--heading-opacity: 0.90;
+	--hr-color:   #606060; /* gray 40 */}
+
+.noctmode {
+	--bg-color:   #000000; /* black */
+	--text-color: #FFBF00; /* amber */
+	--a-link:     #FF6347; /* tomato */
+	--a-visited:  #DC143C; /* crimson */
+	--a-hover:    #FA8072; /* salmon */
+	--a-active:   #FFD700; /* gold */
+	--heading-opacity: 0.72;
+	--hr-color:   #444444; /* med-dark gray */}
+
+body {margin-left: 2%; margin-right: 2%;
+	background-color: var(--bg-color);
+	color: var(--text-color);}
+
+h1, h2, h3, h4, h5, h6 {opacity: var(--heading-opacity);}
+
+a:link {color: var(--a-link);}
+a:visited {color: var(--a-visited);}
+a:hover {color: var(--a-hover);}
+a:active {color: var(--a-active);}
+
+hr {border: none;
+	height: 2px;
+	background-color: var(--hr-color);}
+
+
+/* misc style */
 .center {text-align: center;}
 footer {font-style: italic;
-		text-align: right;
-		font-size: 92%;
-		margin-top: 1em;}
+	text-align: right;
+	font-size: 92%;
+	margin-top: 1em;}
 .smaller {font-size: 90%;}
 .archived {font-size: smaller;}
 .archived a {font-style: italic;}

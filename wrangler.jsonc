@@ -1,9 +1,12 @@
+// For use with Cloudflare Workers. This is necessary for a "Pages"-like 
+// static website.
+//
+// You MUST change "name" to your Cloudflare Workers project name.
+//     should change "compatibility_date" to the date last deployed.
 {
   "$schema": "node_modules/wrangler/config-schema.json",
-  // Change to your project name (or repo name?)
   "name": "website",
-  // Update to today's date
-  "compatibility_date": "2025-08-23",
+  "compatibility_date": "2025-08-26",
   "assets": {
     "directory": "./docs"
   }
