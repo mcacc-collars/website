@@ -38,13 +38,10 @@ table#costs-collars th.size {text-align: left;}
 table#costs-leashes th.width {text-align: center;}
 
 /**********/
-table#donations {
-	width: 92%;
+table#donations {width: 92%;
 	margin-left: 4%;}
 
-#donations td, #donations th {border: 1px solid #ddd;}
-
-#donations tr:nth-child(even){background-color: #f2f2f2;}
+#donations tr:nth-child(even){background-color: var(--table-alt-row-bg);}
 
 #donations th {text-align: left;}
 /************/
