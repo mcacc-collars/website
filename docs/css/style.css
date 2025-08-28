@@ -1,4 +1,4 @@
-/* The light/dark/nocturnal modes are defined as custom properties. */
+/* Light/dark/nocturnal modes are defined as custom properties. */
 :root {
 --bg-color:		#FFFFFF; /* white */
 --text-color:	#000000; /* black */
@@ -6,27 +6,31 @@
 --a-visited:	#800080; /* purple */
 --a-hover:		#4169E1; /* royalBlue */
 --a-active:		#FF0000; /* red */
---heading-opacity: 1.0;
---hr-color:		#A8A8A8; /* light gray */
+--heading-opacity:	1.0;
+--img-opacity:		1.0;
+--img-opacity-trans: 0.0s;
+--hr-color:			#A6A6A6; /* light gray */
 --crumb-bg:			#EEEEEE;
+--crumb-sep-color:	black;
 --crumb-a-link:		mediumBlue;
 --crumb-a-hover:	royalBlue;
 --sect-border-color: #C8C8C8;
---table-border-color: #000000;
+--table-border-color: #999;
 --table-alt-row-bg:	#E6E6E6;}
 
 .darkmode {
 --bg-color:   #121212; /* almost black */
 --text-color: #FFFFFF; /* white */
---a-link:    pink; /* pink */
---a-visited:	#FFDF80; /* amber light */
---a-hover:    lightCoral; /* lightCoral */
---a-active:   crimson; /* crimson */
---heading-opacity: 0.88;
---hr-color:   #636363; /* med gray */
---crumb-bg:			#323232;
---crumb-a-link:		#B38600; /* amber dark */
---crumb-a-hover:	pink; /* pink */
+--a-link:    lightSkyBlue; /* lightSkyBlue #87CEFA */
+--a-visited:	#bb86fc; /* purple */
+--a-hover:    lightCyan; /* lightCyan #E0FFFF */
+--a-active:   #DDA0DD; /* plum #DDA0DD; */
+--heading-opacity: 0.92;
+--hr-color:   #999; /* med gray */
+--crumb-bg:			#2A2A2A;
+--crumb-sep-color:	#808080;
+--crumb-a-link:		#6495ED; /* cornflowerBlue #6495ED*/
+--crumb-a-hover:	#E0FFFFbb; /* lightCyan #E0FFFF made darker */
 --sect-border-color: #484848;
 --table-border-color: #6A6A6A;
 --table-alt-row-bg:	#262626;}
@@ -34,17 +38,20 @@
 .noctmode {
 --bg-color:   #000000; /* black */
 --text-color: #FFBF00; /* amber */
---a-link:     crimson; /* crimson */
---a-visited:  #e67e00; /* darkOrange darker */
---a-hover:    #ff571a; /* orangeRed lighter */
+--a-link:      #e67e00; /* darkOrange #FF8C00 one shade darker: #e67e00 */
+--a-visited:	#CD5C5C; /* indianRed #CD5C5C one shade lighter: cf6363, 2 shades: d57676 */
+--a-hover:    #FF4500; /* orangeRed #FF4500 one shade lighter: #ff571a */
 --a-active:   gold; /* gold */
---heading-opacity: 0.78;
+--heading-opacity: 0.86;
+--img-opacity:		0.5;
+--img-opacity-trans: 0.5s;
 --hr-color:   #FFBF0055;
---crumb-bg:			#FFBF0036;
---crumb-a-link:		indianRed; /* indianRed is good*/
---crumb-a-hover:	#ff571a;
+--crumb-bg:			#FFBF0035; /* amber dark */
+--crumb-sep-color:	#FFBF0078; /* amber, mildly darker */
+--crumb-a-link:		 #c94f4f; /* indianRed #CD5C5C  one shade darker: #c94f4f, 2 shades:  #c33c3c,  */
+--crumb-a-hover:	#ff571a; /* orangeRed #FF4500 one shade lighter: #ff571a */
 --sect-border-color: #FFBF004B;
---table-border-color: #FFBF0068;
+--table-border-color: #806000; /* amber #FFBF00 two shades darker: #cc9900, 3 shades: #b38600 4 shades: #997300. 5 #806000*/
 --table-alt-row-bg:	#FFBF001F;}
 
 
@@ -85,7 +92,8 @@ a.fn {font-size: 88%;
  * responsive to small screens (shrink to fit) */
 div.image {text-align: left; margin-left: 4%;}
 div.image > div {display: inline-block; text-align: center;}
-img {max-width: 100%; height: auto; float: left; padding: 1px;}
+img {max-width: 100%; height: auto; float: left; padding: 1px; opacity: var(--img-opacity); transition: opacity var(--img-opacity-trans) ease-in;}
+img:hover {opacity: 1.0;}
 
 /* footnote section */
 section#fn > hr {margin-top: 1.75em;}
@@ -126,7 +134,7 @@ header > nav > ul li {
 /* Add a slash symbol (/) before/behind each list item */
 header > nav > ul li+li:before {
 	padding: 2px;
-	color: black;
+	color: var(--crumb-sep-color);
 	content: ">\00a0";
 }
 
@@ -173,9 +181,14 @@ table th {font-size: 95%;}
 
 /* Borders */
 table, table th, table td {
-	border: 1px solid var(--table-border-color);
+	border-style: solid;
+	border-color: var(--table-border-color);
+	border-width: 2px;
 	border-collapse: collapse;
+
 }
+
+table th, table td {padding: 0 .33em; /* 0 top/bottom, 1/3 em left/right */}
 
 /* Indent tables */
 table#costs-collars, table#costs-leashes, table#donations,
