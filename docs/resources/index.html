@@ -4,6 +4,7 @@
 <title>Resources</title>
 <link rel="stylesheet" href="../css/style.css">
 <link rel="canonical" href="https://www.mcacc-collars.charity/resources/">
+<script type="text/javascript" src="../js/darkmode.js" defer></script>
 <meta name="description" content="How-to documentation for anyone who'd like to help dogs in shelters.">
 <meta charset="utf-8">
 <meta name="robots" content="noindex">
@@ -14,11 +15,43 @@
 <link rel="manifest" href="/site.webmanifest">
 </head>
 <body>
+<script type="text/javascript">
+// This is only done here because browsers flicker before darkmode is applied.
+// This stuff should be done in the .js file (in the part for the page's initial loading).
+
+storedDisplay = localStorage.getItem('display')
+//console.log('HTML: storedDisplay:', storedDisplay);
+
+// If the visitor hasn't chosen a display mode, use their browser preference.
+// (This same test is in the .js file. It shouldn't exist here if browsers didn't flash.)
+if (storedDisplay === null) {
+	
+	// No stored choice. Check if browser preference is dark.
+	const prefersDark = window.matchMedia('(prefers-color-scheme: dark)');
+	if (prefersDark.matches) {
+		//console.log('HTML: no stored value. Browser prefers dark');
+		storedDisplay = "darkmode"
+	}
+	else {
+		//console.log('Initial: no stored value. Browser does not prefer dark. Using light.');
+		storedDisplay = "lightmode"
+	}
+}
+document.body.classList.add(storedDisplay)
+</script>
 
 <header>
 <nav aria-label="breadcrumbs"><ul>
 <li><a href="../">Home</a></li>
-</ul></nav>	
+</ul></nav>
+<div id="display-mode">
+<label for="display-dropdown">Display:</label>
+<select name="mode" id="display-dropdown" size="1" >
+	<option id="dd-light" value="lightmode">Light</option>
+	<option id="dd-dark" value="darkmode">Dark</option>
+	<option id="dd-nocturnal" value="noctmode">Nocturnal</option>
+</select>
+</div>
 <h1 class="center">Resources</h1>
 </header>
 
@@ -32,7 +65,7 @@
 	<li>Cutting webbing faster with a <u>hot knife</u> (coming soon)</li>
 	</ul>
 </li>
-<li>Making <span class="sleeve">"Adopt Me"</span> <a href="leash_sleeve/">leash sleeves</a></li>
+<li>Making "adopt me" <a href="leash_sleeve/">leash sleeves</a></li>
 </ul>
 
 <section id="fn">

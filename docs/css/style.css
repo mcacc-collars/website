@@ -1,6 +1,7 @@
 /* Light/dark/nocturnal modes are defined as custom properties. */
 :root {
---bg-color:		#FFFFFF; /* white */
+--bg-color:		#888; /* mid-gray. This is to reduce the flash when refreshing
+						the screen using darkmode. */
 --text-color:	#000000; /* black */
 --a-link:		#0000FF; /* blue */
 --a-visited:	#800080; /* purple */
@@ -9,7 +10,7 @@
 --heading-opacity:	1.0;
 --img-opacity:		1.0;
 --img-opacity-trans: 0.0s;
---hr-color:			#A6A6A6; /* light gray */
+--hr-color:			#666; /* light gray */
 --crumb-bg:			#EEEEEE;
 --crumb-sep-color:	black;
 --crumb-a-link:		mediumBlue;
@@ -17,6 +18,14 @@
 --sect-border-color: #C8C8C8;
 --table-border-color: #999;
 --table-alt-row-bg:	#E6E6E6;}
+
+.lightmode {
+--bg-color:	#FFFFFF; /* white. This gets set like the dark & noct modes. If it
+						is default (in :root), the screen flashes when reloading
+						the page using darkmode. (If :root defaults to black,
+						and	you're using light mode & reload, it flashes black.
+						Gray is the balance for both conditions. */
+}
 
 .darkmode {
 --bg-color:   #121212; /* almost black */
@@ -26,7 +35,7 @@
 --a-hover:    lightCyan; /* lightCyan #E0FFFF */
 --a-active:   #DDA0DD; /* plum #DDA0DD; */
 --heading-opacity: 0.92;
---hr-color:   #999; /* med gray */
+--hr-color:   #666; /* med gray */
 --crumb-bg:			#2A2A2A;
 --crumb-sep-color:	#808080;
 --crumb-a-link:		#6495ED; /* cornflowerBlue #6495ED*/
@@ -45,7 +54,7 @@
 --heading-opacity: 0.86;
 --img-opacity:		0.5;
 --img-opacity-trans: 0.5s;
---hr-color:   #FFBF0055;
+--hr-color:   #FFBF0088;
 --crumb-bg:			#FFBF0035; /* amber dark */
 --crumb-sep-color:	#FFBF0078; /* amber, mildly darker */
 --crumb-a-link:		 #c94f4f; /* indianRed #CD5C5C  one shade darker: #c94f4f, 2 shades:  #c33c3c,  */
@@ -54,6 +63,7 @@
 --table-border-color: #806000; /* amber #FFBF00 two shades darker: #cc9900, 3 shades: #b38600 4 shades: #997300. 5 #806000*/
 --table-alt-row-bg:	#FFBF001F;}
 
+* {box-sizing: border-box;}
 
 body {margin-left: 2%; margin-right: 2%;
 	background-color: var(--bg-color);
@@ -110,13 +120,9 @@ section > h6:first-child + div {border-left: .1em dashed var(--sect-border-color
 			margin-left: .4em;
 			padding-left: 1em;}
 
-span.sleeve {font-family: monospace;
-			color: black;
-			font-weight: bold;
-			background-color: yellow;}
 
+/* ------------ Header, breadcrumb links & display mode ------------ */
 
-/* ------------ Header & Breadcrumb links ------------ */
 /* Style the list */
 header > nav > ul {
 	padding: 0px 10px;
@@ -150,11 +156,35 @@ header > nav > ul li a:hover {
 	text-decoration: underline;
 }
 
+/* Display mode choices */
+header div#display-mode {
+	position: absolute;
+	top: 0; right: 0;
+	background-color: var(--bg-color);
+	color: var(--hr-color);
+	border-style: solid;
+	border-width: 0 0 0 0;
+	border-color: var(--hr-color);
+}
+
+header div#display-mode label {
+	font-size: 90%;
+}
+
+header div#display-mode select {
+	background-color: var(--bg-color);
+	color: var(--hr-color);
+	border-width: 0 0 1px 0;
+	border-style: solid;
+	border-color: var(--hr-color);
+	font-size: 90%;
+}
+
 /* Move h1 up if navbar present */
-header > nav + h1 {margin-top: -.1em;}
+header > nav + div + h1 {margin-top: .2em;}
 
 
-/* ------------ root page Welcome ------------ */
+/* ------------------ root page Welcome ------------------ */
 div#welcome ul  {margin: 0 auto;
 	text-align: center;
 	list-style: none;

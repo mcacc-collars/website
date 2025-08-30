@@ -4,6 +4,7 @@
 <title>Leash sleeve</title>
 <link rel="stylesheet" href="../../css/style.css">
 <link rel="canonical" href="https://www.mcacc-collars.charity/resources/leash_sleeve/">
+<script type="text/javascript" src="../../js/darkmode.js" defer></script>
 <meta name="description" content="How to make 'adopt me' leash sleeves for dogs.">
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -17,17 +18,49 @@ table td {text-align: left;}
 </style>
 </head>
 <body>
+<script type="text/javascript">
+// This is only done here because browsers flicker before darkmode is applied.
+// This stuff should be done in the .js file (in the part for the page's initial loading).
+
+storedDisplay = localStorage.getItem('display')
+//console.log('HTML: storedDisplay:', storedDisplay);
+
+// If the visitor hasn't chosen a display mode, use their browser preference.
+// (This same test is in the .js file. It shouldn't exist here if browsers didn't flash.)
+if (storedDisplay === null) {
+	
+	// No stored choice. Check if browser preference is dark.
+	const prefersDark = window.matchMedia('(prefers-color-scheme: dark)');
+	if (prefersDark.matches) {
+		//console.log('HTML: no stored value. Browser prefers dark');
+		storedDisplay = "darkmode"
+	}
+	else {
+		//console.log('Initial: no stored value. Browser does not prefer dark. Using light.');
+		storedDisplay = "lightmode"
+	}
+}
+document.body.classList.add(storedDisplay)
+</script>
 
 <header>
 <nav aria-label="breadcrumbs"><ul>
 <li><a href="../../">Home</a></li>
 <li><a href="../">Resources</a></li>
 </ul></nav>
-<h1 class="center">How to make leash sleeves</h1>
+<div id="display-mode">
+<label for="display-dropdown">Display:</label>
+<select name="mode" id="display-dropdown" size="1" >
+	<option id="dd-light" value="lightmode">Light</option>
+	<option id="dd-dark" value="darkmode">Dark</option>
+	<option id="dd-nocturnal" value="noctmode">Nocturnal</option>
+</select>
+</div>
+<h1 class="center">How to Make Leash Sleeves</h1>
 </header>
 
 <main>
-<p>I was inspired to make &amp; donate <span class="sleeve">"Adopt Me"</span> leash sleeves after seeing one made by Patience & Love.<a class="fn" href="#fn1">[1]</a> Based upon that sleeve, I targeted these dimensions:</p>
+<p>I was inspired to make &amp; donate "adopt me" leash sleeves after seeing one made by Patience & Love.<a class="fn" href="#fn1">[1]</a> Based upon that sleeve, I targeted these dimensions:</p>
 
 <div class="image"><div><a href="../../images/dimensions_quick_ref.png"><img src="../../images/thumbnails/dimensions_quick_ref_small.png" alt="Leash sleeve dimensions"><br><span class="smaller">click for larger</span></a></div></div>
 
