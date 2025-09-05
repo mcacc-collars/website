@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Resources</title>
+<link rel="stylesheet" href="../css/style.css">
+<link rel="canonical" href="https://www.mcacc-collars.charity/resources/">
+<script src="../js/darkmode.js" defer></script>
+<meta name="description" content="How-to documentation for anyone who'd like to help dogs in shelters.">
+<meta charset="utf-8">
+<meta name="robots" content="noindex">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/site.webmanifest">
+</head>
+<body>
+<script>
+// This is only done here because browsers flicker before darkmode is applied.
+// This stuff should be done in the .js file (in the part for the page's initial loading).
+
+storedDisplay = localStorage.getItem('display')
+//console.log('HTML: storedDisplay:', storedDisplay);
+
+// If the visitor hasn't chosen a display mode, use their browser preference.
+// (This same test is in the .js file. It shouldn't exist here if browsers didn't flash.)
+if (storedDisplay === null) {
+	
+	// No stored choice. Check if browser preference is dark.
+	const prefersDark = window.matchMedia('(prefers-color-scheme: dark)');
+	if (prefersDark.matches) {
+		//console.log('HTML: no stored value. Browser prefers dark');
+		storedDisplay = "darkmode"
+	}
+	else {
+		//console.log('Initial: no stored value. Browser does not prefer dark. Using light.');
+		storedDisplay = "lightmode"
+	}
+}
+document.body.classList.add(storedDisplay)
+</script>
+
+<header>
+<nav aria-label="breadcrumbs"><ul>
+<li><a href="../">Home</a></li>
+</ul></nav>
+<div id="display-mode">
+<label for="display-dropdown">Display:</label>
+<select name="mode" id="display-dropdown" size="1" >
+	<option id="dd-light" value="lightmode">Light</option>
+	<option id="dd-dark" value="darkmode">Dark</option>
+	<option id="dd-nocturnal" value="noctmode">Nocturnal</option>
+</select>
+</div>
+<h1 class="center">Resources</h1>
+</header>
+
+<main>
+<p>If anyone would like to do this too, the following information is provided:</p>
+
+<ul>
+<li>Making <a href="collars_leashes/">Collars & leashes</a>
+	<ul>
+	<li>Sewing faster with a <a href="collars_leashes/lk1900bn/">Juki LK-1900 bartacking machine</a></li>
+	<li>Cutting webbing faster with a <u>hot knife</u> (coming soon)</li>
+	</ul>
+</li>
+<li>Making "adopt me" <a href="leash_sleeve/">leash sleeves</a></li>
+</ul>
+
+<section>
+<h2>Alternate access</h2>
+<div>
+<p>This site (mcacc-collars.charity) is mirrored at <a rel="nofollow" href="https://website.mcacc-collars.workers.dev/">website.mcacc-collars.workers.dev</a> and <a rel="nofollow" href="https://mcacc-collars.github.io/website/">mcacc-collars.github.io/website</a>. This site's files are kept in the Github repository <a rel="nofollow" href="https://github.com/mcacc-collars/website">mcacc-collars/website</a>. All the above should exist indefinitely (if this site ever disappeared, the domain name expired, etc.). You can download the repository as a <a rel="nofollow" href="https://github.com/mcacc-collars/website/archive/refs/heads/main.zip">.zip file</a> to browse this site locally on your computer. (To know if your .zip file is outdated, look for the small "Deployments" section on that repository page. Whenever the repository is updated, it automatically deploys to the Github &amp; Cloudfare mirrors. You can also be notified when the repository changes using the "watch" feature there.).</p>
+
+<p>These pages are archived on <a rel="nofollow" href="https://web.archive.org/web/*/mcacc-collars.charity">the Wayback Machine</a>. 
+Those archived pages are of limited use (images &amp; files like the leash sleeve's .svg may not be archived). But, the archive of <a rel="nofollow" href="https://web.archive.org/web/*/mcacc-collars.charity/resources/">this (resources) page</a> would be useful if this site disappeared. It has the above links to the permanent mirrors &amp; downloadable zip.</p>
+</div>
+</section> <!-- end section -->
+
+</main>
+
+<footer>page last modified: Apr 14, 2025</footer>
+
+</body>
+</html>

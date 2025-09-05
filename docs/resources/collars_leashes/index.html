@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Collars & Leashes</title>
+<link rel="stylesheet" href="../../css/style.css">
+<link rel="stylesheet" href="../../css/collars_leashes.css">
+<link rel="canonical" href="https://www.mcacc-collars.charity/resources/collars_leashes/">
+<script src="../../js/darkmode.js" defer></script>
+<meta name="description" content="How to make collars & leashes for dog shelters.">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/site.webmanifest">
+</head>
+<body>
+<script>
+// This is only done here because browsers flicker before darkmode is applied.
+// This stuff should be done in the .js file (in the part for the page's initial loading).
+
+storedDisplay = localStorage.getItem('display')
+//console.log('HTML: storedDisplay:', storedDisplay);
+
+// If the visitor hasn't chosen a display mode, use their browser preference.
+// (This same test is in the .js file. It shouldn't exist here if browsers didn't flash.)
+if (storedDisplay === null) {
+	
+	// No stored choice. Check if browser preference is dark.
+	const prefersDark = window.matchMedia('(prefers-color-scheme: dark)');
+	if (prefersDark.matches) {
+		//console.log('HTML: no stored value. Browser prefers dark');
+		storedDisplay = "darkmode"
+	}
+	else {
+		//console.log('Initial: no stored value. Browser does not prefer dark. Using light.');
+		storedDisplay = "lightmode"
+	}
+}
+document.body.classList.add(storedDisplay)
+</script>
+	
+<header>
+<nav aria-label="breadcrumbs"><ul>
+<li><a href="../../">Home</a></li>
+<li><a href="../">Resources</a></li>
+</ul></nav>
+<div id="display-mode">
+<label for="display-dropdown">Display:</label>
+<select name="mode" id="display-dropdown" size="1" >
+	<option id="dd-light" value="lightmode">Light</option>
+	<option id="dd-dark" value="darkmode">Dark</option>
+	<option id="dd-nocturnal" value="noctmode">Nocturnal</option>
+</select>
+</div>
+<h1 class="center">How to Make Collars &amp; Leashes</h1>
+</header>
+
+<main>
+<p>This page explains how I make collars &amp; leashes. The part #s refer to <a href="http://www.pethardware.com/">PetHardware.com</a>'s products.<a class="fn" href="#fn1">[1]</a></p>
+
+<nav aria-label="Table of Contents">
+<ol>
+<li><a href="#collars">Collars</a>
+	<ul>
+	<li><a href="#collar-materials">Materials</a>
+		<ul>
+		<li><a href="#collar-thread">Thread</a></li>	
+		</ul>
+	</li>
+	<li><a href="#collar-order">Order of assembly</a></li>
+	<li><a href="#collar-cuts">Cuts, marks &amp; bartacks</a>
+		<ul>
+		<li><a href="#collar-bartacks">Bartacks</a></li>	
+		</ul>
+	</li>
+	<li><a href="#collar-labels">Packing labels</a></li>
+	</ul>
+</li>
+<li><a href="#leashes">Leashes</a>
+	<ul>
+	<li><a href="#leash-materials">Materials</a>
+		<ul>
+		<li><a href="#leash-thread">Thread</a></li>	
+		</ul>
+	</li>
+	<li><a href="#leash-cuts">Cuts, marks &amp; box-x patterns</a></li>
+	<li><a href="#leash-lube">Packaging &amp; lubricating the snap bolts</a>
+		<ul>
+		<li><a href="#leash-labels">Packing labels</a></li>
+		</ul>
+	</li>
+	</ul>
+</li>
+<li><a href="#addl-info">Marking, cutting, melting &amp; sewing webbing</a> (common to both collars &amp; leashes)</li>
+</ol>
+
+<p>These pages contain advanced topics:</p>
+
+<ul>
+<li>Sewing faster with a <a href="lk1900bn/">Juki LK-1900 bartack machine</a></li>
+<li>Cutting webbing faster with a <u>hot knife</u> (page coming soon)</li>
+</ul>
+</nav>
+
+<section id="collars">
+<h2>Collars</h2>
+<div>
+<p>I make collars in five widths, each in two lengths (short &amp; long) for more flexibility in fit. Think of "fit" not just as what fits, but how prone the dog is to pulling. (A 5/8"-Short might be better than a 3/8"-Long for a small dog that pulls a lot. A 5/8"-Long for a larger dog that doesn't.). The <a href="../../shelter/">shelter page</a> has a chart <a href="../../images/collar_sizes_visual.png">visualizing the sizes &amp; their overlaps</a>.</p>
+
+<section id="collar-materials">
+<h3>Materials</h3>
+<div>
+
+<table id="collars-materials">
+<thead>
+<tr><th colspan="2" scope="col">Collars</th><th colspan="5" scope="col">Part #s</th></tr>
+
+<tr><th class="width" scope="col">Width</th><th class="len" scope="col">Length</th><th scope="col">Webbing</th><th scope="col">Tri-glide</th><th scope="col">Loop</th><th scope="col">Buckle</th><th scope="col">Ring</th></tr>
+</thead>
+
+<tbody>
+<tr class="short">
+	<th class="width" rowspan="2" scope="row">3/8" <span class="smaller">(X-Small)</span></th><th class="len" scope="row">short</th><td rowspan="2">WE10/B</td><td rowspan="2">202 PL/10</td><td rowspan="2">L8A PL/10</td><td rowspan="2">507 PL/10</td><td rowspan="2">4520/10 NP</td></tr>
+<tr class="long"><th class="len" scope="row">long</th></tr>
+
+<tr class="short">
+	<th class="width" rowspan="2" scope="row">5/8" <span class="smaller">(Small)</span></th><th class="len" scope="row">short</th><td rowspan="2">WE15/B</td><td rowspan="2">202 PL/17</td><td rowspan="2">L8A PL/16</td><td rowspan="2">507 PL/17</td><td rowspan="2">4520/16 NP</td></tr>
+<tr class="long"><th class="len" scope="row">long</th></tr>
+
+<tr class="short">
+	<th class="width" rowspan="2" scope="row">3/4" <span class="smaller">(Medium)</span></th><th class="len" scope="row">short</th><td rowspan="2">WE20/B</td><td rowspan="2">202 PL/20</td><td rowspan="2">408 PL/20</td><td rowspan="2">507 PL/20</td><td rowspan="2">4520/20 NP</td></tr>
+<tr class="long"><th class="len" scope="row">long</th></tr>
+
+<tr class="short">
+	<th class="width" rowspan="2" scope="row">1" <span class="smaller">(Large)</span></th><th class="len" scope="row">short</th><td rowspan="2">WE25/B</td><td rowspan="2">202 PL/25</td><td>L8A PL/25</td><td rowspan="2">507 PL/25</td><td rowspan="2">4520/24 NP</td></tr>
+<tr class="long"><th class="len" scope="row">long</th><td>408 PL/25</td></tr>
+
+<tr class="short">
+	<th class="width" rowspan="2" scope="row">1-1/2" <span class="smaller">(X-Large)</span></th><th class="len" scope="row">short</th><td rowspan="2">WE40/B</td><td rowspan="2">202 PL/40</td><td rowspan="2">L8A PL/40</td><td rowspan="2">507 PL/40</td><td rowspan="2">4520/40 NP</td></tr>
+<tr class="long"><th class="len" scope="row">long</th></tr>
+</tbody>
+</table>
+
+<p>I use two different loops for the 1" collar: round (L8A) &amp; square (408). Neither fit the 1" webbing perfectly. The round is a little tight. The square a little loose. I use the round loop on the Short collar, the square (which is stronger) on the Long. I may end up using the square for both.</p>
+
+<p>For 3/4" collars I use the square (408) loops. That webbing is thick. The round loop doesn't fit.</p>
+
+<section id="collar-thread">
+<h4>Thread</h4>
+<div>
+
+<p>I use Tex-70 polyester thread for the 3/8" to 3/4" webbing. I use Tex 90 for 1" &amp; 1-1/2". (Tex 70 is strong enough for the larger collars. Compensate by sewing a few more stitches). I use Amann "Outdoor Pro" or "Serabond." (It seems like the former is replacing the latter. I don't see Serabond around as much anymore.). You can find this thread at <a rel="nofollow" href="https://www.wawak.com/">Wawak</a> or <a rel="nofollow" href="https://relicate.com/">Relicate</a>.</p>
+
+<p>I use white (7003) for the top thread. Black (7020) for the bottom (bobbin). To use different colors like this you have to get your thread tension balanced (or the white will pull through to the black side which won't look good). Even then, occasionally the white thread will pull through. You can use a Sharpie pen to blot that out. You could use black thread on both sides, but I like the stitches to be visible on the inside so the sturdiness can be seen. Gray would be better. It wouldn't show as brightly if it pulls through to the black-thread side. I still use white because I have it dialed in.</p>
+
+<p>This <a href="../../images/Amann-Serabond_color_chart.webp">color chart</a> shows the Serabond &amp; Outdoor Pro colors.</p>
+
+</div></section> <!-- end h4 -->
+</div></section> <!-- end h3 -->
+
+<section id="collar-order">
+<h3>Order of Assembly</h3>
+<div>
+
+<p><b>1.</b> Sew one end onto the tri-glide:</p>
+
+<div class="image"><div><a href="../../images/1_triglide.jpg"><img src="../../images/thumbnails/1_triglide_small.jpg" alt="1. Tri-glide end" loading="lazy"><br><span class="smaller">click for larger</span></a></div></div>
+
+<p id="asm-thread"><b>2.</b> Thread the webbing through 1) the loop, 2) bottom-slot of the male buckle, 3) top-slot, 4) the loop again, and 5) the tri-glide:</p>
+
+<div class="image"><div><a href="../../images/2_loop_male.jpg"><img src="../../images/thumbnails/2_loop_male_small.jpg" alt="2. Thread through loop and male buckle" loading="lazy"><br><span class="smaller">click for larger</span></a></div></div>
+
+<p>Be sure the overlap at the tri-glide goes <em>between</em> the webbing. If exposed, that could be less comfortable.</p>
+
+<p>Be sure to use the MALE buckle. It contributes to the collar holding it's adjusted size.</p>
+
+<p>Note: The 1-1/2" loop has a curved side. The flat side should face the dog.</p>
+
+<p><b>3.</b> Sew the remaining end onto a D-ring & female buckle:</p>
+
+<div class="image"><div><a href="../../images/3_ring_female.jpg"><img src="../../images/thumbnails/3_ring_female_small.jpg" alt="3. Sew onto D-ring and female buckle" loading="lazy"><br><span class="smaller">click for larger</span></a></div></div>
+
+<p>I use bartacks. Retail collars usually have a "box-x" pattern. Those take a little more space. A bartack is strong enough; two gives redundancy if the stitching fails. Using less space means the overlap is shorter. Shorter overlap lets the collar have more adjustable range (fits more dogs).</p>
+
+<p>The photos above show a 1"-wide collar which gets two bartacks at all three locations (tri-glide &amp; both sides of the D-ring.) The smallest collars get fewer.</p>
+
+</div></section> <!-- end h3 -->
+
+<section id="collar-cuts">
+<h3>Cuts, marks &amp; bartacks</h3>
+<div>
+
+<p>The following table shows how long to cut the webbing &amp; where to mark the ends. Also the number of bartacks:</p>
+
+<table id="collars-lengths">
+<thead>
+<tr><th colspan="2" rowspan="2" scope="col">Collars</th><th rowspan="3" scope="col">Cut<br>length</th><th colspan="4" scope="col">Sewn ends</th><th class="fromto" rowspan="3" colspan="3" scope="col">Adjustable range</th></tr>
+<tr><th colspan="2" scope="col">Tri-glide</th><th colspan="2" scope="col">Male buckle</th></tr>
+<tr><th class="width" scope="col">Width</th><th class="len" scope="col">Length</th><th scope="col">Mark</th><th class="tacks" scope="col">Tacks</th><th scope="col">Mark</th><th class="tacks" scope="col">Tacks</th></tr>
+</thead>
+
+<tbody>
+<tr class="short"><th class="width" rowspan="2" scope="row">3/8 <span class="smaller">(X-Small)</span></th><th class="len" scope="row">short</th><td>11-5/8</td><td rowspan="2">1-5/8</td><td class="tacks" rowspan="2">1</td><td>1-7/8</td><td class="tacks">1+1</td><td class="from">5-7/8</td><td>to</td><td class="to">9</td></tr>
+<tr class="long"><th class="len" scope="row">long</th><td>15-1/4</td><td>2-5/8</td><td class="tacks">2+2</td><td class="from">7-5/8</td><td>to</td><td class="to">12-1/4</td></tr>
+
+<tr class="short"><th class="width" rowspan="2" scope="row">5/8 <span class="smaller">(Small)</span></th><th class="len" scope="row">short</th><td>17-5/8</td><td>2-1/4</td><td class="tacks">1</td><td rowspan="2">3-3/8</td><td class="tacks" rowspan="2">2+2</td><td class="from">8-3/4</td><td>to</td><td class="to">13-1/8</td></tr>
+
+<tr class="long"><th class="len" scope="row">long</th><td>20-3/8</td><td>2-3/8</td><td class="tacks">2</td><td class="from">10-1/8</td><td>to</td><td class="to">15-3/4</td></tr>
+
+<tr class="short"><th class="width" rowspan="2" scope="row">3/4 <span class="smaller">(Medium)</span></th><th class="len" scope="row">short</th><td>22-3/4</td><td rowspan="2">2-3/4</td><td class="tacks" rowspan="2">2</td><td rowspan="2">4</td><td class="tacks" rowspan="2">2+2</td><td class="from">11-1/4</td><td>to</td><td class="to">17-3/8</td></tr>
+<tr class="long"><th class="len" scope="row">long</th><td>26-5/8</td><td class="from">13-1/4</td><td>to</td><td class="to">21-3/8</td></tr>
+
+<tr class="short"><th class="width" rowspan="2" scope="row">1 <span class="smaller">(Large)</span></th><th class="len" scope="row">short</th><td>28-3/8</td><td rowspan="2">3</td><td class="tacks" rowspan="2">2</td><td rowspan="2">4-1/4</td><td class="tacks" rowspan="2">2+2</td><td class="from">14-3/8</td><td>to</td><td class="to">23</td></tr>
+<tr class="long"><th class="len" scope="row">long</th><td>33-3/8</td><td class="from">17</td><td>to</td><td class="to">28</td></tr>
+
+<tr class="short"><th class="width" rowspan="2" scope="row">1-1/2 <span class="smaller">(X-Large)</span></th><th class="len" scope="row">short</th><td>33-5/8</td><td rowspan="2">3-3/8</td><td class="tacks" rowspan="2">2</td><td rowspan="2">5-1/4</td><td class="tacks" rowspan="2">2+2</td><td class="from">17-3/8</td><td>to</td><td class="to">27-5/8</td></tr>
+<tr class="long"><th class="len" scope="row">long</th><td>37-5/8</td><td class="from">19-1/4</td><td>to</td><td class="to">31-1/2</td></tr>
+</tbody>
+</table>
+
+<section id="collar-bartacks">
+<h4>Bartacks</h4>
+<div>
+<p>For the <b>tri-glide end:</b> two bartacks are probably overkill for even the largest collars. These stitches receive almost no stress (consider how it's buried under another layer of webbing sharing the load, like a pulley. That tack gets half the force. It's also never exposed to external abrasion like the buckle-end stitches.). I start double-tacking the tri-glide with the 5/8"-Long size. But, none of the sizes need two here. Which size to start using two is subjective. I like the added sense of durability, redundancy.</p>
+
+<p>For the <b>male buckle end:</b> I sew two bartacks on each side of the D-ring starting with the 3/8"-Long collar. (For the 3/8"-Short, I sew one tack each side. This collar couldn't fit an animal that pulls much.). It's probably safe to use one tack (each side of the D-ring) for all the collars. If either tack failed, the collar wouldn't come apart. The D-ring would still be captive on the collar. These tacks receive more force than at the tri-glide. It makes sense to me to use two.  Again, this is arbitrary. </p>
+</div></section> <!-- end h4 -->
+</div></section> <!-- end h3 -->
+
+<section id="collar-labels">
+<h3>Packing labels</h3>
+<div>
+<p>I created <a href="../../files/packing-labels_collars.zip">packing labels you can use</a> (print the PDF, or modify the .odg source with <a rel="nofollow" href="https://www.libreoffice.org/discover/draw/">LibreOffice Draw</a>). I stand a dozen collars on their edge, flat against each other (stack a dozen on top too).  I use ordinary kitchen plastic/cling wrap around each end. (For longer collars, I wrap the middle too.). I lay a label on one of the cling-wrap pieces, the plastic wrap over, then wrap the bundle of collars with that (the label facing out).</p>
+</div></section> <!-- end h3 -->
+</div></section> <!-- end h2 -->
+
+<section id="leashes">
+<h2>Leashes</h2>
+<div>
+
+<p>I make leashes in four widths, just one length: "5-foot" (approx). Unlike collars where length is important, this is a matter of getting a number of leashes from a roll of webbing. The webbing comes in 50-meter rolls (1,968 inches). That turns out to be 30 "5-foot" (58"-59") leashes from a roll.</p>
+
+<section id="leash-materials">
+<h3>Materials</h3>
+<div>
+
+<table id="leashes-materials">
+<thead>
+<tr><th colspan="2" scope="col">Leashes</th><th colspan="2" scope="col">Part #s</th></tr>
+
+<tr><th class="width" scope="col">Width</th><th class="duty" scope="col">Duty</th><th scope="col">Webbing</th><th scope="col">Snap hook</th></tr>
+</thead>
+
+<tbody>
+<tr class="row1"><th class="width" rowspan="2" scope="row">3/8"</th><th class="duty" scope="row">light</th><td rowspan="2">WE10/B</td><td>45/10 NP</td></tr>
+<tr class="row2"><th class="duty" scope="row">regular</th><td>50/10 NP</td></tr>
+
+<tr class="row1"><th class="width" scope="row">5/8"</th><th class="duty" scope="row">regular</th><td>WE15/B/T</td><td>60/17Q NP</td></tr>
+
+<tr class="row1"><th class="width" scope="row">3/4"<th class="duty" scope="row">regular</th><td>WE20/B/T</td><td>60/20Q NP</td></tr>
+
+<tr class="row1"><th class="width" rowspan="2" scope="row">1"</th><th class="duty" scope="row">regular</th><td rowspan="2">WE25/B/T</td><td>60/25Q CP</td></tr>
+<tr class="row2"><th class="duty" scope="row">heavy</th><td>70/25Q CP</td></tr>
+
+</tbody>
+</table>
+
+<p>Notes: 1. The 3/8" webbing is the same as the collar webbing. The others are thinner than the collar webbing (and less expensive).</p>
+
+<p>2. I make a light-duty version of the 3/8" leash for use with the 3/8-Long collars (the regular version is intended for 5/8"-Short collars). Also a heavy-duty version of the 1" for use with 1-1/2" collars (the regular version is for 1"-Long collars). To help identify these, I sew the 3/8"-Light with a blue thread. I sew the 1"-Heavy with amber (the regular leashes are sewn with a gray thread.) What makes these lighter- or heavier-duty is the bolt-snaps being rated for less (or more) load.</p>
+
+<p>3. The "CP" snaps are chrome plated. They cost a little more than "NP" (nickle plated). Some of the "NP" versions I use are new (I used "CP" versions in the past). I'm hoping the 1" snaps become available in NP (they'd be less expensive). If PetHardware ever stops carrying an "NP" version, look for the "CP" version. Pay attention to the weight rating.</p>
+
+<section id="leash-thread">
+<h4>Thread</h4>
+<div>
+
+<p>I use the same thread described for <a href="#collar-thread">collars</a> (Tex-70 for 3/8 to 3/4 webbing. Tex-90 for 1" - but Tex-70 would be good enough for this.). Since the thread is exposed on both sides, I don't use white (it would stand out too much). I use charcoal (7115) for Tex-90, and shark-gray (7090) for Tex-70 (because I haven't found charcoal in Tex-70.).</p>
+
+<p>For the 3/8" light-duty leash, I use a blue Tex-70 thread I found on Amazon (ASIN: <a rel="nofollow" href="https://www.amazon.com/dp/B06Y63HP4B">B06Y63HP4B</a>) so it stands out more from the 3/8" regular leash. For the 1" heavy-duty leash, I use Amann's ocher (7477) Tex-90 so it too stands out as different than 1" regular. (This color is amber, like the color of stitching on blue jeans. Sometimes called "cowboy yellow.").</p>
+
+</div></section> <!-- end h4 -->
+</div></section> <!-- end h3 -->
+
+<section id="leash-cuts">
+<h3>Cuts, marks &amp; box-x patterns</h3>
+<div>
+
+<p><b id="leash-cut">Cut 65-1/2"</b>. This will give you 30 leashes per 50m (1,968") roll. I get 6-3/8 to 6-1/2" hand openings. The resulting length of the leashes are 58-1/4 to 59". (They don't come out the same length because the metal snaps have different lengths. Also, the box-x pattern for wider leashes requires a longer length of overlap at each end.). It doesn't matter. (If I cut 29 pieces, they'd turn out 2-1/4" longer. If I cut 31 they'd be 2" shorter. Cutting 65-1/2" results in leashes closest to "5-foot.").
+
+<p>I often end up with 10-20" extra. That may be tempting to cut longer pieces (ex., 1/4" longer per leash * 30 leashes = 7.5" additional webbing used.). Resist that temptation until you see how <em>consistent</em> the excess is. If a roll doesn't have the exact excess <em>all</em> the time, then your last leash will eventually be short. It seems like the 1" webbing is more prone to this (even having a few inches <em>less</em> than it should sometimes).</p>
+
+<p>I save the longer pieces of scrap (over 6"). I roll the longer ones (12") into a bundle &amp; put a rubber band around them. I donate a grab bag of these to Goodwill. Sewers can always use odds &amp; ends like this to add handles to a project, or reinforce stress points. (Keep in mind that the 3/8"-wide webbing is the same webbing used for collars. You can use scrap longer than 11-5/8" to make a collar. The other widths of leash webbing are  too thin to use for collars. The collar probably wouldn't hold it's adjusted size.).</p>
+
+<section id="leash-marks">
+<h4>Marks</h4>
+<div>
+
+<p>The following table shows where to mark the ends to fold over and sew:</p>
+
+<table id="leashes-lengths">
+<thead>
+<tr><th scope="col">Leashes</th><th colspan="2" scope="col">Mark ends</th></tr>
+<tr><th class="width" scope="col">Width</th><th scope="col">Handle</th><th scope="col">Snap</th></tr>
+</thead>
+
+<tbody>
+<tr><th class="width" scope="row">3/8</th><td>14-1/2</td><td>2</td></tr>
+<tr><th class="width" scope="row">5/8</th><td>14-1/4</td><td>2-1/2</td></tr>
+<tr><th class="width" scope="row">3/4</th><td>14-3/4</td><td>2-3/4</td></tr>
+<tr><th class="width" scope="row">1</th><td>15-1/4</td><td>3-1/2</td></tr>
+</tbody>
+</table>
+
+</div></section> <!-- end h4 -->
+
+<section id="leash-box">
+<h4>Box-x pattern</h4>
+<div>
+<p>The 5/8 thru 1" leash webbing is thinner than the webbing for collars. I think the stitching should be spread over a larger area (two bartacks might be too concentrated &amp; heavy for the material). Therefore, I sew a box-x pattern (see the <a href="#info-sew">sewing</a> section below. The lengths to mark (above) are long enough to fill with a reasonably-sized box-x.</p>
+
+<p>The 3/8" leash webbing is the same used for collars. I sew two bartacks like I do collars. I think sewing a box-x pattern this small would be tedious. The lengths to mark (above) allow for two bartacks 5/8" apart.</p>
+
+</div></section> <!-- end h4 -->
+</div></section> <!-- end h3 -->
+
+<section id="leash-lube">
+<h3>Packaging &amp; Lubricating the snap bolts</h3>
+<div>
+
+<p>Usually the bolt-snap's sliding bolt can feel rough (crunchy) to operate. I'm in the habit of applying a couple drops of "Zoom-Spout" oil. (Mineral oil from the pharmacy would be fine. Anything thin, light like sewing-machine oil. You can get a gallon of "Lily White" on Amazon cheap.). To apply the oil, I inserted a 5/16" diameter steel rod (3' long) into the top of my wire-frame shelving (14" deep):</p>
+
+<div class="image"><div><a href="../../images/hanging_rod.jpg"><img src="../../images/thumbnails/hanging_rod_small.jpg" alt="Rod to hang leashes" loading="lazy"><br><span class="smaller">click for larger</span></a></div></div>
+
+<p>The rod hangs out 22" in front of the rack. (HAZARD WARNING: my rack is 6' tall &amp; on wheels which adds more height. If your rack is shorter, these rods pose a hazard to someone walking into them, poke an eye out. If it's really low, a dog could hurt themselves.). I slide all the snaps onto the end of the rod (with the webbing hanging down). With all the snaps hanging, I apply 1-2 drops to each sliding gate. I operate the sliding gate of each 1-2 times to help spread the oil. (Having them hanging this way let's gravity help. The 3/8" snap-bolt won't fit over this rod. But, I've never had the crunchy feel with those; haven't needed to oil them. If I had to, a 1/4" rod would work.).</p>
+
+<p>Hanging the leashes helps with packaging too. They're easy to straighten out, flat against each other. Then wrap with pieces of plastic-wrap from the kitchen to keep bundled together for boxing. (That's hard to do if they're laying on the floor or a table. Gravity helps.).</p>
+
+<section id="leash-labels">
+<h4>Packing labels</h4>
+<div>
+<p>I created <a href="../../files/packing-labels_leashes.zip">packing labels you can use</a> (print the PDF, or modify the .odg source with <a rel="nofollow" href="https://www.libreoffice.org/discover/draw/">LibreOffice Draw</a>). Like collars, I use ordinary kitchen plastic/cling wrap. I insert a label inside one of the plastic wraps, facing out. I wrap the leashes four times (both ends, and equally spaced in the middle).</p>
+</div></section> <!-- end h4 -->
+</div></section> <!-- end h3 -->
+</div></section> <!-- end h2 -->
+
+<section id="addl-info">
+<h2>Marking, cutting, melting &amp; sewing webbing</h2>
+<div>
+
+<p>These topics are applicable to <em>both</em> collars and leashes:</p>
+
+<section id="info-mark">
+<h3>Marking</h3>
+<div>
+<p>I use a Clover Chaco pen (ASIN: <a rel="nofollow" href="https://www.amazon.com/dp/B0016ZZOEK">B0016ZZOEK</a> with white chalk) to mark the webbing. There's another version (ASIN: <a rel="nofollow" href="https://www.amazon.com/dp/B001K56TR2">B001K56TR2</a>). There's a couple other brands too (Sewphee and Madam Sew). You can buy chalk refill (brand doesn't matter).</p>
+</div></section> <!-- end h3 -->
+
+<section id="info-cut">
+<h3>Cutting</h3>
+<div>
+
+<p>I use a <u>cutting hot-knife</u> (page coming soon). This goes <em>very</em> fast compared to manually marking, cutting &amp; melting two ends per piece. But, a hot-knife isn't very useful by itself. You need easy access to the webbing from one side; measure the length past the blade to the other side. The more you put into that, the more time-saving the hot-knife will be. I would start with scissors. It'll be some time before that's holding you back.</p>
+
+<p>Before cutting with a hot-knife, I used heavy-duty scissors I bought at Harbor Freight. They don't sell those anymore. I tried other scissors at the time; some didn't work well. You probably want <em>heavy-duty</em> scissors. This <a rel="nofollow" href="https://www.harborfreight.com/hand-tools/hand-saws-cutting-tools/scissors/8-1-4-quarter-inch-multipurpose-stainless-steel-scissors-97049.html">multipurpose scissors</a> from HF work ok (not as good as the shorter ones they don't sell anymore. Their <a rel="nofollow" href="https://www.harborfreight.com/11-in-shop-shear-58490.html">shop shear</a> works very well. PetHardware has <a href="https://www.pethardware.com/en/leather-scissors/sure-grip-shears-1407/">leather scissors</a> which look like they work for webbing.</p>
+
+<p>Scissors aren't great for cutting webbing. The material will be ragged on the side where the cut ends (a tuft can protrude which takes more work melting into a clean end). PetHardware sells a <a href="https://www.pethardware.com/en/leather-scissors/razor-plier-craftool-1404/">Razor Plier Tool</a>. The blade comes <em>straight down</em> on the webbing for a clean cut. If I still cut with scissors, I'd definitely try that.</p>
+</div></section> <!-- end h3 -->
+
+<section id="info-melt">
+<h3>Melting</h3>
+<div>
+
+<p>As mentioned, I use a <u>cutting hot-knife</u> (page coming soon). It cuts &amp; melts at the same time. Prior to that, I used this <a rel="nofollow" href="https://www.harborfreight.com/130-watt-hot-knife-70931.html">Harbor Freight hot knife</a> to melt the ends. I mounted it upside-down on a board:</p>
+
+<div class="image"><div><a href="../../images/hf_hot-knife.jpg"><img src="../../images/thumbnails/hf_hot-knife_small.jpg" alt="Harbor Freight hot-knife to melt ends" loading="lazy"><br><span class="smaller">click for larger</span></a></div></div>
+
+<p>I would sit on the floor and roll each end against the surface. It worked well. Setting the dial to 2.6 to 2.8 seemed best for collars. I never used it for thinner leash webbing (I assume cooler would work better. 2.3. The dial's numbers probably aren't calibrated across each knife - my numbers may not be the same on another one.). Too cool, it will be sludgy, take longer to melt. Too hot will be too liquid, take longer to cool before you can touch it. It can drip. Have a towel in your lap. Don't let a dog get under it.</p>
+
+<p>You'll probably want to shape/smooth the melted surface between your fingers. Blow on the end, wait 1-2 seconds and then apply your fingers. It can burn if too molten. You can tape your fingers with first-aid tape (you want to feel what you're doing). Touch the corners on the blade to remove sharp burrs.</p>
+
+<section id="melt-vent">
+<h4>Ventilation</h4>
+<div>
+<p>I've read that polypropylene smoke isn't toxic. But, it's probably better not to inhale it straight from the blade. You could use a fan to blow it away. But, that'll probably blow on you too (might not be comfortable). I set up an "extraction fan" to pull the heat &amp; smoke away from the knife:</p>
+
+<div class="image"><div><a href="../../images/hf_hot-knife-vent1.jpg"><img src="../../images/thumbnails/hf_hot-knife-vent1_small.jpg" alt="Extraction fan used with Harbor Freight hot-knife" loading="lazy"><br><span class="smaller">click for larger</span></a></div></div>
+
+<p>That's a Hydrofarm Active Air 4" inline fan (<a rel="nofollow" href="https://www.hydrofarm.com/p/active-air-inline-fan/acdf6">ACDF4</a>). You'll need an Active Air speed adjuster (<a rel="nofollow" href="https://www.hydrofarm.com/p/active-air-duct-fan-speed-adjuster/acsc2">ACSC2</a>). Without the speed controller, that fan runs too fast for this use (I dial it down to about 1/3 away from the slowest setting). You can get 4" flexible ducting at the hardware store. I route the end out a window or door.</p>
+
+<p>I used a "4-inch to 6-inch duct adapter" as a hood. You can find these online. I had to use tin snips to cut 1" slits (1/2" apart all the way around) so it would fit over the fan's flange:</p>
+
+<div class="image"><div><a href="../../images/hf_hot-knife-vent2.jpg"><img src="../../images/thumbnails/hf_hot-knife-vent2_small.jpg" alt="4-inch to 6-inch adapter modified to fit the fan" loading="lazy"><br><span class="smaller">click for larger</span></a></div></div>
+
+<p>You may not have to do that. I used "foil tape" to seal the outside of my "feathered" end. (You can even tape the hood onto the fan. The prior photo shows using a band clamp.).</p>
+
+<p><strong>WARNING:</strong> the fan's mounting legs have sharp edges. You can cut yourself pretty badly if you walk into it barefoot (in the dark as I did). A dog running into it (chasing a ball) could cut themselves. I wrapped mine with a rubber bicycle inner-tube (cut open lengthwise). You could wrap a piece of cardboard around the legs (use ordinary "duck tape" to secure that in place).</p>
+
+<p>FWIW: Buying the above ventilation wasn't a wasted investment. Now I use every piece of it with the <u>cutting hot-knife</u> (page coming soon). Likewise, you can buy the cutting hot-knife instead of the HF melt-only knife. (Use <em>its</em> blade to melt the ends against - you don't have to cut with it. But, it's nice to have as a backup if/when the cutting hot-knife fails.).</p>
+
+</div></section> <!-- end h4 -->
+</div></section> <!-- end h3 -->
+
+<section id="info-sew">
+<h3>Sewing</h3>
+<div>
+
+<p>I started sewing webbing with a vintage <a href="https://ismacs.net/singer_sewing_machine_company/singer-class-201-sewing-machines.html">Singer 201-2</a>. I ended up with an industrial Juki LK-1900BN bartacking machine <a href="lk1900bn/">which I explain how to use on another page</a>. If you're really going to make collars &amp; leashes, you <em>need</em> this.</p>
+
+<p>To get started, you'll be looking at "heavy-duty" consumer machines. It needs to work with Tex-70, and have a stronger motor than a typical home machine (the 3/4" collar webbing is the hardest). My Singer 201-2 did ok, but I usually had to help it start by turning the handwheel.</p>
+
+<p>I was interested in a Janome 3160 computerized machine after seeing <a rel="nofollow" href="https://www.youtube.com/watch?v=kLIntt5Lnaw">this video</a> showing it automatically sew a bartack. That looked like it could be a lot easier than manually switching fwd/rev with my 201. I never learned if it could sew Tex 70 thread, or how strong the motor is (if it could sew thick webbing). I got the impression that the computer component is generic &amp; used on many machines. Maybe there's another stronger machine with that same feature (a pattern to choose).</p>
+
+<p>I mentioned on the <a href="../leash_sleeve/">leash sleeve page</a> that I use a <a rel="nofollow" href="https://juki.com/du-1181n">Juki DU-1181N</a> for those. That would definitely sew this. It handles Tex 90 thread. The only downside I can think of is that the reverse lever has to be held down. That might be harder to work with than the 201's lever which stays put until you move it again.  If I were thinking of using this machine for bar tacks, I would consider rigging a foot pedal to hold the reverse lever down. Or, I might pivot the webbing 180-degrees and sew in forward all the time. You can add a "needle positioner" accessory so that it always stops with the needle down. That would make pivoting fast.</p>
+
+<section id="sew-tack">
+<h4>Bartacks</h4>
+<div>
+<p>A real bartack has a slight zig-zag over a basting stich. Using a straight-stich machine, you'll sew fwd/rev 4-6 times. If you sew many, it's tedious going back/forth 4-5 times to sew a "bartack" this way. The LK-1900BN lets you make 4-5 times as many pieces with much less tedium.</p>
+</div></section> <!-- end h4 -->
+
+<section id="sew-box">
+<h4>Box-x</h4>
+<div>
+	
+<p>For leashes I sew a box-x pattern as shown:</p>
+
+<div class="image"><div><a href="../../images/box-x.png"><img src="../../images/thumbnails/box-x_small.png" alt="Box-x pattern" loading="lazy"><br><span class="smaller">click for larger</span></a></div></div>
+
+<p>The leash webbing is thinner. I think a concentrated bunch of stitches isn't as good for that. I think spreading the stitching out over a broader area is better (stronger). The 3/8" leash webbing is the same used for collars. I sew bar tacks for those leashes. (I think a tiny box-x would be hard to do.).</p>
+
+<p>Collars sold retail usually have box-x stitches. I don't do that with mine. Box-x usually takes more space, requiring more overlap which reduces the adjustable range of the collar. I do bartacks for collars to minimize the overlap (maximize the range of fit).</p>
+
+</div></section> <!-- end h4 -->
+</div></section> <!-- end h3 -->
+</div></section> <!-- end h2 -->
+	
+
+<section id="fn">
+<hr>
+<h2>footnotes</h2>
+
+<p><a id="fn1">[1]</a> <a href="https://www.pethardware.com/">PetHardware</a> is in the Czech Republic. I'm in the US and didn't think that would be economical. But, small orders cost about the same as buying in the US. Larger orders are very reasonable because the cost of shipping is less per item as the order grows larger (consolidated shipping). I haven't found better prices in the US. Plus, they have a large selection (when I've found someone selling something competitively in the US, they usually only have 1-2 things needed. Then I have to find everything else.).</p>
+
+<p>[The following is from before Trump's tariffs] Import tariff: Keep in mind that small orders aren't subject to import duties. This is called "de minimis." If the value of the order is less than $800, then it's not supposed to be taxed (but US Customs decides that, not PetHardware). If a tariff is imposed, it's based upon "CIF" (cost, insurance &amp; freight. I assume the <i>de minimis</i> limit is based upon CIF too, but I don't know for sure. Maybe it's just cost.). This means there's a "sweet spot" where you save more on consolidating shipping <em>until</em> you trigger a 4%(?) tariff at $800. (UPS uses a customs broker who charges another 1.5%.). So, if you exceed <i>de minimis</i>, then you benefit from spending <em>even more</em>. PetHardware's tiered discount (3% for spending $1000, 5% for $2,500, 10% for $4,000) makes up for the tariff. Plus: to spend that much money you'll probably buy the larger ("case") quantities which have the greatest volume-discount. It becomes a very good deal the further you go in that direction.</p>
+
+<p>The process of ordering is simple. You'll pay with a credit card, paypal or bank-to-bank wire transfer. You get UPS tracking numbers. Customs can be nerve-wracking. If it's over <i>de minimis</i> UPS will notify you of the amount due. You can pay that online or with a personal check at time of delivery. If you exceed $2,500, US customs wants to know who you are. UPS will prompt you to provide a "taxpayer ID." If you're an individual, that's your soc. sec. number. (That can make people nervous. UPS emailed me asking for it. The number I was told to call wasn't a UPS number when I googled it. I called, but asked them to send me an email while I was on the phone so I could know they were from UPS. They understood my caution.).
+
+<p>One order resulted in a request to complete a CPB Form 5106 ("importer identity") and submit it through UPS's web site. You'll probably receive either request before the shipment leaves Europe. I get the impression there's a pre-entry approval which must occur first. (Maybe UPS doesn't want to incur the cost of transport until this is done.). After that, you'll be notified of the amount to pay. During the telephone transaction I described above, UPS said the shipper can include this info in an "invoice" field, then UPS won't delay the shipment waiting for the recipient to do all this. If you're a charity with a taxpayer ID, that might be worth investigating. For an individual (soc. sec. number), I'd be nervous about that.</p>
+
+<p>My <b>material costs</b> shown on the <a href="../../donors/">donor page</a> reflect shipping &amp; import cost. I use a spreadsheet to apportion the shipping to each product by its <em>weight</em>. The import cost is apportioned by the product's cost + shipping. If you want to do this too, you can download the <a href="../../files/Pethardware_cost_calculator.zip">zipped spreadsheet</a> (created with <a rel="nofollow" href="https://www.libreoffice.org/discover/calc/">LibreOffice Calc</a>. You may need to use that if MS Office won't open it after unzipping.).</p>
+
+<p>To use that spreadsheet, you'll need the weight each product adds to the order. This is a little tedious to get. You have to 1) Add your first item to your cart. 2) Open another browser window, go to your cart &amp; start the purchase process until you reach the "shipping" step (which shows the total weight of the order). That weight is the weight of the first item. Leave this browser window sitting on this shipping page. 3) Add your next item (from the first window). 4) Refresh the shipping page to see the new weight. Subtract the prior weight from this new weight. That's the weight of the item you added to your cart.</p>
+
+<p>I'm hoping PetHardware makes weight easier to see. But, once you get used to it, it's not hard. Most people may not want to know the exact cost. I think it's useful for comparing to other sellers (domestic, who don't have the additional shipping and import costs), or communicating accurately to donors what their donation buys.</p>
+
+</section> <!-- end fn -->
+</main>
+
+<footer>page last modified: Apr 16, 2025</footer>
+
+</body>
+</html>

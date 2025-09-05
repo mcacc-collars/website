@@ -1,0 +1,41 @@
+/* ------------ Shelter page ------------ */
+
+/* no borders for the lengths */
+table#alloc-collars tr.short td, table#alloc-collars tr.short th,
+table#alloc-leashes tr.short td, table#alloc-leashes tr.short th {border-bottom-style: none;}
+table#alloc-collars tr.long td, table#alloc-collars tr.long th,
+table#alloc-leashes tr.long td, table#alloc-leashes tr.long th {border-top-style: none;}
+
+table#alloc-collars th.len,
+table#alloc-leashes th.len {border-right-style: none;}
+table#alloc-collars td.len-fromto,
+table#alloc-leashes td.len-fromto {border-left-style: none;}
+
+/* no borders between (leash) width and duty */
+table#alloc-leashes th.width {border-right-style: none;}
+table#alloc-leashes th.duty, table#alloc-leashes thead th.width + th {border-left-style: none;}
+
+/* Format */
+table#alloc-collars th.len, table#alloc-collars td.pct,
+table#alloc-leashes th.len, table#alloc-leashes tbody th.duty {text-align: right;}
+table#alloc-collars th.len,
+table#alloc-leashes th.len {font-style: italic;}
+table#alloc-collars td.len-fromto,
+table#alloc-leashes td.len-fromto {font-size: 0.94rem;}
+
+/* Make collar row heading left-justified */
+table#alloc-collars th.size {text-align: left;}
+/* Make leash row heading centered */
+table#alloc-leashes th.width {text-align: center;}
+
+/* anti-ocr images */
+div.fn a.hint {
+	display: inline-block;
+	text-decoration: underline;
+}
+div.fn a.hint:link {
+	border: 2px solid blue;
+}
+div.fn a.hint:hover {
+	border: 2px solid red;
+}

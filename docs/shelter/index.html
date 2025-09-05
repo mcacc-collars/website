@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Shelter</title>
+<link rel="stylesheet" href="../css/style.css">
+<link rel="stylesheet" href="../css/shelter.css">
+<link rel="canonical" href="https://www.mcacc-collars.charity/shelter/">
+<script src="../js/darkmode.js" defer></script>
+<meta name="description" content="Information for recipient shelters.">
+<meta charset="utf-8">
+<meta name="robots" content="noindex">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/site.webmanifest">
+</head>
+<body>
+<script>
+// This is only done here because browsers flicker before darkmode is applied.
+// This stuff should be done in the .js file (in the part for the page's initial loading).
+
+storedDisplay = localStorage.getItem('display')
+//console.log('HTML: storedDisplay:', storedDisplay);
+
+// If the visitor hasn't chosen a display mode, use their browser preference.
+// (This same test is in the .js file. It shouldn't exist here if browsers didn't flash.)
+if (storedDisplay === null) {
+	
+	// No stored choice. Check if browser preference is dark.
+	const prefersDark = window.matchMedia('(prefers-color-scheme: dark)');
+	if (prefersDark.matches) {
+		//console.log('HTML: no stored value. Browser prefers dark');
+		storedDisplay = "darkmode"
+	}
+	else {
+		//console.log('Initial: no stored value. Browser does not prefer dark. Using light.');
+		storedDisplay = "lightmode"
+	}
+}
+document.body.classList.add(storedDisplay)
+</script>
+
+<header>
+<nav aria-label="breadcrumbs"><ul>
+<li><a href="../">Home</a></li>
+</ul></nav>
+<div id="display-mode">
+<label for="display-dropdown">Display:</label>
+<select name="mode" id="display-dropdown" size="1" >
+	<option id="dd-light" value="lightmode">Light</option>
+	<option id="dd-dark" value="darkmode">Dark</option>
+	<option id="dd-nocturnal" value="noctmode">Nocturnal</option>
+</select>
+</div>
+<h1 class="center">Shelter</h1>
+</header>
+
+<main>
+<section id="collars">
+<h2>Collars</h2>
+<div>
+
+<p>I make collars in the following sizes:</p>
+
+<div class="image"><div><a href="../images/collar_sizes_visual.png"><img src="../images/thumbnails/collar_sizes_visual_small.png" alt="Visual representation of collar sizes"><br><span class="smaller">click for larger</span></a></div></div>
+
+<p>Those sizes are based upon what appear to be semi-official sizes.<a class="fn" href="#fn1">[1]</a> I make short &amp; long versions of each size for more flexibility in fitment. (I.e., you can put a narrower, lighter-weight collar on larger dogs who pull less. Heavier, wider collars on smaller dogs if they pull more.). The greater overlap in sizes gives more "single-ply" for dogs who don't need double (more "two-ply" for those who pull more).</p>
+
+<section id="collars-alloc">
+<h3>Allocation</h3>
+<div>
+
+<p>I make those sizes in the following proportions:</p>
+
+<table id="alloc-collars">
+<thead>
+<tr><th scope="col">Width</th><th scope="col" colspan="2">Length</th><th scope="col">Proportion</th></tr>
+</thead>
+
+<tbody>
+<tr class="short"><th class="size" rowspan="2" scope="row">X-Small <span class="small">(3/8”)</span></th>
+	<th class="len">short:</th><td class="len-fromto">5-7/8 to 9”</td><td class="pct">6%</td></tr>
+<tr class="long"><th class="len">long:</th><td class="len-fromto">7-5/8 to 12-1/4”</td><td class="pct">8%</td></tr>
+
+<tr class="short"><th class="size" rowspan="2" scope="row">Small <span class="small">(5/8”)</span></th>
+	<th class="len">short:</th><td class="len-fromto">8-3/4 to 13-1/8”</td><td class="pct">11%</td></tr>
+<tr class="long"><th class="len">long:</th><td class="len-fromto">10-1/8 to 15-3/4”</td><td class="pct">14%</td></tr>
+
+<tr class="short"><th class="size" rowspan="2" scope="row">Medium <span class="small">(3/4”)</span></th>
+	<th class="len">short:</th><td class="len-fromto">11-1/4 to 17-3/8”</td><td class="pct">14%</td></tr>
+<tr class="long"><th class="len">long:</th><td class="len-fromto">13-1/4 to 21-3/8”</td><td class="pct">14%</td></tr>
+
+<tr class="short"><th class="size" rowspan="2" scope="row">Large <span class="small">(1”)</span></th>
+	<th class="len">short:</th><td class="len-fromto">14-3/8 to 23”</td><td class="pct">14%</td></tr>
+<tr class="long"><th class="len">long:</th><td class="len-fromto">17 to 28”</td><td class="pct">14%</td></tr>
+
+<tr class="short"><th class="size" rowspan="2" scope="row">X-Large <span class="small">(1-1/2”)</span></th>
+	<th class="len">short:</th><td class="len-fromto">17-3/8 to 27-5/8”</td><td class="pct">3%</td></tr>
+<tr class="long"><th class="len">long:</th><td class="len-fromto">19-1/4 to 31-1/2”</td><td class="pct">2%</td></tr>
+
+</tbody>
+</table>
+
+</div></section> <!-- end h3 -->
+</div></section> <!-- end h2 -->
+
+<section id="leashes">
+<h2>Leashes</h2>
+<div>
+
+<section id="leashes-alloc">
+<h3>Sizes & allocations</h3>
+<div>
+
+<p>I make leashes in quantities that pair with the above collars:</p>
+
+<table id="alloc-leashes">
+<thead>
+<tr><th class="width" scope="col">Width</th><th class="duty" scope="col">Duty</th><th scope="col" colspan="2">Pair with collar</th></tr>
+</thead>
+
+<tbody>
+<tr class="short"><th class="width" rowspan="2" scope="row">3/8”</th><th class="duty" scope="row">Light</th>
+	<th class="len">3/8"</th><td class="len-fromto">long</td></tr>
+<tr class="long"><th class="duty" scope="row">Regular</th><th class="len">5/8"</th><td class="len-fromto">short</td></tr>
+
+<tr class="short"><th class="width" rowspan="2" scope="row">5/8”</th><th class="duty" rowspan="2" scope="row">Regular</th>
+	<th class="len">5/8"</th><td class="len-fromto">long</td></tr>
+<tr class="long"><th class="len">3/4"</th><td class="len-fromto">short</td></tr>
+
+<tr class="short"><th class="width" rowspan="2" scope="row">3/4”</th><th class="duty" rowspan="2" scope="row">Regular</th>
+	<th class="len">3/4"</th><td class="len-fromto">long</td></tr>
+<tr class="long"><th class="len">1"</th><td class="len-fromto">short</td></tr>
+
+<tr class="short"><th class="width" rowspan="2" scope="row">1”</th><th class="duty" scope="row">Regular</th>
+	<th class="len">1"</th><td class="len-fromto">long</td></tr>
+<tr class="long"><th class="duty" scope="row">Heavy</th><th class="len">1-1/2"</th><td class="len-fromto">short &amp; long</td></tr>
+
+</tbody>
+</table>
+
+<p>The 3/8" light-duty (and 1" heavy-duty) have lighter (or heavier) bolt snaps. They have blue (or amber) thread to help identify them.</p>
+
+<p>I don't make leashes for 3/8-Short collars.</p>
+
+</div></section> <!-- end h3 -->
+</div></section> <!-- end h2 -->
+
+<section id="colors">
+<h2>Colors</h2>
+<div>
+
+<p>I only make basic black. The materials are the least expensive.</p>
+
+</div></section> <!-- end h2 -->
+</main>
+
+<section id="fn">
+<hr>
+<h2>footnotes</h2>
+
+<p><a id="fn1">[1]</a> My collar sizes are based on the following:</p>
+
+<ul>
+<li>Petsmart: <a rel="nofollow" href="https://www.petsmart.com/help/sizing-charts-H0012b.html">Dog Collar Sizing Chart</a> <span class="archived">(<a href="https://web.archive.org/web/20230601220605/https://www.petsmart.com/help/sizing-charts-H0012b.html">archived</a>)</span></li>
+<li>Canine Journal: <a rel="nofollow" href="https://www.caninejournal.com/neck-size/">Dog Collar, Leash Fit & Sizing Guide</a> (near bottom of page) <span class="archived">(<a rel="nofollow" href="https://web.archive.org/web/20230331000336/https://www.caninejournal.com/neck-size/">archived</a>)</span></li>
+</ul>
+
+</section> <!-- end fn -->
+
+<footer>page last modified: Mar 18, 2025</footer>
+
+</body>
+</html>

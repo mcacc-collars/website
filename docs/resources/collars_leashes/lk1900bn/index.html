@@ -1,0 +1,747 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>LK-1900BN</title>
+<link rel="stylesheet" href="../../../css/style.css">
+<link rel="stylesheet" href="../../../css/lk1900bn.css">
+<link rel="canonical" href="https://www.mcacc-collars.charity/resources/collars_leashes/lk1900bn/">
+<script src="../../../js/darkmode.js" defer></script>
+<meta name="description" content="How to make collars & leashes faster with a bartacking machine.">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/site.webmanifest">
+</head>
+<body>
+<script>
+// This is only done here because browsers flicker before darkmode is applied.
+// This stuff should be done in the .js file (in the part for the page's initial loading).
+
+storedDisplay = localStorage.getItem('display')
+//console.log('HTML: storedDisplay:', storedDisplay);
+
+// If the visitor hasn't chosen a display mode, use their browser preference.
+// (This same test is in the .js file. It shouldn't exist here if browsers didn't flash.)
+if (storedDisplay === null) {
+	
+	// No stored choice. Check if browser preference is dark.
+	const prefersDark = window.matchMedia('(prefers-color-scheme: dark)');
+	if (prefersDark.matches) {
+		//console.log('HTML: no stored value. Browser prefers dark');
+		storedDisplay = "darkmode"
+	}
+	else {
+		//console.log('Initial: no stored value. Browser does not prefer dark. Using light.');
+		storedDisplay = "lightmode"
+	}
+}
+document.body.classList.add(storedDisplay)
+</script>
+
+<header>
+<nav aria-label="breadcrumbs"><ul>
+<li><a href="../../../">Home</a></li>
+<li><a href="../../">Resources</a></li>
+<li><a href="../">Collars &amp; Leashes</a></li>
+</ul></nav>
+<div id="display-mode">
+<label for="display-dropdown">Display:</label>
+<select name="mode" id="display-dropdown" size="1" >
+	<option id="dd-light" value="lightmode">Light</option>
+	<option id="dd-dark" value="darkmode">Dark</option>
+	<option id="dd-nocturnal" value="noctmode">Nocturnal</option>
+</select>
+</div>
+<h1 class="center">Sewing Collars &amp; Leashes with a LK-1900BN Bartacking Machine</h1>
+</header>
+
+<main>
+<p>I used a Singer 201-2 to sew collars for 2-3 years. Then I bought a <a rel="nofollow" href="https://juki.com/lk-1900bn-series">Juki LK-1900BN</a> bartacking machine which lets me go 5-10x faster. (<a href="../../../files/LK1900BN_P12_1910_Catalog-bn_series.pdf">brochure</a>; <a href="../../../files/instruction_eg-1900bn_ONLY.pdf">instruction manual</a>; <a href="../../../files/LK-1900BN_parts.pdf">parts list</a>; <a href="../../../files/LK-1900BN_Series-Engineer_Manual.pdf">engineer manual</a>). It has a sewing field of 40mm wide x 30mm tall (1.57" x 1.18"). It can sew box-x patterns (better for leashes than collars, IMO) but doesn't come with any).</p>
+
+<p>Explaining how to use the machine is beyond the scope of this page. It has a steep learning curve & will be overwhelming at first (has many options &amp; settings). It takes time to get comfortable, find what works for you. The best way to start is to watch <a rel="nofollow" href="https://www.youtube.com/results?search_query=Juki+lk-1900bn">YouTube videos</a>.<a class="fn" href="#fn1">[1]</a></p>
+
+<p>The <a href="../">collars &amp; leashes</a> page contains details you'll need. This page contains info specific to this machine.</p>
+
+<nav aria-label="Table of Contents">
+<ol>
+<li><a href="#pre-buy">Before buying</a>
+	<ul>
+	<li><a href="#pre-loosen">Pre-loosen screws</a></li>
+	<li><a href="#pre-materials">Materials</a></li>
+	</ul>
+</li>
+<li><a href="#getting-started">Getting started</a>
+	<ul>
+	<li><a href="#start-settings">Settings</a></li>
+	<li><a href="#start-winding">Winding bobbins</a></li>
+	<li><a href="#start-clamps">Work clamps &amp; feed plates</a>
+	<ul>
+		<li><a href="#start-clamps-change">Changing work clamps</a></li>
+	</ul>
+	</li>
+	<li><a href="#start-guards">Fingerguards</a></li>
+	</ul>
+<li><a href="#collars">Making collars</a>
+<ul>
+	<li><a href="#collar-1.5">1-1/2"</a>
+	<ul>
+		<li><a href="#collar-1.5-moves">Material moves under clamp</a></li>
+	</ul>
+	</li>
+	<li><a href="#collar-1.0">1"</a></li>
+	<li><a href="#collar-0.75">3/4"</a></li>
+	<li><a href="#collar-0.625">5/8"</a></li>
+	<li><a href="#collar-0.375">3/8"</a></li>
+</ul>
+</li>
+<li><a href="#leashes">Making leashes</a>
+<ul>
+	<li><a href="#leash-1.0">1"</a>
+	<ul>
+		<li><a href="#leash-1.0-line-up">Lining up</a></li>
+	</ul>
+	</li>
+	<li><a href="#leash-0.75">3/4"</a></li>
+	<li><a href="#leash-0.625">5/8"</a></li>
+	<li><a href="#leash-0.375">3/8"</a></li>
+</ul>
+</li>
+</ol>
+</nav>
+
+<section id="pre-buy">
+<h2>Before buying</h2>
+<div>
+<p>Before getting one of these, keep in mind it's incredibly heavy (110 lbs + the weight of the table). Having a <b>table with wheels</b> helps a lot. Industrial machines traditionally use a "k-leg" table. Sometimes people add casters to that. But, that's kludgey; raises the foot pedal too. There are newer designs of tables with wheels (and the foot pedal remains at the floor). I would try to get the machine with that. The usual table dimension is 48"w x 20"d. I have 36" wide. I didn't need a full table because I have another table next to this one.</p>
+
+<p>There is a -BNH category for "heavy weight." I think that's just the needle size it comes with. But, there is a -BNW category which has a "large hook." I think this means it comes with a <b>high-capacity bobbin.</b> Depending on how much that costs, I would buy it. I don't mind running out of bobbin thread. It only takes a few seconds to swap & start the empty winding. But, a larger bobbin would be nice. Looking at the <a href="../../../files/LK-1900BN_parts.pdf">parts list</a> I think the standard -BN can be upgraded by replacing 5-7 parts. I intend to look into that some day. There are some Chinese clones of this machine &amp; parts. I wouldn't invest in a clone machine, but the parts might be worth trying.</p>
+
+<section id="pre-loosen">
+<h3>Pre-loosen screws</h3>
+<div>
+	
+<p>I think the biggest risk with this machine is rounding off the head of a screw (then needing special equipment to drill it out, clean the threads.). There are a few screws you'll probably need to remove at some point. I would ask the seller to loosen &amp; re-tighten with some grease applied to the threads so they'll be easier for you:</p>
+
+<ul>
+<li>5 screws holding the "work-clamp face plate" to the arch.
+<p>These are <em>notoriously</em> difficult to loosen. When they snap free they spin so freely that you'll think you snapped the head off. (Their problem doesn't seem to be the threads seizing, but the anodized surface of the plate &amp; screw binding somehow.). Putting the arch in the freezer overnight seems to help more than using heat. I spray some "Liquid Wrench" on the screws, use a heat gun, then put in the freezer (don't try to loosen while hot. It <em>always</em> works better when frozen. The heat might help the Liquid Wrench penetrate better.). After a deep freeze, if they don't break free, do it again (penetrating oil, heat, deep freeze). It's important to let it completely freeze. Give it hours. You can strike the screwdriver with a hammer. That can help when frozen (I don't think it helps when hot). It's a good idea to buy a few spare screws (#SS2110930SP, desc: SCREW 11/64-40 L=8.7).</p>
+</li>
+
+<li>2 <em>very</em> small setscrews holding the fingerguard to the arch.
+<p>Unlike the above 5 screws, these seem to have thread-locking compound applied to their threads. Heat is all you need. But, the screws are tiny. You need a jeweler screwdriver for them. It's hard to get a good grip on such a small screwdriver. (And, if you turn too hard, the tiny screwdriver might snap.). I clamped <a rel="nofollow" href="https://www.harborfreight.com/hand-tools/pliers/locking-pliers/6-inch-needle-nose-locking-pliers-39715.html">long-nose clamping pliers</a> onto the screwdriver. With my thumb pushing hard against the end of the screwdriver (into the setscrew), I rotate the screwdriver with the other (using the clamp for better leverage). Rock it back and forth a very little and it will work free. Trying to force it with such a small screw driver will break the screw driver. As I said, heat seems to help.</p>
+</li>
+
+<li>1 set screw holding the "ball retainer" to the top of the arch.
+<p>This one's not as bad as the prior two. It's part #43 in the "feed mechanism components." Prior versions of the 1900 used balls. Now it's a "slider" (#42) that fits into this cup. You may need to adjust this part up/down. If it's too loose the front of the arch will flex up/down too much. If it's too tight, you'll get an E926 error when the machine initializes (the arch won't move freely enough).</p>
+</li>
+
+<li>2 screws on each side of the arch securing the "lever driving plates."
+<p>These let you make the two sides of the clamp level in the UP position. But, you can adjust both sides a little higher/lower. These two screws are almost as difficult as the 5 faceplate screws. They break free easier when frozen (but pre-heat with liquid wrench before freezing might help too. I wouldn't waste my time trying to loosen while hot. They come loose easier when frozen.). Like the faceplate, I think it's the anodized finish of the screws &amp; plate. The threads aren't seized, it's that surface beneath the screw head. (FWIW: you'll notice the same phenomenon with the screw securing the feedplate. The under-side of its head seems to bind against the washer. They're both anodized. Grease between the screw's head &amp; washer helps. Eventually the anodized finish wears off enough that it's not a problem. That screw has an allen-head. Not much risk wrecking that. It's these slotted screws that are risky.)</p>
+</li>
+
+<li>4 screws holding the needle plate (the plate the work clamp comes down on)</li>
+<li>6 screws holding the feed presser plate (the plate to the rear of the needle plate)
+<p>These two groups of screws are awkwardly located. It's hard to get a screwdriver straight-vertical over them. If you round one off, it will be even harder to drill out (the head of the machine in the way). It would be a good idea if the seller made sure these won't be a problem for you. It could be a long time before you have to remove these two plates. But, if you wreck one of these, it would be a big problem. I'd ask the seller to make sure there's easy to remove so you don't have to worry about it. (In the meantime, find some quality stubby screwdrivers, or low-profile bit drivers. Be prepared.)</p>
+</li>
+</ul>
+
+<p>There is "hinge screw" which the wiper arm rotates on (the arm that pulls the thread out of the fabric after sewing). You shouldn't have to remove this (I wouldn't ask the seller to go to the trouble of loosening this one for you.). But, this is another one I had to freeze. (Like the 5 faceplate screws, I think it's the anodized surfaces that bind). To remove that part (to freeze it) you have to remove a tiny retaining ring. I wrecked my ring. It could be worth buying some spares in advance (part# RC0470611KP, desc: retaining ring 4.7).<p>
+	
+<p>Ask the seller if they recommend any screwdriver sets, "hollow-ground" bits? You want some good tools for this. You'll also need an allen wrench for the screw that holds the feed plate down (4mm), and another for the screw that holds the arch down (5mm). I feel like I get a tighter fit with a 5/32" allen wrench in the feed plate's 4mm screw head. Look for a set that has the rounded (ball) on one end. That's useful to hand tighten while you're positioning the arch and feed plate. (Use the non-ball end to crank it down tight after you've got the pattern centered within the opening.).</p>
+
+</div></section> <!-- end h3 -->
+
+<section id="pre-materials">
+<h3>Materials</h3>
+<div>
+<p>You'll need <b>Juki #2 oil</b> (thicker than #1 oil which is used with the DU-1181N I sew <a href="../../leash_sleeve/">leash sleeves</a> with).</p>
+
+<p>You'll need <b>spare bobbins</b> (#138-12102. I believe they're "Style A, class 15." I don't know for sure. The large-capacity bobbin is #B180-621-0D00.). If you sew Tex 70 &amp; 90, then you need another <b>bobbin case</b> (#B1828-980-0BB. Or, the large-capacity B1828-210-DAA case for the large-capacity hook.). You'll adjust the bobbin tension differently for different size thread. It's better to have dedicated cases so you don't have to change the adjustment back/forth. You can find these (often generic clones, cheaper) on eBay &amp; Amazon. However, there is a <a href="#start-bobbin-avoid">bobbin-case I would avoid</a>.</p>
+
+<section id="needles">
+<h4>Needles</h4>
+<div>
+<p>The machine uses 135x17 <b>needles</b> (also called DPx17). I use size 140/22 for all the webbing, and both Tex-70 and -90 thread. Usually you'd use a larger needle with heavier thread. It wouldn't hurt to have smaller 120/19, 130/21 &amp; larger 160/23 needles. Ask the seller of the machine what would make sense to experiment with. I'm using Groz-Beckert 761032 R point (regular round point; gedebur means titanium coated). I also have Groz-Beckert 768692 RG point (round with small ball point) SAN5 (which means improved thread guidance). I think I was told SAN5 should be better, but I haven't used one yet. The R point seems to work fine.</p>
+
+<section id="needles_replace">
+<h5>Scheduled replacement</h5>
+<div>
+<p>My first broken needles were due to something I did wrong. Now they seem to happen after prolonged use. I think they fatigue &amp; break on their own eventually. The problem is: when the needle breaks, the remaining shaft tears up the webbing (while the machine continues to finish the pattern). It's probably a good idea to replace the needle after a certain amount of time (or work). They only cost 50-cents.</p>
+
+<p>The <a href="../../../files/instruction_eg-1900bn_ONLY.pdf">instruction manual</a> (pg 35, sewing through the use of a counter) discusses 3 types of counters available (per shape, per cycle &amp; bobbin thread). The latter increments every 10 stitches. Each pattern has a fixed number of stitches. You know how many tacks (or boxes) you use per item. With that info, you can calculate how many stitches you sew. I was able to calculate how many stitches I sew per month (75,160), and set the counter to 7,516. (When the counter reaches that number, the control panel flashes an alert. I replace the needle, press "reset" and it starts counting again.). If I break a needle because I do something wrong, I go into the counter and decrement the count back to zero.</p>
+
+<p>It would probably be sufficient to setup a recurring monthly reminder (in a calendar tool) to remind yourself every month (whatever makes sense for the volume you sew). I don't sew exactly the same things every month. I might sew 4 months worth of a couple collar sizes, and 4 months worth of leashes, etc. I like using the counter to remind me based on <em>actual</em> usage. Note: the counter only goes to 9,999 (which represents 99,999 stitches). If I wanted to change the needle at a number of stitches larger than that, then I would set the counter to <em>half</em> what I want, and tally (using a piece of paper) each time it alerts. (Every two alerts I'd replace the needle.). I doubt it makes sense to use a needle that long. They're cheap.</p>
+
+<p>You won't need to think about this when you start. You'll break needles making mistakes. I created a spreadsheet to calculate how many stitches I sew per month (if I sewed a month's worth of the different collars &amp; leashes together in one month). You can download the <a href="../../../files/stitches_per_month.zip">zipped spreadsheet</a> if you'd like to use it. It's pretty straightforward. (It was created using <a rel="nofollow" href="https://www.libreoffice.org/discover/calc/">LibreOffice Calc</a>, which you may need to install that if MS Calc won't open it after unzipping.).</p>
+
+</div></section> <!-- end h5 -->
+</div></section> <!-- end h4 -->
+
+<section id="lighting">
+<h4>Lighting</h4>
+<div>
+<p>You'll want more lighting than the machine's built-in light. You can buy gooseneck lamps that clamp onto the table, or you drill a hole &amp; install permanently. There is a common design used with industrial machines (google industrial sewing machine lamps. You'll see lots of setups with these lights). They seem to be called SNU-21, or SNU-26 referring to the length of the gooseneck. But, the 21 has a larger hood (6-1/2" long, 4" inside diameter at the opening) and can use a larger A21-size bulb. (Being shorter length, it can hold more weight? The SNU-26 has a smaller hood - 5-3/4" long, 3-3/4" ID - and uses the smaller A19 bulb.).  IMPORTANT: if you use the larger A21 bulb in the SNU-26's smaller hood, it will protrude &amp; be glaring to your eyes.</p>
+
+<p>I installed two SNU-21 lamps. This shows one I installed on the right side of the machine:</p>
+
+<div class="image"><div><a href="../../../images/1900_gooseneck-R.jpg"><img src="../../../images/thumbnails/1900_gooseneck-R_small.jpg" alt="Gooseneck (right side) installed behind control panel" loading="lazy"><br><span class="smaller">click for larger</span></a></div></div>
+
+<p>This shows one installed on the left side of the machine:</p>
+
+<div class="image"><div><a href="../../../images/1900_gooseneck-L.jpg"><img src="../../../images/thumbnails/1900_gooseneck-L_small.jpg" alt="Gooseneck (left side) installed behind machine" loading="lazy"><br><span class="smaller">click for larger</span></a></div></div>
+
+<p>The SNU-21 barely reaches. It's important to note that the machine may have to lay on its side for service someday. This lamp should be installed so it doesn't interfere with that.</p>
+
+<p>The machine comes with a built-in light which has a few brightness levels. By itself, it seems glaring to me. Putting some scotch tape over it might help (or taping some tissue paper over it).</p>
+
+</div></section> <!-- end h4 -->
+</div></section> <!-- end h3 -->
+</div></section> <!-- end h2 -->
+
+<section id="getting-started">
+<h2>Getting started</h2>
+<div>
+
+<p>There is a <b id="start-bolt">bolt holding the machine down to the table</b> (right-front corner, bottom of machine. You can see it in front of the rubber foot in the first of the <a href="#lighting">lighting</a> photos above.). This secures the machine from tipping over onto its side (which you might need to do for service, but takes two people. I believe the machine is top-heavy, and could flop over easily? If it did, it would be catastrophic.). You should loosen that bolt from underneath the table. (Don't remove it. It's useful as a safeguard against accidental tipping over. Just back the bolt out 1-2 turns. Leave the locknut loose, or finger snug against the bottom of the machine.). Don't operate the machine with the bolt tight &mdash; holding the machine down tight against the table. There are reports of machines cracking due to the vibration during sewing.</p>
+
+<p>The machine comes with a clear plastic shield for <b id="start-eye">eye protection</b>. If you wear glasses, you should be safe without it. Without any protection, if a needle breaks, a piece could strike your eye. If you wear glasses, consider their coverage (if anything could reach your eye). If you don't wear glasses, consider buying the weakest reading glasses sold at the pharmacy (0.75?). A little magnification could be good in addition to the protection. Otherwise, consider safety glasses, or installing the shield (whichever feels less intrusive).</p>
+
+<p>When I started, I was overwhelmed. The <b id="start-finger">fingerguard</b> felt in the way. I removed it until I used the machine for awhile. If you do that, be extra careful. The work clamp serves as a guard (to some extent, only in the up position). It's not super unsafe to remove the fingerguard. But, it's better to have it on (I re-installed mine after 3-4 months). The fingerguard can be raised or lowered. You can try adjusting that before removing it. Maybe you could find a height that doesn't feel as in the way.</p>
+
+<p>You'll need to <b id="start-hold-thread">hold the thread when it starts sewing.</b> If you don't, the white top thread will get pushed through to the bottom (black side, "piling?"). To do this, pull the thread toward the rear of the machine to have enough length to comfortably hold. Then swing that to the the front (toward you) so the wiper arm won't hit it. If you pull the thread toward you, it will be rough on the thread. You need to pull back, then swing the end toward you. Fishing for the tail of thread around the needle made me nervous. Be aware of your foot on the pedal (not pressing down. Never put your finger under the needle. Just rub the side of the needle to get the thread.).</p>
+
+<p>Sometimes the <b id="start-thread-loop">thread can loop over the top of the takeup lever</b>. The symptom will be that it's hard to pull the thread to the rear before starting to sew. (If you don't realize it's looped, the thread tension will be wrong - the thread may even break; you could even break a needle.). If it feels tighter when pulling the thread to the rear (before starting to sew), look closely at the takeup lever to see if the thread is looped over it. But, also be aware that if the thread is pulling off the bottom of the spool, it can feel hard-to-pull too, and then "give" freely when it gets past that. You might feel that and think it's the takeup lever problem. You'll get used to which is which. I don't know why it loops over the takeup lever. It seems to happen when the pattern loads, the machine cycles into the ready state. I can go weeks without it happening, then it happens 10 times in a row.</p>
+
+<p>There is a <b id="start-thread-guide">thread guide</b> above the thread-tension disks. See the <a href="../../../files/instruction_eg-1900bn_ONLY.pdf">instruction manual</a> (pg 15, threading illustration). Notice that the thread goes through that guide only <em>once</em> (<em>up</em> to the takeup lever). At some point, I got the impression that the thread should go down through that guide <em>AND</em> back up through it (to the takeup lever). After 4-5 months it stood out to me that was wrong. When I started doing it correctly, it seemed like the machine operated better (thread tension was more consistent. If things aren't working right, it's good to stop &amp; question everything.). Some machines actually do go through that guide in <em>both</em> directions (my DU-1181N for <a href="../../leash_sleeve/">leash sleeves</a> does.).</p>
+
+<p>The control box mounted under the table has a <b id="start-fan">cooling fan.</b> You can hear it sometimes. I live in a hot &amp; dusty environment. I'm in the habit of blowing out my laptop 2-3 times a year (especially summer so it will operate cooler). It usually accumulates a lot of dust. I've been thinking this control-box fan would be similar. I've removed the plastic cover (4 screws), but haven't seen dust buildup. (You can't even see the fan. It's buried behind the circuit board. The <a href="../../../files/LK-1900BN_parts.pdf">parts list</a> shows it. See "Control Box Components" part 17.). I'm still going to occasionally remove the cover and see if it needs to be blown clean. So far it doesn't have the problem I thought it would.</p>
+
+<p>However, the other side of the control box is metal &amp; may serve a heat sink. I use a 5" clamp-on fan (clamped onto the bottom foot of the table) to blow air onto that surface. You may not need to do this. Being in a hot environment, I'm in the habit of doing what I can to help electronics last longer. (I service this clamp-on fan 1-2 times a year by blowing the dust out of it, and remove the blade &amp; plastic housing to apply some oil to the shaft's bearing surfaces. It will last many years doing that service.). This makes sense in my climate. But, Juki's parts can be expensive. I'd do it in a cooler environment too.</p>
+
+<section id="start-settings">
+<h3>Settings</h3>
+<div>
+
+<section id="start-settings-warning">
+<h4>WARNING</h4>
+<div>
+<p>The control panel has many options (called "switches") accessed by the "M" button. Press it once (one beep) and that's the options for normal operation. Hold it 2 seconds longer and you'll hear a 2nd beep. That gives you access to additional options. Hold it another 2 seconds for a 3rd beep gives more options. These options are listed in the <a href="../../../files/instruction_eg-1900bn_ONLY.pdf">instruction</a> &amp; <a href="../../../files/LK-1900BN_Series-Engineer_Manual.pdf">engineer manuals</a>. It helps to see them at a glance that way before seeing them on the control panel. (Juki's manuals are hard to understand. It doesn't help much.).<p>
+
+<p>Don't play with these options (too soon, too many at once). Be sure to write down the value it was before changing so you can get back to where you were. There's probably a "factory reset" but I haven't had a reason to look for it yet. If you write everything down you shouldn't have to either. Also, it's easy to accidentally press the +/- keys intending to press the up/down arrow keys (to the prev/next "switch"), changing the value of the item you're still sitting on. If you think you've done that, power off (I don't think it saves until you press the return "<span class="larger">↩</span>" button.). By "power off" I mean the power switch mounted to the table, not the green ready button on the control panel.</p>
+</div></section> <!-- end h4 -->
+
+<p>One of the switches I changed was <b id="start-set-k021">K021 &amp; 23</b> (pressure switch positions 1 & 3). These are in Memory Switch 2 (3 beeps). These specify when the foot pedal causes the presser foot to drop, and when sewing starts. The default settings are 90 &amp; 230. I found it hard to hold the pedal between those two positions. I set these to 45 &amp; 245. That gives more range between the clamp coming down, and sewing starting. (It can go to 250, but that didn't work reliably. Often it felt like I couldn't push far enough to make it start sewing. So, I backed it down to 245. (It might be worth trying 248. Apparently there's some play in the pedal sensor that won't touch 250 all the time.). I definitely recommend this change. A lot happens all at once. It's overwhelming. Having more "wiggle room" with your foot definitely removes some stress. (Note: K022 isn't used. There is configuration of this machine that uses a "2-stage" pedal. It actuates something else between "clamp-down" and "sewing-start." You can ignore it.).</p>
+
+<p>Also, I was stressed by the work clamp coming down. There's a lot going on (at once). K027 (3 beeps, mem sw 2) sets the work clamp lowering speed. I have it set to 1,500 now. But, I started around 800. It <em>sounds bad</em> the slower it goes. But, I preferred the slower speed in the early days.</p>
+
+</div></section> <!-- end h3 -->
+
+<section id="start-winding">
+<h3>Winding bobbins</h3>
+<div>
+	
+<p>Winding bobbins with this machine is harder than others. The official(?) way is to wind the thread over/under a few times, and that will create enough friction to start. That didn't work for me most of the time. Another problem: it seems to be sensitive to the thread tension when wound. Often, the machine doesn't catch the bobbin thread, or the thread has retracted into the bobbin case. It seems to be sensitive to being wound too tight (or loose). I haven't figured it out. I use a low thread tension, which requires the bobbin's tension to be low so the black/white thread is balanced (so the white doesn't pull through to the black). Maybe I'm at such a low bobbin-case tension that's causing my occasional problems.</p>
+
+<p>For winding the bobbins, it works better to drill a 3/32 (0.0938) hole in one side of the bobbin, near the center hole:</p>
+
+<div class="image"><div>
+<a href="../../../images/1900_bobbin-hole-outside.jpg"><img src="../../../images/thumbnails/1900_bobbin-hole-outside_small.jpg" alt="1. bobbin with hole drilled through one side (outside view)" loading="lazy"><br><span class="smaller">click for larger</span></a></div>
+<div><a href="../../../images/1900_bobbin-hole-inside.jpg"><img src="../../../images/thumbnails/1900_bobbin-hole-inside_small.jpg" alt="2. bobbin with hole drilled through one side (inside view)" loading="lazy"><br><span class="smaller">click for larger</span></a>
+</div></div>
+
+<p>Be sure to smooth any burrs. I used a small flat (or half-curved) steel file. The tip fit into the hole (at an angle from inside the two walls of the bobbin), and I dragged the sharp edge of the file around the edge of the hole, knocking down the sharp edge. The tip of an x-acto blade might work. You want the edge of the hole to not snag the thread interfering with the thread pulling off while sewing. But, you don't want to roughen the inner surface of the bobbin trying to do this. The inner surface should remain as smooth as it is, and you're just taking any snag-potential off the edge of the drilled hole. It's a little hard to do. You need something with hard, square edge you can get into the hole from inside the bobbin, and drag that sharp square edge around the hole's edge to knock down the burrs.</p>
+
+<p>To wind a bobbin: pull the thread through the hole, wind the thread around the bobbin a few times (the winding post rotates counter-clockwise. You'll wrap the initial few winds clockwise looking down on it). While holding the end of the thread (coming out the drilled hole) toward you, push the bobbin down so it comes down over the thread, locking the thread against the surface beneath the bobbin. You <strong>must</strong> snip the excess thread as close as possible to the edge of the bobbin (or it will interfere with winding). However, the bobbin (clamped down on top of the thread) doesn't grip the thread very tightly. You have to snip the excess gently so it remains clamped under the bobbin. After winding, you'll need to snip the rest of the excess coming out of the hole.</p> 
+
+<section id="start-wind-standalone">
+<h4>Standalone bobbin winder</h4>
+<div>
+	
+<p>There is a standalone bobbin-winder which works with these bobbins (style A, class 15?):</p>
+
+<div class="image"><div><a href="../../../images/1900_bobbin-winder.jpg"><img src="../../../images/thumbnails/1900_bobbin-winder_small.jpg" alt="standalone bobbin winder" loading="lazy"><br><span class="smaller">click for larger</span></a></div></div>
+
+<p>That photo comes from Amazon (ASIN: <a rel="nofollow" href="https://www.amazon.com/gp/product/B07RJL9XHY">B07RJL9XHY</a> seller <a rel="nofollow" href="https://www.amazon.com/stores/ckpsms/page/8C8B8C59-BE53-42E6-B404-8E5D05BAEFB8">CKPSMS</a>). You'll find <em>many</em> sellers of this winder. I chose this seller because their photos were more informative (instructional. The english is hard to understand. But, that was more than other sellers do.).</p>
+
+<p>It works. It could be worth having on hand. Lots of caveats:</p>
+
+<ol>
+<li>Most of the spools I use won't fit its stand. You need a standalone thread stand. I have one with a cast-iron base (Amazon ASIN: <a rel="nofollow" href="https://www.amazon.com/dp/B01ELYA1HC">B01ELYA1HC</a>). That same stand is also sold with a plastic base. The cast-iron base is worth getting. I cut a piece of felt to fit the bottom, and glued it on.</li>
+<li>Insert the thread into the guide hole, then go 3/4 turn around the tension disk, then straight to the bobbin. (You might be tempted to go all the way around to the guide, and exit that hole the same way you use the LK1900's tension disk, but the guide isn't positioned properly for that.).</li>
+<li>The shutoff sensor is light-based. If you have too much light shining on this, it won't shutoff. You can improve that condition by taping some cardboard around the sides/end. Add a horizontal piece to the top of that shade.</li>
+<li>The tension disk isn't great in a few ways:
+	<ul>
+	<li>It's too close to the bobbin. You'll center the vertical height of the tension disk so the thread winds evenly up/down the bobbin. But, being so close it won't let the thread travel that far up/down. You'll end up with a bulge in the center of the bobbin. You can sew with it. But, you're not using the entire bobbin's capacity.</li>
+	<li>The silver knob adjusts the height of the tension disks, but it also limits how high the beige knob (tension adjustment) can go. This is more of a problem the lower the tension disks need to be.from The lower the tension disks are (for a narrower bobbin). Even with the taller LK1900 bobbins, I feel like the tension is a little too much. (This could also contribute to the thread not travelling up/down the bobbin).</li>
+	<li>The guide hole isn't positioned to let you go in and out of it the way they usually work.</li>
+	</ul>
+</li>
+</ol>
+
+<p>If I were going to use this winder a lot, I would:</p>
+
+<ul>
+<li>Mount the box to a plank of wood (not the small steel plate it comes with).</li>
+<li>Make another box (stack of wood, something the same height as the winding box) to mount the tension disks. Mount that to the plank of wood so the tension disks are twice as far away. Orient the guide hole so you can go in &amp; out of it using an external thread stand.</li>
+<li>Replace the tension disk with the one used on the LK1900 (#141-13468). It's not very expensive, but much better quality. (Or, I would replace the silver center knob with some threaded rod so the beige knob can adjust higher, allow the tension to be reduced more. I would take the silver knob to Ace Hardware and find something with the same therad, but longer.).</li>
+<li>Add some shade around the sensor end.</li>
+</ul>
+
+<p>I think it would be a good winder with those changes.</p>
+
+</div></section> <!-- end h4 -->
+
+<section id="start-wind-panel">
+<h4>Control-panel bobbin winder</h4>
+<div>
+<p>The control panel has a function to wind the bobbin (while not sewing) (<a href="../../../files/instruction_eg-1900bn_ONLY.pdf">instruction manual</a> pg 23). But, the <em>entire</em> machine operates (a lot of wear &amp; tear?). I've done it when I had to, but wouldn't do this as the normal way to wind bobbins.</p>
+
+<p>If you have to use this feature, be sure to <strong>unthread the machine past the takeup lever.</strong> If you don't, the thread can be pulled into the machine at the lever. That could take a lot of time to fix (removing the top cover of the machine, etc.).</p>
+
+<p>If you drill a small hole in a bobbin to hold the thread (from the top) as it starts winding (like you would with ordinary machines), you could use this function for that start. It will stop when you depress the peddle a second time. This doesn't sound appealing to me. 1) You have to press the green ready button to take the machine out of the ready state. After starting the bobbin winding (press the foot pedal twice), you have to 2) press the green ready button again (load the pattern again, the machine initializes again.) You may not have to unthread the takeup lever for this little bit of operation. But, you probably have to pull the thread out of the needle at least. There is a setting (U049, mem sw 1, one beep) that lets you set the bobbin winding speed. Default is 1600. You could probably set that to its lowest 800 value. That could reduce the risk of the thread being pulled into the takeup lever. You might not even have to pull the thread out of the needle if it's that slow (just to start the bobbin winding). But, the standalone winder sounds like a better idea to me.</p>
+</div></section> <!-- end h4 -->
+</div></section> <!-- end h3 -->
+
+<section id="start-bobbin-install">
+<h3>Installing the bobbin into the bobbin case</h3>
+<div>
+	
+<p>The <a href="../../../files/instruction_eg-1900bn_ONLY.pdf">instruction manual</a> (pgs 15 &amp; 16) shows how to install the bobbin. But, two things worth emphasizing:</p>	
+
+<div class="image"><div><a href="../../../images/1900_bobbin-case.jpg"><img src="../../../images/thumbnails/1900_bobbin-case_small.jpg" alt="bobbin properly installed in bobbin case" loading="lazy"><br><span class="smaller">click for larger</span></a></div></div>
+
+<p>1) The thread should go <em>through the hole</em> in case's arm. I didn't do that for 2 months. It seemed to work ok. (I somehow got the idea the needle went though that hole.). But, it's supposed to hold the thread for the needle and shuttle hook to bring together. I'm surprised how well it worked. I probably missed the first couple stitches and didn't notice it. 2) The tension plate (on the outside of the bobbin case) has two guides which the thread should stay between. If it's not between those guides, the thread tension will be inconsistent. (This was more of a problem with a bobbin case I bought on eBay, below. The tension plate is different, maybe an older design.).</p>
+
+<section id="start-bobbin-avoid">
+<h4>Bobbin case to avoid?</h4>
+<div>
+<p>I bought a case on e-Bay that looks like this:</p>	
+	
+<div class="image"><div><a href="../../../images/1900_bobbin-case-avoid.jpg"><img src="../../../images/thumbnails/1900_bobbin-case-avoid_small.jpg" alt="oder bobbin-case design to avoid?" loading="lazy"><br><span class="smaller">click for larger</span></a></div></div>
+
+<p>Notice how one of the guides (which the thread's supposed to stay between) hangs off the side of the case. The thread easily pulls past that guide, and will feed from behind it - coming off the <em>side</em> of the tension plate. It wasn't a big problem. But, it's hard to get the thread tension balanced. You can find the other style (shown above. Both "guides" go down into the square hole the thread comes out of). This may be an older design.</p>
+
+<p>This one might work better with tex-90 (thicker) thread. Maybe that wouldn't slip past the guide as easily. My experience could also be due to me adjusting the bobbin thread tension to be pretty light. That means the tension plate is sprung higher, and the guide doesn't hang down the side of the case as far. Maybe that side of the tension plate could be removed &amp; bent down a little to make that guide fit better. (FYI: I use light tension because whenever I made a mistake - like forgetting to install the d-ring before sewing the buckle-end - it was a lot of work to fix if the stiching was tighter. Having light thread-tension makes it easier to use a thread-ripping tool to "unsew" the mistake. I made a lot of mistakes in the beginning. This saved me a lot of time.).</p>
+</div></section> <!-- end h4 -->
+</div></section> <!-- end h3 -->
+
+<section id="start-clamps">
+<h3>Work clamps &amp; feed plates</h3>
+<div>
+<p>The machine comes with a 27 x 5mm work clamp (27.4 x 5.2mm feed plate). You can use this for <em>all</em> the collar bartacks from 3/8"- to 1"-wide. (For the 1-1/2"-wide collars, sew two 3/4"-long bartacks end to end). This is the fastest way to get started. But, you'll need to add some cut length to the smaller collars (increase the overlap distances to accomodate a larger clamp). You'll end up with less adjustable range. But, not much less. (This could be the way to start.). </p>
+
+<p>I bought a 40mm-wide clamp for the 1-1/2"-wide collar (one long bartack). And, a 20mm-wide for the 3/4 (and smaller) collars. My goal was to reduce the webbing's overlap (have more adjustable range). Previously, I made these collars with a Singer 201-2 which has a narrow foot. I was able to put the stitches closer to triglide, buckle, ring. The 20mm clamp (modified as you'll see) got closer to what I had been doing (than if I used the 27mm). There's no reason to start this way. I use the following with collars:<a class="fn" href="#fn2">[2]</a></p>
+
+<table id="clamps-collars">
+<thead>
+<tr><th>Width</th><th>Clamp &amp; Plate</th><th>Source</th></tr>
+</thead>
+<tbody>
+<tr><th>1-1/2"</th><td>39 x 6mm clamp &amp; plate</td><td>eBay: CuTex Sewing Supplies</td></tr>
+<tr><th>1"</th><td>27 x 5mm clamp &amp; 27.4 x 5.4mm plate</td><td>came with machine</td></tr>
+<tr><th>3/4, 5/8 &amp; 3/8"</th><td>20 x 4.8mm clamp (modified) &amp; 21.3 x 5.3mm plate</td><td>eBay: evernice</td></tr>
+</tbody>
+</table>
+
+<p>For leashes you need box clamps. (The 3/8"-wide leashes are the exception. That webbing is the same as used for collars. Bar tacks are fine.). The webbing used with wider leashes is thin. If you tried to use a bartack, I think it should have a wider zig-zag (y-direction) than used for collars. The idea would be to cover more material. But, that could require you to enlarge the clamp &amp; plate's opening (for a really wide zig-zag). If had to do that, you might as well buy box-clamps.</p>
+
+<table id="clamps-leashes">
+<thead>
+<tr><th>Width</th><th>Clamp &amp; Plate</th><th>Source</th></tr>
+</thead>
+<tbody>
+<tr><th>1"</th><td>25 x 25mm clamp &amp; plate</td><td>eBay: DailyDeal360</td></tr>
+<tr><th>3/4"</th><td>20 x 20mm clamp &amp; plate</td><td>eBay: DailyDeal360</td></tr>
+<tr><th>5/8"</th><td>16 x 16mm clamp &amp; plate</td><td>eBay: DailyDeal360</td></tr>
+<tr><th>3/8"</th><td colspan="2">Sew bartacks using the 3/8"-collar clamp</td></tr>
+</tbody>
+</table>
+
+<section id="start-clamps-fitment">
+<h4>Fitment</h4>
+<div>
+<p>Be aware that the inexpensive clamps I bought needed a little filing/polishing to fit into the arch's slots. You'll need a polishing stone. I used a <a rel="nofollow" href="https://www.harborfreight.com/combination-sharpening-stone-62852.html">Harbor Freight Gordon Combination Sharpening Stone</a>. It has a rough &amp; fine surface. Be careful not to go too far, and make it too loose.</p>
+
+<p>The clamps also tended to come down "toe-up" (the heel down more, the toe up a little. That allowed some movement as the plate/clamp moved.). I placed mine in a vice (with a piece of wood protecting the polished surface from the vice's surface) and tapped them lightly with a hammer to align them a little better. Take your time, go slow. I tapped a clamp so far back (to bring the toe down enough to be flat) that the feed plate wouldn't go back far enough. I had to grind some material off the end so it would move further back toward the arch's base. Be prepared. Tapping the "thigh" of the clamp down won't move the sewing field back as much as tapping on the "shin."</p>
+
+<p>If the <b>height of the two feet aren't the same</b> when lifted, you can adjust that with the "lever driving plate" (the part the machine pushes down to lift the foot. There's two screws on each side of the arch that let you move each part separately. You can make the lifted height lower or higher. These screws I suggested having the seller loosen for you.). This is important because if you try to tap the feet into level, that could take forever. You can just loosen these two screws and make them level. (These plates also gives you a little overall up/down adjustment.). Be aware: There is a real clamp-height adjustment under the machine's top cover. You should'nt ever have to do that.</p>
+
+</div></section> <!-- end h4 -->
+
+<section id="start-clamps-change">
+<h4>Changing work clamps</h4>
+<div>
+
+<p>If you use different clamps, then you're going to <b>remove the clamp face plate (5 screws) to swap clamps.</b> This isn't bad, especially if you make a lot of one thing at a time (change clamps less frequently). With the power off, you can push the arch around for better access to those screws (left/right, back. WARNING: Shoving the arch around can cause the fingerguard to hit the needle. You may have to lower your fingerguard a bit.).</p>
+
+<p>You shouldn't have to remove the arch except the first time you do it. Those screws can be <em>impossible</em> to turn the first time. If you round the slot, you'll have a big problem to fix. (This is why you should ask the seller to make sure these are broken free for you.).</p>
+
+<p>Important note about <b id="start-clamps-arch-reinstall">re-installing the arch:</b> There is a small slider part on top of the arch. It sits inside an elevated cup. Look at that before removing the arch. Be sure it looks the same when installing the arch. That slider can slip out a little, causing the arch to be cocked a little. If I'm careless and don't see it, then I notice it when tightening the screw behind the arch. Normally that screw immediately tightens in 1/4 turn (after being snug). If the slider jacks the front of the arch down, then tightening that screw will feel springy. You'll turn the screw 2-3 turns to tighten it (probably not good for the arch). It could be worthwhile to deliberately mis-align the slider to feel that difference so you'll recognize it. (For anything on this machine: if something doesn't feel right, stop. Look at everything.).</p>
+
+<section id="start-clamps-change-arch">
+<h5>Dedicated arch assemblies</h5>
+<div>
+<p>You can buy additional arch assemblies (change the arch when you change the pattern). This probably isn't worth the expense. I found someone selling used arches on eBay for $75 (2023 prices). I bought a dedicated arch for each of the above clamps (and some spare arches). Looking back, I don't think I'd do that again. OTOH: It's nice to have easily swapped setups. But, now I make one thing longer before changing an arch. Removing the faceplate wouldn't be as much work as I thought it would be.</p>
+</div></section> <!-- end h5 -->
+
+<section id="start-clamps-change-kit">
+<h5>"Simple work clamp kit"</h5>
+<div>
+<p>The <a href="../../../files/LK1900BN_P12_1910_Catalog-bn_series.pdf">brochure</a> shows a "simple work clamp kit" (#400-57279). That would simplify changing clamps (compared to unscrewing 5 faceplate screws). But, it's confusing because the photos show the clamp lifting <em>up</em> &amp; out out of the clamp. The face plate is shaped like an "m" (with the tops preventing the clamp from lifting up that far. This kit implies you have to modify your faceplate (cut the tops of the "m" off). Then the center leg (between the clamps) has only one screw. Apparently you'd have to drill/tap a hole for a <em>sixth</em> screw (at the top of the center leg).</p>
+
+<p>It's a nice idea. I got the impression the kit's expensive. With all the custimization. It doesn't seem worth it compared to unscrewing 5 screws.</p>
+</div></section> <!-- end h5 -->
+
+<section id="start-clamps-change-die">
+<h5>Knurled-knob (finger-tight) faceplate screws</h5>
+<div>
+<p>If the five screws holding the faceplate could be finger-tightened (no screwdriver required), that could make it easier to change clamps. The screws are 11/64"x40 thread (8.7mm long). You can buy that tap &amp; die (ASIN: <a rel="nofollow" href="https://www.amazon.com/Burkit-11-64-40-Machine/dp/B09ZTTNP3Z">B09ZTTNP3Z</a>. Note: the die is 3/4" (20mm) diameter. You'll need a "die stock wrench handle" for that size. The die comes with a tap. You need a "tap wrench handle" to use it.).</p>
+
+<p>11/64" is 1/64" less than 3/16". Common #10-24 threaded rod is also called 3/16-20. I was able to cut decent threads onto #10-24 threaded rod. You have to turn 1/2" turn (then back 1/4" turn to clear the teeth). Use thread-cutting oil each time you go back to wash the chips out. It goes slow. (But, you only need to cut 1/4"-long length. That's not much. But, doing 5 takes awhile.). You don't need to buy real thread-cutting oil. Any oil should work. You're just flushing the chips out. I've heard that chainsaw "bar oil" is better as a thread-cutting oil because it has high sulfur content which reduces binding. (But, that topic may be for continous thread-cutting with a machine.).</p>
+
+<p>I've also cut usable threads onto #8-32 threaded rod. That's thinner &amp; much easier. But, a bit too thin. The threads may not be strong. It's worth trying (practice with). The resulting threads might be good enough for this use.</p>
+
+<p>My idea was to thread a 10-24 knurled knob onto that, the untouched threads. Or, imagine a free-swinging lever (a wingnut with one wing cut off). You could thread the rod into the arch, then "cinch" the lever tight. (It seems like there could be a way to simplify replacing the faceplate. Maybe a threaded-rod like this with a hex head (spot welded, or "JB" welded onto the rod). Then a self-centering nut driver might be easier to use than a slotted screw driver? (It seems like something could be easier if you had to remove the faceplate as a matter of routine. It may not be worth the effort.).</p>
+</div></section> <!-- end h5 -->
+</div></section> <!-- end h4 -->
+</div></section> <!-- end h3 -->
+
+<section id="start-guards">
+<h3>Fingerguards</h3>
+<div>
+<p>The machine comes with a 74x59mm fingerguard (#135-48300). There's a smaller 64x56.5mm fingerguard (#135-33104. I found mine on eBay.) which fits the smaller (20mm) bartack clamp. Initially, I felt fingerguards were in the way. I removed them. After 2-3 months I installed them (they didn't feel obstructing anymore). The work clamp is a guard to some extent (while in the up position). You have to be more careful if you go without the fingerguard.</p>
+
+<p>For leashes (box clamps), I haven't tried the fingerguards yet. I believe those rectangular guards will work with the square clamps. Positioning the leash (seen below) doesn't involve getting your fingers as close to the needle as the collars. I started making leashes long after making collars. So, I've been more comfortable not using a guard with the box clamps.</p>
+
+<p>If you change the clamps (one arch), see the <a href="#pre-loosen">before buying</a> section above for more info about breaking the fingerguard's two small setscrews free. Once that's done, it's trivial to change the guard with the clamp.</p>
+</div></section> <!-- end h3 -->
+</div></section> <!-- end h2 -->
+
+<section id="collars">
+<h2>Making collars</h2>
+<div>
+<p>The machine comes with 50 "standard patterns" (shown in the <a href="../../../files/LK1900BN_P12_1910_Catalog-bn_series.pdf">brochure</a>). I use those for collars. The following are the details I use:</p>
+
+<table id="settings-collars">
+<thead>	
+<tr><th rowspan="2">Webbing</th><th rowspan="2">Pattern<br>Key</th><th rowspan="2">Std<br>Pattern</th><th rowspan="2">Stitches</th><th colspan="2">Scale<br>%</th><th rowspan="2">Speed</th><th rowspan="2">Thread<br>tension</th></tr>
+<tr><th>x</th><th>y</th></tr>
+</thead>
+<tbody>
+<tr><th>3/8"</th><td>P1</td><td>12</td><td>28</td><td>92</td><td>80-100<sup>*</sup></td><td>800</td><td>70-80</td></tr>
+<tr><th>5/8"</th><td>P2</td><td>08</td><td>36</td><td>65</td><td>94-102<sup>†</sup></td><td>900</td><td>63-73</td></tr>
+<tr><th>3/4"</th><td>P3</td><td>03</td><td>42</td><td>95</td><td>110</td><td>1100</td><td>75-85</td></tr>
+<tr><th>1"</th><td>P4</td><td>09</td><td>56</td><td>79</td><td>92</td><td>1100</td><td>65-75</td></tr>
+<tr><th>1-1/2"</th><td>P5</td><td>37</td><td>90</td><td>142</td><td>100</td><td>1100</td><td>64-76</td></tr>
+</tbody>
+</table>
+
+<p>The <a href="../../../files/instruction_eg-1900bn_ONLY.pdf">instruction manual</a> (pg 27) explains how to register a pattern to a "pattern key."</p>
+
+<p><sup>*</sup> The <a href="#collar-0.375">3/8" collar</a> uses one &amp; two bartacks. Whenever two bartacks are used (only the -Long collar, and only at each side of the D-ring), I set y=80%. The -Short has only one bartack each side of the D-Ring. I use y=90%. The tri-glide end has only one bartack (both -Short &amp; -Long). I set y=100%.</p>
+
+<p><sup>†</sup> The <a href="#collar-0.625">5/8-Short collar</a> has only one bartack at the triglide. I set y=102%. The other locations are 2 bartacks. I set y=94%.</p>
+
+<section id="collars-tension">
+<h3>Thread tension</h3>
+<div>
+	
+<ul><li>The melted ends require a higher thread tension. The higher number is for that. The lower number is for all the other bartacks. (The melted end at the tri-glide would benefit from the higher tension too, but I don't do it. If the white thread pulls through, it won't be visible because it's beneath the collar. If you were selling these, you might increase the tension on that end too so it would look better.).</li>
+<li>These numbers represent balanced bobbin & needle tension. If your bobbin tension is higher, then your needle tension will be too. Be aware: if you balance with higher thread tension (because the bobbin tension is higher), it will be harder to rip the stitching (with a thread-ripping tool). When I started, I made a lot of mistakes (forgetting the d-ring). A looser thread tension is easier to rip. I set my bobbin tension lower, which resulted in the needle-tensions being lower too. Don't try to have my exact numbers, but be aware of how that balancing works, and that you can lower your numbers by reducing bobbin-thread tension.</li>
+<li>I took me a long time to realize each webbing required a different tension to balance the thread (so the white wouldn't pull through). I thought it would all be the same. I spent a lot of time chasing thread tension until I realized I was going in circles, and they each had their own best tension. Whatever numbers you end up at, you'll probably see the same kind of difference between the different webbing.</li>
+<li>For any of the buckle-end tacks, if I run out of bobbin thread, then I'll increase the tension 5-10 when I sew over that partial with a new one. Sewing over a tack can cause the white thread to pull through to the visible side. More tension in that case helps. (You may still have to ink it out with a Sharpie. But, it should be less than not changing the tension.). I single out the buckle-end because the white thread pulling through is visible. You definitely don't want it. The same effect happens with the tri-glide end (if I run out of bobbin thread). But, you can't see that. It's under the collar. If you were selling them, then maybe you'd care. But, donations... I don't think about it.</li>
+</ul>
+
+</div></section> <!-- end h3 -->
+
+<p>I don't sew one collar at a time. I sew <em>all</em> the tri-glide tack(s) first. Then I install all the loops &amp; male buckles. Then, I sew all the buckle ends (first the buckle fist, then all the melted ends. Finally both sides of the D-ring at the same time.).</p>
+
+<p>ATTENTION: For the bartack closest to the tri-glide, I drop the clamp <em>onto</em> the tri-glide. You shouldn't start this way.<a class="fn" href="#fn3">[3]</a> Instead, add 1/4" to the cut length (add that to this overlap). Then sew with the clamp on the webbing. Your finished collar's adjustable range will be a <em>little</em> less. But, much easier to sew (especially when starting. You might not ever want to try what I do. I still do it because I'm accustomed to it. It wasn't worth the trouble. Definitely not worth starting this way.).</p>
+
+<p>The following shows what each tack looks like, in the order sewn. Showing each size seems excessive, but I couldn't pick which one to show. Might as well show them all. There are some topics that apply to just one size:</p>
+
+<section id="collar-1.5">
+<h3>1-1/2"</h3>
+<div>
+
+<div class="image"><div>
+<a href="../../../images/1.5_triglide-tail.jpg"><img src="../../../images/thumbnails/1.5_triglide-tail_small.jpg" alt="1. tack triglide tail" loading="lazy"></a> 
+<a href="../../../images/1.5_triglide-top.jpg"><img src="../../../images/thumbnails/1.5_triglide-top_small.jpg" alt="2. tack triglide from top" loading="lazy"></a>
+<a href="../../../images/1.5_buckle.jpg"><img src="../../../images/thumbnails/1.5_buckle_small.jpg" alt="3. tack buckle end" loading="lazy"></a>
+<a href="../../../images/1.5_tail.jpg"><img src="../../../images/thumbnails/1.5_tail_small.jpg" alt="4. tack tail of buckle end" loading="lazy"></a>
+<a href="../../../images/1.5_ring1.jpg"><img src="../../../images/thumbnails/1.5_ring1_small.jpg" alt="5. tack ring next to tail tack" loading="lazy"></a>
+<a href="../../../images/1.5_ring2.jpg"><img src="../../../images/thumbnails/1.5_ring2_small.jpg" alt="6. tack ring next to buckle tack" loading="lazy"></a>
+</div></div>
+
+<section id="collar-1.5-moves">
+<h4>Material moves under clamp</h4>
+<div>
+<p>This topic applies most to the 1-1/2" collar due to its weight. But, I had this problem to varying degrees with the other sizes. The 3/4" was probably the next problematic for me (maybe the 20mm clamp I bought was the problem. If you have a problem with the 3/4", you could try using the 1" clamp the machine comes with, to compare.). Here I discuss factors to consider if you have problems with the webbing shifting while sewing.</p>
+
+<p>There's an art to holding the opposite end of the webbing. When <b>sewing the tri-glide end:</b> I always remove one hand from the front (the plastic part). The other end of the webbing points to the rear. It could lay on the table, but I suspend that over my fingers (not grasping it, just let it rest over my fingers far enough to the rear that I won't interfere with the left/right movement during sewing).
+
+<p>However, I clamp onto the tri-glide. That's <em>much</em> more prone to slipping. I still remove one hand from the front. But, the rear is very sensitive to how you hold it. It really needs to move freely, and even that may not work (the vibration could cause it to slip). I usually use my thumb and forefinger "pinch" the webbing against the head of the feed-plate's screw (in front of the arch). That can "lock" the webbing to the plate & clamp. In some cases (webbing size, tack location), I pinch down onto the feed-plate's surface (not the screw head). Over time you get used to which ones need more or less "help" like that. Ideally you shouldn't help at all. Suspending the webbing (resting on your finger) is the first step of helping. Pinching down on the plate is the next step. Pinching down on the screw-head is the most help (the easiest to get wrong; make worse). As I've said already, you shouldn't clamp onto the tri-glide (at least when starting). Add 1/4" to the length, always clamp onto the webbing. You won't have to think so much about this topic.</p>
+
+<section id="collar-1.5-moves-other">
+<h5>Other factors:</h5>
+<div>
+<p>I mentioned earlier that the work-clamp feet I bought were <b>"toe-up" a little.</b> Not much. I wouldn't have noticed it if I didn't have some slippage problems causing me to look harder. I removed the feet from the arch, put them in a vise &amp; tapped with a hammer <em>very little</em> to change the angle. Go slow, put them back in the arch and check. It's tedious. (But, I think this helped.). Also, the <b>stitch speed</b> can make a difference. Slower could help, or it may be too "jerky," making it worse (faster could be beter, or "hum" in a different way that's worse. It's worth experimenting with). The <b>zig-zag width</b> of the bartack can make it worse (more vibration). Again, this is more of a thing if you clamp onto the tri-glide.</p>
+</div></section> <!-- end h5 -->
+
+<p>2) When <b>sewing the buckle end:</b> the weight of the opposite end is more of an issue. Don't let it hang off the edge of the table. That weight will amplify the vibration. Always make sure that end lays on the table. (But, when you sew one of the D-ring tacks, the oposite end end will point toward you. You want to hold it in a way that creates some slack between you and the clamp (The clamp should be able to swing side to side without any pulling at it.). For the other tacks on this end, the webbing points to the rear like it did for the tri-glide. Similar to sewing the tri-GLIDE end, you may find that lightly suspending it so it can move with the arch like it's floating in air is best. Or, helping it stay put by pinching down onto the plate, or even the screw head more firmly.</p>
+
+<p>For the buckle-end, pay attention to the first tack closest to the buckle, and the last tack aganst the ring (smaller collars don't have two tacks between buckle and ring). It's easy to clamp too close (too high). When it starts sewing, it will slip down when sewing starts (revealing the the straight basting stiches outside the zig-zag). I wag the webbing side-to-side a little to let the clamp settle down if it needs to. If you don't do that, you'll get some slip in the first few stitches (the straight basting stiches will be revealed outside the zig-zag stitches).</p>
+
+<p>That last point (about clamping too close to the buckle or ring) caused me to grind some of the face off the 3/4" clamp (seen below). I'm tempted to do that with this 1-1/2" (40mm) clamp too. If it was half as thick in the front, I could sew a <em>little</em> closer to the buckle and ring. A tiny amount, but I feel like it could be better. The clamps I bought were inexpensive. It wouldn't hurt to try it. (I wouldn't do this with the 1" clamp the machine comes with. Original Juki parts are expensive.).</p>
+
+</div></section> <!-- end h4 -->
+</div></section> <!-- end h3 -->
+
+<section id="collar-1.0">
+<h3>1"</h3>
+<div>
+
+<p>This uses the clamp &amp; plate the machine came with. The photos are in the order of operations: 1) Tack the tail of the triglide end. 2) Tack next to the triglide (you can see the tail tack. Remember: I clamp onto the triglide itself. This is not a good way to start, may not even be worth doing at all. You can add 1/4" to the cut length of webbing, and use that here to clamp down onto the webbing for both tacks). 3) At the other end, tack closest to the buckle, then 4) the tail, 5) tail-end of the D-ring, 6) the other side of the D-ring (closest to the buckle tack):</p>
+
+<div class="image"><div>
+<a href="../../../images/1.0_triglide-tail.jpg"><img src="../../../images/thumbnails/1.0_triglide-tail_small.jpg" alt="1. tack triglide tail" loading="lazy"></a>
+<a href="../../../images/1.0_triglide-top.jpg"><img src="../../../images/thumbnails/1.0_triglide-top_small.jpg" alt="2. tack triglide from top" loading="lazy"></a>
+<a href="../../../images/1.0_buckle.jpg"><img src="../../../images/thumbnails/1.0_buckle_small.jpg" alt="3. tack buckle end" loading="lazy"></a>
+<a href="../../../images/1.0_tail.jpg"><img src="../../../images/thumbnails/1.0_tail_small.jpg" alt="4. tack tail of buckle end" loading="lazy"></a>
+<a href="../../../images/1.0_ring1.jpg"><img src="../../../images/thumbnails/1.0_ring1_small.jpg" alt="5. tack ring next to tail tack" loading="lazy"></a>
+<a href="../../../images/1.0_ring2.jpg"><img src="../../../images/thumbnails/1.0_ring2_small.jpg" alt="6. tack ring next to buckle tack" loading="lazy"></a>
+</div></div>
+
+</div></section> <!-- end h3 -->
+
+<section id="collar-0.75">
+<h3>3/4"</h3>
+<div>
+	
+<div class="image"><div>
+<a href="../../../images/0.750_triglide-tail.jpg"><img src="../../../images/thumbnails/0.750_triglide-tail_small.jpg" alt="1. tack triglide tail" loading="lazy"></a>
+<a href="../../../images/0.750_triglide-top.jpg"><img src="../../../images/thumbnails/0.750_triglide-top_small.jpg" alt="2. tack triglide from top" loading="lazy"></a>
+<a href="../../../images/0.750_buckle.jpg"><img src="../../../images/thumbnails/0.750_buckle_small.jpg" alt="3. tack buckle end" loading="lazy"></a>
+<a href="../../../images/0.750_tail.jpg"><img src="../../../images/thumbnails/0.750_tail_small.jpg" alt="4. tack tail of buckle end" loading="lazy"></a>
+<a href="../../../images/0.750_ring1.jpg"><img src="../../../images/thumbnails/0.750_ring1_small.jpg" alt="5. tack ring next to tail tack" loading="lazy"></a>
+<a href="../../../images/0.750_ring2.jpg"><img src="../../../images/thumbnails/0.750_ring2_small.jpg" alt="6. tack ring next to buckle tack" loading="lazy"></a>
+</div></div>
+
+<p>Notice how I ground off some of the front of the 20 x 4.8mm clamp I found on eBay. I used a dremel with a cutting wheel to go back/forth against that surface taking that material down to what you see. I did this for the 5/8" & 3/8" collars, so I could get the stitching into a smaller space. But, I found that this clamp works better for photo #2 (clamping down onto the tri-glide). The unaltered 20mm clam didn't work as well.</p>
+
+<p>I've said numerous times that clamping down onto the triglide isn't a good idea. I had the <strong>most</strong> trouble with <em>this</em> collar. For this collar, it's definitely easier to add 1/4" to the cut length, sew both tacks clamped onto the webbing. This one requires me to pin the webbing hard against the feed-plate's screw using my thumb. That locks it to the plate as it moves. This webbing is harder/stiffer than the others. That might have something to do with this method working.</p>
+
+
+<section id="collar-0.75-clamp-under">
+<h4>Clamping <em>under</em> the triglide</h4>
+<div>
+	
+<p>FWIW: You can adjust the "lever driving plate" on each side of the arch:</p>
+
+<div class="image"><div><a href="../../../images/1900_lever-driving-plate.jpg"><img src="../../../images/thumbnails/1900_lever-driving-plate_small.jpg" alt="alternate: clamp under triglide #1." loading="lazy"></a></div></div>
+
+<p>This will let the clamp's "UP" position be lower. (You can dremel out the slots in those plates so the clamp can go even lower.). If you get it low enough, you could put the triglide <em>over</em> the clamp. But, I don't like this idea because the triglide could freely move into the needle. You'd need a feed plate that extends further to the front, and some kind of "catch" to snag the edge of the triglide to hold it back. (If you're inclined to make things like this, you can make a lot of money selling custom clamps/plates. If someone made this for you, they'd charge $1-2k.).</p>
+
+<p>I only mention this to show how there are more possibilities depending on how far you want to go. (FYI: There's also a shaft adjustment under the machine's top cover to adjust the clamp's UP height. See the <a href="../../../files/LK-1900BN_Series-Engineer_Manual.pdf">engineer manual</a> (pgs 26-27).</p>
+
+</div></section> <!-- end h4 -->
+</div></section> <!-- end h3 -->
+
+<section id="collar-0.625">
+<h3>5/8"</h3>
+<div>
+
+<p>The -Short collar has just <em>one</em> bartack at the tri-glide. I sew it by clamping onto the tri-glide (skip the 1st photo.) However, I suggest you add 1/8" to the -Short's overlap, clamp onto the webbing. (You can do it without adding 1/8", but the tack can be too close to the melted end for just one tack. It's a little more secure if the stitch has a <em>little</em> more webbing behind it.).</p>
+
+<div class="image"><div>
+<a href="../../../images/0.625_triglide-tail.jpg"><img src="../../../images/thumbnails/0.625_triglide-tail_small.jpg" alt="1. tack triglide tail" loading="lazy"></a>
+<a href="../../../images/0.625_triglide-top.jpg"><img src="../../../images/thumbnails/0.625_triglide-top_small.jpg" alt="2. tack triglide from top" loading="lazy"></a>
+<a href="../../../images/0.625_buckle.jpg"><img src="../../../images/thumbnails/0.625_buckle_small.jpg" alt="3. tack buckle end" loading="lazy"></a>
+<a href="../../../images/0.625_tail.jpg"><img src="../../../images/thumbnails/0.625_tail_small.jpg" alt="4. tack tail of buckle end" loading="lazy"></a>
+<a href="../../../images/0.625_ring1.jpg"><img src="../../../images/thumbnails/0.625_ring1_small.jpg" alt="5. tack ring next to tail tack" loading="lazy"></a>
+<a href="../../../images/0.625_ring2.jpg"><img src="../../../images/thumbnails/0.625_ring2_small.jpg" alt="6. tack ring next to buckle tack" loading="lazy"></a>
+</div></div>
+
+<p>	If you ever try clamping onto the tri-glide, this collar (the -Long) is the easiest. (The 3/4" is the hardest, 1-1/2" is slightly less challening. 1" isn't bad. This one's the easiest.). But, while starting I suggest adding 1/4" to the -Long's cut length (and put that length into the tri-glide overlap). Sew the -Long by clamping both bartacks onto the webbing, After that, you'll probably think it's not worth the hassle to squeeze that 1/4" out the way I do. (Once again: I don't think it's ever worth clamping the -Short's triglide. I shouldn't be doing it.).</p>
+	
+<p>Note: My choice to start using 2 tacks at the tri-glide with the 5/8"-Long was completely arbitrary. I've mentioned elsewhere that two tacks is probably overkill even for the 1-1/2" collars. Almost no force reaches those stitches. (Think of how the webbing loops through the tri-glide. That's like a pulley. There's much less force reaching those stitches than at the D-ring stitches.). I like the security (redundancy) of two tacks. I can't see myself doing just one tack with the 1-1/2" tri-glide. Even though I'm sure it's strong enough, I'd feel better with two there. Then it turns into "where is it obviously over-kill?" I chose 5/8"-Long. You could easily decide that it (and 3/4"-Short) are overkill with two tacks.</p>
+
+</div></section> <!-- end h3 -->
+
+<section id="collar-0.375">
+<h3>3/8"</h3>
+<div>
+
+<p>Both the -Long &amp; -Short collars use just one bartack at the tri-glide (like the 5/8"-Short above):</p>
+
+<div class="image"><div><a href="../../../images/0.375_triglide-top.jpg"><img src="../../../images/thumbnails/0.375_triglide-top_small.jpg" alt="1. tack triglide from top" loading="lazy"></a></div></div>
+
+<p>I increase the zig-zag height a little for this stich. In the table of pattern info, I said I use 80% y scaling. But, for the single-tack triglide, I enlarge that to 100%. You don't have to do this. I think there's space for a little more "grab" across the webbing. You can play with it yourself. (Be sure the needle won't stike the feed plate when enlarging the pattern.). The added vibration (of more zig-zag distance) may make it harder to clamp onto the tri-glide the way I do.</p>
+
+<p>As I said about the 5/8-Short, I suggest adding 1/8" to the tri-glide overlap; clamp down on the webbing instead of the tri-glide. (You can almost do it without adding that length, but the stitches tend to be too close to the melted end. There should be 1/8" to 3/16" of webbing past the stitches.).</p>
+
+<p>If you try clamping down on the tri-glides, I would start with the 5/8" long which has two tacks. As I said there, one tack on top of the tri-glide is harder than tacking the tail first. If you try clamping on the tri-gide of a one-tack collar, I'd do these 3/8"-Short &amp; -Long first. These feel a little easier than the 5/8"-Short's single tack.</p>
+
+<section id="collar-0.375-long">
+<h4>Long</h4>
+<div>
+
+<p>The -Long collar has two bartacks each side of the ring like the above collars:</p>
+
+<div class="image"><div>
+<a href="../../../images/0.375_long-buckle.jpg"><img src="../../../images/thumbnails/0.375_long-buckle_small.jpg" alt="2. tack buckle end" loading="lazy"></a>
+<a href="../../../images/0.375_long-tail.jpg"><img src="../../../images/thumbnails/0.375_long-tail_small.jpg" alt="3. tack tail of buckle end" loading="lazy"></a>
+<a href="../../../images/0.375_long-ring1.jpg"><img src="../../../images/thumbnails/0.375_long-ring1_small.jpg" alt="4. tack ring next to tail tack" loading="lazy"></a>
+<a href="../../../images/0.375_long-ring2.jpg"><img src="../../../images/thumbnails/0.375_long-ring2_small.jpg" alt="5. tack ring next to buckle tack" loading="lazy"></a>
+</div></div>
+
+</div></section> <!-- end h4 -->
+
+<section id="collar-0.375-short">
+<h4>Short</h4>
+<div>
+<p>The -Short collar uses just one bartack each side of the ring:</p>
+
+<div class="image"><div>
+<a href="../../../images/0.375_short-buckle.jpg"><img src="../../../images/thumbnails/0.375_short-buckle_small.jpg" alt="2. tack buckle end" loading="lazy"></a>
+<a href="../../../images/0.375_short-tail.jpg"><img src="../../../images/thumbnails/0.375_short-tail_small.jpg" alt="3. tack tail of buckle end" loading="lazy"></a>
+</div></div>
+
+<p>Notice I use a smaller clip to hold the tail (when sewing the first tack at the buckle). It's a very tight fit to get the ordinary plastic sewing clip into that space behind the work clamp. These clips are called "Mini Alligator Clips" (I bought Amazon ASIN: <a href="https://www.amazon.com/dp/B0F2T9YJH6">B0F2T9YJH6</a>.). The ones I bought have a silicon piece inside the metal clamp. Some of the other sellers seemed to show a photo of a clamp without that insert. I think the silicon surface would grip better. (These might work better than the more common plastic clips. The plastic clips stress from repeated use, and break after using one 50-100 times. They're cheap; it doesn't matter.).</p>
+
+<p>Like the one-tack tri-glide both the Long- & Short- collars have: I increase the zig-zag of this single-tack too. It's not necessary. But, there's a little more space with one tack (each side of the ring). Try 90% instead of the 80% I said I use in the table of pattern data above. That's a little more grab across the webbing.</p>
+
+</div></section> <!-- end h4 -->
+</div></section> <!-- end h3 -->
+</div></section> <!-- end h2 -->
+
+<section id="leashes">
+<h2>Making leashes</h2>
+<div>
+
+<table id="settings-leashes">
+<thead>	
+<tr><th rowspan="2">Webbing</th><th rowspan="2">Pattern<br>Key</th><th rowspan="2">User<br>Pattern</th><th rowspan="2">Stitches</th><th colspan="2">Scale<br>%</th><th rowspan="2">Speed</th><th rowspan="2">Thread<br>tension</th></tr>
+<tr><th>x</th><th>y</th></tr>
+</thead>
+<tbody>
+<tr><th>5/8"</th><td>P7 (P1+P3)</td><td>151</td><td>84</td><td>52</td><td>46</td><td>900</td><td>58</td></tr>
+<tr><th>3/4"</th><td>P8 (P1+P4)</td><td>151</td><td>84</td><td>66</td><td>57</td><td>900</td><td>51</td></tr>
+<tr><th>1"</th><td>P9 (P1+P5)</td><td>153</td><td>110</td><td>54</td><td>63</td><td>1000</td><td>50</td></tr>
+</tbody>
+</table>
+
+<p>For <b>3/8" leashes</b>, I use the 3/8" collar bartack (pattern-key P1). The webbing is the same as used for collars. All the settings should be the same. But, I enlarge the zig-zag stitch height (the y dimension) to <b>120%</b>. I do this so the bartacks grab more webbing. (If you remember from the 3/8"-collar section above, I use 80, 90 &amp; 100%. So, whenever you use pattern-key P1, you'll be changing the y dimension from 80, 90, 100 for collars &amp; 120% for leashes. Everything else should remain the same.). I sew two bartacks at each end of the leash, about 5/8" apart.</p>
+
+<section id="leashes-box-patterns">
+<h3>Box-x patterns</h3>
+<div>
+<p>The machine doesn't come with box-x patterns. <a href="../../../files/box_patterns.zip">This zip file</a> contains the patterns I use. You can put them on a USB and copy them into the control panel (the numbers 150-153 are the pattern numbers where mine are stored). The <a href="../../../files/instruction_eg-1900bn_ONLY.pdf">instruction manual</a> (pgs 42 &amp; 43) talks about how to do this. (The seller of your machine should be able to do this for you.).</p>
+
+<section id="leashes-box-more">
+<h4>More about the box-x patterns</h4>
+<div>
+<p>There are two box patterns (150 &amp; 152), and two box-x. Sometimes you see box-x stitching with two lines of stitching on each end. I think you can use 150 with 151 (152 with 153) to get that (stronger) box-x pattern. This would be done with the "combination function (cycle sewing)" discussed in the  <a href="../../../files/instruction_eg-1900bn_ONLY.pdf">instruction manual</a> (pg 32). You would sew the box, then the box-x inside. But, for leashes this overkill. The box-x by itself is fine. It has two lines of stitches at each end.).</p>
+</div></section> <!-- end h4 -->
+</div></section> <!-- end h3 -->
+
+<p>I never have any problem with slippage (like the collars). I suspend both ends as it sews so it doesn't drag or hang (more of a concern with the metal bolt-snap. The plastic clips used on the handle-end could snag too.).</p>
+
+<section id="leash-1.0">
+<h3>1"</h3>
+<div>
+	
+<div class="image"><div>
+<a href="../../../images/1.0_handle-end-clamped.jpg"><img src="../../../images/thumbnails/1.0_handle-end-clamped_small.jpg" alt="1. handle-end clamped" loading="lazy"></a>
+<a href="../../../images/1.0_handle-end-sewn.jpg"><img src="../../../images/thumbnails/1.0_handle-end-sewn_small.jpg" alt="2. handle-end sewn" loading="lazy"></a>
+<a href="../../../images/1.0_snap-end-clamped.jpg"><img src="../../../images/thumbnails/1.0_snap-end-clamped_small.jpg" alt="3. snap-end clamped" loading="lazy"></a>
+<a href="../../../images/1.0_snap-end-sewn.jpg"><img src="../../../images/thumbnails/1.0_snap-end-sewn_small.jpg" alt="4. snap-end sewn" loading="lazy"></a>
+</div></div>
+
+<p>For the snap end: I use a "T-pin" (1-1/2" long). The above shows the "regular" leash with charcoal thread. (I also make a "heavy" version with amber/ochre thread to denote a heavier snap.).</p>
+
+<p>Notice how I ground off some of the clamp's right-side to make it narrower (I used a Sharpie to mark the edge so I could see how much I'd ground off. You can still see that mark.). That lets me sew a little closer to the clamp. I did this with the smaller box clamps below.</p>
+
+<section id="leash-1.0-line-up">
+<h4>Lining up</h4>
+<div>
+<p>It's challenging to get this lined up. You have to pay attention to three things. I clamp-down once (and release) to flatten the webbing. 1) Position left/right using a mark from a Sharpie pen as a reference:</p>
+
+<div class="image"><div><a href="../../../images/1.0_align-1.jpg"><img src="../../../images/thumbnails/1.0_align-1_small.jpg" alt="Step 1. Align left-right" loading="lazy"></a></div></div>
+
+<p>I hold my head to the left side, and 2) align the webbing to top-edge of the feed-plate's cut-out. Also, 3) make sure the two layers of webbing are staked squarely on each other:</p>
+
+<div class="image"><div><a href="../../../images/1.0_align-2.jpg"><img src="../../../images/thumbnails/1.0_align-2_small.jpg" width="320" height="240" alt="Step 2. Align up/down" loading="lazy"></a></div></div>
+
+<p>This takes some time to get fast (and accurate). Some of this depends on how you centered the pattern in the plate &amp; clamp. How you line up to these reference points (the dot, the top edge of the cutout) will change each time you change to a new setup (and back again). You can use the pattern-settings' X &amp; Y adjustment to dial it so you visually align like you did last time (use some scrap webbing). Or, notice how it's lining up &amp; make a visual adjustment to your reference points. (I think commercial leash-makers use custom clamps &amp; plates made for the webbing to align &amp; "seat" into place.).</p>
+
+</div></section> <!-- end h4 -->
+</div></section> <!-- end h3 -->
+
+<section id="leash-0.75">
+<h3>3/4"</h3>
+<div>
+
+<div class="image"><div>
+<a href="../../../images/0.750_handle-end-clamped.jpg"><img src="../../../images/thumbnails/0.750_handle-end-clamped_small.jpg" alt="1. handle-end clamped" loading="lazy"></a>
+<a href="../../../images/0.750_handle-end-sewn.jpg"><img src="../../../images/thumbnails/0.750_handle-end-sewn_small.jpg" alt="2. handle-end sewn" loading="lazy"></a>
+<a href="../../../images/0.750_snap-end-clamped.jpg"><img src="../../../images/thumbnails/0.750_snap-end-clamped_small.jpg" alt="3. snap-end clamped" loading="lazy"></a>
+<a href="../../../images/0.750_snap-end-sewn.jpg"><img src="../../../images/thumbnails/0.750_snap-end-sewn_small.jpg" alt="4. snap-end sewn" loading="lazy"></a>
+</div></div>
+
+</div></section> <!-- end h3 -->
+
+<section id="leash-0.625">
+<h3>5/8"</h3>
+<div>
+
+<div class="image"><div>
+<a href="../../../images/0.625_handle-end-clamped.jpg"><img src="../../../images/thumbnails/0.625_handle-end-clamped_small.jpg" alt="1. handle-end clamped" loading="lazy"></a>
+<a href="../../../images/0.625_handle-end-sewn.jpg"><img src="../../../images/thumbnails/0.625_handle-end-sewn_small.jpg" alt="2. handle-end sewn" loading="lazy"></a>
+<a href="../../../images/0.625_snap-end-clamped.jpg"><img src="../../../images/thumbnails/0.625_snap-end-clamped_small.jpg" alt="3. snap-end clamped" loading="lazy"></a>
+<a href="../../../images/0.625_snap-end-sewn.jpg"><img src="../../../images/thumbnails/0.625_snap-end-sewn_small.jpg" alt="4. snap-end sewn" loading="lazy"></a>
+</div></div>
+
+</div></section> <!-- end h3 -->
+
+<section id="leash-0.375">
+<h3>3/8"</h3>
+<div>
+
+<p>I sew this leash like a collar (with bartacks):</p>
+
+<div class="image"><div>
+<a href="../../../images/0.375_handle-end-sewn.jpg"><img src="../../../images/thumbnails/0.375_handle-end-sewn_small.jpg" alt="1. handle-end sewn" loading="lazy"></a>
+<a href="../../../images/0.375_snap-end-sewn.jpg"><img src="../../../images/thumbnails/0.375_snap-end-sewn_small.jpg" alt="2. snap-end sewn" loading="lazy"></a>
+</div></div>
+
+<p>The overlap should allow for the bartacks to be 5/8" apart (in these photos it looks a little closer). For the snap-end, I sew it like the collar's buckle end (attach a clip to the tail &amp; tack at the snap first. Then sew the tail.), For the handle-end, I attach two clips like the other leashes. I tack the tail first.</p>
+
+<p>Those photos show the regular version (using "shark gray" tex-70 thread). I make a "light" version using blue thread (to denote a lighter snap.).</p>
+
+</div></section> <!-- end h3 -->
+</div></section> <!-- end h2 -->
+
+<section id="fn">
+<hr>
+<h2>footnotes</h2>
+
+<p><a id="fn1">[1]</a> There was an LK-1900-B, -A before that, 1900 (no suffix) before that. Videos about them are mostly relevant to the BN. You can find the parts manuals for these models and see that many of the part #s are the same (or what's not).</p>
+
+<p>There was a 1850 series before theoe. Some of those parts are the same (but it was largely different I think. Not computerized?). There's a 1910, 20, 30, 40. They have larger sewing fields, I believe (more expensive). There is an AMS series (210?). They have very large sewing fields (<em>very</em> expensive).</p>
+
+<p>Videos showing any of these will be more or less helpful. But, keep in mind that the further you go from -BN, the more things might be different. The -BN is the machine to get. But, you might find a used -B or -A.</p>
+
+<p><a id="fn2">[2]</a> You'll find a lot of <a rel="nofollow" href="https://www.ebay.com/sch/i.html?_nkw=juki+1900+work+clamps+%26+plates">clamps &amp; plates on eBay</a>. Also spare parts if you search for that. Bobbins &amp; bobbin cases. Smaller fingerguards. I've been seeing more of this on Amazon too.</p>
+
+<p><a id="fn3">[3]</a> The reason I drop the clamp onto the tri-glide: I started making collars with a Singer 201 whose standard foot is narrow, some of it even able to pass <em>under</em> the tri-glide. Doing that, I was able to make the overlap very short (for more adjustable range; fit more dogs). When I began using this LK1900BN, I wanted to keep everything the same. Dropping the clamp on the tri-glide worked. But, it has disadvantages (the piece is prone to shift because the clamp's grip on the plastic isn't as strong; the needle may hit the plastic.). You shoulnd't start this way. (It's probably not worth doing at all. I've got it dialed in now, but this added difficulty getting started with this machine. If I would've added 1/4" to the webbing length - started by clamping on the webbing - it wouldn't have been worth trying to clamp onto the tri-glide.). To do this <em>properly</em> I should have a custom clamp to fit. It's not worth doing that. It's hardly worth doing the improper way I do it.</p>
+
+</section> <!-- end fn -->
+</main>
+
+<footer>page last modified: Apr 27, 2025</footer>
+
+</body>
+</html>

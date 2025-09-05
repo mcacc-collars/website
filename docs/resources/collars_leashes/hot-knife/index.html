@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Hot Knife</title>
+<link rel="stylesheet" href="../../../css/style.css">
+<link rel="canonical" href="https://www.mcacc-collars.charity/resources/collars_leashes/hot-knife/">
+<script src="../../../js/darkmode.js" defer></script>
+<meta name="description" content="How to use a hot-knife to cut webbing faster.">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/site.webmanifest">
+</head>
+<body>
+<script>
+// This is only done here because browsers flicker before darkmode is applied.
+// This stuff should be done in the .js file (in the part for the page's initial loading).
+
+storedDisplay = localStorage.getItem('display')
+//console.log('HTML: storedDisplay:', storedDisplay);
+
+// If the visitor hasn't chosen a display mode, use their browser preference.
+// (This same test is in the .js file. It shouldn't exist here if browsers didn't flash.)
+if (storedDisplay === null) {
+	
+	// No stored choice. Check if browser preference is dark.
+	const prefersDark = window.matchMedia('(prefers-color-scheme: dark)');
+	if (prefersDark.matches) {
+		//console.log('HTML: no stored value. Browser prefers dark');
+		storedDisplay = "darkmode"
+	}
+	else {
+		//console.log('Initial: no stored value. Browser does not prefer dark. Using light.');
+		storedDisplay = "lightmode"
+	}
+}
+document.body.classList.add(storedDisplay)
+</script>
+
+<header>
+<nav aria-label="breadcrumbs"><ul>
+<li><a href="../../../">Home</a></li>
+<li><a href="../../">Resources</a></li>
+<li><a href="../">Collars &amp; Leashes</a></li>
+</ul></nav>
+<div id="display-mode">
+<label for="display-dropdown">Display:</label>
+<select name="mode" id="display-dropdown" size="1" >
+	<option id="dd-light" value="lightmode">Light</option>
+	<option id="dd-dark" value="darkmode">Dark</option>
+	<option id="dd-nocturnal" value="noctmode">Nocturnal</option>
+</select>
+</div>
+<h1 class="center">Cutting Webbing with a Hot Knife</h1>
+</header>
+
+<main>
+<p>When I sewed <a href="../#addl-info">collars &amp; leashes with an ordinary sewing machine</a>, cutting webbing as described there (mark, cut &amp; melt in seperate steps) kept up with how fast I made them. Using an <a href="">LK1900 bar tacking machine</a>, cutting webbing became the bottleneck. Using a hot-knife was the answer. You can mark, cut & melt in <em>one</em> operation.</p>
+
+<p>But, buying a hot-knife doesn't help much by itself. You need a "jig" (or platform) to use the hot-knife within. 1) You need a way to dispense the webbing from the left side (with as little intervention as possible). 2) You need the knife secured to the work surface (for safety and eliminate any intervention required moving it back in position). And, 3) you need a way to measure the length to cut without looking at it.</p>
+
+<p>This page shows how I made mine:</p>
+
+<pre>two images of assembled jig
+  - left/right angles
+  - one collar, one leash</pre>
+  
+<!-- <div class="image"><div><a href=""><img src="" alt="an image will be here"><br><span class="smaller">click for larger</span></a></div></div> -->
+
+<ul>
+<li><a href="#hot-knife">The hot knife</a></li>
+<li><a href="#tabletop">The tabletop</a></li>
+<li><a href="#secure">Securing the knife to the tabletop</a></li>
+
+<li><a href="#posts-and-receptacles">Making the posts &amp; receptacles</a></li>
+<li><a href="#legs">Legs</a></li>
+</ul>
+
+<section id="hot-knife">
+<h2>The hot knife</h2>
+<div>
+<p>I bought my 4" hot-knife from Lebec Mfg (website: <a href="http://www.webbing-cutting.com/">webbing-cutting.com</a>. eBay seller: <a href="https://www.ebay.com/usr/class67must">class67must</a>). Other brands to consider are <a href="https://sheffieldcuttingequip.com/products/manual-cutters/">Sheffield, model H-5</a>, and <a href="https://www.thewebcutter.biz/rx80/">NovaTech RX-80 basic models</a>. These two brands are more industrial. They cost twice as much. Lebec is more budget, hobbiest. Mine's been working fine. (Note: the H5 product photo on Sheffield's site is their prior/original design. If you buy one, it will look different.).</p>
+
+<p>My Lebec operated better after I sprayed some lithium grease in the area where the arm pivots against its stand. That arm was a little tight. (You want it tight. You'll get more accurate cut lengths if there's no side/side play.). Applying some grease caused it to move up/down like butter. I used lithium because it's good with hot surfaces. (If you have any play, you can tighten that bolt at the pivot point.).</p>
+
+<section id="hot-knife-teflon">
+<h3>Teflon tape</h3>
+<div>
+<p>Sometime in the past, I read something about it being important to affix "teflon tape" to the cutting surface beneath the blade. (I've never been able to find the web page I read that on, but it struck me as a legit maker of these cutters at the time.). This isn't teflon tape used for plumbing. It's used for thermal bag-sealers. It's brass/bronze colored, a woven appearance. I bought 3/4"-wide tape (Amazon ASIN: <a href="https://www.amazon.com/dp/B0BHSDM8XX">B0BHSDM8XX</a>). I cut a 5" strip and affixed it to the base of the hot-knife where the blade comes down onto the base.</p>
+
+<p>I think using this tape may protect the brass blade from wearing against the steel base. It could also give a better cut edge (if the heat doesn't sink into the steel.).</p>
+</div></section> <!-- end h3 -->
+
+<section id="hot-knife-temp">
+<h3>Laser/infrared thermometers</h3>
+<div>
+<p>The instructions I received said to turn the knob all the way to 10, let it heat 5 minutes, then set it to whatever level you want. My impression is that it will take longer to warm up if you set knob to where you use it (5 to 7 for me). That could be useful, but could also overshoot the heat level you use.</p>
+
+<p>I find it helpful to use a laser/infrared thermometer. But, you want one with a high max temperature (1200F or more). Many only go to 700-800F. You may find that you use the cutter at 900-1100F. Also pay attention to the aperture ratio(?). Some are 75:1 for reading at a longer distance. I think 12:1 is better. I think that means the front of the gun should be 12" from the spot measured. (I made a mark on my tabletop where I should rest the gun's handle and be at the correct distance each time). You also need to aim consistently at the same spot. I found the best place is on the brass block (which holds the blade), and between the two small nuts near the bottom of the block (holding the blade to the block). I aim at an imaginary line between those nuts, in the center between them. (Measuring the blade shows it being erratic as it loses heat and the electronics react. The block retains more heat, is easier to read. If I get the same reading there each time, the blade should be the same temperature each time too.)</p>
+</div></section> <!-- end h3 -->
+
+<section id="hot-knife-burrs">
+<h3>Sharp edges &amp; burrs</h3>
+<div>
+<p>Another good use for the thermometer is dialing in what temperature works best. I've found that at low temperatures I get a sharp edge on the underside. Maybe also more prone to a sharp burr on the corners (maybe because I have to push harder with a lower temperature). I'm still figuring this out. Hotter seems to be better, less forcing it through. But, if too hot, it liquefies too much? (If you don't use a thermometer, you could chase the temperature all over the place. It could be too hot, and in the process of dropping to the knob setting. You might turn it down thinking that's what it needs. Then react to it being too cool. Maybe overreact because it's not there yet, and you don't know that. Knowing the temperature for sure helps a lot to dial it in.).</p>
+
+<p>I've found that I need to do more touch-up after cutting than I'd hoped for. I don't think this is a problem with the Lebec cutter. I think it's the nature of cutting with a hot-knife. Novatech's -BDL version says it has a narrower blade that's supposed to reduce meltback &amp; burrs (which they say are typical of cutting material with a hot-knife). I was thinking that could be a good reason to spend more for one of those. But, the photo looks like a similarly thin blade like the Lebec cutter. The other RX-80 models on that page look like they have fat blades. Maybe Novatech is comparing their -BDL with those other models. Maybe it's <em>worse</em> with those other models.</p>
+
+<section id="hot-knife-touchup">
+<h4>Touch-up</h4>
+<div>
+
+<p>For touch up, you can 1) use a butane lighter/torch as you sew and encounter a sharp edge. If you get the knife's heat dialed in well enough, you may not have much to touch up. It could make more sense to do it as you encounter that as you sew. 2) Use the <a href="../#info-melt">Harbor Freight hot knife I used to melt the ends</a> (when I cut webbing with ordinary scissors). If you find that a lot of your cut pieces need touch up, that could go faster to sit down with all of them and do it as a seperate step between cutting &amp; sewing. 3) As you cut the webbing, touch the edges to the brass block above the cutter's blade. This starts to look more attractive when you understand the following advanced topic.</p>
+
+<section id="hot-knife-touchup-advanced">
+<h5>Advanced (for less touch-up)</h5>
+<div>
+<p>You should skip this topic until you've made a lot of collars, going faster. This topic involves 1) maintaining a view of the cut webbing having a top/bottom side which corresponds to the finished collar's inside/outside surface. 2) Designating one cut end being the buckle-end (the other the tri-glide end). It's confusing to conceptualize. There's no reason to spend time on this topic at the beginning. (It may help to visualize the following if you have this <a href="../../../images/2_loop_male.jpg">collar threading picture</a> open in another browser window.).</p>
+
+<p>Touch-up methods #1 &amp; 2 can go faster if you realize which cut edges are exposed. I.e., you don't have to touch-up <em>all</em> four edges (and maybe not all four corners either). As you work, pay attention to:
+
+<ol>
+<li>The way the rolled webbing feeds through the jig. It cups upward (showing the way it was rolled). The cut webbing will maintain that curl to some extent and lends itself to the curl the finished collar will have in use.</li>
+<li>If you assemble/thread the collar that way, then as the webbing lays on the jig, the top side is the surface which will face the dog (bottom side of the webbing will face the world.</li>
+<li>Consider how the ends of cut webbing will fold over (to sew the tri-glide on one end, the female buckle at the other end). This means the <em>bottom</em> side of the cut edges is the only side that needs touch-up.</li>
+<li>Furthermore, the bottom cut edge on the <em>tri-glide end</em> will face up away from the dog - and also be covered by a layer of webbing. This edge only needs touch-up if it's very rough and could abrade the webbing surface as the collar size is adjusted (the webbing slides over that cut edge).</li>
+<li>Finally, the sharp burrs on the corners at the <em>buckle end</em> are more exposed to being felt by the human. At the tri-glide end, the corners are sandwiched between two layers of webbing. They're not as easy to touch. I allow a little burring there which I would soften if they were at the buckle end.</li>
+</ol>
+
+<p>When you can get your head around that you can reduce your touch-up work. But, you have to maintain a <em>directionality</em> of your cut pieces. I think of the cut end closest to the blade as the buckle-end (the end pulled to the measurement "stop" is the tri-glide end). Doing this makes it relatively easy to touch up the cut end (buckle end) against the knife's brass block. That end (the end most likely to need touch-up) is right there. It can go faster doing it there than using a butane torch-lighter while sewing (or as a seperate sit-down step with the Harbor Freight knife.).</p>
+
+<p>If you touch-up <em>smartly</em> this way, then you need to maintain directionality. Lay your cut peices so all the buckle-ends are at the same end. You can buy some elastic bungee cord, tie a <a href="https://www.netknots.com/rope_knots/slip-knot">slip knot</a>. Cinch your cut pieces into bundle so the ends remain oriented. (I affix some painter's tape to one end of one cut piece. This way I know that end of the bundle is the buckle end). You don't need to care which side of the webbing is "top" (faces the dog). There should be lingering curl. If the curl isn't obvious, it's easy to feel the collar end's edge and notice which edge is softenened. (Likewise, it doesn't matter if you lose track of which end is the buckle-end. You should be able to feel both ends at the same time, and notice which will be the softest edge for that end. But, it will be easier if you can keep the ends pointing the same direction.). The only time directionality will matter is when you mark the tri-glide ends (the first step making the collar). Once that's done, then you know which end is which (which side up is up).</p> 
+
+<p>The above is something to be aware of. You could save time by not touching up all the edges (when it's not necessary). It may make sense to touch-up the buckle ends as you cut, then sit down with the HF hot knife to touch up the tri-glide ends/corners as needed (in one operation). Or, touch those up with a butane torch as you mark the tri-glide ends to sew. (Or, touch up the buckle ends with a butane torch as needed.). It depends on if a different cutting temperature produces cleaner cuts (or, if not pushing as hard - cutting slower helps).</p>
+
+</div></section> <!-- end h5 -->
+</div></section> <!-- end h4 -->
+</div></section> <!-- end h3 -->
+</div></section> <!-- end h2 -->
+
+<section id="tabletop">
+<h2>The tabletop</h2>
+<div>
+<p>The first step is to make the tabletop, the foundation of the jig. This photo shows that, and identifies what the different parts are:</p>
+
+<pre>--- photo of the entire table (glued pieces only)</pre>
+
+<p>This photo shows the view from the end of the table, the alignment of the feed-trough &amp; measuring-bed align:</p>
+
+<pre>--- photo of end view showing the alignment of the intake trough, measuring bed.</pre>
+
+<p>This photo shows the "shoe" which they hot-knife sits within:</p>
+
+<pre>--- photo of the "shoe" area.</pre>
+
+<p>All the pieces of wood are common "1 by" size you can find at Lowes &amp; Home Depot. The tabletop is 3/4" thick x 16" deep x 6' long. It was called "Project board, butcher-block appearance" at Lowes.<a class="fn" href="#fn1">[1]</a> Consider how flat/bowed the board is. If it has some warp, the pieces you glue down can make it flatter (use clamps). You can glue "1x2" all the way around the underside edge of the table if it would help. (If you bolt <a href="#legs">legs</a> to the bottom of the table, you'll need to glue some gusseting under the table to screw into. That gusseting could run the entire length or width, straightening out the table.).</p>
+
+<p>The photos contain all the necessary details (measurements, placement). Some topics worth emphasizing:</p>
+
+<ul>
+<li>All the wood is glued down (with clamps). If I did this again, I would consider using t-nuts (on the underside of the table) to bolt the pieces down. That would allow reusing much of this jig if I bought a different web cutter in the future. (I'd probably have to make a new table unless the base of the cutter was the same width, and the blade came down where the webbing crosses over. Or, it could be possible to remove the new knife from its base and mount it to the Lebec base.). The only complication of bolting the wood pieces down is that the two receptacles at the left edge of the table would require more thought about how to secure them to the table. It wouldn't be hard.</li>
+
+<li>You can see a line drawn on the tabletop in the center of the "shoe." That's 2'from the left edge of the table (4' to the right edge). That seemed like a good place to have the cutting blade come down. You can change that. (I'm right handed. If you're left-handed, you might want to reverse everything?).</li>
+
+<li>I sand all the corner edges so they're rounded &amp; soft to the touch. I also applied one coat of satin polyurethane to all the wood after it was glued together. (Not for a nice finish. Just to seal the wood so it won't become grimy from dirty hands. Or, soak up spilled liquids. One liberal coat is enough so that water will bead on the surface.). </li>
+
+<li>You can cut the table in half, make it a "drop leaf" (or slide-in "extension"). That would be nice when not in use. You'll need to consider what kind of <a href="#legs">legs</a> you'll use.</li>
+</ul>
+
+</div></section> <!-- end h2 -->
+
+<section id="secure">
+<h2>Securing the knife to the tabletop</h2>
+<div>
+<pre> -- photo showing bar installed (1913 or 1911) 
+		showing parts (1916)</pre>
+		showing center hole over nut, pilot holes drilled. 1899 
+			- Drill holes 3/4" from ends.
+
+		Use the bar to mark where 1/4"-thick spacers go, glue them down, and when dried, transfer pilot hole to the top of the spacer. 1916
+
+1. Cut bar 6-1/2" long (round the corners with a file).
+2. Drill 13/32" hole in the center
+3. Place the bar with that hole on the cutter's screw head. Mark where the spacers should be. Glue them in place.
+
+- Drilling the wood:
+4. Drill 3/32" or 1/8" pilot holes 3/4" from the ends of the bar. Using a scribe (or small nail) mark the top of the spacers through the pilot holes.
+5. Drill 1/8" pilot hole through those marks and down through the bottom of the table.
+6. Using a 3/4" to 1" forstner or flat-blade wood borig bit, drill the bottom of the table up to the glued-on wood.
+7. Using an ordinary 5/16" bit, drill down through the 1/8" pilot hole from the top.
+8. Install 1/4-20 t-nuts underneath the table (see spacer section for how to set the t-nuts into the wood). 
+- Drilling the bar (again):
+9. Drill out the bar's two pilot holes to 1/4".
+
+</div></section> <!-- end h2 -->
+
+
+
+
+
+
+<section id="posts-and-receptacles">
+<h2>Making the posts &amp; receptacles</h2>
+<div>
+
+<p>The roll of webbing is suspended by two posts made of common "2x2":</p>
+
+<pre>--- photo of posts.</pre>
+
+<p>You should make those first because the receptacals will be cut/sanded to fit snuggly around its post.</p>
+
+<pre>--- photo of receptacles with posts inserted.</pre>
+
+<p>Notice that I marked the receptacles &amp; posts "Rear" &amp; "Front." This is important because you're going to fit the receptical parts the post. It won't come out right if you interchange posts, or insert them rotated differently. This is the sockets without the post:</p>
+
+<pre>--- photo of receptacles without posts inserted.</pre>
+
+<p>That photo contains all the details you need to make the receptacles. As mentioned above, you'll dry fit the parts around the post. If it fits too tight, sand the post. If it's too loose, sand the mating surfaces of the receptacle parts so they fit more snuggly around the post. This can take some time. It doesn't have to be perfect. You want to be close. After gluing and screwing the parts together, if the post is too tight, sand the post to fit. (If it's too lose, you can use wooden "shims" sold at the hardware store. They're 1/32" thick at one end, tapering to 3/16" at the other end. You can cut a piece that makes the post snug, glue that piece inside the socket.).</p>
+
+<p>Before gluing the socket pieces together, I held them together around the post, and drilled a pilot hole, drove the wood screw into it, then hold the remainder together and drill another pilote hole (install that screw, and sew on). With all the screws installed, I checked again how the post fit. After that, I disassembled, glued the mating surfaces, drove the screws in while the glue was wet. Wiped off glue that squeezed out, and then inserted the post again. While the glue's wet, the socket might shift a little to conform to the post. Don't leave the post in there. Glue could still squeeze out and then your post would be stuck inside the socket. You can wait 20 minutes, and insert the post again. Ordinary wood glue won't harden by then. You could still get some shifting to fit the post. It might retain that shape better as the glue is stiffer then. (I still wouldn't leave the post in the socket as the glue dries.).</p>
+
+<p>When the glue is dried, you can glue it down onto the table as shown. It's important to note that the part "C" (which sits on top of the channel rail) should be straight veritically. When you're dry-fitting the socket pieces around the post, you should also check how squarely they sit on the table, and especially how square vertically "C" is. Likewise, when you drill the holes (C into both A pieces), you want to make sure C's positioned so it sits on that rail and is square verticially with the tabletop. Check it before drilling the holes.</p>
+
+<p>It's important for part "C" to be square with the table surface because you'll insert spacers between the sockets when cutting narrower webbing. The "front" socket's "C" surface is more important to be square than the rear socket's. The spacer needs to sit flat on the table surface, and press against the front socket's "C" surface. If that surface is cocked, it will be harder to work with.</p>
+
+<p>This is another photo of the rear sockets showing the screws from that angle. Notice the notch cut into Rear's part "C." You'll see what that's for later. I cut my notch with a dremmel after the sockets were glued to the table. It would be better to wait to glue these to the table until you get to the point where the notch is needed. Then you can cut it easier. (Or, you can cut a notch that's more generous in advance. It doesn't have to be as small as I cut. It could be twice the dimension all the way around. It could go deeper, even halfway into that 3/4" thick wood. You just need some space for a locknut to recess into.</p>
+
+<pre>--- photo of notch</pre>
+
+</div></section> <!-- end h2 -->
+
+<section id="legs">
+<h2>Legs</h2>
+<div>
+
+<p>I use Home Depot buckets as legs. I set on the floor and cut webbing. It works well enough. I can lean the table against a wall when not in use. One serious downside is: if your dogs are rambunctious, they might knock the table over (or off the buckets). Could damage the cutting arm if it tipped over (could be worse if this happened while hot.).</p>
+
+<p>Harbor Freight sells a <a href="https://www.harborfreight.com/universal-lathe-stand-70595.html">universal lathe stand</a>. It has generous adjustable height (24-1/2 to 34-1/2", and width: 23-1/2 to 35-1/2"). You could mount the exhaust fan between the legs, maybe some shelves on the left side hanging under the tabletop. You can replace the leveling feet (M12 thread, not sure of the pitch) with locking casters (I've seen M12 threaded casters, but need to find out if the thread pitch is the same. I assume it would be.). I was thinking this would be the ideal stand (legs) for cutting the table in half &amp; making it a drop-leaf or extension. I was really sold on this until I went and saw it in person. It seemed too heavy-duty (absurdly too much for this table). But, I've been getting over that first impression. I haven't found anything better. It would be very sturdy when using the knife. Very bottom heavy (it wouldn't tip over easily).</p>
+
+<p>You can find folding legs online. These are like what you'd find on folding card tables. Example, Amazon ASIN: <a href="https://www.amazon.com/gp/product/B08LXBJ1WV">B08LXBJ1WV</a>. Not many are narrow enough to a 16" wide table (the example I linked to is 14". That would be ideal.). They cost almost as much as much as the lathe stand. I imagine these could have some play, making the table wobbly (especially the version on that page with adjustable-height legs). If you wanted to cut the table in half (for drop-leaf or extension), I assume you'd have to attach one leg to one piece of the table, one leg to the other. That cut joint between the legs would probably add to any play the legs have. (If both legs were attached to one half, I think hanging the other half off the edge could make it prone to tipping that direction.).</p>
+
+<p>I haven't found any legs halfway between those two choices. That makes the lathe stand look more attractive to me. I don't spend a lot of time cutting webbing. So, the Home Depot buckets have been good enough.</p>
+
+</div></section> <!-- end h2 -->
+
+<section id="fn">
+<hr>
+<h2>footnotes</h2>
+
+<p><a id="fn1">[1]</a> The tabletop I bought at Lowes had a shelf tag saying: Item: <code>9108</code>. Model: <code>L5PAN172116P</code>. The UPC sticker on the board: <code>7&nbsp;16781&nbsp;13413&nbsp;0</code>.</p> 
+
+</section> <!-- end fn -->
+</main>
+
+<footer>page last modified: Aug 18, 2025</footer>
+
+</body>
+</html>

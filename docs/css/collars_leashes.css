@@ -1,0 +1,41 @@
+/* ------------ resources/collars_leashes page ------------ */
+
+/* Don't show the Length heading */
+table#collars-materials thead th.len,
+table#collars-lengths thead th.len {visibility: collapse;}
+
+/* no borders for the short/long collar lengths (row1/2 leash duties) */
+table#collars-materials tr.short td, table#collars-materials tr.short th,
+table#collars-lengths tr.short td, table#rcollars-lengths tr.short th,
+table#leashes-materials tr.row1 td, table#leashes-materials tr.row1 th {border-bottom-style: none;}
+
+table#collars-materials tr.long td, table#collars-materials tr.long th,
+table#collars-lengths tr.long td, table#collars-lengths tr.long th,
+table#leashes-materials tr.row2 td, table#leashes-materials tr.row2 th {border-top-style: none;}
+
+/* no borders between widths and lengths (duties for leashes) */
+table#collars-materials th.width,
+table#collars-lengths th.width,
+table#leashes-materials th.width {border-right-style: none;}
+
+table#collars-materials th.len,
+table#collars-lengths th.len,
+table#leashes-materials th.duty {border-left-style: none;}
+
+/* remove the border both sides of "to" */
+table#collars-lengths td.from {border-right-style: none;}
+table#collars-lengths td.to {border-left-style: none;}
+table#collars-lengths td.from + td {border-left-style: none;
+									border-right-style: none;
+									font-size: 0.92rem;
+									font-style: italic;}
+
+/* Format */
+table#collars-materials th.width,
+table#collars-lengths th.width {padding-right: 0.5rem;}
+table#collars-materials tbody th.width,
+table#collars-lengths tbody th.width {text-align: left;}
+table#collars-materials tbody th.len,
+table#collars-lengths tbody th.len,
+table#leashes-materials tbody th.duty {text-align: left;}
+table#collars-lengths td.tacks {text-align: center;}

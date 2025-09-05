@@ -1,0 +1,276 @@
+/* Light/dark/nocturnal modes are defined as custom properties. */
+:root {
+--bg-color:		#FFFFFF; /* White */
+--text-color:	#000000; /* black */
+--a-link:		#0000FF; /* 0000FF blue */
+--a-visited:	#551A8B; /* 551A8B is default on Firefox */
+--a-hover:		#4169E1; /* 4169E1 royalBlue */
+--a-active:		#FF0000; /* FF0000 red */
+--heading-opacity:	1.0; /* not used */
+--img-opacity:		1.0; /* not used */
+--img-opacity-trans: 0.0s; /* not used */
+--hr-color:		#666; /* 666 gray, used for display-mode dropdown too */
+--crumb-bg:				#EEE; /* EEE very light gray */
+--crumb-sep-color:		#868686; /* 868686 medium gray */
+--crumb-a-link:			#6B6B6B; /* 6B6B6B gray */
+--crumb-a-hover:		#6489f5; /* royalBlue 4169E1, lighter & less saturated: 6489f5 */
+--sect-border-color:	#C8C8C8; /* C8C8C8 light gray */
+--table-border-color:	#999; /* 999 gray */
+--table-alt-row-bg:		#E6E6E6; /* E6E6E6 very light gray */
+
+--bold-color:	#000000; /* black. Dark & noct modes need a different color */
+}
+
+/* Lightmode is the default, :root */
+.lightmode {
+}
+
+.darkmode {
+--bg-color:		#121212; /* 121212 almost black */
+--text-color:	#FFFFFF; /* white */
+--a-link:		lightSkyBlue; /* lightSkyBlue 87CEFA */
+--a-visited:	#bb86fc; /* bb86fc purple */
+--a-hover:		#7bffff; /* cyan 00FFFF, less saturated, lighter: 7bffff */
+--a-active:		#DDA0DD; /* plum DDA0DD; */
+--heading-opacity: 0.92; /* the headings are a little bright in darkmode */
+--img-opacity:			1.0;  /* not used */
+--img-opacity-trans:	0.0s; /* not used */
+--hr-color:		#777; /* 777 med gray. This is also used for the display-mode drop-down. */
+--crumb-bg:				#292929; /* 292929 light gray */
+--crumb-sep-color:		#A0A0A0; /* A0A0A0 gray */
+--crumb-a-link:			#7D7D7D; /* 7D7D7D gray */
+--crumb-a-hover:		#63c2c2; /* cyan 00FFFF made darker: 63c2c2 */
+--sect-border-color:	#484848; /* 484848 dark gray */
+--table-border-color:	#6A6A6A; /* 6A6A6A medium gray */
+--table-alt-row-bg:		#262626; /* 262626 very dark gray */
+
+--bold-color:	#FFBD00; /* FFBD00 amber. but a little brighter than noctmode's plain text. */
+}
+
+/* This mode is intended for a dark environment, or before bed time (there's no blue which
+ * can interfere with "circadian rhythm"). Darkmode is more of the daytime mode. */
+.noctmode {
+--bg-color:		#000000; /* black */
+--text-color:	#FFB900; /* amber FFB900
+					Online ref says FFB000. Or, FFCC00 which is lighter. decimal 28 apart.
+					Another ref says FFBF00. decimal 15 difference. I like FFB7 - B9. */
+--a-link:		#FF8C00; /* darkOrange FF8C00. I like darker & more red: fd8a00 . this isn't bad: ff8800 */
+--a-visited:	#32b000; /* 32b000 dimmer than an old-school CRT green */
+--a-hover:		#f24200; /* orangeRed FF4500 but darker: f24200*/
+--a-active:		#FFD700; /* gold FFD700 */
+--heading-opacity:		0.86; /* the headings are a little bright in noctmode */
+--img-opacity:			0.5;  /* dim the images. Mouseover to brighten them */
+--img-opacity-trans:	0.5s; /* mouseover transition time */
+--hr-color:				#FFB90088; /* Amber darker. This is used for the display-mode drop-down too. */
+--crumb-bg:				#FFB90022; /* amber dark */
+--crumb-sep-color:		#b58300; /* amber FFB900, 71% = b58300 */
+--crumb-a-link:			#8a6400; /* amber FFB900 54% = 8a6400 */
+--crumb-a-hover:		#c2542b; /* orangeRed FF4500, darkened and desaturated */
+--sect-border-color:	#FFB9004E; /* amber dark */
+--table-border-color:	#805d00; /* amber FFB900 50% darker = 805d00 */
+--table-alt-row-bg:		#FFB9001F; /* amber darker */
+
+--bold-color:	#E5E500;  /* E5E500 yellow. This mode doesn't have many choices for color. This is all that's left. */
+}
+
+
+* {box-sizing: border-box;}
+
+body {margin-left: 2%; margin-right: 2%;
+	background-color: var(--bg-color);
+	color: var(--text-color);}
+
+h1, h2, h3, h4, h5, h6 {opacity: var(--heading-opacity);}
+
+a:link {color: var(--a-link);}
+a:visited {color: var(--a-visited);}
+a:hover {color: var(--a-hover);}
+a:active {color: var(--a-active);}
+
+hr {border: none;
+	height: 2px;
+	background-color: var(--hr-color);}
+
+/* misc style */
+.center {text-align: center;}
+footer {font-style: italic;
+	text-align: right;
+	font-size: 0.92rem;
+	margin-top: 1em;}
+.smaller {font-size: 90%;}
+.archived {font-size: smaller;}
+.archived a {font-style: italic;}
+
+/* Fake "sup" appearance */
+a.fn {font-size: 0.88rem;
+	vertical-align: text-top;
+	position: relative;
+	top: -0.17rem;
+	right: -0.01rem;}
+
+
+/* bold, strong & table headings (dark & noct mode):
+ * Bold doesn't stand out enough. I think this styling works. The small-caps
+ * suggest bold/strong. The color too. */
+body.darkmode b, body.darkmode strong, body.darkmode th,
+body.noctmode b, body.noctmode strong, body.noctmode th {
+font-family: "Courier New", monospace;
+color: var(--bold-color);
+font-weight: 600; /* this is supposed to be less heavy than bold's default 700. */
+font-variant: small-caps;
+letter-spacing: 0.03rem; /* a little more space between letters */
+word-spacing: -0.4rem; /* a litte less space between words */
+}
+
+/* Courier (dark & noct modes) is smaller than the default text. It needs to be
+ * larger to fit normal text */
+body.darkmode b, body.darkmode strong,
+body.noctmode b, body.darkmode strong {
+font-size: 1.28rem;
+}
+
+/* I like table headings to be smaller (and have been set smaller at the bottom
+ * of this file). But, courier (used for dark & noct modes) is smaller. I need
+ * it to be larger. Courier also benefits from a different padding. */
+body.darkmode th, body.noctmode th {
+font-size: 1.19rem;
+padding: 0 .26rem; /* 0 top/bottom, .22 left/right */
+}
+
+
+/* Images will left-align with the page, but have centered text beneath, and
+ * responsive to small screens (shrink to fit) */
+div.image {text-align: left; margin-left: 4%;}
+div.image > div {display: inline-block; text-align: center;}
+img {max-width: 100%; height: auto; float: left; padding: 1px; opacity: var(--img-opacity); transition: opacity var(--img-opacity-trans) ease-in;}
+img:hover {opacity: 1.0;}
+
+/* footnote section */
+section#fn > hr {margin-top: 1.75rem;}
+section#fn > p:first-of-type {margin-top: .75rem;}
+section#fn > h2 {display: none;}
+
+/* Indent the nested sections (the div container which immediately follows the
+ *  first h1-6 of the section) */
+section > h2:first-child + div,
+section > h3:first-child + div,
+section > h4:first-child + div,
+section > h5:first-child + div,
+section > h6:first-child + div {border-left: .1rem dashed var(--sect-border-color);
+			margin-left: .4rem;
+			padding-left: 1rem;}
+
+
+/* ------------ Header, breadcrumb links & display mode ------------ */
+
+header > nav {
+	position: absolute;
+	top: 0; left: 0;
+}
+
+/* Style the list */
+header > nav > ul {
+	padding: 2px 10px;
+	list-style: none;
+	background-color: var(--crumb-bg);
+	display: inline;
+	vertical-align: middle;
+}
+
+/* Display list items side by side */
+header > nav > ul li {
+	display: inline;
+	font-size: 0.90rem;
+}
+
+/* Add a slash symbol (>) before/behind each list item */
+header > nav > ul li+li:before {
+	padding: 2px;
+	color: var(--crumb-sep-color);
+	content: ">\00a0";
+}
+
+/* Add a color to all links inside the list */
+header > nav > ul li a {
+	color: var(--crumb-a-link) !important;
+	text-decoration: none;
+}
+
+/* Add a color on mouse-over */
+header > nav > ul li a:hover {
+	color: var(--crumb-a-hover) !important;
+	text-decoration: underline;
+}
+
+/* --- Display mode choices --- */
+header div#display-mode {
+	position: absolute;
+	top: 0; right: 0;
+	background-color: var(--bg-color);
+	color: var(--hr-color);
+	border-style: solid;
+	border-width: 0 0 0 0;
+	border-color: var(--hr-color);
+}
+
+header div#display-mode label {
+	font-size: 0.90rem;
+}
+
+header div#display-mode select {
+	background-color: var(--bg-color);
+	color: var(--hr-color);
+	border-width: 0 0 1px 0;
+	border-style: solid;
+	border-color: var(--hr-color);
+	font-size: 0.90rem;
+}
+
+/* Move h1 down. The display-mode drop-down is absolutely positioned (so is the breadcrumb nav if present). */
+header > div + h1 {margin-top: 1.7rem;}
+
+
+/* ------------------ root page Welcome ------------------ */
+div#welcome ul  {margin: 0 auto;
+	text-align: center;
+	list-style: none;
+	font-size: 1.33rem;
+	font-weight: bold;
+	padding: 0 10%;
+}
+
+div#welcome ul li.row1 {
+	float: left;
+	width: 50%;
+}
+
+/* Add responsiveness - make the columns appear on top of each other instead of next to each other on small screens */
+@media screen and (max-width: 800px) {
+	div#welcome ul li.row1 {
+		width: 100%;
+		text-align: center;
+	}
+}
+
+/* -------------- Tables --------------
+ * The font-size and padding (for dark & noct modes) is set elsewhere. */
+table th {font-size: 0.905rem;}
+
+/* Borders */
+table, table th, table td {
+	border-style: solid;
+	border-color: var(--table-border-color);
+	border-width: 2px;
+	border-collapse: collapse;
+	padding: .11rem .20rem; /* .11 top/bottom, .22 left/right */
+}
+
+/* Indent tables */
+table#costs-collars, table#costs-leashes, table#donations,
+table#alloc-collars, table#alloc-leashes,
+table#collars-materials, table#collars-lengths,
+table#leashes-materials, table#leashes-lengths,
+table#clamps-collars, table#settings-collars,
+table#clamps-leashes, table#settings-leashes {margin-left: 4%;}
+
+
