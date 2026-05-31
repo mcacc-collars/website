@@ -1,0 +1,466 @@
+/* Light/dark/nocturnal modes are defined as custom properties. */
+:root {
+--bg-color:		#FFFFFF; /* White */
+--text-color:	#000000; /* black */
+--a-link:		#0000FF; /* 0000FF blue */
+--a-visited:	#551A8B; /* 551A8B is default on Firefox */
+--a-hover:		#4169E1; /* 4169E1 royalBlue */
+--a-active:		#FF0000; /* FF0000 red */
+--heading-opacity:	1.0; /* not used (only for dark/noct modes) */
+--img-opacity:		1.0; /* not used (only for noct mode) */
+--img-opacity-trans: 0.0s; /* not used (only for noct mode) */
+
+--subtle-text-color: #5e5e5e; /* white, 37% = 5e5e5e - This is for the top nav links, footnote h2 heading, and last-updated footer. */
+--subtle-line-color: #b3b3b3; /* white, 70% = b3b3b3 - This is for the lines associated with that text (the lines should lighter) */
+
+--crumb-a-hover:		#6489f5; /* royalBlue 4169E1, lighter & less saturated: 6489f5 */
+--sect-border-color:	#aaaaaa; /* white, 67% = AAAAAA */
+--table-border-color:	#999; /* white, 60% = 999 */
+--table-alt-row-bg:		#f2f2f2; /* white, 95% = f2f2f2 */
+--bold-color:	#000000; /* black. (Dark & noct modes need a different color) */
+
+--b-strong-th-font-family: Verdana,sans-serif;
+--b-strong-th-font-weight: bold;
+--b-strong-th-font-variant: normal;
+--b-strong-th-letter-spacing: normal;
+--b-strong-th-word-spacing: normal;
+
+--b-strong-font-size: 1rem;
+
+--th-font-size: 0.905rem;
+--th-padding: .05rem .30rem;
+
+--fn-th-font-size: .84rem;
+--fn-b-strong-font-size: .885rem;
+}
+
+/* Lightmode is the default, it's :root */
+body.lightmode {
+} 
+
+/* Dark & noct modes don't render bold, strong & th as obvious as I'd like. I
+ * use a different font, weight, variant. The different font necessitates
+ * different letter & word spacing, font size, cell padding. */
+body.darkmode, body.noctmode {
+--b-strong-th-font-family: "Courier New", monospace;
+--b-strong-th-font-weight: 600;
+--b-strong-th-font-variant: small-caps;
+--b-strong-th-letter-spacing: .032rem; /* mono font needs more space between letters */
+--b-strong-th-word-spacing: -0.4rem;   /*   and less space between words */
+
+--b-strong-font-size: 1.08rem;
+
+--th-font-size: 1.06rem; /* I like table headings to be a little smaller */
+--th-padding: 0 .28rem; /* mono font needs needs no vert cellspacing, and a little more horiz */
+
+--fn-th-font-size: .94rem;
+--fn-b-strong-font-size: 1rem;
+}
+
+body.darkmode {
+--bg-color:		#121212; /* 121212 almost black */
+--text-color:	#FFFFFF; /* white */
+--a-link:		lightSkyBlue; /* lightSkyBlue 87CEFA */
+--a-visited:	#bb86fc; /* bb86fc purple */ /* pink like firefox dir listing: ffadff */
+--a-hover:		#7bffff; /* cyan 00FFFF, less saturated, lighter: 7bffff */
+--a-active:		#DDA0DD; /* plum DDA0DD; */
+--heading-opacity: 0.92; /* the headings are a little bright in darkmode */
+--img-opacity:			1.0;	/* not used */
+--img-opacity-trans:	0.0s;	/* not used */
+
+--subtle-text-color: #a6a6a6; /* white, 65% = a6a6a6 - This is for the top nav links, footnote h2 heading, and last-updated footer. */
+--subtle-line-color: #757575; /* white, 46% = 757575 - This is for the lines associated with that text (the lines should be less bright) */
+
+--crumb-a-hover:		#63c2c2; /* cyan 00FFFF made darker: 63c2c2 */
+--sect-border-color:	#4B4B4B; /* white, 29% = 4B4B4B */
+--table-border-color:	#696969; /* white, 41% = 696969 */
+--table-alt-row-bg:		#212121; /* white, 13% = 212121 */
+--bold-color:	#FFBC00; /* FFBC00 amber. but a little brighter than noctmode's plain text. */
+}
+
+/* This mode is intended for a dark environment, or before bed time (there's no blue which
+ * can interfere with "circadian rhythm"). Darkmode is more of the daytime mode. */
+body.noctmode {
+--bg-color:		#000000; /* black */
+--text-color:	#FFB900; /* amber FFB900
+					Online ref says FFB000. Or, FFCC00 which is lighter. decimal 28 apart.
+					Another ref says FFBF00. decimal 15 difference. I like FFB7 - B9. */
+--a-link:		#FF8C00; /* darkOrange FF8C00. I like darker & more red: fd8a00 . this isn't bad: ff8800 */
+--a-visited:	#32b000; /* 32b000 dimmer than an old-school CRT green */
+--a-hover:		#f24200; /* orangeRed FF4500 but darker: f24200*/
+--a-active:		#FFD700; /* gold FFD700 */
+--heading-opacity:		0.86;	/* the headings are a little bright in noctmode */
+--img-opacity:			0.5;	/* dim the images. Mouseover to brighten them */
+--img-opacity-trans:	0.5s;	/* mouseover transition time */
+
+--subtle-text-color: #c28d00; /* amber FFB900, 76% = c28d00 - This is for the top nav links, footnote h2 heading, and last-updated footer. */
+--subtle-line-color: #9c7100; /* amber FFB900, 61% = 9c7100 - This is for the lines associated with that text (the lines should be less bright) */
+
+--crumb-a-hover:		#c25400; /* orangeRed FF4500, darkened and desaturated */
+--sect-border-color:	#4f3900; /* amber FFB900, 31% = 4f3900 */
+--table-border-color:	#735300; /* amber FFB900, 45% = 735300 */
+--table-alt-row-bg:		#1c1400; /* amber FFB900, 11% = 1c1400 */
+--bold-color:	#E4E400; /* E4E400 yellow. This mode doesn't have many choices for color. This is all that's left. */
+}
+
+/* section#notes :target {border-left: 2px solid var(--bold-color); padding-left: .8em;} */
+/* section#notes aside:has(:target) {border-left: .25rem solid var(--bold-color); padding-left: .5em;} */
+
+* {box-sizing: border-box;}
+
+body {margin: 0;
+	background-color: var(--bg-color);
+	color: var(--text-color);
+	line-height: 1.5;
+	font-family: Verdana,sans-serif;}
+
+/* This comes from w3.css. I added h7. If used, specify as <div class="h7" "role="heading" aria-level="7"> */
+h1,h2,h3,h4,h5,h6,div.h7{font-family:"Segoe UI",Arial,sans-serif;font-weight:600;margin:10px 0}
+
+main, footer {margin: 0 2%;}
+
+/* Headings */
+h1 {margin-top: 0.2rem; text-align: center;} /* h1 is snugged under the breadcrumbs and display mode */
+h1, h2, h3, h4, h5, h6, div.h7 {opacity: var(--heading-opacity);}
+
+/* Heading sizes comes from w3.css. It uses a base font-size: 15px. I don't set a base font-size. So, I made
+ * the heading sizes proportional. */
+/* h1{font-size:36px}h2{font-size:30px}h3{font-size:24px}h4{font-size:20px}h5{font-size:18px}h6{font-size:16px} */
+h1{font-size:2.4rem}h2{font-size:2.0rem}h3{font-size:1.6rem}h4{font-size:1.33rem}h5{font-size:1.2rem}h6{font-size:1.1rem}div.h7{font-size:0.92rem}
+
+
+/* TABLE OF CONTENTS
+/* Add some top/bottom space to the outer (parent) ol */
+main nav > ol:first-child {
+	margin: .35rem 0 .65rem 0;}
+
+/* Enable top/bottom border. Make the Nav box (the border) fit the content (inline-block).
+ * Add left-side indent, and let the border go to the right further. */
+main nav {display: inline-block;
+	border-top: 1px solid var(--subtle-line-color);
+	border-bottom: 1px solid var(--subtle-line-color);
+	/* Using the same left-indent as used elsewhere - twice as much */
+	margin: .2em 0 .2em calc(clamp(1rem, 2.1vw, 1.75rem) * 2);
+	padding: 0 4% 0 0%;}
+	
+/* Make the toc text smaller */
+main nav ol, main nav ul {font-size: .92rem;
+	letter-spacing: .058rem;
+	word-spacing: .04rem;
+	line-height: 1.4rem;}
+
+
+/* LINKS
+ * Increase the touchable area of links */
+a {display: inline-block;
+	position: relative;
+	padding: 0.5rem;
+	margin: -0.5rem;}
+
+a:link {color: var(--a-link);}
+a:visited {color: var(--a-visited);}
+a:hover {color: var(--a-hover);}
+a:active {color: var(--a-active);}
+
+
+/* ol & ul *
+ * li by itself is too tight. Using p makes it too spaced. This is something
+ * in between. */
+ol p, ul p {margin-top: .55em; margin-bottom: .55em;}
+
+/* misc style */
+.center {text-align: center;}
+.smaller {font-size: 90%;}
+.archived {font-size: smaller;}
+.archived a {font-style: italic;}
+span.nowrap {white-space: nowrap;}
+
+
+/***********************************************
+ * bold, strong & table headings: In dark & noct modes, bold doesn't stand out
+ * enough. I think this styling works better. The different font, small-caps and
+ * color suggest bolder/stronger. */
+b, strong, th {
+font-family: var(--b-strong-th-font-family);
+color: var(--bold-color);
+font-weight: var(--b-strong-th-font-weight);
+font-variant: var(--b-strong-th-font-variant);
+letter-spacing: var(--b-strong-th-letter-spacing);
+word-spacing: var(--b-strong-th-word-spacing); /* a litte less space between words */
+}
+
+/* Courier (dark & noct modes) is smaller than the default text. It needs to be
+ * larger to fit normal text. (The th element is set with the other table styling
+ * at the end of this sheet.) */
+b, strong {
+font-size: var(--b-strong-font-size);
+line-height: 1.0; /* Dark & noct modes (mono font) need no line height. This doesn't affect light mode. */
+}
+/***********************************************/
+
+
+img {max-width: 100%; height: auto;
+	border: 1px solid var(--subtle-line-color);
+	aspect-ratio: 4/3;
+	margin-top: 0.35em;
+	/* used for nocturnal only */
+	opacity: var(--img-opacity); transition: opacity var(--img-opacity-trans) ease-in;}
+
+img:hover {opacity: 1.0;}  /* used for nocturnal only */
+
+/* SINGLE IMAGE
+ * Images will left-align with the page, but have centered text beneath them, and
+ * responsive to small screens (shrink to fit) */
+div.image {text-align: left;
+	/* Images will indent at the same rate as the nested sections do, and as
+	 * tables do. */
+	margin-left: clamp(1rem, 2.1vw, 1.75rem);}
+
+/* END SINGLE IMAGE */
+
+
+/* GROUP OF IMAGES
+/* Images will left-align with the page, but have centered text beneath them, and
+ * responsive to small screens (shrink to fit) */
+div.images {text-align: left;
+/*	width: 95%; */
+	/* This container of images will indent at the same rate as the nested sections do, and as
+	 * tables do (and as single images do). */
+	margin-left: clamp(1rem, 2.1vw, 1.75rem);}
+
+div.images::after { /* clear floating images */
+	content: "";
+	clear: both;
+	display: table;}
+
+div.images img {display: inline-block; float: left;
+/*	width: 25vw;
+	max-width: max-content; */
+	margin: 1px;}
+
+/* Revert the touchable area of links (Lighthouse objects) */
+div.images a {padding: 0;
+	margin: 0;}
+/* END GROUP OF IMAGES */
+
+
+
+/* FOOTNOTES "sup" appearance
+ * - section#notes is in the footer. 
+ * - aside.inline-notes is in main (only the lk1900 page) */
+footer section#notes sup, main aside.inline-notes sup {font-size: 0.88rem;
+	vertical-align: text-top;
+	position: relative;
+	top: -0.18rem;
+	right: -0.01rem;}
+
+/* Put some space between the superscript and the note */
+footer section#notes sup, main aside.inline-notes sup {margin-right: .8em;}
+
+/* This is only for table notes.
+ * The notes are indented the same amount as the table, and a left-border of the same color as the table's */
+main aside.inline-notes {margin-left: clamp(1rem, 2.1vw, 1.75rem);
+	border-left: 2px solid var(--table-border-color);
+	padding-left: 1em; }
+
+/* footnote section appearance
+ * Don't show the hr (use h2 border-top) */
+footer section#notes hr {display: none;}
+
+footer section#notes > h2 {font-family: "Courier New", monospace;
+	letter-spacing: .25rem; /* mono font needs more space between letters */
+	word-spacing: normal; /* " " less space between words */
+	font-size: 1.05rem;
+	font-weight: normal;
+	color: var(--subtle-text-color);
+	border-style: none;
+	font-style: italic;
+	border-top: 1px solid var(--subtle-line-color);
+	margin-top: 2.5rem;
+	text-transform: lowercase;}
+
+footer section#notes p:first-of-type {margin-top: -.2rem;}
+footer section#notes, main aside.inline-notes {font-size: .955rem;} /* make footnote text smaller */
+footer section#notes th {font-size: var(--fn-th-font-size);}
+footer section#notes b, section#notes strong {font-size: var(--fn-b-strong-font-size);}
+
+
+/* SECTIONS
+ * Indent the nested sections (the div container which immediately follows the
+ * first h1-6 of the section) */
+section > h2:first-child + div,
+section > h3:first-child + div,
+section > h4:first-child + div,
+section > h5:first-child + div,
+section > h6:first-child + div,
+section > div.h7:first-child + div {border-left: .09rem dashed var(--sect-border-color);
+/* - margin-left causes the border to line up with the left-edge of the first
+ * character of the heading above it.
+ * - padding-left can be as large as 1.75rem (counting the margin-left's
+ * contribution). But, no smaller than 1rem (counting margin-left's conribution).
+ * It expands at a rate of 2.1vh. (A smaller vh expands slower. A larger vh
+ * will reach the max padding sooner (a narrower window) */
+			margin-left: .12rem;
+			padding-left: clamp(.88rem, 2.1vw, 1.63rem);}
+
+/* The first paragraph of sections seems a little distant from the heading */
+main section > div > p:first-child {margin-top: 0.6em;}
+
+/* SECTION (expandable details/summary)
+ * The 1"-Leash has a hidden section. This is just for that (h4) nesting. */
+
+section > details:first-child > summary:first-child + div:first-of-type {border-left: .09rem dashed var(--sect-border-color);
+/* - margin-left causes the border to line up with the left-edge of the first
+ * character of the heading above it.
+ * - padding-left can be as large as 1.75rem (counting the margin-left's
+ * contribution). But, no smaller than 1rem (counting margin-left's conribution).
+ * It expands at a rate of 2.1vh. (A smaller vh expands slower. A larger vh
+ * will reach the max padding sooner (a narrower window) */
+			margin-left: .12rem;
+			padding-left: clamp(.88rem, 2.1vw, 1.63rem);}
+
+/* The expandable marker's font-size should be 10% more than the heading's */
+section > details summary:has(h4)::marker, 
+section > details summary:has(h4):is(::-webkit-details-marker) {font-size: 146%;}
+
+/* The heading should be italic when closed, normal when open. */
+section > details:first-child > summary:first-child > h4:first-child {display: inline; font-style: italic;}
+section > details[open]:first-child > summary:first-child > h4:first-child {font-style: normal;}
+
+
+/* toggle the show/hide text */
+details summary span.fake-link span:before {content: "(show)";}
+details[open] summary span.fake-link span:before {content: "(hide)";}
+
+/* make the show/hide look like a link, and smaller text too */
+details summary span.fake-link {
+	font-size: 93%;
+	color: var(--a-link);
+	text-decoration: underline;
+	cursor: pointer;}
+details[open] summary span.fake-link {color: var(--a-visited);}
+details[open] summary span.fake-link:hover, details summary span.fake-link:hover {color: var(--a-hover);}
+details[open] summary span.fake-link:active, details summary span.fake-link:active {color: var(--a-active);}
+
+/* Linking to an element inside the details element causes it to be displayed opened
+ * But, I want it to display as if the heading was linked to. An empty span element positioned
+ * out of the flow, and it has the target ID to link to (to have the details opened) */
+section > details:first-child > summary:first-child + div:first-of-type > span:first-of-type {
+position: relative;
+top: -3.2em; }
+
+/* END - EXPANDABLE SECTION */
+
+
+/* ------------ Header, breadcrumb links & display mode ------------ */
+
+/* The header element is a flex container. The breadcrumb links & display mode
+ * are displayed on opposite sides of the screen. Much easier than float left &
+ * right. */
+header {display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	align-items: flex-start;
+	justify-content: space-between;
+	/* after setting the body line height to 1.5, the breadcrumb links seem to have more.
+	 * that might not be bad except the display mode doesn't. It looks uneven. This fixes it,
+	 * but only if it's applied here. Applied to the ul or li, it doesn't. */
+	line-height: 1.0;}
+
+/* Style the list */
+header > nav > ul {
+	padding: 2px 10px;
+	list-style: none;
+	display: inline;
+	vertical-align: middle;
+	margin: 0;
+	border-width: 0 0 1px 0;
+	border-style: solid;
+	border-color: var(--subtle-line-color);}
+
+/* Display list items side by side */
+header > nav > ul li {
+	display: inline;
+	font-size: 0.90rem;}
+
+/* Add a slash symbol (>) before/behind each list item */
+header > nav > ul li+li:before {
+	padding: 2px;
+	color: var(--subtle-line-color);
+	content: ">\00a0";}
+
+/* Add a color to all links inside the list */
+header > nav > ul li a {
+	color: var(--subtle-text-color) !important;
+	text-decoration: none;}
+
+/* Add a color on mouse-over */
+header > nav > ul li a:hover {
+	color: var(--crumb-a-hover) !important;
+	text-decoration: underline;}
+
+/* --- Display mode choices ()--- */
+header div#display-mode {
+	background-color: var(--bg-color);
+	color: var(--subtle-text-color);
+	border-style: solid;
+	border-width: 0 0 0 0;
+	border-color: var(--subtle-line-color);}
+
+header div#display-mode label {
+	font-size: 0.90rem;}
+
+header div#display-mode select {
+	background-color: var(--bg-color);
+	color: var(--subtle-text-color);
+	border-width: 0 0 1px 0;
+	border-style: solid;
+	border-color: var(--subtle-line-color);
+	font-size: 0.90rem;
+	/* alternative to line-height on the header element, you can push the select
+	 * down this way to match the breadcrumb */
+	padding-top: 2px;}
+
+
+/* -------------- Tables -------------- */
+
+main table {margin-top: 1.15em; margin-bottom: 1.15em;}
+
+/* I like table-headings to be a little smaller. Dark & noct modes need their
+ * their own size due to using a mono font. */
+table th {font-size: var(--th-font-size);}
+
+/* Borders */
+table, table th, table td {
+	border-style: solid;
+	border-color: var(--table-border-color);
+	border-width: 2px;
+	border-collapse: collapse;}
+
+/* cell padding (th cell pading is changed for dark/light mode because it uses a
+ * different font. The td font & padding remains the same) */
+table td {padding: .05rem .30rem;} /* .05 top/bottom, .30 left/right */
+table th {padding: var(--th-padding);}
+
+/* Indent tables */
+table#costs-collars, table#costs-leashes, table#donations,
+table#alloc-collars, table#alloc-leashes,
+table#collars-materials, table#collars-lengths,
+table#leashes-materials, table#leashes-lengths,
+table#sewing-singer201,
+table#clamps-collars, table#settings-collars,
+table#clamps-leashes, table#settings-leashes,
+table#bnw-parts {
+/* this is the same min & max as the nested sections get, and images get. These
+ * images, tables and nested sections (the paragraph text within a section) should
+ * indent the same amounts. */
+margin-left: clamp(1rem, 2.1vw, 1.75rem);}
+
+
+/* Table for /files/index.html - This one thing needs to be here. If I have more
+ * than one of these index pages, I'll put it all here.
+ * - Create horiz line above & below listing. */
+table#files-index tbody {border-top: 2px solid var(--table-border-color);
+	border-bottom: 2px solid var(--table-border-color);}
+
+

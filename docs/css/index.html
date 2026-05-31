@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Index of /css</title>
+<link rel="stylesheet" href="../css/style.css?v=0.3">
+<link rel="stylesheet" href="../css/files.css?v=0.3">
+<link rel="canonical" href="https://www.mcacc-collars.charity/css/">
+<script src="../js/darkmode.js" defer></script>
+<meta name="description" content="Index of directory (/css)">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/site.webmanifest">
+</head>
+<body>
+<script>
+// This is only done here because browsers flicker before darkmode is applied.
+// This stuff should be done in the .js file (in the part for the page's initial loading).
+
+storedDisplay = localStorage.getItem('display')
+//console.log('HTML: storedDisplay:', storedDisplay);
+
+// If the visitor hasn't chosen a display mode, use their browser preference.
+// (This same test is in the .js file. It shouldn't exist here if browsers didn't flash.)
+if (storedDisplay === null) {
+	
+	// No stored choice. Check if browser preference is dark.
+	const prefersDark = window.matchMedia('(prefers-color-scheme: dark)');
+	if (prefersDark.matches) {
+		//console.log('HTML: no stored value. Browser prefers dark');
+		storedDisplay = "darkmode"
+	}
+	else {
+		//console.log('Initial: no stored value. Browser does not prefer dark. Using light.');
+		storedDisplay = "lightmode"
+	}
+}
+document.body.classList.add(storedDisplay)
+</script>
+
+<header>
+<nav aria-label="Breadcrumbs"><ul>
+<li><a href="../">Home</a></li>
+</ul></nav>
+<div id="display-mode">
+<label for="display-dropdown">Display:</label>
+<select name="mode" id="display-dropdown" size="1" >
+	<option id="dd-light" value="lightmode">Light</option>
+	<option id="dd-dark" value="darkmode">Dark</option>
+	<option id="dd-nocturnal" value="noctmode">Nocturnal</option>
+</select>
+</div>
+</header>
+
+<main>
+<h1>Index of /css</h1>
+
+<table id="files-index">
+
+<thead>
+<tr><th>Name</th><th>Last modified</th><th>Size</th><th>Description</th></tr>
+</thead>
+<tbody>
+
+<tr><td><a href="files.css" title="files.css">files.css</a></td>	<td>2026-01-04 11:43:06</td><td>1.4K</td><td>Stylesheet for directory listings</td></tr>
+<tr><td><a href="style.css" title="style.css">style.css</a></td>	<td>2026-02-24 15:33:02</td><td>17.9K</td><td>Sitewide stylesheet</td></tr>
+
+</tbody>
+</table>
+
+</main>
+
+</body>
+</html>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- NOTE: xmllint won't download the schemas declared in the .xml file. They were
+downloaded into the schemas/ directory. However, xmllint can't be passed more than
+one schema on the command line. This "wrapper" is passed on the command line as
+the schema, and imports them from the schemas/ directory. -->
+
+<schema elementFormDefault="qualified" xmlns="http://www.w3.org/2001/XMLSchema">
+    <import namespace="http://www.sitemaps.org/schemas/sitemap/0.9" schemaLocation="schemas/sitemap.xsd"/>
+    <import namespace="http://www.google.com/schemas/sitemap-image/1.1" schemaLocation="schemas/sitemap-image.xsd"/>
+</schema>

@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Shelter: information about donated collars & leashes</title>
+<link rel="stylesheet" href="../css/style.css?v=0.3">
+<link rel="canonical" href="https://www.mcacc-collars.charity/shelter/">
+<script src="../js/darkmode.js" defer></script>
+<meta name="description" content="Information for recipient shelters.">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/site.webmanifest">
+<style>
+/* no borders for the lengths */
+table#alloc-collars tr.short td, table#alloc-collars tr.short th,
+table#alloc-leashes tr.short td, table#alloc-leashes tr.short th {border-bottom-style: none;}
+table#alloc-collars tr.long td, table#alloc-collars tr.long th,
+table#alloc-leashes tr.long td, table#alloc-leashes tr.long th {border-top-style: none;}
+
+table#alloc-collars th.len,
+table#alloc-leashes td.len {border-right-style: none;}
+
+table#alloc-collars td.len-from,
+table#alloc-leashes td.len-fromto {border-left-style: none;}
+
+/* remove the border both sides of "to" */
+table#alloc-collars td.len-from {border-right-style: none; white-space: nowrap;}
+table#alloc-collars td.len-to {border-left-style: none; white-space: nowrap;}
+table#alloc-collars td.len-from + td {border-left-style: none;
+	border-right-style: none;
+	font-size: 0.92rem;
+	font-style: italic;}
+
+
+/* no borders between (leash) width and duty */
+table#alloc-leashes th.width {border-right-style: none;}
+table#alloc-leashes th.duty, table#alloc-leashes thead th.width + th {border-left-style: none;}
+
+/* nowrap some columns */
+table#alloc-collars tbody th.size, table#alloc-collars tbody td,
+table#alloc-leashes tbody th.width, table#alloc-leashes tbody td {white-space: nowrap;}
+
+/* Format */
+table#alloc-collars th.len, table#alloc-collars td.pct,
+table#alloc-leashes td.len, table#alloc-leashes tbody th.duty, table#alloc-leashes td.load {text-align: right;}
+
+table#alloc-collars th.len,
+table#alloc-leashes th.len {font-style: italic;}
+table#alloc-collars td.len-from, table#alloc-collars td.len-to,
+table#alloc-leashes td.len-fromto {font-size: 0.94rem;}
+
+/* Make collar row heading left-justified */
+table#alloc-collars th.size {text-align: left;}
+/* Make leash row heading centered */
+table#alloc-leashes th.width {text-align: center;}
+
+/* anti-ocr images */
+/* section.fn a.hint {
+	display: inline-block;
+	text-decoration: underline;}
+section.fn a.hint:link {
+	border: 2px solid blue;}
+section.fn a.hint:hover {
+	border: 2px solid red;} */
+</style>
+</head>
+<body>
+<script>
+// This is only done here because browsers flicker before darkmode is applied.
+// This stuff should be done in the .js file (in the part for the page's initial loading).
+
+storedDisplay = localStorage.getItem('display')
+//console.log('HTML: storedDisplay:', storedDisplay);
+
+// If the visitor hasn't chosen a display mode, use their browser preference.
+// (This same test is in the .js file. It shouldn't exist here if browsers didn't flash.)
+if (storedDisplay === null) {
+	
+	// No stored choice. Check if browser preference is dark.
+	const prefersDark = window.matchMedia('(prefers-color-scheme: dark)');
+	if (prefersDark.matches) {
+		//console.log('HTML: no stored value. Browser prefers dark');
+		storedDisplay = "darkmode"
+	}
+	else {
+		//console.log('Initial: no stored value. Browser does not prefer dark. Using light.');
+		storedDisplay = "lightmode"
+	}
+}
+document.body.classList.add(storedDisplay)
+</script>
+
+<header>
+<nav aria-label="Breadcrumbs"><ul>
+<li><a href="../">Home</a></li>
+</ul></nav>
+<div id="display-mode">
+<label for="display-dropdown">Display:</label>
+<select name="mode" id="display-dropdown" size="1" >
+	<option id="dd-light" value="lightmode">Light</option>
+	<option id="dd-dark" value="darkmode">Dark</option>
+	<option id="dd-nocturnal" value="noctmode">Nocturnal</option>
+</select>
+</div>
+</header>
+
+<main>
+<h1>Shelter</h1>
+
+<section id="collars">
+<h2>Collars</h2>
+<div>
+
+<p>I make collars in the following sizes:</p>
+
+<div class="image"><a href="../images/collar-size-chart.gif">
+<img src="../images/medium/collar-size-chart.gif"
+srcset="../images/small/collar-size-chart.gif 400w,
+../images/medium/collar-size-chart.gif 680w,
+../images/collar-size-chart.gif 1200w"
+sizes="70vmin" alt="Chart of collar sizes & their fitment overlaps" fetchpriority="high"></a></div>
+
+<p>Those sizes are based upon what appear to be commonly-referenced sizes<sup class="fn"><a role="doc-noteref" aria-label="Notes" id="s1" href="#n1">[1]</a></sup> (depicted at the bottom of the chart as "reference"). I make short &amp; long versions of each size for more flexibility in fitment. (I.e., you can put a narrower, lighter-weight collar on larger dogs who pull less. Heavier, wider collars on smaller dogs who pull more.).</p>
+
+<section id="collars-alloc">
+<h3>Allocation</h3>
+<div>
+
+<p>I make those sizes in the following proportions:</p>
+
+<table id="alloc-collars">
+<thead>
+<tr><th scope="col">Width</th><th scope="col" colspan="4">Length <span class="smaller">(in)</span></th><th scope="col">Proportion</th></tr>
+</thead>
+
+<tbody>
+<tr class="short"><th class="size" rowspan="2" scope="row">X-Small <span class="small">(3/8”)</span></th>
+	<th class="len">short:</th><td class="len-from">5-7/8</td><td>to</td><td class="len-to">9</td><td class="pct">6%</td></tr>
+<tr class="long"><th class="len">long:</th><td class="len-from">7-5/8<td>to</td><td class="len-to">12-1/4</td><td class="pct">8%</td></tr>
+
+<tr class="short"><th class="size" rowspan="2" scope="row">Small <span class="small">(5/8”)</span></th>
+	<th class="len">short:</th><td class="len-from">8-3/4<td>to</td><td class="len-to">13-1/8</td><td class="pct">11%</td></tr>
+<tr class="long"><th class="len">long:</th><td class="len-from">10-1/8<td>to</td><td class="len-to">15-3/4</td><td class="pct">14%</td></tr>
+
+<tr class="short"><th class="size" rowspan="2" scope="row">Medium <span class="small">(3/4”)</span></th>
+	<th class="len">short:</th><td class="len-from">11-1/4<td>to</td><td class="len-to">17-3/8</td><td class="pct">14%</td></tr>
+<tr class="long"><th class="len">long:</th><td class="len-from">13-1/4<td>to</td><td class="len-to">21-3/8</td><td class="pct">14%</td></tr>
+
+<tr class="short"><th class="size" rowspan="2" scope="row">Large <span class="small">(1”)</span></th>
+	<th class="len">short:</th><td class="len-from">14-3/8<td>to</td><td class="len-to">23</td><td class="pct">14%</td></tr>
+<tr class="long"><th class="len">long:</th><td class="len-from">17<td>to</td><td class="len-to">28</td><td class="pct">14%</td></tr>
+
+<tr class="short"><th class="size" rowspan="2" scope="row">X-Large <span class="small">(1-1/2”)</span></th>
+	<th class="len">short:</th><td class="len-from">17-3/8<td>to</td><td class="len-to">27-5/8</td><td class="pct">3%</td></tr>
+<tr class="long"><th class="len">long:</th><td class="len-from">19-1/4<td>to</td><td class="len-to">31-1/2</td><td class="pct">2%</td></tr>
+
+</tbody>
+</table>
+
+</div></section> <!-- end h3 -->
+</div></section> <!-- end h2 -->
+
+<section id="leashes">
+<h2>Leashes</h2>
+<div>
+
+<section id="leashes-alloc">
+<h3>Sizes & allocations</h3>
+<div>
+
+<p>I make leashes in quantities that pair with the above collars:</p>
+
+<table id="alloc-leashes">
+<thead>
+<tr><th class="width" scope="col">Width</th><th class="duty" scope="col">Duty</th><th class="load" scope="col">Breaking<br>load <span class="smaller">(lbs)</span></th><th scope="col" colspan="2">Pair with collar</th></tr>
+</thead>
+
+<tbody>
+<tr class="short"><th class="width" rowspan="2" scope="row">3/8"</th><th class="duty" scope="row">Light</th>
+	<td class="load">77</td>
+	<td class="len">3/8</td><td class="len-fromto">Long</td></tr>
+<tr class="long"><th class="duty" scope="row">Regular</th>
+	<td class="load">254</td>
+<td class="len">5/8</td><td class="len-fromto">Short</td></tr>
+
+<tr class="short"><th class="width" rowspan="2" scope="row">5/8"</th><th class="duty" rowspan="2" scope="row">Regular</th>
+	<td class="load" rowspan="2">366</td>
+	<td class="len">5/8</td><td class="len-fromto">Long</td></tr>
+<tr class="long"><td class="len">3/4</td><td class="len-fromto">Short</td></tr>
+
+<tr class="short"><th class="width" rowspan="2" scope="row">3/4"</th><th class="duty" rowspan="2" scope="row">Regular</th>
+	<td class="load" rowspan="2">342</td>
+	<td class="len">3/4</td><td class="len-fromto">Long</td></tr>
+<tr class="long"><td class="len">1</td><td class="len-fromto">Short</td></tr>
+
+<tr class="short"><th class="width" rowspan="2" scope="row">1"</th><th class="duty" scope="row">Regular</th>
+	<td class="load">276</td>
+	<td class="len">1</td><td class="len-fromto">Long</td></tr>
+<tr class="long"><th class="duty" scope="row">Heavy</th>
+	<td class="load">434</td>
+<td class="len">1-1/2</td><td class="len-fromto">Short &amp; Long</td></tr>
+
+</tbody>
+</table>
+
+<p>The 3/8" light-duty (and 1" heavy-duty) have lighter (heavier) bolt snaps. They have blue (amber) thread to help identify them.</p>
+
+<p>I don't make leashes for 3/8-Short collars.</p>
+
+</div></section> <!-- end h3 -->
+</div></section> <!-- end h2 -->
+
+<section id="colors">
+<h2>Colors</h2>
+<div>
+
+<p>I only make black (the materials are least expensive).</p>
+
+</div></section> <!-- end h2 -->
+
+</main>
+
+<footer>
+<section aria-label="Footnotes" role="doc-endnotes" id="notes">
+<hr>
+<h2>Notes</h2>
+
+<aside id="n1" role="note">
+<p><sup><a href="#s1" role="doc-backlink" aria-label="Return to content">[1]</a></sup> My collar sizes are based on the following:</p>
+
+<ul>
+<li>Petsmart: <a rel="nofollow" href="https://www.petsmart.com/help/sizing-charts-H0012b.html">Dog Collar Sizing Chart</a> <span class="archived">(<a href="https://web.archive.org/web/20230601220605/https://www.petsmart.com/help/sizing-charts-H0012b.html">archived</a>)</span></li>
+<li>Canine Journal: <a rel="nofollow" href="https://www.caninejournal.com/neck-size/">Dog Collar, Leash Fit & Sizing Guide</a> (see collar sizes near middle of page) <span class="archived">(<a rel="nofollow" href="https://web.archive.org/web/20230331000336/https://www.caninejournal.com/neck-size/">archived</a>)</span></li>
+</ul>
+</aside>
+
+</section> <!-- end notes -->
+
+</footer>
+
+</body>
+</html>

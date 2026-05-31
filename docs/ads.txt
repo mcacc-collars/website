@@ -1,0 +1,3 @@
+# From the IAB v1.1 standard (Aug 2022):
+#     3.2.1 FILES WITHOUT AUTHORIZED ADVERTISING SYSTEM RECORDS
+placeholder.example.com, placeholder, DIRECT, placeholder

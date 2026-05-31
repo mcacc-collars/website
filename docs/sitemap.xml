@@ -1,0 +1,585 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+		xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+<url>
+	<loc>https://www.mcacc-collars.charity/shelter/</loc>
+	<lastmod>2025-12-20</lastmod>
+	<changefreq>never</changefreq>
+	<priority>0.2</priority>
+	<!-- This image is also on resources/collars_leashes/ -->
+	<image:image>
+	<image:loc>https://www.mcacc-collars.charity/images/collar-size-chart.gif</image:loc>
+	<image:caption>A diagram visualizing the overlapping size ranges of dog collars.</image:caption>
+	<image:title>Collar Sizes</image:title>
+	</image:image>
+</url>
+
+<url>
+	<loc>https://www.mcacc-collars.charity/resources/</loc>
+	<lastmod>2025-12-18</lastmod>
+	<changefreq>never</changefreq>
+	<priority>0.4</priority>
+</url>
+
+<url>
+	<loc>https://www.mcacc-collars.charity/resources/collars_leashes/</loc>
+	<lastmod>2026-05-30</lastmod>
+	<changefreq>monthly</changefreq>
+	<priority>0.9</priority>
+	
+	<image:image>
+	<image:loc>https://www.mcacc-collars.charity/images/collar-size-chart.gif</image:loc>
+	<image:caption>A diagram visualizing the overlapping size ranges of dog collars.</image:caption>
+	<image:title>Collar Sizes</image:title>
+	</image:image>
+	<image:image>
+	<image:loc>https://www.mcacc-collars.charity/images/collar-step1-sew-triglide.jpg</image:loc>
+	<image:caption>The first step making a dog collar (sew one end onto the tri-glide).</image:caption>
+	<image:title>Assembling a Collar: Step 1</image:title>
+	</image:image>
+	<image:image>
+	<image:loc>https://www.mcacc-collars.charity/images/collar-step2-assemble-loop-buckle-male.jpg</image:loc>
+	<image:caption>The second step making a dog collar (thread webbing through loop &amp; male buckle).</image:caption>
+	<image:title>Assembling a Collar: Step 2</image:title>
+	</image:image>
+	<image:image>
+	<image:loc>https://www.mcacc-collars.charity/images/collar-step3-sew-ring-buckle-female.jpg</image:loc>
+	<image:caption>The third step making a dog collar (sew other end onto ring &amp; female buckle).</image:caption>
+	<image:title>Assembling a Collar: Step 3</image:title>
+	</image:image>
+	<image:image>
+	<image:loc>https://www.mcacc-collars.charity/images/collar-bundled-2-dozen.jpg</image:loc>
+	<image:caption>A dozen finished dog collars packaged (with packing label).</image:caption>
+	<image:title>Packaging a Dozen Collars</image:title>
+	</image:image>
+	<image:image>
+	<image:loc>https://www.mcacc-collars.charity/images/leash-hanging-rod-organizer.jpg</image:loc>
+	<image:caption>A way to hang dog leashes for lubricating the snap bolt, and neatly packaging two-dozen together.</image:caption>
+	<image:title>Rods to Hang Leashes After Assembly</image:title>
+	</image:image>
+	<image:image>
+	<image:loc>https://www.mcacc-collars.charity/images/collars-leashes-hot_knife-seal-webbing.jpg</image:loc>
+	<image:caption>Using inexpensive Harbor Freight hot-knife to melt (seal) polypropylene webbing ends.</image:caption>
+	<image:title>Hot-Knife to Melt Webbing Ends</image:title>
+	</image:image>
+	<image:image>
+	<image:loc>https://www.mcacc-collars.charity/images/collars-leashes-hot_knife-exhaust-system.jpg</image:loc>
+	<image:caption>Using a fan to exhaust fumes away from you when melting webbing.</image:caption>
+	<image:title>Fume Extraction From Melting Webbing</image:title>
+	</image:image>
+	<image:image>
+	<image:loc>https://www.mcacc-collars.charity/images/collars-leashes-hot_knife-intake-hood-feathered-flange.jpg</image:loc>
+	<image:caption>How to make an intake hood for the extraction fan.</image:caption>
+	<image:title>Making a Hood for the Extraction Fan</image:title>
+	</image:image>
+	<image:image>
+	<image:loc>https://www.mcacc-collars.charity/images/leash-box-x-sewing-pattern.gif</image:loc>
+	<image:caption>Diagram showing how to manually sew a box-x pattern.</image:caption>
+	<image:title>Sewing a Box-X Pattern</image:title>
+	</image:image>
+</url>
+
+
+<url>
+	<loc>https://www.mcacc-collars.charity/resources/collars_leashes/lk1900bn/</loc>
+	<lastmod>2026-05-30</lastmod>
+	<changefreq>monthly</changefreq>
+	<priority>0.7</priority>
+
+	<image:image>
+	<image:loc>https://www.mcacc-collars.charity/images/lk1900-difficult-screw-arch-faceplate.gif</image:loc>
+	<image:caption>Part diagram: "work clamp face plate" screws (5) are difficult to remove.</image:caption>
+	<image:title>"Work Clamp Face Plate" Screws</image:title>
+	</image:image>
+	<image:image>
+	<image:loc>https://www.mcacc-collars.charity/images/lk1900-difficult-setscrew-arch-fingerguard.gif</image:loc>
+	<image:caption>Part diagram: "finger guard" setscrews (2) are difficult to remove.</image:caption>
+	<image:title>"Finger Guard" Setscrews</image:title>
+	</image:image>
+	<image:image>
+	<image:loc>https://www.mcacc-collars.charity/images/lk1900-difficult-setscrew-arch-ball-retainer.gif</image:loc>
+	<image:caption>Part diagram: "ball retainer" setscrew is difficult to remove.</image:caption>
+	<image:title>"Ball Retainer" Setscrew</image:title>
+	</image:image>
+	<image:image>
+	<image:loc>https://www.mcacc-collars.charity/images/lk1900-difficult-screw-arch-lever-driving-plate.gif</image:loc>
+	<image:caption>Part diagram: "lever driving plate" screws (4) are difficult to remove.</image:caption>
+	<image:title>"Lever Driving Plate" Screws</image:title>
+	</image:image>
+	<image:image>
+	<image:loc>https://www.mcacc-collars.charity/images/lk1900-difficult-screw-needle-plate.gif</image:loc>
+	<image:caption>Part diagram: "needle plate" screws (4) are difficult to remove.</image:caption>
+	<image:title>"Needle Plate" Screws</image:title>
+	</image:image>
+	<image:image>
+	<image:loc>https://www.mcacc-collars.charity/images/lk1900-difficult-screw-cutter-lever-asm.gif</image:loc>
+	<image:caption>Part diagram: "thread cutter lever assembly" screw (1) are difficult to remove.</image:caption>
+	<image:title>"Thread Cutter Lever" Screw</image:title>
+	</image:image>
+	<image:image>
+	<image:loc>https://www.mcacc-collars.charity/images/lk1900-difficult-screw-needle-hole-guide.gif</image:loc>
+	<image:caption>Part diagram: "needle-hole guide" screws (2) are difficult to remove.</image:caption>
+	<image:title>"Needle Hole Guide" Screws</image:title>
+	</image:image>
+	<image:image>
+	<image:loc>https://www.mcacc-collars.charity/images/lk1900-difficult-screw-cloth-feed-presser-plate.gif</image:loc>
+	<image:caption>Part diagram: "cloth feed presser plate" screws (6) are difficult to remove.</image:caption>
+	<image:title>"Cloth Feed Presser Plate" Screws</image:title>
+	</image:image>
+	<image:image>
+	<image:loc>https://www.mcacc-collars.charity/images/lk1900-difficult-hingescrew-wiper.gif</image:loc>
+	<image:caption>Part diagram: "thread wiper arm" hinge screw is difficult to remove.</image:caption>
+	<image:title>"Thread Wiper Arm" Hinge Screw</image:title>
+	</image:image>
+	<image:image>
+	<image:loc>https://www.mcacc-collars.charity/images/lk1900-lamp-gooseneck-leftside.jpg</image:loc>
+	<image:caption>SNU-21 gooseneck lamp installed on the left side of a Juki LK-1900BN bartacking machine.</image:caption>
+	<image:title>Gooseneck Lamp (Left)</image:title>
+	</image:image>
+	<image:image>
+	<image:loc>https://www.mcacc-collars.charity/images/lk1900-lamp-gooseneck-rightside.jpg</image:loc>
+	<image:caption>SNU-21 gooseneck lamp installed on the right side of a Juki LK-1900BN bartacking machine.</image:caption>
+	<image:title>Gooseneck Lamp (Right)</image:title>
+	</image:image>
+	<image:image>
+	<image:loc>https://www.mcacc-collars.charity/images/lk1900-bobbin-drilled-outside.jpg</image:loc>
+	<image:caption>LK-1900 bobbin drilled for easier winding (viewed from outside bobbin)</image:caption>
+	<image:title>Drilled Bobbin (Outside)</image:title>
+	</image:image>
+	<image:image>
+	<image:loc>https://www.mcacc-collars.charity/images/lk1900-bobbin-drilled-inside.jpg</image:loc>
+	<image:caption>LK-1900 bobbin drilled for easier winding (viewed from inside bobbin)</image:caption>
+	<image:title>Drilled Bobbin (Inside)</image:title>
+	</image:image>
+	<image:image>
+	<image:loc>https://www.mcacc-collars.charity/images/lk1900-bobbin-winder-standalone.jpg</image:loc>
+	<image:caption>No-name standalone bobbin winder which (somewhat) works with LK1900 bobbins.</image:caption>
+	<image:title>Standalone Bobbin Winder (Generic)</image:title>
+	</image:image>
+	<image:image>
+	<image:loc>https://www.mcacc-collars.charity/images/lk1900-bobbin-case.jpg</image:loc>
+	<image:caption>A bobbin case with bobbin properly installed.</image:caption>
+	<image:title>Bobbin Installed in Bobbin Case</image:title>
+	</image:image>
+	<image:image>
+	<image:loc>https://www.mcacc-collars.charity/images/lk1900-bobbin-case-avoid.jpg</image:loc>
+	<image:caption>A bobbin case design which doesn't work as well.</image:caption>
+	<image:title>Different Bobbin Case (Avoid)</image:title>
+	</image:image>
+	<image:image>
+	<image:loc>https://www.mcacc-collars.charity/images/lk1900-arch-lever-driving_plate-adjust.jpg</image:loc>
+	<image:caption>Adjust work-clamp feet height &amp; level with "lever driving plate" screws.</image:caption>
+	<image:title>Lever-Driving Plate Adjustment</image:title>
+	</image:image>
+	
+	<!-- LK1900 collars -->
+
+	<image:image>
+	<image:loc>https://www.mcacc-collars.charity/images/lk1900-collar-xlarge-triglide-tail-clamped.jpg</image:loc>
+	<image:caption>Clamped onto 1-1/2" collar's tri-glide tail end (1st bartack).</image:caption>
+	<image:title>1-1/2" Collar: Tri-Glide Tail</image:title>
+	</image:image>
+	<image:image>
+	<image:loc>https://www.mcacc-collars.charity/images/lk1900-collar-xlarge-triglide-top-clamped.jpg</image:loc>
+	<image:caption>Clamped onto 1-1/2" collar's tri-glide top (2nd bartack).</image:caption>
+	<image:title>1-1/2" Collar: Tri-Glide Top</image:title>
+	</image:image>
+	<image:image>
+	<image:loc>https://www.mcacc-collars.charity/images/lk1900-collar-xlarge-buckle-clamped.jpg</image:loc>
+	<image:caption>Clamped next to 1-1/2" collar's buckle (3rd bartack).</image:caption>
+	<image:title>1-1/2" Collar: Buckle</image:title>
+	</image:image>
+	<image:image>
+	<image:loc>https://www.mcacc-collars.charity/images/lk1900-collar-xlarge-tail-clamped.jpg</image:loc>
+	<image:caption>Clamped onto 1-1/2" collar's buckle tail end (4th bartack).</image:caption>
+	<image:title>1-1/2" Collar: Buckle Tail</image:title>
+	</image:image>
+	<image:image>
+	<image:loc>https://www.mcacc-collars.charity/images/lk1900-collar-xlarge-ring-tailside-clamped.jpg</image:loc>
+	<image:caption>Clamped next to 1-1/2" collar's ring (tail side; 5th bartack).</image:caption>
+	<image:title>1-1/2" Collar: Ring (Tail-side)</image:title>
+	</image:image>
+	<image:image>
+	<image:loc>https://www.mcacc-collars.charity/images/lk1900-collar-xlarge-ring-buckleside-clamped.jpg</image:loc>
+	<image:caption>Clamped next to 1-1/2" collar's ring (buckle side; 6th bartack).</image:caption>
+	<image:title>1-1/2" Collar: Ring (Buckle-side)</image:title>
+	</image:image>
+	<image:image>
+	<image:loc>https://www.mcacc-collars.charity/images/lk1900-collar-large-triglide-tail-clamped.jpg</image:loc>
+	<image:caption>Clamped onto 1" collar's tri-glide tail end (1st bartack).</image:caption>
+	<image:title>1" Collar: Tri-Glide Tail</image:title>
+	</image:image>
+
+	<image:image>
+	<image:loc>https://www.mcacc-collars.charity/images/lk1900-collar-large-triglide-top-clamped.jpg</image:loc>
+	<image:caption>Clamped onto 1" collar's tri-glide top (2nd bartack).</image:caption>
+	<image:title>1" Collar: Tri-Glide Top</image:title>
+	</image:image>
+	<image:image>
+	<image:loc>https://www.mcacc-collars.charity/images/lk1900-collar-large-buckle-clamped.jpg</image:loc>
+	<image:caption>Clamped next to 1" collar's buckle (3rd bartack).</image:caption>
+	<image:title>1" Collar: Buckle</image:title>
+	</image:image>
+	<image:image>
+	<image:loc>https://www.mcacc-collars.charity/images/lk1900-collar-large-tail-clamped.jpg</image:loc>
+	<image:caption>Clamped onto 1" collar's buckle tail end (4th bartack).</image:caption>
+	<image:title>1" Collar: Buckle Tail</image:title>
+	</image:image>
+	<image:image>
+	<image:loc>https://www.mcacc-collars.charity/images/lk1900-collar-large-ring-tailside-clamped.jpg</image:loc>
+	<image:caption>Clamped next to 1" collar's ring (tail side; 5th bartack).</image:caption>
+	<image:title>1" Collar: Ring (Tail-side)</image:title>
+	</image:image>
+	<image:image>
+	<image:loc>https://www.mcacc-collars.charity/images/lk1900-collar-large-ring-buckleside-clamped.jpg</image:loc>
+	<image:caption>Clamped next to 1" collar's ring (buckle side; 6th bartack).</image:caption>
+	<image:title>1" Collar: Ring (Buckle-side)</image:title>
+	</image:image>
+
+	<image:image>
+	<image:loc>https://www.mcacc-collars.charity/images/lk1900-collar-medium-triglide-tail-clamped.jpg</image:loc>
+	<image:caption>Clamped onto 3/4" collar's tri-glide tail end (1st bartack).</image:caption>
+	<image:title>3/4" Collar: Tri-Glide Tail</image:title>
+	</image:image>
+	<image:image>
+	<image:loc>https://www.mcacc-collars.charity/images/lk1900-collar-medium-triglide-top-clamped.jpg</image:loc>
+	<image:caption>Clamped onto 3/4" collar's tri-glide top (2nd bartack).</image:caption>
+	<image:title>3/4" Collar: Tri-Glide Top</image:title>
+	</image:image>
+	<image:image>
+	<image:loc>https://www.mcacc-collars.charity/images/lk1900-collar-medium-buckle-clamped.jpg</image:loc>
+	<image:caption>Clamped next to 3/4" collar's buckle (3rd bartack).</image:caption>
+	<image:title>3/4" Collar: Buckle</image:title>
+	</image:image>
+	<image:image>
+	<image:loc>https://www.mcacc-collars.charity/images/lk1900-collar-medium-tail-clamped.jpg</image:loc>
+	<image:caption>Clamped onto 3/4" collar's buckle tail end (4th bartack).</image:caption>
+	<image:title>3/4" Collar: Buckle Tail</image:title>
+	</image:image>
+	<image:image>
+	<image:loc>https://www.mcacc-collars.charity/images/lk1900-collar-medium-ring-tailside-clamped.jpg</image:loc>
+	<image:caption>Clamped next to 3/4" collar's ring (tail side; 5th bartack).</image:caption>
+	<image:title>3/4" Collar: Ring (Tail-side)</image:title>
+	</image:image>
+	<image:image>
+	<image:loc>https://www.mcacc-collars.charity/images/lk1900-collar-medium-ring-buckleside-clamped.jpg</image:loc>
+	<image:caption>Clamped next to 3/4" collar's ring (buckle side; 6th bartack).</image:caption>
+	<image:title>3/4" Collar: Ring (Buckle-side)</image:title>
+	</image:image>
+
+		<!-- LK1900 collars - 5/8"-Long only -->
+	<image:image>
+	<image:loc>https://www.mcacc-collars.charity/images/lk1900-collar-small-triglide-tail-clamped.jpg</image:loc>
+	<image:caption>Clamped onto 5/8" collar's tri-glide tail end (-Long only).</image:caption>
+	<image:title>5/8"-Long Collar: Tri-Glide Tail</image:title>
+	</image:image>
+		<!-- LK1900 collars - 5/8"-Short & -Long -->
+	<image:image>
+	<image:loc>https://www.mcacc-collars.charity/images/lk1900-collar-small-triglide-top-clamped.jpg</image:loc>
+	<image:caption>Clamped onto 5/8" collar's tri-glide top.</image:caption>
+	<image:title>5/8" Collar: Tri-Glide Top</image:title>
+	</image:image>
+	<image:image>
+	<image:loc>https://www.mcacc-collars.charity/images/lk1900-collar-small-buckle-clamped.jpg</image:loc>
+	<image:caption>Clamped next to 5/8" collar's buckle.</image:caption>
+	<image:title>5/8" Collar: Buckle</image:title>
+	</image:image>
+	<image:image>
+	<image:loc>https://www.mcacc-collars.charity/images/lk1900-collar-small-tail-clamped.jpg</image:loc>
+	<image:caption>Clamped onto 5/8" collar's buckle tail end.</image:caption>
+	<image:title>5/8" Collar: Buckle Tail</image:title>
+	</image:image>
+	<image:image>
+	<image:loc>https://www.mcacc-collars.charity/images/lk1900-collar-small-ring-tailside-clamped.jpg</image:loc>
+	<image:caption>Clamped next to 5/8" collar's ring (tail side).</image:caption>
+	<image:title>5/8" Collar: Ring (Tail-side)</image:title>
+	</image:image>
+	<image:image>
+	<image:loc>https://www.mcacc-collars.charity/images/lk1900-collar-small-ring-buckleside-clamped.jpg</image:loc>
+	<image:caption>Clamped next to 5/8" collar's ring (buckle side).</image:caption>
+	<image:title>5/8" Collar: Ring (Buckle-side)</image:title>
+	</image:image>
+
+		<!-- LK1900 collars - 3/8"-Short & -Long -->
+	<image:image>
+	<image:loc>https://www.mcacc-collars.charity/images/lk1900-collar-xsmall-triglide-top-clamped.jpg</image:loc>
+	<image:caption>Clamped onto 3/8" collar's tri-glide top.</image:caption>
+	<image:title>3/8" Collar: Tri-Glide Top (1st bartack)</image:title>
+	</image:image>
+		<!-- LK1900 collars - 3/8"-Long only -->
+	<image:image>
+	<image:loc>https://www.mcacc-collars.charity/images/lk1900-collar-xsmall-long-buckle-clamped.jpg</image:loc>
+	<image:caption>Clamped next to 3/8"-Long collar's buckle.</image:caption>
+	<image:title>3/8"-Long Collar: Buckle (2nd bartack)</image:title>
+	</image:image>
+	<image:image>
+	<image:loc>https://www.mcacc-collars.charity/images/lk1900-collar-xsmall-long-tail-clamped.jpg</image:loc>
+	<image:caption>Clamped onto 3/8"-Long collar's buckle tail end.</image:caption>
+	<image:title>3/8"-Long Collar: Buckle Tail (3rd bartack)</image:title>
+	</image:image>
+	<image:image>
+	<image:loc>https://www.mcacc-collars.charity/images/lk1900-collar-xsmall-long-ring-tailside-clamped.jpg</image:loc>
+	<image:caption>Clamped next to 3/8"-Long collar's ring (tail side).</image:caption>
+	<image:title>3/8"-Long Collar: Ring (Tail-side; 4th bartack)</image:title>
+	</image:image>
+	<image:image>
+	<image:loc>https://www.mcacc-collars.charity/images/lk1900-collar-xsmall-long-ring-buckleside-clamped.jpg</image:loc>
+	<image:caption>Clamped next to 3/8"-Long collar's ring (buckle side).</image:caption>
+	<image:title>3/8"-Long Collar: Ring (Buckle-side; 5th bartack)</image:title>
+	</image:image>
+		<!-- LK1900 collars - 3/8"-Short only -->
+	<image:image>
+	<image:loc>https://www.mcacc-collars.charity/images/lk1900-collar-xsmall-short-buckle-clamped.jpg</image:loc>
+	<image:caption>Clamped next to 3/8"-Short collar's buckle.</image:caption>
+	<image:title>3/8"-Short Collar: Buckle (2nd bartack)</image:title>
+	</image:image>
+	<image:image>
+	<image:loc>https://www.mcacc-collars.charity/images/lk1900-collar-xsmall-short-tail-clamped.jpg</image:loc>
+	<image:caption>Clamped onto 3/8"-Short collar's buckle tail end.</image:caption>
+	<image:title>3/8"-Short Collar: Buckle Tail (3rd bartack)</image:title>
+	</image:image>
+
+	<!-- LK1900 leashes - 1" -->
+	<image:image>
+	<image:loc>https://www.mcacc-collars.charity/images/lk1900-leash-large-handle-clamped.jpg</image:loc>
+	<image:caption>Clamped onto 1" leash's handle end.</image:caption>
+	<image:title>1" Leash: Handle (Clamped)</image:title>
+	</image:image>
+	<image:image>
+	<image:loc>https://www.mcacc-collars.charity/images/lk1900-leash-large-handle-sewn.jpg</image:loc>
+	<image:caption>After sewing 1"-leash handle's box-x pattern.</image:caption>
+	<image:title>1" Leash: Handle (Sewn)</image:title>
+	</image:image>
+	<image:image>
+	<image:loc>https://www.mcacc-collars.charity/images/lk1900-leash-large-snap-pinned.jpg</image:loc>
+	<image:caption>The 1" leash's bolt-snap end pinned for sewing.</image:caption>
+	<image:title>1" Leash: Bolt-Snap (Pinned)</image:title>
+	</image:image>
+	<image:image>
+	<image:loc>https://www.mcacc-collars.charity/images/lk1900-leash-large-snap-clamped.jpg</image:loc>
+	<image:caption>Clamped onto 1" leash's bolt-snap end.</image:caption>
+	<image:title>1" Leash: Bolt-Snap (Clamped)</image:title>
+	</image:image>
+	<image:image>
+	<image:loc>https://www.mcacc-collars.charity/images/lk1900-leash-large-snap-sewn.jpg</image:loc>
+	<image:caption>After sewing 1"-leash bolt-snap's box-x pattern.</image:caption>
+	<image:title>1" Leash: Bolt-Snap (Sewn)</image:title>
+	</image:image>
+
+<!-- LK1900 leashes - 1" HORIZ -->
+	<image:image>
+	<image:loc>https://www.mcacc-collars.charity/images/lk1900-leash-large-handle-clamped-horiz.jpg</image:loc>
+	<image:caption>Clamped onto 1" leash's handle end for sewing horizontally.</image:caption>
+	<image:title>1" Leash: Handle (Clamped horizontally)</image:title>
+	</image:image>
+	<image:image>
+	<image:loc>https://www.mcacc-collars.charity/images/lk1900-leash-large-handle-sewn-horiz.jpg</image:loc>
+	<image:caption>After sewing 1"-leash handle's box-x pattern (horizontally).</image:caption>
+	<image:title>1" Leash: Handle (Sewn horizontally)</image:title>
+	</image:image>
+	<image:image>
+	<image:loc>https://www.mcacc-collars.charity/images/lk1900-leash-large-snap-clamped-horiz.jpg</image:loc>
+	<image:caption>Clamped onto 1" leash's bolt-snap end for sewing horizontally.</image:caption>
+	<image:title>1" Leash: Bolt-Snap (Clamped horizontally)</image:title>
+	</image:image>
+	<image:image>
+	<image:loc>https://www.mcacc-collars.charity/images/lk1900-leash-large-snap-sewn-horiz.jpg</image:loc>
+	<image:caption>After sewing 1"-leash bolt-snap's box-x pattern (horizontally).</image:caption>
+	<image:title>1" Leash: Bolt-Snap (Sewn horizontally)</image:title>
+	</image:image>
+
+	<!-- LK1900 leashes - 3/4" -->
+	<image:image>
+	<image:loc>https://www.mcacc-collars.charity/images/lk1900-leash-medium-handle-clamped.jpg</image:loc>
+	<image:caption>Clamped onto 3/4" leash's handle end.</image:caption>
+	<image:title>3/4" Leash: Handle (Clamped)</image:title>
+	</image:image>
+	<image:image>
+	<image:loc>https://www.mcacc-collars.charity/images/lk1900-leash-medium-handle-sewn.jpg</image:loc>
+	<image:caption>After sewing 3/4"-leash handle's box-x pattern.</image:caption>
+	<image:title>3/4" Leash: Handle (Sewn)</image:title>
+	</image:image>
+	<image:image>
+	<image:loc>https://www.mcacc-collars.charity/images/lk1900-leash-medium-snap-clamped.jpg</image:loc>
+	<image:caption>Clamped onto 3/4" leash's bolt-snap end.</image:caption>
+	<image:title>3/4" Leash: Bolt-Snap (Clamped)</image:title>
+	</image:image>
+	<image:image>
+	<image:loc>https://www.mcacc-collars.charity/images/lk1900-leash-medium-snap-sewn.jpg</image:loc>
+	<image:caption>After sewing 3/4"-leash bolt-snap's box-x pattern.</image:caption>
+	<image:title>3/4" Leash: Bolt-Snap (Sewn)</image:title>
+	</image:image>
+
+	<!-- LK1900 leashes - 5/8" -->
+	<image:image>
+	<image:loc>https://www.mcacc-collars.charity/images/lk1900-leash-small-handle-clamped.jpg</image:loc>
+	<image:caption>Clamped onto 5/8" leash's handle end.</image:caption>
+	<image:title>5/8" Leash: Handle (Clamped)</image:title>
+	</image:image>
+	<image:image>
+	<image:loc>https://www.mcacc-collars.charity/images/lk1900-leash-small-handle-sewn.jpg</image:loc>
+	<image:caption>After sewing 5/8"-leash handle's box-x pattern.</image:caption>
+	<image:title>5/8" Leash: Handle (Sewn)</image:title>
+	</image:image>
+	<image:image>
+	<image:loc>https://www.mcacc-collars.charity/images/lk1900-leash-small-snap-clamped.jpg</image:loc>
+	<image:caption>Clamped onto 5/8" leash's bolt-snap end.</image:caption>
+	<image:title>5/8" Leash: Bolt-Snap (Clamped)</image:title>
+	</image:image>
+	<image:image>
+	<image:loc>https://www.mcacc-collars.charity/images/lk1900-leash-small-snap-sewn.jpg</image:loc>
+	<image:caption>After sewing 5/8"-leash bolt-snap's box-x pattern.</image:caption>
+	<image:title>5/8" Leash: Bolt-Snap (Sewn)</image:title>
+	</image:image>
+
+	<!-- LK1900 leashes - 3/8" -->
+	<image:image>
+	<image:loc>https://www.mcacc-collars.charity/images/lk1900-leash-xsmall-handle-tail-clamped.jpg</image:loc>
+	<image:caption>Clamped onto 3/8" leash handle-end's tail (1st bartack).</image:caption>
+	<image:title>3/8" Leash: Handle Tail (Clamped)</image:title>
+	</image:image>
+	<image:image>
+	<image:loc>https://www.mcacc-collars.charity/images/lk1900-leash-xsmall-handle-clamped.jpg</image:loc>
+	<image:caption>Clamped next to 3/8" leash handle-end's opening (2nd bartack).</image:caption>
+	<image:title>3/8" Leash: Handle Opening (Clamped)</image:title>
+	</image:image>
+	<image:image>
+	<image:loc>https://www.mcacc-collars.charity/images/lk1900-leash-xsmall-handle-sewn.jpg</image:loc>
+	<image:caption>After sewing 3/8"-leash handle's two bartacks.</image:caption>
+	<image:title>3/8" Leash: Handle (Sewn)</image:title>
+	</image:image>
+
+	<image:image>
+	<image:loc>https://www.mcacc-collars.charity/images/lk1900-leash-xsmall-snap-clamped.jpg</image:loc>
+	<image:caption>Clamped onto 3/8" leash bolt-snap's tail (1st bartack).</image:caption>
+	<image:title>3/8" Leash: Bolt-Snap Tail (Clamped)</image:title>
+	</image:image>
+	<image:image>
+	<image:loc>https://www.mcacc-collars.charity/images/lk1900-leash-xsmall-snap-tail-clamped.jpg</image:loc>
+	<image:caption>Clamped next tp 3/8" leash bolt-snap (2nd bartack).</image:caption>
+	<image:title>3/8" Leash: Bolt-Snap (Clamped)</image:title>
+	</image:image>
+	<image:image>
+	<image:loc>https://www.mcacc-collars.charity/images/lk1900-leash-xsmall-snap-sewn.jpg</image:loc>
+	<image:caption>After sewing 3/8"-leash bolt-snap's two bartacks.</image:caption>
+	<image:title>3/8" Leash: Bolt-Snap (Sewn)</image:title>
+	</image:image>
+
+	<!-- LK1900 footnotes -->
+	<image:image>
+	<image:loc>https://www.mcacc-collars.charity/images/lk1900-compare-bobbins-std-vs-large-diameter.jpg</image:loc>
+	<image:caption>Comparing size difference of LK-1900's standard &amp; large bobbins (diameter).</image:caption>
+	<image:title>Juki LK-1900 Bobbins (Large &amp; Std; Side-view)</image:title>
+	</image:image>
+	<image:image>
+	<image:loc>https://www.mcacc-collars.charity/images/lk1900-compare-bobbins-std-vs-large-width.jpg</image:loc>
+	<image:caption>Comparing size difference of LK-1900's standard &amp; large bobbins (width).</image:caption>
+	<image:title>Juki LK-1900 Bobbins (Large &amp; Std; Edge-view)</image:title>
+	</image:image>
+
+</url>
+
+
+<url>
+	<loc>https://www.mcacc-collars.charity/resources/leash_sleeve/</loc>
+	<lastmod>2026-03-03</lastmod>
+	<changefreq>monthly</changefreq>
+	<priority>0.8</priority>
+	<image:image>
+	<image:loc>https://www.mcacc-collars.charity/images/leash_sleeve-dimensions-quick-ref.gif</image:loc>
+	<image:caption>Diagram showing the dimensions (cut, text, snap &amp; sewing) of "adopt me" leash sleeve for dogs.</image:caption>
+	<image:title>Dimensions of Leash Sleeve</image:title>
+	</image:image>
+	<image:image>
+	<image:loc>https://www.mcacc-collars.charity/images/leash_sleeve-compare-retail-and-diy.jpg</image:loc>
+	<image:caption>Comparing Patience &amp; Love's embroidered leash sleeve to DIY silkscreened sleeve.</image:caption>
+	<image:title>Comparing Two Leash Sleeves</image:title>
+	</image:image>
+	<image:image>
+	<image:loc>https://www.mcacc-collars.charity/images/leash_sleeve-fairfield-low-loft-retail-packaging.jpg</image:loc>
+	<image:caption>Fairfield Poly-fil Low Loft batting looks like this at Walmart.</image:caption>
+	<image:title>Fairfield Poly-fil Low Loft Batting Packaging</image:title>
+	</image:image>
+	<image:image>
+	<image:loc>https://www.mcacc-collars.charity/images/leash_sleeve-step1-lines-drawn-to-sew.jpg</image:loc>
+	<image:caption>Making the leash sleeve. Step 1: Mark the lines to sew.</image:caption>
+	<image:title>Mark Lines to Sew</image:title>
+	</image:image>
+	<image:image>
+	<image:loc>https://www.mcacc-collars.charity/images/leash_sleeve-step2-stabilizer-with-edge-strips.jpg</image:loc>
+	<image:caption>Making the leash sleeve. Step 2: Clipping stabilizer edge strips to main stabilizer.</image:caption>
+	<image:title>Stabilizer Preparation</image:title>
+	</image:image>
+	<image:image>
+	<image:loc>https://www.mcacc-collars.charity/images/leash_sleeve-step3-clipped-for-sewing.jpg</image:loc>
+	<image:caption>Making the leash sleeve. Step 3: Stacking all the materials together &amp; clipping for sewing.</image:caption>
+	<image:title>Fully Clipped for Sewing</image:title>
+	</image:image>
+	<image:image>
+	<image:loc>https://www.mcacc-collars.charity/images/leash_sleeve-step3a-pinned-for-sewing.jpg</image:loc>
+	<image:caption>Making the leash sleeve. Step 3a (alternate): Pin the materials together for sewing.</image:caption>
+	<image:title>(Alternate) Fully Pinned for Sewing</image:title>
+	</image:image>
+	<image:image>
+	<image:loc>https://www.mcacc-collars.charity/images/leash_sleeve-step4-sewn.jpg</image:loc>
+	<image:caption>Making the leash sleeve. Step 4: Sewn (one end left open).</image:caption>
+	<image:title>Sewn</image:title>
+	</image:image>
+	<image:image>
+	<image:loc>https://www.mcacc-collars.charity/images/leash_sleeve-step5-trimmed.jpg</image:loc>
+	<image:caption>Making the leash sleeve. Step 5: Edges trimmed, corners cut.</image:caption>
+	<image:title>Edges Trimmed</image:title>
+	</image:image>
+	<image:image>
+	<image:loc>https://www.mcacc-collars.charity/images/leash_sleeve-step6-turned-inside-out.jpg</image:loc>
+	<image:caption>Making the leash sleeve. Step 6: Turned inside out &amp; open end clipped to sew closed.</image:caption>
+	<image:title>Turned Inside Out</image:title>
+	</image:image>
+	<image:image>
+	<image:loc>https://www.mcacc-collars.charity/images/leash_sleeve-plastic-template-for-marking-snap-holes.jpg</image:loc>
+	<image:caption>A plastic template you must make to mark snap hole locations squarly.</image:caption>
+	<image:title>Plastic Template for Marking Snap Holes (you'll make this)</image:title>
+	</image:image>
+	<image:image>
+	<image:loc>https://www.mcacc-collars.charity/images/leash_sleeve-step7-use-template-to-mark-snap-holes.jpg</image:loc>
+	<image:caption>Making the leash sleeve. Step 7 start: The plastic template positioned on the sleeve (to mark snap holes).</image:caption>
+	<image:title>Template Positioned to Mark Snap Holes</image:title>
+	</image:image>
+	<image:image>
+	<image:loc>https://www.mcacc-collars.charity/images/leash_sleeve-step7a-snap-holes-marked.jpg</image:loc>
+	<image:caption>Making the leash sleeve. Step 7 complete: The snap holes marked (ready to pierce).</image:caption>
+	<image:title>Snap Hole Positions Marked</image:title>
+	</image:image>
+
+	<image:image>
+	<image:loc>https://www.mcacc-collars.charity/images/leash_sleeve-make_template-marked-and-scored.jpg</image:loc>
+	<image:caption>Making the plastic template: marking &amp; scoring before cutting the plastic sheet.</image:caption>
+	<image:title>Plastic Sheet Marked for Cutting</image:title>
+	</image:image>
+	<image:image>
+	<image:loc>https://www.mcacc-collars.charity/images/leash_sleeve-make_template-clamped.jpg</image:loc>
+	<image:caption>Making the plastic template: clamping &amp; cutting the plastic sheet.</image:caption>
+	<image:title>Plastic Sheet Clamped for Cutting</image:title>
+	</image:image>
+	<image:image>
+	<image:loc>https://www.mcacc-collars.charity/images/leash_sleeve-paper-template-for-making-plastic-template.gif</image:loc>
+	<image:caption>Making the plastic template: diagram to print &amp; transfer hole locations to plastic.</image:caption>
+	<image:title>Diagram of Template To Make</image:title>
+	</image:image>
+
+	<image:image>
+	<image:loc>https://www.mcacc-collars.charity/images/leash_sleeve-step8-bagged-individually.jpg</image:loc>
+	<image:caption>Packaging: one sleeve bagged.</image:caption>
+	<image:title>One Sleeve Packaged</image:title>
+	</image:image>
+	<image:image>
+	<image:loc>https://www.mcacc-collars.charity/images/leash_sleeve-step9-bagged-dozen.jpg</image:loc>
+	<image:caption>Packaging: a dozen sleeves bagged.</image:caption>
+	<image:title>Twelve Sleeves Packaged</image:title>
+	</image:image>
+</url>
+
+</urlset>
+
+
+

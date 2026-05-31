@@ -1,0 +1,37 @@
+/* 
+* This file is used when hosting on Cloudflare Workers. The actual static
+* website is contained in docs/.
+*/
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "website",
+  "compatibility_date": "2026-05-25",
+  "preview_urls": false,
+  "assets": {
+    "directory": "./docs",
+    "not_found_handling": "404-page"
+  }
+}
+/*
+* 1. You MUST change "name: website" to *your* Cloudflare Workers project name.
+* (Your URL will be {project}.{user).workers.dev).
+*
+* 2. You should keep the "compatibility_date" (yyyy-mm-dd) relatively current.
+*
+* 3. In mid-2025 (this may be fixed now), Cloudflare Workers created a preview
+* URL even if you told it not to (in "workers > settings > build > builds for
+* non-production branches."). It had to be set "false" here or a dev URL would
+* be created.
+*
+* ADDITIONAL INFO:
+*
+* The following files are also specific to Cloudflare Workers, serving a similar
+* configuration-like purpose:
+*	/docs/.assetsignore
+*	/docs/_headers
+*
+* The file "docs/.htaccess" contains more info about Cloudflare features I use:
+*   1. "Bulk redirect" rule to redirect non-www to www.
+*   2. "Security custom rule" to block prolific requests for things I don't
+*		have (apparently looking for vulnerabilities).
+*/
