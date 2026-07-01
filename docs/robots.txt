@@ -1,7 +1,6 @@
 User-agent: *
 
 # Allow everything.
-#     / and /donors/ have "noindex"
 
 # Nothing in /files/ is useful (except one custom pdf for Juki DU-1181N)
 Disallow: /files/

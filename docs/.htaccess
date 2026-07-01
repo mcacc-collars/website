@@ -85,14 +85,8 @@
 # shortest image path is 21-char (plus 8 for "/images/" in front):
 
 (starts_with(http.request.uri.path, "/images/") and
-  (
-    (
-    ends_with(http.request.uri.path, "webp") or
-    ends_with(http.request.uri.path, "jpg") or
-    ends_with(http.request.uri.path, "gif")
-    ) and
-    len(http.request.uri.path) gt 28
-  )
+  substring(http.request.uri.path, -4) in {"webp" ".jpg" ".gif"} and
+  len(http.request.uri.path) gt 28
 ) or
 
 # There can also be directory browsing on /images/. But, that should be much less frequent. I
@@ -124,33 +118,26 @@ http.request.uri.path in {
 # Then there's requests for /files/*. Only the filetypes pdf & zip exist: 
 
 ( starts_with(http.request.uri.path, "/files/") and
-  (
-  ends_with(http.request.uri.path, "pdf") or
-  ends_with(http.request.uri.path, "zip")
-  ) 
+  substring(http.request.uri.path, -3) in {"pdf" "zip"}
 ) or
 
-# Again, could be accessed with /index.html or without trailing /. Whitelisted below.
+# Again, /files could be accessed with /index.html or without trailing /. Whitelisted below.
 #
 # favicons:
 
-starts_with(http.request.uri.path, "/android") or
+substring(http.request.uri.path, 0, 8) in {"/android" "/favicon"} or
 starts_with(http.request.uri.path, "/apple") or
-starts_with(http.request.uri.path, "/fav") or
-
-# I officially serve sitemap.xml.gz. But I've seen requests for the uncompressed file, so I serve
-# it too. It's also possible for sitemap_index.xml to be reqested (but I don't serve it). I could
-# enumerate all three in root, but I do it more broadly:
-
-starts_with(http.request.uri.path, "/sitemap") or
 
 # The files in the root directory:
 
-http.request.uri.path in {"/BingSiteAuth.xml" "/googleb3737839f3b1fec8.html" "/googleb3737839f3b1fec8" "/llms.txt" "/robots.txt" "/site.webmanifest" "/404.html" "/404.svg" "/ads.txt" "/sitemap.xml.gz" "/sitemap.xml"} or
+http.request.uri.path in {"/BingSiteAuth.xml" "/googleb3737839f3b1fec8.html" "/googleb3737839f3b1fec8" "/llms.txt" "/robots.txt" "/site.webmanifest" "/404.html" "/404.svg" "/sitemap.xml.gz" "/sitemap.xml"
+"/ads.txt" "/humans.txt" "/security.txt"
+} or
 
 # I get requests for the google site verification file with & without .html. I created a symlink
-# to serve both.
-#
+# to serve both. I see requests for sitemap.xml and .gz. I serve both. I get requests for ads,
+# humans & security .txt files. I whitelist it even if I don't serve them.
+
 # There's also .well-known/, which I don't use. But, it's not unusual for it to be accessed.
 
 starts_with(http.request.uri.path, "/.well-known/") or
@@ -233,19 +220,19 @@ http.request.uri.path in {
 len(http.request.uri.path) lt 8 or
 
 # I block paths ending in these strings:
-substring(lower(http.request.uri.path), -3) in {".gz" ".7z" ".xz" ".md" ".sh" ".js" ".rc" ".db" ".py"} or
-substring(lower(http.request.uri.path), -4) in {".zip" ".tar" ".rar" ".bz2" ".tgz" ".cfm" ".ini" ".env" "/env" ".asp" ".cfg" ".yml" ".map" ".sql" ".axd"} or
-substring(lower(http.request.uri.path), -5) in {".json" ".toml" ".aspx" ".yaml"} or
+substring(lower(http.request.uri.path), -3) in {".gz" ".7z" ".xz" ".md" ".sh" ".js" ".rc" ".db" ".py" "yml"} or
+substring(lower(http.request.uri.path), -4) in {".zip" ".tar" ".rar" ".bz2" ".tgz" ".cfm" ".ini" ".asp" ".cfg" ".map" ".sql" ".axd" ".cgi" ".bak" ".log" ".key" ".pem" "dump" ".hcl"} or
+substring(lower(http.request.uri.path), -5) in {".json" ".toml" ".aspx" ".yaml" ".conf" "fvars" "state"} or
 
 # I block paths starting with these strings:
-substring(http.request.uri.path, 0, 2) in {"/_"} or
-substring(lower(http.request.uri.path), 0, 3) in {"/.hg" "/.ds" "/v2"} or
-substring(lower(http.request.uri.path), 0, 4) in {"/app" "/aws" "/ecp"} or
-substring(lower(http.request.uri.path), 0, 5) in {"/.env" "/_env" "/.ssh" "/.aws" "/alfa" "/blog" "/.svn"} or
-substring(lower(http.request.uri.path), 0, 6) in {"/graph" "/debug" "/login"} or
-substring(lower(http.request.uri.path), 0, 7) in {"/upload" "/plugin" "/.trash" "/admin/" "/server" "/docker"} or
-substring(lower(http.request.uri.path), 0, 8) in {"/.pypirc" "/storage" "/request" "/cgi-bin" "/swagger" "/webjars" "/console"} or
-substring(lower(http.request.uri.path), 0, 9) in {"/procfile" "/actuator" "/telescop" "/firebase" "/filezill"} or
+substring(http.request.uri.path, 0, 2) in {"/_" "/~" "/$" "/;"} or
+substring(lower(http.request.uri.path), 0, 3) in {"/v2" "/s3" "/.;"} or
+substring(lower(http.request.uri.path), 0, 4) in {"/.ds" "/.ht" "/app" "/aws" "/ecp" "/var" "/log" "/opt" "/etc" "/rsc" "/old" "/pre" "/dev" "/new" "/asp" "/..;"} or
+substring(lower(http.request.uri.path), 0, 5) in {"/.ssh" "/.aws" "/alfa" "/blog" "/.svn" "/root" "/rest" "/team" "/home" "/file" "/page" "/post" "/.bod" "/auto" "/cred" "/user" "/word" "/inst" "/curl" "/host"} or
+substring(lower(http.request.uri.path), 0, 6) in {"/graph" "/debug" "/login" "/admin" "/oauth" "/media" "/react" "/theme" "/tinyf" "/.idea" "/.bash" "/check" "/test-"} or
+substring(lower(http.request.uri.path), 0, 7) in {"/upload" "/plugin" "/.trash" "/server" "/health" "/action" "/webjar" "/orders" "/editor" "/assets" "/module" "/static" "/manage" "/update"} or
+substring(lower(http.request.uri.path), 0, 8) in {"/.pypirc" "/storage" "/request" "/cgi-bin" "/swagger" "/console" "/webhook" "/setting" "/project" "/product" "/package" "/message" "/control" "/contact" "/billing" "/.vercel" "/.stripe" "/jenkins" "/profile" "/payment" "/threads" "/enhance" "/.yarnrc" "/metrics" "/web-inf" "/.action" "/staging"} or
+substring(lower(http.request.uri.path), 0, 9) in {"/procfile" "/actuator" "/telescop" "/firebase" "/filezill" "/.netlify" "/articles" "/register" "/template" "/componen" "/.amplify" "/livewire"} or
 
 # Each Cloudflare rule is limited to 4096 chars (and you get 5 rules). Doing it as above uses less
 # chars than individual "contains" or "ends_with" functions. Especially if you have to use the lower
@@ -255,6 +242,7 @@ substring(lower(http.request.uri.path), 0, 9) in {"/procfile" "/actuator" "/tele
 # mixed-case uses.
 http.request.uri.path contains "wp" or
 lower(http.request.uri.path) contains "php" or
+http.request.uri.path contains "env" or
 http.request.uri.path contains "[" or
 http.request.uri.path contains "manifest.webmanifest" or
 http.request.uri.path contains "application.properties" or
@@ -264,8 +252,13 @@ http.request.uri.path contains "/.git" or
 http.request.uri.path contains "config" or
 http.request.uri.path contains "backup" or
 http.request.uri.path contains "api" or
+http.request.uri.path contains "debug" or
+lower(http.request.uri.path) contains "docker" or
 http.request.uri.path contains "%" or
-http.request.uri.path contains "META-INF"
+http.request.uri.path contains "*" or
+http.request.uri.path contains "META-INF" or
+http.request.uri.path contains "/login" or
+http.request.uri.path contains "credential"
 
 
 # FWIW: the "wp," "php," ".git" & "env" block 90% of the malicious requests. Adding more rules is 

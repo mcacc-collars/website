@@ -1,3 +1,5 @@
-# From the IAB v1.1 standard (Aug 2022):
-#     3.2.1 FILES WITHOUT AUTHORIZED ADVERTISING SYSTEM RECORDS
 placeholder.example.com, placeholder, DIRECT, placeholder
+
+# The above line indicates that we do not sell ad space pursuant to v1.1 (Aug 2022) Ads.txt specification (https://iabtechlab.com/wp-content/uploads/2022/04/Ads.txt-1.1.pdf) 
+# Specifically:
+#     3.2.1 FILES WITHOUT AUTHORIZED ADVERTISING SYSTEM RECORDS
