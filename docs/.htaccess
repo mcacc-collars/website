@@ -130,7 +130,7 @@ starts_with(http.request.uri.path, "/apple") or
 
 # The files in the root directory:
 
-http.request.uri.path in {"/BingSiteAuth.xml" "/googleb3737839f3b1fec8.html" "/googleb3737839f3b1fec8" "/llms.txt" "/robots.txt" "/site.webmanifest" "/404.html" "/404.svg" "/sitemap.xml.gz" "/sitemap.xml"
+http.request.uri.path in {"/BingSiteAuth.xml" "/googleb3737839f3b1fec8.html" "/googleb3737839f3b1fec8" "/llms.txt" "/robots.txt" "/site.webmanifest" "/404.html" "/404.svg" "/sitemap.xml.gz" "/sitemap.xml" "/LICENSE.txt"
 "/ads.txt" "/humans.txt" "/security.txt"
 } or
 
@@ -138,11 +138,12 @@ http.request.uri.path in {"/BingSiteAuth.xml" "/googleb3737839f3b1fec8.html" "/g
 # to serve both. I see requests for sitemap.xml and .gz. I serve both. I get requests for ads,
 # humans & security .txt files. I whitelist it even if I don't serve them.
 
-# There's also .well-known/, which I don't use. But, it's not unusual for it to be accessed.
+# There's also .well-known/
 
 starts_with(http.request.uri.path, "/.well-known/") or
 
-# I don't need to whitelist accesses without the trailing /. Directory browsing shouldn't be allowed.
+# I don't need to whitelist accesses without the trailing /. Directory browsing shouldn't be allowed
+for /.well-known.
 
 # At this point, the only other requests that could occur would be directory browsing of either 1)
 # directories that aren't the site's "pages" people are invited to visit (whitelisted above as
@@ -228,10 +229,10 @@ substring(lower(http.request.uri.path), -5) in {".json" ".toml" ".aspx" ".yaml" 
 substring(http.request.uri.path, 0, 2) in {"/_" "/~" "/$" "/;"} or
 substring(lower(http.request.uri.path), 0, 3) in {"/v2" "/s3" "/.;"} or
 substring(lower(http.request.uri.path), 0, 4) in {"/.ds" "/.ht" "/app" "/aws" "/ecp" "/var" "/log" "/opt" "/etc" "/rsc" "/old" "/pre" "/dev" "/new" "/asp" "/..;"} or
-substring(lower(http.request.uri.path), 0, 5) in {"/.ssh" "/.aws" "/alfa" "/blog" "/.svn" "/root" "/rest" "/team" "/home" "/file" "/page" "/post" "/.bod" "/auto" "/cred" "/user" "/word" "/inst" "/curl" "/host"} or
-substring(lower(http.request.uri.path), 0, 6) in {"/graph" "/debug" "/login" "/admin" "/oauth" "/media" "/react" "/theme" "/tinyf" "/.idea" "/.bash" "/check" "/test-"} or
-substring(lower(http.request.uri.path), 0, 7) in {"/upload" "/plugin" "/.trash" "/server" "/health" "/action" "/webjar" "/orders" "/editor" "/assets" "/module" "/static" "/manage" "/update"} or
-substring(lower(http.request.uri.path), 0, 8) in {"/.pypirc" "/storage" "/request" "/cgi-bin" "/swagger" "/console" "/webhook" "/setting" "/project" "/product" "/package" "/message" "/control" "/contact" "/billing" "/.vercel" "/.stripe" "/jenkins" "/profile" "/payment" "/threads" "/enhance" "/.yarnrc" "/metrics" "/web-inf" "/.action" "/staging"} or
+substring(lower(http.request.uri.path), 0, 5) in {"/.ssh" "/.aws" "/alfa" "/blog" "/.svn" "/root" "/rest" "/team" "/home" "/file" "/page" "/post" "/.bod" "/auto" "/cred" "/user" "/word" "/inst" "/curl" "/host" "/feed" "/sign" "/test"} or
+substring(lower(http.request.uri.path), 0, 6) in {"/graph" "/debug" "/login" "/admin" "/oauth" "/media" "/react" "/theme" "/tinyf" "/.idea" "/.bash" "/check" "/front"} or
+substring(lower(http.request.uri.path), 0, 7) in {"/upload" "/plugin" "/.trash" "/server" "/health" "/action" "/webjar" "/orders" "/editor" "/assets" "/module" "/static" "/manage" "/update" "/vendor"} or
+substring(lower(http.request.uri.path), 0, 8) in {"/.pypirc" "/storage" "/request" "/cgi-bin" "/swagger" "/console" "/webhook" "/setting" "/project" "/product" "/package" "/message" "/control" "/contact" "/billing" "/.vercel" "/.stripe" "/jenkins" "/profile" "/payment" "/threads" "/enhance" "/.yarnrc" "/metrics" "/web-inf" "/.action" "/staging" "/laravel" "/deliver"} or
 substring(lower(http.request.uri.path), 0, 9) in {"/procfile" "/actuator" "/telescop" "/firebase" "/filezill" "/.netlify" "/articles" "/register" "/template" "/componen" "/.amplify" "/livewire"} or
 
 # Each Cloudflare rule is limited to 4096 chars (and you get 5 rules). Doing it as above uses less
