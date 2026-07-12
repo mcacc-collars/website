@@ -4,42 +4,22 @@
 		
 <url>
 	<loc>https://www.mcacc-collars.charity/</loc>
-	<lastmod>2026-06-30</lastmod>
+	<lastmod>2026-07-12</lastmod>
 	<changefreq>never</changefreq>
-	<priority>0.0</priority>
+	<priority>0.4</priority>
 	<!-- This is just a landing page. -->
 </url>
 
 <url>
-	<loc>https://www.mcacc-collars.charity/donors/</loc>
-	<lastmod>2026-06-30</lastmod>
-	<changefreq>never</changefreq>
-	<priority>0.1</priority>
-</url>
-
-<url>
-	<loc>https://www.mcacc-collars.charity/shelter/</loc>
-	<lastmod>2026-05-22</lastmod>
-	<changefreq>never</changefreq>
-	<priority>0.2</priority>
-	<!-- This image is also on resources/collars_leashes/ -->
-	<image:image>
-	<image:loc>https://www.mcacc-collars.charity/images/collar-size-chart.gif</image:loc>
-	<image:caption>A diagram visualizing the overlapping size ranges of dog collars.</image:caption>
-	<image:title>Collar Sizes</image:title>
-	</image:image>
-</url>
-
-<url>
 	<loc>https://www.mcacc-collars.charity/resources/</loc>
-	<lastmod>2025-12-18</lastmod>
+	<lastmod>2026-07-12</lastmod>
 	<changefreq>never</changefreq>
-	<priority>0.4</priority>
+	<priority>0.6</priority>
 </url>
 
 <url>
 	<loc>https://www.mcacc-collars.charity/resources/collars_leashes/</loc>
-	<lastmod>2026-05-30</lastmod>
+	<lastmod>2026-07-12</lastmod>
 	<changefreq>monthly</changefreq>
 	<priority>0.9</priority>
 	

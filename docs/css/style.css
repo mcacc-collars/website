@@ -443,8 +443,7 @@ table td {padding: .05rem .30rem;} /* .05 top/bottom, .30 left/right */
 table th {padding: var(--th-padding);}
 
 /* Indent tables */
-table#costs-collars, table#costs-leashes, table#donations,
-table#alloc-collars, table#alloc-leashes,
+table#cost-collars, table#cost-leashes
 table#collars-materials, table#collars-lengths,
 table#leashes-materials, table#leashes-lengths,
 table#sewing-singer201,

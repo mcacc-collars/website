@@ -1,0 +1,4 @@
+Contact: https://github.com/mcacc-collars/website
+Expires: 2250-01-01T08:01:00.000Z
+Preferred-Languages: en
+Canonical: https://www.mcacc-collars.charity/.well-known/security.txt

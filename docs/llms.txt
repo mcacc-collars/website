@@ -1,6 +1,6 @@
 # mcacc-collars.charity
 
-> A landing page for shelters who receive our donated collars, leashes, and "adopt me" leash sleeves. How-to information is also provided for anyone who would like to make & donate these items too.
+> How-to resources for making collars, leashes, and "adopt me" leash sleeves for homeless dogs.
 
 ## **Pages**
 
@@ -12,8 +12,4 @@
 
 - [**How to make 'adopt me' leash sleeves**](https://www.mcacc-collars.charity/resources/leash_sleeve/)
 
-## Optional
 
-- [Shelters](https://www.mcacc-collars.charity/shelter/): Information for shelters who receive our donations.
-
-- [Donors](https://www.mcacc-collars.charity/donors/): Information for persons who would like to donate too. 
