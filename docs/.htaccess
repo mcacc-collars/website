@@ -108,8 +108,6 @@ http.request.uri.path in {
 "/resources/collars_leashes/lk1900bn/"
 "/resources/collars_leashes/hot-knife/"
 "/resources/"
-"/donors/"
-"/shelter/"
 "/"} or
 
 # Those could also be accessed with /index.html or without trailing /. I whitelist that below
@@ -167,8 +165,6 @@ http.request.uri.path in {
 "/resources/collars_leashes/hot-knife/index.html"
 "/resources/collars_leashes/lk1900bn/index.html"
 "/resources/leash_sleeve/index.html"
-"/donors/index.html"
-"/shelter/index.html"
 "/index.html"
 
 # Another /directory/ & /directory/index.html
@@ -193,8 +189,6 @@ http.request.uri.path in {
 "/resources/collars_leashes/hot-knife"
 "/resources/collars_leashes/lk1900bn"
 "/resources/leash_sleeve"
-"/donors"
-"/shelter"
 "/files"
 "/images/small"
 "/images/medium"}
