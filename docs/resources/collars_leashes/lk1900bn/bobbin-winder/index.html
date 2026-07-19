@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>A standalone bobbin winder useable with a Juki LK-1900BN bartack machine</title>
+<link rel="stylesheet" href="../../../../css/style.css?v=0.4">
+<link rel="canonical" href="https://www.mcacc-collars.charity/resources/collars_leashes/lk1900bn/bobbin-winder/">
+<script src="../../../../js/darkmode.js" defer></script>
+<meta name="description" content="A third-party bobbin winder which works with Juki LK-1900 bobbins.">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="icon" type="image/svg+xml" href="/icon.svg">
+<link rel="manifest" href="/site.webmanifest">
+<style>
+</style>
+</head>
+<body>
+<script>
+// This is only done here because browsers flicker before darkmode is applied.
+// This stuff should be done in the .js file (in the part for the page's initial loading).
+
+storedDisplay = localStorage.getItem('display')
+//console.log('HTML: storedDisplay:', storedDisplay);
+
+// If the visitor hasn't chosen a display mode, use their browser preference.
+// (This same test is in the .js file. It shouldn't exist here if browsers didn't flash.)
+if (storedDisplay === null) {
+	
+	// No stored choice. Check if browser preference is dark.
+	const prefersDark = window.matchMedia('(prefers-color-scheme: dark)');
+	if (prefersDark.matches) {
+		//console.log('HTML: no stored value. Browser prefers dark');
+		storedDisplay = "darkmode"
+	}
+	else {
+		//console.log('Initial: no stored value. Browser does not prefer dark. Using light.');
+		storedDisplay = "lightmode"
+	}
+}
+document.body.classList.add(storedDisplay)
+</script>
+
+<header>
+<nav aria-label="Breadcrumbs"><ul>
+<li><a href="../../../../">Home</a></li>
+<li><a href="../../../">Resources</a></li>
+<li><a href="../../">Collars &amp; Leashes</a></li>
+<li><a href="../">LK-1900bn</a></li>
+</ul></nav>
+<div id="display-mode">
+<label for="display-dropdown">Display:</label>
+<select name="mode" id="display-dropdown" size="1" >
+	<option id="dd-light" value="lightmode">Light</option>
+	<option id="dd-dark" value="darkmode">Dark</option>
+	<option id="dd-nocturnal" value="noctmode">Nocturnal</option>
+</select>
+</div>
+</header>
+
+<main>
+<h1>Winding LK-1900 bobbins with a standalone winder</h1>
+
+<p>When I began using my <a href="../">LK-1900 bartacker to sew collars &amp; leashes</a>, I considered using a standalone after-market winder. I thought it would be easier than the machine's built-in winder. (Also, the machine's built-in winder doesn't operate seperately. If all you want to do is wind a bobbin, the whole machine operates. That seems like a lof of wear &amp; tear. But, you usually wind while sewing. So, that's much of an issue.).</p>
+
+<p>The machine uses style A, class 15 bobbins. This is the only winder I could find that works with this size bobbin:</p>
+
+<div class="image"><a href="../../../../images/lk1900-bobbin-winder-standalone.jpg">
+<img src="../../../../images/medium/lk1900-bobbin-winder-standalone.webp"
+srcset="../../../../images/small/lk1900-bobbin-winder-standalone.webp 400w,
+../../../../images/medium/lk1900-bobbin-winder-standalone.webp 680w,
+../../../../images/lk1900-bobbin-winder-standalone.jpg 1152w"
+sizes="70vmin" alt="Standalone bobbin winder" loading="lazy"></a></div>
+
+<p>As the photo notes, it has some shortcomings. I don't recommend buying one. But, if you wanted to wind bobbins separately, that seems to be the <em>only</em> choice. This page documents what I learned in case it's useful to others. It's a generic, no-name winder sold by many online. The one I bought was ASIN: <a rel="nofollow" href="https://www.amazon.com/gp/product/B07RJL9XHY">B07RJL9XHY</a> (seller <a rel="nofollow" href="https://www.amazon.com/stores/ckpsms/page/8C8B8C59-BE53-42E6-B404-8E5D05BAEFB8">CKPSMS</a>). I chose that one because the product photos were more informative than other sellers; printed instructions were included (the english is hard to understand, but it's better than nothing).</p>
+
+<section id="shortcomings">
+<h2>Shortcomings</h2>
+<div>
+
+<p>It works, but has some shortcomings out of the box:</p>
+
+<ol>
+<li><p>Large spools of thread won't fit its stand.</p></li>
+<li><p>The shutoff sensor is light-based. If there's too much ambient light, it won't shutoff. (The sensor is mounted on a shiny silver steel plate. That might reflect light into the sensor.).</p></li>
+<li><p>The sensors are mounted a little low. It would be better if they were centered between the flanges.</p></li>
+<li><p>The tension disk is problematic in a few ways:</p>
+	<ul>
+	<li><p>It's too close to the bobbin. You'll adjust the vertical height of the tension disk so the thread winds evenly up/down the bobbin. But, being so close, it won't let the thread travel that far (up/down). You end up with a bulge (donut) in the center of the bobbin). You can sew with it. But, you're not using the entire bobbin's capacity. Increasing the disk tension usually helps bobbins wind flatter. But, I think this is too close for that.</p></li>
+	<li><p>The silver knob adjusts the height of the tension disks. But, it's not long enough to center the disks to the bobbin.</p></li>
+	<li><p>The tension-disk's guide hole points in a drection which prevents routing the thread completely around the disk (exiting the guide hole, the way you do it with the LK-1900's bobbin-thread tension disk). You should enter through the guide hole, but only wrap the thread <em>3/4 turn</em> (clockwise) around the tension disk (go straight to the bobbin from there).</p></li>
+	</ul>
+</li>
+</ol>
+
+</div></section> <!-- end h2 -->
+
+<section id="easy-fixes">
+<h2>Easy improvements</h2>
+<div>
+
+<p>Most of those shortcomings can be improved easily:</p>
+
+<ol>
+<li><p>Replace the silver center knob with a bolt that's longer (so the disk height can be adjusted higher). The knob's thread is M4 x 0.7 pitch. I replaced mine with a 35mm long hex-head bolt (it doesn't have to be threaded the full length). FYI: there is a circuit board underneath. You can screw the bolt in about 3/8" before it touches the circuit board.</p></li>
+<li><p>Put a washer(s) under the plate the sensors are mounted on. (Raise them so they're looking through the middle of the bobbin). You may need a longer screw. It's M4 x 0.7. A 10mm length works fine. FYI: there's nothing underneath it inside the box. No risk of it being too long and going too far down.</p></li>
+<li><p>Use a separate thread stand. I have one with a cast-iron base (Amazon ASIN: <a rel="nofollow" href="https://www.amazon.com/dp/B01ELYA1HC">B01ELYA1HC</a>. That same stand is also sold with a plastic base. The weight of cast-iron is worth the extra cost. I cut a piece of felt to fit the bottom of the stand, and glued it on.).</p></li>
+<li><p>Tape some poster-board around the end of the winder where the sensors are (create some shade. It might help to paint the shiny plate black, or affix some painter's tape so it's not as reflective.)</p></li>
+</ol>
+
+<div class="image"><a href="../../../../images/lk1900-bobbin-winder-standalone-easy-fixes.jpg">
+<img src="../../../../images/medium/lk1900-bobbin-winder-standalone-easy-fixes.webp"
+srcset="../../../../images/small/lk1900-bobbin-winder-standalone-easy-fixes.webp 400w,
+../../../../images/medium/lk1900-bobbin-winder-standalone-easy-fixes.webp 680w,
+../../../../images/lk1900-bobbin-winder-standalone-easy-fixes.jpg 1152w"
+sizes="70vmin" alt="Standalone bobbin winder after 3 easy fixes" loading="lazy"></a></div>
+
+<p>Note: that photo shows the sensors raised even higher for the LK-1900's <a href="#high-cap">high-capacity bobbin</a>. The half-circle has been enlarged for that too.</p>
+
+<p>Since you'll use a standalone thread stand, you could orient the tension-disk's guide hole to point more toward the bobbin (so the thread can go in &amp; out of the guide hole as you'd expect). The bottom of the tension-disk has an "indexing" post which slips into a hole. This holds the tension-disk in position. You can drill another hole for that post. But, be careful not to let the drill go too far when it drills through the plastic (there's a circuit board underneath. You have about 1/4" of space before hitting the board). I don't think that's worth doing. I would proceed with the next level of improvements.</p>
+
+</div></section> <!-- end h2 -->
+
+
+<section id="more-fixes">
+<h2>More improvements</h2>
+<div>
+
+<p>The simple fix above works really good. But, you still have bulging winds because the disk &amp; bobbin are too close. If I were going to use this winder a lot, I would improve it more substantially:</p>
+
+<ol>
+<li><p>Mount the plastic box to a plank of wood (ex., 1-by-8, 14" long) so the tension disk can be removed and mounted separately, further away.</p></li>
+<li><p>Make a "stand" for the thread tension disks. Bend some 1" aluminum (bar stock) into a U-shape. Mount that (upside-down) to the board, screwing the two legs down to the board. Mount the tension disk to the flat top. (This should be made so the tension disk is at the same height as it was when mounted to the winder box.). Install this so the tension disks aare 11" from the bobbin (measured from centers. This is the distance of the LK-1900 winder). The goal is for the thread to travel more freely up/down the bobbin, not get the "donut" bulge in the center. Increasing the tension is the normal way to flatten the wind. But, I think the distance is too short for that to work.</p></li>
+<li><p>When relocating the tension disk to the "stand," orient the guide hole to point more toward the bobbin (so the thread can go in &amp; out of the guide like normal.</p><ul>
+<li><p>Even better: replace the tension disk with the one used on the LK-1900 (#141-13468). It's not very expensive, but better quality.</p></li></ul></li>
+<li><p>Using this larger platform, you can mount the winder's thread stand to use larger spools of thread (you won't need a separate thread stand.). You'll need "threaded inserts for wood." These embed into the wood, and provide the machine-screw threads that the center pin &amp; suspended thread-guide screw into (like they screw into the steel base the winder comes with). The center pin (spool holder) is M5 x 0.8. The suspended thread-guide is M4 x 0.7. You'll need one threaded insert of each.</p></li>
+</ol>
+
+<p>I intend to make this. I'll post a photo eventually.</p>
+
+</div></section> <!-- end h2 -->
+
+<section id="high-cap">
+<h2>High capacity bobbin</h2>
+<div>
+
+<p>The standalone winder works with the <a href="../#pre-large-hook">high-capacity</a> bobbins too. But:</p>
+
+<ol>
+<li><p>The tension-disk height needs to be a little higher. A 40mm-long screw is more appropriate (but the 35mm works). FYI: There is a circuit board underneath. If you screw this down 3/8" you'll be close to touching the board. So, this screw should be chosen to fit.</p></li>
+<li><p>The sensor plate needs to be even higher. You'll need a 12- or 15mm-long screw (another washer underneath). There's nothing underneath this screw (inside the box). It can be any length.</p></li>
+<li><p>The half-circle cutout in the sensor plate needs to be enlarged with a dremel to accommodate the larger bobbin diameter.</p></li>
+<li><p>To the extent moving the tension disks further away helped normal bobbins wind more evenly (flatter), it may help to go even further because the high-capacity bobbins are 32.6% wider (the thread travels that much further up/down to fill evenly). It could benefit if the disks are moved 32.6% further (14-5/8" apart).</p></li>
+</ol>
+
+</div></section> <!-- end h2 -->
+
+</main>
+</body>
+</html>

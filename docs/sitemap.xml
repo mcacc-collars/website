@@ -147,11 +147,6 @@
 	<image:title>Drilled Bobbin (Inside)</image:title>
 	</image:image>
 	<image:image>
-	<image:loc>https://www.mcacc-collars.charity/images/lk1900-bobbin-winder-standalone.jpg</image:loc>
-	<image:caption>No-name standalone bobbin winder which (somewhat) works with LK1900 bobbins.</image:caption>
-	<image:title>Standalone Bobbin Winder (Generic)</image:title>
-	</image:image>
-	<image:image>
 	<image:loc>https://www.mcacc-collars.charity/images/lk1900-bobbin-case.jpg</image:loc>
 	<image:caption>A bobbin case with bobbin properly installed.</image:caption>
 	<image:title>Bobbin Installed in Bobbin Case</image:title>
@@ -474,6 +469,26 @@
 
 </url>
 
+
+<url>
+	<loc>https://www.mcacc-collars.charity/resources/collars_leashes/lk1900bn/bobbin-winder/</loc>
+	<lastmod>2026-07-19</lastmod>
+	<changefreq>yearly</changefreq>
+	<priority>0.1</priority>
+
+	<image:image>
+	<image:loc>https://www.mcacc-collars.charity/images/lk1900-bobbin-winder-standalone.jpg</image:loc>
+	<image:caption>Generic standalone bobbin winder which works with LK1900 bobbins.</image:caption>
+	<image:title>Standalone Bobbin Winder (Generic)</image:title>
+	</image:image>
+
+	<image:image>
+	<image:loc>https://www.mcacc-collars.charity/images/lk1900-bobbin-winder-standalone-easy-fixes.jpg</image:loc>
+	<image:caption>Generic standalone bobbin winder after 3 easy fixes to work better with LK1900 bobbins.</image:caption>
+	<image:title>Standalone Bobbin Winder (Generic) with 3 fixes</image:title>
+	</image:image>
+
+</url>
 
 <url>
 	<loc>https://www.mcacc-collars.charity/resources/leash_sleeve/</loc>
