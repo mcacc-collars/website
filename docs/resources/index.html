@@ -14,9 +14,13 @@
 <link rel="icon" type="image/svg+xml" href="/icon.svg">
 <link rel="manifest" type="application/manifest+json" href="/site.webmanifest">
 <style>
-ul.res > li::marker {content: "★";}
-ul.supp li::marker {content: "–";}
+
+ul.res > li::marker {content: "➤"; font-size: 1.0em;}
+ul.supp li::marker {content: "-";}
 ul.res li {padding-left: .5em;}
+ul.res > li:not(:first-child) {margin-top: .33em;}
+
+/* ➤ ★ ☀︎ ✷ ✴︎ */
 </style>
 </head>
 <body>
