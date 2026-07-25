@@ -85,7 +85,7 @@
 # shortest image path is 21-char (plus 8 for "/images/" in front):
 
 (starts_with(http.request.uri.path, "/images/") and
-  substring(http.request.uri.path, -4) in {"webp" ".jpg" ".gif"} and
+  substring(http.request.uri.path, -4) in {"webp" ".jpg" ".gif" ".svg"} and
   len(http.request.uri.path) gt 28
 ) or
 
@@ -106,9 +106,11 @@ http.request.uri.path in {
 "/resources/leash_sleeve/"
 "/resources/collars_leashes/"
 "/resources/collars_leashes/lk1900bn/"
+"/resources/collars_leashes/lk1900bn/bobbin-winder/"
 "/resources/collars_leashes/hot-knife/"
 "/resources/"
 "/"} or
+
 
 # Those could also be accessed with /index.html or without trailing /. I whitelist that below
 # (rare).
@@ -128,20 +130,24 @@ starts_with(http.request.uri.path, "/apple") or
 
 # The files in the root directory:
 
-http.request.uri.path in {"/BingSiteAuth.xml" "/googleb3737839f3b1fec8.html" "/googleb3737839f3b1fec8" "/llms.txt" "/robots.txt" "/site.webmanifest" "/404.html" "/404.svg" "/sitemap.xml.gz" "/sitemap.xml" "/LICENSE.txt"
-"/ads.txt" "/humans.txt" "/security.txt"
+http.request.uri.path in {"/BingSiteAuth.xml" "/googleb3737839f3b1fec8.html" "/llms.txt" "/robots.txt" "/site.webmanifest" "/404.html" "/404.svg" "/sitemap.xml.gz" "/sitemap.xml" "/LICENSE.txt" "/ads.txt"
+"/android-chrome-192x192.png" "/android-chrome-512x512.png" "/apple-touch-icon.png" "/favicon.ico" "/favicon-16x16.png" "/favicon-32x32.png" "/icon.svg"
+"/googleb3737839f3b1fec8" "/manifest.webmanifest"
+"/humans.txt sitemap_index.xml"
 } or
 
 # I get requests for the google site verification file with & without .html. I created a symlink
 # to serve both. I see requests for sitemap.xml and .gz. I serve both. I get requests for ads,
-# humans & security .txt files. I whitelist it even if I don't serve them.
+# humans & security .txt files, and sitemap_index.xml. I whitelist it even if I don't serve them.
 
 # There's also .well-known/
 
-starts_with(http.request.uri.path, "/.well-known/") or
+(starts_with(http.request.uri.path, "/.well-known/") and
+  not ends_with(http.request.uri.path, ".php")
+) or
 
-# I don't need to whitelist accesses without the trailing /. Directory browsing shouldn't be allowed
-for /.well-known.
+# I don't whitelist .php access. And, I don't need to whitelist accesses without the trailing /.
+# Directory browsing shouldn't be allowed for /.well-known.
 
 # At this point, the only other requests that could occur would be directory browsing of either 1)
 # directories that aren't the site's "pages" people are invited to visit (whitelisted above as
@@ -164,6 +170,7 @@ http.request.uri.path in {
 "/resources/collars_leashes/index.html"
 "/resources/collars_leashes/hot-knife/index.html"
 "/resources/collars_leashes/lk1900bn/index.html"
+"/resources/collars_leashes/lk1900bn/bobbin-winder/index.html"
 "/resources/leash_sleeve/index.html"
 "/index.html"
 
@@ -188,6 +195,7 @@ http.request.uri.path in {
 "/resources/collars_leashes"
 "/resources/collars_leashes/hot-knife"
 "/resources/collars_leashes/lk1900bn"
+"/resources/collars_leashes/lk1900bn/bobbin-winder"
 "/resources/leash_sleeve"
 "/files"
 "/images/small"
@@ -216,18 +224,22 @@ len(http.request.uri.path) lt 8 or
 
 # I block paths ending in these strings:
 substring(lower(http.request.uri.path), -3) in {".gz" ".7z" ".xz" ".md" ".sh" ".js" ".rc" ".db" ".py" "yml"} or
-substring(lower(http.request.uri.path), -4) in {".zip" ".tar" ".rar" ".bz2" ".tgz" ".cfm" ".ini" ".asp" ".cfg" ".map" ".sql" ".axd" ".cgi" ".bak" ".log" ".key" ".pem" "dump" ".hcl"} or
-substring(lower(http.request.uri.path), -5) in {".json" ".toml" ".aspx" ".yaml" ".conf" "fvars" "state"} or
+substring(lower(http.request.uri.path), -4) in {".zip" ".tar" ".rar" ".bz2" ".tgz" ".cfm" ".ini" ".asp" ".cfg" ".map" ".sql" ".axd" ".cgi" ".bak" ".log" ".key" ".pem" "dump" ".hcl" "vars"} or
+substring(lower(http.request.uri.path), -5) in {".json" ".toml" ".aspx" ".yaml" ".conf" "state"} or
 
 # I block paths starting with these strings:
 substring(http.request.uri.path, 0, 2) in {"/_" "/~" "/$" "/;"} or
 substring(lower(http.request.uri.path), 0, 3) in {"/v2" "/s3" "/.;"} or
-substring(lower(http.request.uri.path), 0, 4) in {"/.ds" "/.ht" "/app" "/aws" "/ecp" "/var" "/log" "/opt" "/etc" "/rsc" "/old" "/pre" "/dev" "/new" "/asp" "/..;"} or
-substring(lower(http.request.uri.path), 0, 5) in {"/.ssh" "/.aws" "/alfa" "/blog" "/.svn" "/root" "/rest" "/team" "/home" "/file" "/page" "/post" "/.bod" "/auto" "/cred" "/user" "/word" "/inst" "/curl" "/host" "/feed" "/sign" "/test"} or
-substring(lower(http.request.uri.path), 0, 6) in {"/graph" "/debug" "/login" "/admin" "/oauth" "/media" "/react" "/theme" "/tinyf" "/.idea" "/.bash" "/check" "/front"} or
+substring(lower(http.request.uri.path), 0, 4) in {"/.ds" "/.ht" "/app" "/aws" "/ecp" "/var" "/log" "/opt" "/etc" "/rsc" "/old" "/pre" "/dev" "/new" "/asp" "/..;" "/id_" "/img" "/v1/"} or
+substring(lower(http.request.uri.path), 0, 5) in {"/.ssh" "/.aws" "/alfa" "/blog" "/.svn" "/root" "/rest" "/team" "/home" "/file" "/page" "/post" "/.bod" "/auto" "/cred" "/user" "/word" "/inst" "/curl" "/host" "/feed" "/sign" "/test" "/dash" "/boot" "/info" "/.pgp"} or
+substring(lower(http.request.uri.path), 0, 6) in {"/graph" "/debug" "/login" "/admin" "/oauth" "/media" "/react" "/theme" "/tinyf" "/.idea" "/.bash" "/check" "/front" "/alvin" "/nginx"} or
 substring(lower(http.request.uri.path), 0, 7) in {"/upload" "/plugin" "/.trash" "/server" "/health" "/action" "/webjar" "/orders" "/editor" "/assets" "/module" "/static" "/manage" "/update" "/vendor"} or
-substring(lower(http.request.uri.path), 0, 8) in {"/.pypirc" "/storage" "/request" "/cgi-bin" "/swagger" "/console" "/webhook" "/setting" "/project" "/product" "/package" "/message" "/control" "/contact" "/billing" "/.vercel" "/.stripe" "/jenkins" "/profile" "/payment" "/threads" "/enhance" "/.yarnrc" "/metrics" "/web-inf" "/.action" "/staging" "/laravel" "/deliver"} or
-substring(lower(http.request.uri.path), 0, 9) in {"/procfile" "/actuator" "/telescop" "/firebase" "/filezill" "/.netlify" "/articles" "/register" "/template" "/componen" "/.amplify" "/livewire"} or
+substring(lower(http.request.uri.path), 0, 8) in {"/.pypirc" "/storage" "/request" "/cgi-bin" "/swagger" "/console" "/webhook" "/setting" "/project" "/product" "/package" "/message" "/control" "/contact" "/billing" "/.vercel" "/.stripe" "/jenkins" "/profile" "/payment" "/threads" "/enhance" "/.yarnrc" "/metrics" "/web-inf" "/.action" "/staging" "/laravel" "/deliver" "/details" "/pricing"} or
+substring(lower(http.request.uri.path), 0, 9) in {"/procfile" "/actuator" "/telescop" "/firebase" "/filezill" "/.netlify" "/articles" "/register" "/template" "/componen" "/.amplify" "/livewire" "/official" "/.profile"} or
+
+# I get some strange requests, malformed urls that seem to be scripted. I'll stop blocking these eventually:
+http.request.uri.path in {"/images/favicon-196x196.png" "/favicon.png" "/favicon.ico.png"
+"/resources/lk1900bn" "/leash_sleeve" "/collars_leashes/lk1900bn" "/collars_leashes/lk1900bn/bobbin-winder" "/collars_leashes"} or
 
 # Each Cloudflare rule is limited to 4096 chars (and you get 5 rules). Doing it as above uses less
 # chars than individual "contains" or "ends_with" functions. Especially if you have to use the lower
@@ -239,7 +251,6 @@ http.request.uri.path contains "wp" or
 lower(http.request.uri.path) contains "php" or
 http.request.uri.path contains "env" or
 http.request.uri.path contains "[" or
-http.request.uri.path contains "manifest.webmanifest" or
 http.request.uri.path contains "application.properties" or
 http.request.uri.path contains "/wordpress" or
 http.request.uri.path contains "/auth" or
@@ -253,8 +264,8 @@ http.request.uri.path contains "%" or
 http.request.uri.path contains "*" or
 http.request.uri.path contains "META-INF" or
 http.request.uri.path contains "/login" or
-http.request.uri.path contains "credential"
-
+http.request.uri.path contains "credential" or
+http.request.uri.path contains "gradle"
 
 # FWIW: the "wp," "php," ".git" & "env" block 90% of the malicious requests. Adding more rules is 
 # diminishing returns.

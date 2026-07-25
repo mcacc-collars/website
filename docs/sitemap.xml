@@ -472,7 +472,7 @@
 
 <url>
 	<loc>https://www.mcacc-collars.charity/resources/collars_leashes/lk1900bn/bobbin-winder/</loc>
-	<lastmod>2026-07-19</lastmod>
+	<lastmod>2026-07-24</lastmod>
 	<changefreq>yearly</changefreq>
 	<priority>0.1</priority>
 
@@ -481,11 +481,15 @@
 	<image:caption>Generic standalone bobbin winder which works with LK1900 bobbins.</image:caption>
 	<image:title>Standalone Bobbin Winder (Generic)</image:title>
 	</image:image>
-
 	<image:image>
 	<image:loc>https://www.mcacc-collars.charity/images/lk1900-bobbin-winder-standalone-easy-fixes.jpg</image:loc>
 	<image:caption>Generic standalone bobbin winder after 3 easy fixes to work better with LK1900 bobbins.</image:caption>
 	<image:title>Standalone Bobbin Winder (Generic) with 3 fixes</image:title>
+	</image:image>
+	<image:image>
+	<image:loc>https://www.mcacc-collars.charity/images/lk1900-bobbin-winder-new-platform.svg</image:loc>
+	<image:caption>A new design for a generic standalone bobbin winder's base to work better with LK1900 bobbins.</image:caption>
+	<image:title>Standalone Bobbin Winder (Generic) new base design</image:title>
 	</image:image>
 
 </url>
@@ -495,6 +499,7 @@
 	<lastmod>2026-06-30</lastmod>
 	<changefreq>monthly</changefreq>
 	<priority>0.8</priority>
+
 	<image:image>
 	<image:loc>https://www.mcacc-collars.charity/images/leash_sleeve-dimensions-quick-ref.gif</image:loc>
 	<image:caption>Diagram showing the dimensions (cut, text, snap &amp; sewing) of "adopt me" leash sleeve for dogs.</image:caption>
