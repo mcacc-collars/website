@@ -23,8 +23,8 @@
 	<priority>0.9</priority>
 	
 	<image:image>
-	<image:loc>https://www.mcacc-collars.charity/images/collar-size-chart.gif</image:loc>
-	<image:caption>A diagram visualizing the overlapping size ranges of dog collars.</image:caption>
+	<image:loc>https://www.mcacc-collars.charity/images/collar-size-chart.svg</image:loc>
+	<image:caption>A graph visualizing the overlapping size ranges of dog collars.</image:caption>
 	<image:title>Collar Sizes</image:title>
 	</image:image>
 	<image:image>
