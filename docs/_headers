@@ -1,15 +1,22 @@
 # This is used only with Cloudflare Workers. 
 
-# Cache everything half a day (43200 seconds)
+# SITEWIDE
 /*
+	# Cache everything half a day (43200 seconds)
 	Cache-Control: public, max-age=43200
 
+	# Sitewide security headers
 	Permissions-Policy: accelerometer=(), camera=(), geolocation=(), gyroscope=(), magnetometer=(), microphone=(), midi=()
 	Referrer-Policy: strict-origin-when-cross-origin
 	X-Content-Type-Options: nosniff
 	X-Frame-Options: DENY
 	X-XSS-Protection: 1; mode=block
 	Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline';  img-src 'self';  object-src 'none'; frame-ancestors 'none'; base-uri 'self'
+
+
+# Canonicals for PDFs
+/files/lk1900-bobbin-winder-new-platform.pdf
+	Link: <https://www.mcacc-collars.charity/resources/collars_leashes/lk1900bn/bobbin-winder/>; rel="canonical"
 
 
 # I may do this eventually
