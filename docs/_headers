@@ -5,7 +5,7 @@
 	# Cache everything half a day (43200 seconds)
 	Cache-Control: public, max-age=43200
 
-	# Sitewide security headers
+	# Security headers
 	Permissions-Policy: accelerometer=(), camera=(), geolocation=(), gyroscope=(), magnetometer=(), microphone=(), midi=()
 	Referrer-Policy: strict-origin-when-cross-origin
 	X-Content-Type-Options: nosniff
@@ -14,10 +14,45 @@
 	Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline';  img-src 'self';  object-src 'none'; frame-ancestors 'none'; base-uri 'self'
 
 
-# Canonicals for PDFs
+# Canonicals for downloadable files
+/files/box_patterns.zip
+	Link: <https://www.mcacc-collars.charity/resources/collars_leashes/lk1900bn/>; rel="canonical"
+/files/clarendon-bt.zip
+	Link: <https://www.mcacc-collars.charity/resources/leash_sleeve/>; rel="canonical"
+/files/du1181n.pdf
+	Link: <https://www.mcacc-collars.charity/resources/leash_sleeve/>; rel="canonical"
+/files/instruction_7K_english.pdf
+	Link: <https://www.mcacc-collars.charity/resources/leash_sleeve/>; rel="canonical"
+/files/instruction_eg-1900bn_ONLY.pdf
+	Link: <https://www.mcacc-collars.charity/resources/collars_leashes/lk1900bn/>; rel="canonical"
+/files/juki-du1181-manual.pdf
+	Link: <https://www.mcacc-collars.charity/resources/leash_sleeve/>; rel="canonical"
+/files/leash_sleeve-paper-template-for-making-plastic-template.odg-source.zip
+	Link: <https://www.mcacc-collars.charity/resources/leash_sleeve/>; rel="canonical"
+/files/leash_sleeve-paper-template-for-making-plastic-template-w-dimensions.pdf
+	Link: <https://www.mcacc-collars.charity/resources/leash_sleeve/>; rel="canonical"
+/files/leash_sleeve-paper-template-for-making-plastic-template-wo-dimensions.pdf
+	Link: <https://www.mcacc-collars.charity/resources/leash_sleeve/>; rel="canonical"
+/files/LK1900BN_P12_1910_Catalog-bn_series.pdf
+	Link: <https://www.mcacc-collars.charity/resources/collars_leashes/lk1900bn/>; rel="canonical"
 /files/lk1900-bobbin-winder-new-platform.pdf
 	Link: <https://www.mcacc-collars.charity/resources/collars_leashes/lk1900bn/bobbin-winder/>; rel="canonical"
-
+/files/LK-1900BN_parts.pdf
+	Link: <https://www.mcacc-collars.charity/resources/collars_leashes/lk1900bn/>; rel="canonical"
+/files/LK-1900BN_Series-Engineer_Manual.pdf
+	Link: <https://www.mcacc-collars.charity/resources/collars_leashes/lk1900bn/>; rel="canonical"
+/files/packing-labels_collars.zip
+	Link: <https://www.mcacc-collars.charity/resources/collars_leashes/>; rel="canonical"
+/files/packing-labels_leashes.zip
+	Link: <https://www.mcacc-collars.charity/resources/collars_leashes/>; rel="canonical"
+/files/Parts_List-JUKI_DU-1181N.pdf
+	Link: <https://www.mcacc-collars.charity/resources/collars_leashes/lk1900bn/>; rel="canonical"
+/files/Pethardware_cost_calculator.zip
+	Link: <https://www.mcacc-collars.charity/resources/collars_leashes/>; rel="canonical"
+/files/stitches_calculator.zip
+	Link: <https://www.mcacc-collars.charity/resources/collars_leashes/lk1900bn/>; rel="canonical"
+/files/SVG_artwork.zip
+	Link: <https://www.mcacc-collars.charity/resources/leash_sleeve/>; rel="canonical"
 
 # I may do this eventually
 # Cache all HTML files for half a day (43200 seconds)
