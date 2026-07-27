@@ -4,6 +4,13 @@
 /*
 	Cache-Control: public, max-age=43200
 
+	Content-Security-Policy: default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; object-src 'none'; frame-ancestors 'none'; base-uri 'self';
+	Permissions-Policy: accelerometer=(), camera=(), geolocation=(), gyroscope=(), magnetometer=(), microphone=(), midi=()
+	Referrer-Policy: strict-origin-when-cross-origin
+	X-Content-Type-Options: nosniff
+	X-Frame-Options: DENY
+	X-XSS-Protection: 1; mode=block
+
 # I may do this eventually
 # Cache all HTML files for half a day (43200 seconds)
 #/*.html
@@ -18,7 +25,7 @@
 	Cache-Control: public, max-age=172800
 
 # I may do this eventually for css and js
-# Cache all assets in the /assets/ directory for one year (31536000 seconds)
+# Cache all assets in the /css/ and /js/ directory for one year (31536000 seconds)
 #/css/*
 #	Cache-Control: public, max-age=31536000, immutable
 
