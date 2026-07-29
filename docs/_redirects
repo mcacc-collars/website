@@ -6,7 +6,7 @@
 
 /images/collar-size-chart.gif /images/collar-size-chart.svg 301
 
-/resources/collars_leashes* /resources/collars-leashes:splat 301
 /resources/leash_sleeve /resources/leash-sleeve/ 301
 /resources/leash_sleeve/ /resources/leash-sleeve/ 301
 
+/resources/collars_leashes* /resources/collars-leashes:splat 301

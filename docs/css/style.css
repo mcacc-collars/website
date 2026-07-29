@@ -130,7 +130,7 @@ h1{font-size:2.4rem}h2{font-size:2.0rem}h3{font-size:1.6rem}h4{font-size:1.33rem
 
 
 /* TABLE OF CONTENTS
-
+ *
 /* Enable top/bottom border. Make the nav box (the border) fit the content (inline-block).
  * Add left-side indent, and let the border go to the right further. */
 main nav {display: inline-block;
@@ -150,10 +150,10 @@ main nav ul {padding-left: 1rem;} /* left box edge to circle */
 
 
 /* Make the toc text smaller (but wider) */
-main nav ol, main nav ul {font-size: .86rem; /* was .92rem */
-	letter-spacing: .13rem; /* was .058rem */
-	word-spacing: .09rem; /* was .04rem */
-	line-height: 1.47rem; /* was 1.4 */
+main nav ol, main nav ul {font-size: .84rem; /* was .92rem */
+	letter-spacing: .14rem; /* was .058rem */
+	word-spacing: .1rem; /* was .04rem */
+	line-height: 1.5rem; /* was 1.4 */
 	font-variant: small-caps;} 
 
 
@@ -166,11 +166,11 @@ main nav ul li {list-style-type: circle;
 
 main nav ol a {display: inline-block;
 	position: relative;
-	padding: 0.2rem;
-	margin: -0.2rem;
+	padding: 0.0rem;
+	margin: -0.0rem;
 	text-decoration: none;                /* Removes the default solid line */
 
- /* border: 1px solid #ff3333;  */ }
+ /* border: 1px solid #ff3333; */   }
 
 
 
