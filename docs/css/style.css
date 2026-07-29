@@ -144,10 +144,12 @@ main nav {display: inline-block;
 	padding: 0 4% 0 0%;}
 	
 /* Make the toc text smaller */
-main nav ol, main nav ul {font-size: .92rem;
-	letter-spacing: .058rem;
-	word-spacing: .04rem;
-	line-height: 1.5rem; } /* was 1.4 */
+main nav ol, main nav ul {font-size: .86rem; /* was .92rem */
+	letter-spacing: .085rem; /* was .058rem */
+	word-spacing: .06rem; /* was .04rem */
+	line-height: 1.4rem; 
+	
+font-variant: small-caps;} /* was 1.4 */
 
 
 /* LINKS
