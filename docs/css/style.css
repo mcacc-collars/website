@@ -145,11 +145,16 @@ main nav {display: inline-block;
 	
 /* Make the toc text smaller */
 main nav ol, main nav ul {font-size: .86rem; /* was .92rem */
-	letter-spacing: .085rem; /* was .058rem */
-	word-spacing: .06rem; /* was .04rem */
-	line-height: 1.4rem; 
+	letter-spacing: .11rem; /* was .058rem */
+	word-spacing: .07rem; /* was .04rem */
+	line-height: 1.47rem; /* was 1.4 */
 	
-font-variant: small-caps;} /* was 1.4 */
+font-variant: small-caps;} 
+
+/* make subsections more distant from bullet */
+main nav ul li {list-style-type: circle;
+	padding-left: .45rem;}
+
 
 
 /* LINKS
