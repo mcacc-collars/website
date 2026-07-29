@@ -1,11 +1,13 @@
 # This is used only with Cloudflare Workers. 
 
+##########
 # SITEWIDE
 /*
-	# Cache everything half a day (43200 seconds)
+	#
+	# Cache everything half a day
 	Cache-Control: public, max-age=43200
 
-
+	#
 	# Security headers
 	Permissions-Policy: accelerometer=(), camera=(), geolocation=(), gyroscope=(), magnetometer=(), microphone=(), midi=()
 	Referrer-Policy: strict-origin-when-cross-origin
@@ -14,8 +16,8 @@
 	X-XSS-Protection: 1; mode=block
 	Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline';  img-src 'self';  object-src 'none'; frame-ancestors 'none'; base-uri 'self'
 
-
-# Canonicals for downloadable files
+#
+# Canonicals for downloadable /files
 /files/box_patterns.zip
 	Link: <https://www.mcacc-collars.charity/resources/collars-leashes/lk1900bn/>; rel="canonical"
 /files/clarendon-bt.zip
@@ -56,24 +58,29 @@
 	Link: <https://www.mcacc-collars.charity/resources/leash-sleeve/>; rel="canonical"
 
 # I may do this eventually
-# Cache all HTML files for half a day (43200 seconds)
+# Cache all HTML files for half a day
 #/*.html
 #	Cache-Control: public, max-age=43200
 
-# Cache all image files for two days (172800 seconds)
+#
+# Cache all image files for two days
 /images/*
 	Cache-Control: public, max-age=172800
 
-# Cache files/ index for two days (172800 seconds)
+#
+# Cache files/ index for two days
 /files/index.html
 	Cache-Control: public, max-age=172800
 
-
-# Don't cache long while changing style
+#
+# Cache css 1/2 day (I should do 2 days, or 4 eventually)
 /css/*
-	Cache-Control: public, max-age=300
+	Cache-Control: public, max-age=86400
+	
+	# Don't cache css long while changing style
+	# Cache-Control: public, max-age=300
 
-# Cache longer (4 days)
+# Cache js 4 days (I should do a week, or two)
 /js/*
 	Cache-Control: public, max-age=345600
 
