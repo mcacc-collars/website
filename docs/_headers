@@ -5,6 +5,7 @@
 	# Cache everything half a day (43200 seconds)
 	Cache-Control: public, max-age=43200
 
+
 	# Security headers
 	Permissions-Policy: accelerometer=(), camera=(), geolocation=(), gyroscope=(), magnetometer=(), microphone=(), midi=()
 	Referrer-Policy: strict-origin-when-cross-origin
@@ -67,11 +68,16 @@
 /files/index.html
 	Cache-Control: public, max-age=172800
 
-# I may do this eventually for css and js
-# Cache all assets in the /css/ and /js/ directory for one year (31536000 seconds)
-#	Cache-Control: public, max-age=31536000, immutable
+
 # Don't cache long while changing style
 /css/*
 	Cache-Control: public, max-age=300
 
+# Cache longer (4 days)
+/js/*
+	Cache-Control: public, max-age=345600
 
+#====
+# I may do this eventually for css and js
+# Cache all assets in the /css/ and /js/ directory for one year (31536000 seconds)
+#	Cache-Control: public, max-age=31536000, immutable

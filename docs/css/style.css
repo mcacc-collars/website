@@ -130,30 +130,47 @@ h1{font-size:2.4rem}h2{font-size:2.0rem}h3{font-size:1.6rem}h4{font-size:1.33rem
 
 
 /* TABLE OF CONTENTS
-/* Add some top/bottom space to the outer (parent) ol */
-main nav > ol:first-child {
-	margin: .35rem 0 .65rem 0;}
 
-/* Enable top/bottom border. Make the Nav box (the border) fit the content (inline-block).
+/* Enable top/bottom border. Make the nav box (the border) fit the content (inline-block).
  * Add left-side indent, and let the border go to the right further. */
 main nav {display: inline-block;
 	border-top: 1px solid var(--subtle-line-color);
 	border-bottom: 1px solid var(--subtle-line-color);
-	/* Using the same left-indent as used elsewhere - twice as much */
-	margin: .2em 0 .2em calc(clamp(1rem, 2.1vw, 1.75rem) * 2);
-	padding: 0 4% 0 0%;}
-	
-/* Make the toc text smaller */
-main nav ol, main nav ul {font-size: .86rem; /* was .92rem */
-	letter-spacing: .11rem; /* was .058rem */
-	word-spacing: .07rem; /* was .04rem */
-	line-height: 1.47rem; /* was 1.4 */
-	
-font-variant: small-caps;} 
+	/* Using the same left-indent as used elsewhere 
+	 * Add some left/right padding (inner space) to the nav box */
+	margin: .2em 0 .2em calc(clamp(1rem, 2.1vw, 1.75rem));
+	padding: 0 2% 0 2%; /* make the top/bottom border extend further */}
 
-/* make subsections more distant from bullet */
+/* Add some top/bottom distance to the outer (parent) ol */
+main nav > ol:first-child {margin: .35rem 0 .65rem 0;
+	padding-left: 1rem;} /* reduce the std 40px indent of the outer list (entire toc) */
+
+/* And set how far the subsections indent */
+main nav ul {padding-left: 1rem;} /* left box edge to circle */
+
+
+/* Make the toc text smaller (but wider) */
+main nav ol, main nav ul {font-size: .86rem; /* was .92rem */
+	letter-spacing: .13rem; /* was .058rem */
+	word-spacing: .09rem; /* was .04rem */
+	line-height: 1.47rem; /* was 1.4 */
+	font-variant: small-caps;} 
+
+
+/* Set the distance from number/bullet to text */
+main nav ol li {padding-left: .4rem;} /* distance between number and text */
+
 main nav ul li {list-style-type: circle;
-	padding-left: .45rem;}
+	padding-left: .5rem;} /* distance between cicrle and text */
+
+
+main nav ol a {display: inline-block;
+	position: relative;
+	padding: 0.2rem;
+	margin: -0.2rem;
+	text-decoration: none;                /* Removes the default solid line */
+
+ /* border: 1px solid #ff3333;  */ }
 
 
 
@@ -163,7 +180,7 @@ a {display: inline-block;
 	position: relative;
 	padding: 0.5rem;
 	margin: -0.5rem;
-	/* border: 1px solid #ff3333; */}
+/* border: 1px solid #ff3333; */}
 
 a:link {color: var(--a-link);}
 a:visited {color: var(--a-visited);}
