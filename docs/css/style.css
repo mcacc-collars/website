@@ -146,31 +146,37 @@ main nav > ol:first-child {margin: .35rem 0 .65rem 0;
 	padding-left: 1rem;} /* reduce the std 40px indent of the outer list (entire toc) */
 
 /* And set how far the subsections indent */
-main nav ul {padding-left: 1rem;} /* left box edge to circle */
+main nav ul {padding-left: .95rem;} /* left box edge to circle */
 
 
 /* Make the toc text smaller (but wider) */
-main nav ol, main nav ul {font-size: .84rem; /* was .92rem */
-	letter-spacing: .14rem; /* was .058rem */
-	word-spacing: .1rem; /* was .04rem */
-	line-height: 1.5rem; /* was 1.4 */
-	font-variant: small-caps;} 
+main nav ol, main nav ul {font-size: .87rem; /* was .92rem */
+	letter-spacing: .2rem; /* was .058rem */
+	word-spacing: .2rem; /* was .04rem */
+	line-height: 1.47rem; /* was 1.4 */
+} 
 
+/* Make the markers smaller too */
+main nav ol li::marker {font-size: .94em;}
+
+/* Smallcaps */
+main nav span {text-transform: uppercase;
+	font-size: .72rem;}
 
 /* Set the distance from number/bullet to text */
-main nav ol li {padding-left: .4rem;} /* distance between number and text */
+main nav ol li {padding-left: .0rem;} /* distance between number and text */
 
 main nav ul li {list-style-type: circle;
 	padding-left: .5rem;} /* distance between cicrle and text */
 
-
+/* undo the large touch area for other links */
 main nav ol a {display: inline-block;
 	position: relative;
 	padding: 0.0rem;
 	margin: -0.0rem;
 	text-decoration: none;                /* Removes the default solid line */
 
- /* border: 1px solid #ff3333; */   }
+  /* border: 1px solid #ff3333; */ }
 
 
 
