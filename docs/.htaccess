@@ -1,7 +1,10 @@
-#*******************************************************************************
-# This site is hosted on Cloudflare Workers which doesn't use .htaccess (it uses
-# "rules" in the dashboard. I show my Cloudflare rules at the end.).
-#*******************************************************************************
+#***************************************************************************************************
+# This site is hosted on Cloudflare Workers which doesn't use .htaccess (it uses "rules" in the
+# dashboard). Below, I show my:
+#
+#		- .htaccess from Apache hosting (not used)
+#   	- Cloudflare rules (used).
+#***************************************************************************************************
 
 #===============================================================================
 # When this site was hosted on Apache, the following was used:
@@ -26,38 +29,64 @@
 #RewriteRule ^(.*)$ https://www.mcacc-collars.charity/$1 [R=301,L]
 
 
-#===============================================================================
-# ON CLOUDFLARE: The http-to-https redirect is done automatically (a setting in
-# "SSL/TLS > Edge certificates"). I don't use the free domain anymore.
+#===================================================================================================
+# ON CLOUDFLARE:
 #
-# REDIRECT APEX TO WWW
-# Go to account home (domains) > "Delivery & performance > Bulk redirects." Create a "bulk redirect
-# list" with these two items:
+# REDIRECT HTTP & APEX TO WWW: 
+#     The http & non-www redirect can be done in two places. 
 #
-# SOURCE URL                     TARGET URL                         STATUS
-# http://mcacc-collars.charity/  https://www.mcacc-collars.charity/ 301
-# https://mcacc-collars.charity/ https://www.mcacc-collars.charity/ 301
+# 1. I do it in "bulk redirects:"
+#   - Go to home (domains) > "Delivery & performance > Bulk redirects."
+# 	- Create a "bulk redirect list" with these three items:
+#	 
+#   SOURCE URL                        TARGET URL                         STATUS
+#   http://mcacc-collars.charity/     https://www.mcacc-collars.charity/ 301
+#   https://mcacc-collars.charity/    "                                  301
+#   http://www.mcacc-collars.charity/ "                                  301
 #
-# You MUST enable the following parameters for EACH rule:
-#   - Subpath matching (matches any source URL after /) 
-#   - Preserve path suffix (adds anything after / to the target URL) 
+#   You MUST enable the following "edit parameters" for EACH rule:
+#     - Subpath matching (matches any source URL after /) 
+#     - Preserve path suffix (adds anything after / to the target URL) 
 #
-# The bulk-redirect matching algorithm[1] suggests that it can match just hostname (without scheme),
+# IMPORTANT: You MUST disable "SSL/TLS > Edge certificates > Always Use HTTPS". That looks tempting
+# to use, but there is a condition where two redirects will occur (someone visits http://apex/ will
+# be redircted to https, and then the bulk redirect will redirect https://apex/ to
+# https://www.apex/). It's better to cover both conditions in one redirect.
+#
+# Redirect rules are processed late in Cloudflare's process.[1] I use it because I block a lot of spam
+# traffic. The blocking occurs before the bulk redirect (therefore less to redirect).
+#
+# The bulk-redirect matching algorithm[2] suggests that it can match just hostname (without scheme),
 # but I couldn't get that to work. (If that worked, only one list item would be necessary. I created
 # two to cover the two possible ways non-www can occur.
 #
-# Bulk redirect rules occur before Cloudflare requires https. (The first item essentially requires
-# https before Cloudflare has to do it.).
 #
-# FYI: there is also a "Rules > Overview > Redirect rules" where you can accomplish the above. But,
-# that's processed very early in Cloudflare's ruleset engine.[2] That's problematic when you
-# consider the next section's security blocking rules. (You wouldn't want to redirect things you
-# end up blocking. Better to do the blocking first. Redirect what remains.).
+# 2. You can also do it in "Rules > Overview > Redirect rules" with the following rule:
 #
-# REDIRECT /images/[subdomains] to /images
-# I also created bulk redirects for the /images/medium/ and /small/ subdirectories. They have smaller
-# versions of the images in /images. I don't have directory browsing for those subdirs. I redirect
-# any request to browse those subdirs to /images which has directory browsing.
+#   "If incoming requests match..."
+#     - "Custom filter expression"
+#       - "When incoming requests match..."
+#         - Chose "Edit expression:"
+#           (not ssl) or (http.host eq "mcacc-collars.charity")
+#	  
+#       - "Then..."
+#         - "URL redirect"
+#           Type: Dynamic
+#           Expression: concat("https://www.mcacc-collars.charity", http.request.uri.path)
+#           Status: 301
+#
+# Rules > Redirect rules is applied very early in Cloudflare's processing. That would be better for
+# your normal traffic, but I block a lot of spam traffic. Using "redirect rules" redirects those
+# only to be blocked when the return (with https & www.). Seems wasteful. Plus, you see the first
+# (redirected) spam listed in "Security > analytics." That can add a lot of noise there. If there
+# were a way to not see it there (not log those redirects), I'd probably use this rule. I chose
+# "bulk redirects" because the "Security > analytics" is more meaningful (blocking the spam before
+# the redirect).
+#
+# REDIRECT /images/[subdirectory] to /images
+# I also created another bulk-redirect list for the /images/medium/ and /small/ subdirectories. They
+# have smaller versions of the images in /images. I don't have directory browsing for those subdirs.
+# I redirect any request (to browse those subdirs) to /images, which has directory browsing.
 #
 #
 # SOURCE URL                     								TARGET URL									STATUS
@@ -67,53 +96,61 @@
 # https://www.mcacc-collars.charity/images/small				"											301
 # https://www.mcacc-collars.charity/images/small/				"											301
 # https://www.mcacc-collars.charity/images/small/index.html		"											301
-
+#
+# Do not enable any "Edit parameters."
+#
+# I also bulk=-edirect 3 other things as a convenience. "/license.txt" to "/LICENSE.txt",
+# "/manifest.webmanifest" to "site.webmanifest." Also, google occasionally requests its site-verify
+# file (xxx.html) without the .html. I redirect that.
+#
+# See /_redirects for more redirects. I use that file when I change a file or path name. Eventually,
+# I remove those redirects when nobody's trying to access the old name.
+#
+#
 #===
 # BLOCK MALICIOUS REQUESTS
 #
-# I was getting hundreds of requests for infrastructure files, things I don't have & nobody should
-# try to access even if I did. I created the # following rules in Security > Security rules >
-# Custom rules." 
+# I was getting hundreds of requests for system files, things I don't have (nobody should try to
+# access even if I did). I created the following rules in Security > Security rules > Custom rules:" 
 #
 # RULE #1: Whitelist: expected (valid) requests
 #
-# The blocking rules (#2, 3 & 4) have so many conditions that it seemed better to whitelist what I
+# The blocking rule (below) have so many conditions that it seemed better to whitelist what I
 # know to be the valid requests. I start with what should be the most frequent requests (images?),
-# end with the least expected.
+# end with the least expected (people typing in a path without a trailing /).
 #
-# I think /images/* probably gets the most access. I expect three filetypes (webp, jpg or gif). The
-# shortest image path is 21-char (plus 8 for "/images/" in front):
+# I think /images/* get the most access. I expect four extensions (.webp, .jpg, .gif or .svg; plus
+# .html whitelisted elsewhere). The shortest image filename is 21-char (plus 8 for "/images/" path):
 
 (starts_with(http.request.uri.path, "/images/") and
   substring(http.request.uri.path, -4) in {"webp" ".jpg" ".gif" ".svg"} and
   len(http.request.uri.path) gt 28
 ) or
 
-# There can also be directory browsing on /images/. But, that should be much less frequent. I
-# whitelist that below.
+# There can also be directory browsing on /images/ (not the subdirs inside it). But, that should be
+# much less frequent. I whitelist it below. The .html extension is handled there.
 #
-# I assume /css & /js are the next most-common requests:
+# Next, I assume /css & /js are the next most-common requests:
 
 http.request.uri.path in {"/css/style.css" "/css/files.css" "/js/darkmode.js"} or
 
-# Again, there could be directory browsing of the above. That's whitelisted below because it should
-# be rare.
+# Again, there could be directory browsing on those. That's whitelisted below because it should be
+# rare.
 #
-# At this point, I think the published pages (directories) of the site would be most commonly
-# requested (in the order I think they'd be most visited, not sure it matters with "in"?):
+# I think the published (displayable) pages (directories) of the site would be next most commonly
+# requested (in the order I think they'd be most visited, not sure if order matters with "in"?):
 
 http.request.uri.path in {
-"/resources/leash_sleeve/"
-"/resources/collars_leashes/"
-"/resources/collars_leashes/lk1900bn/"
-"/resources/collars_leashes/lk1900bn/bobbin-winder/"
-"/resources/collars_leashes/hot-knife/"
 "/resources/"
+"/resources/leash-sleeve/"
+"/resources/collars-leashes/"
+"/resources/collars-leashes/lk1900bn/"
+"/resources/collars-leashes/lk1900bn/bobbin-winder/"
+"/resources/collars-leashes/hot-knife/"
 "/"} or
 
-
-# Those could also be accessed with /index.html or without trailing /. I whitelist that below
-# (rare).
+# Those can also be directory browsed with /index.html (or without the trailing /). This should be
+# even more rare. I whitelist it below.
 #
 # Then there's requests for /files/*. Only the filetypes pdf & zip exist: 
 
@@ -121,33 +158,30 @@ http.request.uri.path in {
   substring(http.request.uri.path, -3) in {"pdf" "zip"}
 ) or
 
-# Again, /files could be accessed with /index.html or without trailing /. Whitelisted below.
+# Again, /files could be directory browsed with /index.html or without trailing /. Whitelisted below.
 #
-# favicons:
+# Next, I enumerate all the individual files acessible in home:
 
-substring(http.request.uri.path, 0, 8) in {"/android" "/favicon"} or
-starts_with(http.request.uri.path, "/apple") or
-
-# The files in the root directory:
-
-http.request.uri.path in {"/BingSiteAuth.xml" "/googleb3737839f3b1fec8.html" "/llms.txt" "/robots.txt" "/site.webmanifest" "/404.html" "/404.svg" "/sitemap.xml.gz" "/sitemap.xml" "/LICENSE.txt" "/ads.txt"
+http.request.uri.path in {"/BingSiteAuth.xml" "/googleb3737839f3b1fec8.html" "/llms.txt" "/robots.txt" "/site.webmanifest" "/404.html" "/404.svg" "/sitemap.xml.gz" "/sitemap.xml" "/LICENSE.txt" "/ads.txt" "/6s9dh98hxq1sjut3sf1t1pq5rz41uevv.txt"
 "/android-chrome-192x192.png" "/android-chrome-512x512.png" "/apple-touch-icon.png" "/favicon.ico" "/favicon-16x16.png" "/favicon-32x32.png" "/icon.svg"
-"/googleb3737839f3b1fec8" "/manifest.webmanifest"
-"/humans.txt sitemap_index.xml"
+
+# I dont serve these files, but redirect them to files I do serve:
+"/license.txt" "/manifest.webmanifest" "/googleb3737839f3b1fec8"
+
+# I don't serve these, but see requests for them. I wouldn't block these (they're not bad). So, 
+# I whitelist them.
+"/humans.txt /sitemap_index.xml"
 } or
 
-# I get requests for the google site verification file with & without .html. I created a symlink
-# to serve both. I see requests for sitemap.xml and .gz. I serve both. I get requests for ads,
-# humans & security .txt files, and sitemap_index.xml. I whitelist it even if I don't serve them.
-
-# There's also .well-known/
+# There's also .well-known. I think that's supposed to be wide-open, any request allowed (a
+# standard). But, .php requests look unreasonable to me. (I'd be careful blocking more.).
 
 (starts_with(http.request.uri.path, "/.well-known/") and
   not ends_with(http.request.uri.path, ".php")
 ) or
 
-# I don't whitelist .php access. And, I don't need to whitelist accesses without the trailing /.
-# Directory browsing shouldn't be allowed for /.well-known.
+# Directory browsing shouldn't be allowed for /.well-known. I don't whitelist .index.html nor
+# requests without the trailing / .
 
 # At this point, the only other requests that could occur would be directory browsing of either 1)
 # directories that aren't the site's "pages" people are invited to visit (whitelisted above as
@@ -160,6 +194,7 @@ http.request.uri.path in {"/BingSiteAuth.xml" "/googleb3737839f3b1fec8.html" "/l
 http.request.uri.path in {
 
 # /directory/ & /directory/index.html
+
 "/images/" "/images/index.html"
 "/css/" "/css/index.html"
 "/js/" "/js/index.html"
@@ -167,11 +202,11 @@ http.request.uri.path in {
 # These are just /directory/index.html because the /directory/ was already whitelisted above:
 
 "/resources/index.html"
-"/resources/collars_leashes/index.html"
-"/resources/collars_leashes/hot-knife/index.html"
-"/resources/collars_leashes/lk1900bn/index.html"
-"/resources/collars_leashes/lk1900bn/bobbin-winder/index.html"
-"/resources/leash_sleeve/index.html"
+"/resources/collars-leashes/index.html"
+"/resources/collars-leashes/hot-knife/index.html"
+"/resources/collars-leashes/lk1900bn/index.html"
+"/resources/collars-leashes/lk1900bn/bobbin-winder/index.html"
+"/resources/leash-sleeve/index.html"
 "/index.html"
 
 # Another /directory/ & /directory/index.html
@@ -192,11 +227,11 @@ http.request.uri.path in {
 "/css"
 "/js"
 "/resources"
-"/resources/collars_leashes"
-"/resources/collars_leashes/hot-knife"
-"/resources/collars_leashes/lk1900bn"
-"/resources/collars_leashes/lk1900bn/bobbin-winder"
-"/resources/leash_sleeve"
+"/resources/collars-leashes"
+"/resources/collars-leashes/hot-knife"
+"/resources/collars-leashes/lk1900bn"
+"/resources/collars-leashes/lk1900bn/bobbin-winder"
+"/resources/leash-sleeve"
 "/files"
 "/images/small"
 "/images/medium"}
@@ -204,12 +239,12 @@ http.request.uri.path in {
 # Action: SKIP (all remaining custom rules)
 # Log matching requests: NO
 #
-# Note: It's tempting to consider reversing the logic, and say "if NOT" any of the above: block.
-# But, I think there could be legitimate things browsers, AI bots might look for. For example,
-# llms.txt is relatively new. Likewise, an old Apple ipad looks for a "precomposed" favicon. I would
-# worry what else I'm not aware of. I think it's better to let everything not-whitelisted fall
-# through. But, I do block "images" and "js" if anything falls through. (I'm considering "files" and
-# "css" too.).
+# Note: It's tempting to consider reversing the logic, and say "if NOT" any of the above: block
+# (everthing else). But, I think there could be legitimate things browsers, AI bots might look for.
+# For example, llms.txt is relatively new. Likewise, an old Apple ipad looks for a "precomposed"
+# favicon. I would worry about what else I'm not aware of. I think it's better to let everything
+# not-whitelisted fall through. But, I have considered blocking "/js" if there was a lot of probing
+# that.
 #
 # RULE #2: Block: requests for things I don't have (and look malicious):
 #
@@ -217,29 +252,25 @@ http.request.uri.path in {
 
 # I get hundreds of requests for /aa, /ab, /ac, etc. The largest path I serve is /ads.txt (8 char).
 # There shouldn't be any requests for any files with paths shorter than that. I could probably
-# block < 10, but there's alawys new standards evolving (like /llms.txt which is 9 char). I wouldn't
-# want to block something that's normal someday (unforeseen today). I think there's almost no chance
-# of a future standard looking for something shorter than 8.
+# block < 10, but there's alawys new standards evolving (like /llms.txt which is 9). I wouldn't want
+# to block something that's normal someday (unforeseen today). I think there's almost no chance of a
+# future standard looking for something shorter than 8.
 len(http.request.uri.path) lt 8 or
 
 # I block paths ending in these strings:
 substring(lower(http.request.uri.path), -3) in {".gz" ".7z" ".xz" ".md" ".sh" ".js" ".rc" ".db" ".py" "yml"} or
 substring(lower(http.request.uri.path), -4) in {".zip" ".tar" ".rar" ".bz2" ".tgz" ".cfm" ".ini" ".asp" ".cfg" ".map" ".sql" ".axd" ".cgi" ".bak" ".log" ".key" ".pem" "dump" ".hcl" "vars"} or
-substring(lower(http.request.uri.path), -5) in {".json" ".toml" ".aspx" ".yaml" ".conf" "state"} or
+substring(lower(http.request.uri.path), -5) in {".json" ".toml" ".aspx" ".yaml" ".conf" "state" ".lock" "phtml"} or
 
 # I block paths starting with these strings:
 substring(http.request.uri.path, 0, 2) in {"/_" "/~" "/$" "/;"} or
 substring(lower(http.request.uri.path), 0, 3) in {"/v2" "/s3" "/.;"} or
-substring(lower(http.request.uri.path), 0, 4) in {"/.ds" "/.ht" "/app" "/aws" "/ecp" "/var" "/log" "/opt" "/etc" "/rsc" "/old" "/pre" "/dev" "/new" "/asp" "/..;" "/id_" "/img" "/v1/"} or
-substring(lower(http.request.uri.path), 0, 5) in {"/.ssh" "/.aws" "/alfa" "/blog" "/.svn" "/root" "/rest" "/team" "/home" "/file" "/page" "/post" "/.bod" "/auto" "/cred" "/user" "/word" "/inst" "/curl" "/host" "/feed" "/sign" "/test" "/dash" "/boot" "/info" "/.pgp"} or
-substring(lower(http.request.uri.path), 0, 6) in {"/graph" "/debug" "/login" "/admin" "/oauth" "/media" "/react" "/theme" "/tinyf" "/.idea" "/.bash" "/check" "/front" "/alvin" "/nginx"} or
+substring(lower(http.request.uri.path), 0, 4) in {"/.ds" "/.ht" "/aws" "/ecp" "/var" "/log" "/opt" "/etc" "/rsc" "/old" "/pre" "/dev" "/new" "/asp" "/..;" "/id_" "/img" "/v1/" "/.ai"} or
+substring(lower(http.request.uri.path), 0, 5) in {"/.ssh" "/.aws" "/alfa" "/blog" "/.svn" "/root" "/rest" "/team" "/home" "/file" "/page" "/post" "/.bod" "/auto" "/cred" "/user" "/word" "/inst" "/curl" "/host" "/feed" "/sign" "/test" "/dash" "/boot" "/info" "/.pgp" "/make" "/mini"} or
+substring(lower(http.request.uri.path), 0, 6) in {"/graph" "/debug" "/login" "/admin" "/oauth" "/media" "/react" "/theme" "/tinyf" "/.idea" "/.bash" "/check" "/front" "/alvin" "/nginx" "/.wind" "/.curs"} or
 substring(lower(http.request.uri.path), 0, 7) in {"/upload" "/plugin" "/.trash" "/server" "/health" "/action" "/webjar" "/orders" "/editor" "/assets" "/module" "/static" "/manage" "/update" "/vendor"} or
 substring(lower(http.request.uri.path), 0, 8) in {"/.pypirc" "/storage" "/request" "/cgi-bin" "/swagger" "/console" "/webhook" "/setting" "/project" "/product" "/package" "/message" "/control" "/contact" "/billing" "/.vercel" "/.stripe" "/jenkins" "/profile" "/payment" "/threads" "/enhance" "/.yarnrc" "/metrics" "/web-inf" "/.action" "/staging" "/laravel" "/deliver" "/details" "/pricing"} or
 substring(lower(http.request.uri.path), 0, 9) in {"/procfile" "/actuator" "/telescop" "/firebase" "/filezill" "/.netlify" "/articles" "/register" "/template" "/componen" "/.amplify" "/livewire" "/official" "/.profile"} or
-
-# I get some strange requests, malformed urls that seem to be scripted. I'll stop blocking these eventually:
-http.request.uri.path in {"/images/favicon-196x196.png" "/favicon.png" "/favicon.ico.png"
-"/resources/lk1900bn" "/leash_sleeve" "/collars_leashes/lk1900bn" "/collars_leashes/lk1900bn/bobbin-winder" "/collars_leashes"} or
 
 # Each Cloudflare rule is limited to 4096 chars (and you get 5 rules). Doing it as above uses less
 # chars than individual "contains" or "ends_with" functions. Especially if you have to use the lower
@@ -267,7 +298,7 @@ http.request.uri.path contains "/login" or
 http.request.uri.path contains "credential" or
 http.request.uri.path contains "gradle"
 
-# FWIW: the "wp," "php," ".git" & "env" block 90% of the malicious requests. Adding more rules is 
+# FWIW: "wp," "php," ".git" & "env" block 90% of the malicious requests. Adding more rules is 
 # diminishing returns.
 
 #
@@ -278,6 +309,6 @@ http.request.uri.path contains "gradle"
 # section about bulk-redirects, I mentioned another place redirects can be done. Those are processed
 # before these security rules.).
 #
-# [1] https://developers.cloudflare.com/rules/url-forwarding/bulk-redirects/how-it-works/#url-matching-algorithm
+# [1] https://developers.cloudflare.com/ruleset-engine/reference/phases-list/#request-phases
 #
-# [2] https://developers.cloudflare.com/ruleset-engine/reference/phases-list/#request-phases
+# [2] https://developers.cloudflare.com/rules/url-forwarding/bulk-redirects/how-it-works/#url-matching-algorithm

@@ -10,7 +10,7 @@
 --img-opacity:		1.0; /* not used (only for noct mode) */
 --img-opacity-trans: 0.0s; /* not used (only for noct mode) */
 
---subtle-text-color: #5e5e5e; /* white, 37% = 5e5e5e - This is for the top nav links, footnote h2 heading, and last-updated footer. */
+--subtle-text-color: #585858; /* white, 35% = 585858 - This is for the top nav links, footnote h2 heading, and last-updated footer. */
 --subtle-line-color: #b3b3b3; /* white, 70% = b3b3b3 - This is for the lines associated with that text (the lines should lighter) */
 
 --crumb-a-hover:		#6489f5; /* royalBlue 4169E1, lighter & less saturated: 6489f5 */
@@ -112,7 +112,7 @@ body {margin: 0;
 	background-color: var(--bg-color);
 	color: var(--text-color);
 	line-height: 1.5;
-	font-family: Verdana,sans-serif;}
+	font-family: Verdana, sans-serif;}
 
 /* This comes from w3.css. I added h7. If used, specify as <div class="h7" "role="heading" aria-level="7"> */
 h1,h2,h3,h4,h5,h6,div.h7{font-family:"Segoe UI",Arial,sans-serif;font-weight:600;margin:10px 0}
@@ -150,7 +150,8 @@ main nav ul {padding-left: .95rem;} /* left box edge to circle */
 
 
 /* Make the toc text smaller (but wider) */
-main nav ol, main nav ul {font-size: .87rem; /* was .92rem */
+main nav ol, main nav ul {font-weight: 600;
+	font-size: .87rem; /* was .92rem */
 	letter-spacing: .2rem; /* was .058rem */
 	word-spacing: .2rem; /* was .04rem */
 	line-height: 1.47rem; /* was 1.4 */
