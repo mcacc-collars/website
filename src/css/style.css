@@ -151,23 +151,23 @@ main nav ul {padding-left: .95rem;} /* left box edge to circle */
 
 /* Make the toc text smaller (but wider) */
 main nav ol, main nav ul {font-weight: 650;
-	font-size: .85rem; /* was .92rem */
-	letter-spacing: .205rem; /* was .058rem */
-	word-spacing: .18rem; /* was .04rem */
+	font-size: .83rem; /* was .92rem */
+	letter-spacing: .168rem; /* was .058rem */
+	word-spacing: .215rem; /* was .04rem */
 	line-height: 1.437rem; /* was 1.4 */
 } 
 
 /* Make the markers smaller too */
-main nav ol li::marker {font-size: .94em;}
+main nav ol li::marker {font-size: .95em;}
 
 /* Smallcaps */
 main nav span {text-transform: uppercase;
-	font-size: .73rem;}
+	font-size: .71rem;}
 
 /* Set the distance from number/bullet to text */
 main nav ol li {padding-left: .0rem;} /* distance between number and text */
 
-main nav ul li {list-style-type: circle;
+main nav ul li {list-style-type: "-";
 	padding-left: .5rem;} /* distance between cicrle and text */
 
 /* undo the large touch area for other links */

@@ -1,7 +1,7 @@
 # This is used only with Cloudflare Workers. 
 #
-# 12hr	1day 	2day	3day	4day
-# 43200	86400	172800	259200	345600
+# 12hr	1day 	2day	3day	4day	1wk		2wk		4wk
+# 43200	86400	172800	259200	345600	604800	1209600	2419200
 
 ##########
 # SITEWIDE
@@ -87,9 +87,9 @@
 	# Don't cache css long while changing style
 	# Cache-Control: public, max-age=300
 
-# Cache js 4 days (I should do a week, or two)
+# Cache js four weeks (darkmode.js almost never changes. I can bust the cache with the url.)
 /js/*
-	Cache-Control: public, max-age=345600
+	Cache-Control: public, max-age=2419200
 
 #====
 # I may do this eventually for css and js

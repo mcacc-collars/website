@@ -1,12 +1,12 @@
 # Source html, css & js files (not minified)
-This directory contains the website's source .html, .css & .js files. These files end up being "minified" after editing. The minified version goes into the `/docs` directory (which Cloudflare Workers & Github Pages[1] uses as the source for their static hosting). 
+This directory contains the website's source .html, .css & .js files. These files end up being "minified" after editing. The minified version goes into the `/docs` directory (which Cloudflare Workers & Github Pages[1] uses as the source for static hosting). 
 
 ## HTML base element
-These source .html files contain a `<base href="">` element which causes the browser to display the images from `/docs`. This lets you edit these source files and easily view them in your browser.
+These source .html files contain an `<base href="">` element which causes the browser to display the images from `/docs`. This lets you edit these source files and easily view them in your browser as if they were in the real site directory. (But, if you click anything, you'll then be in `/docs`.).
 
-The base element is placed _after_ the css & java files are loaded. So, those source files can be edited & tested from `/src` too. When the source file is minified, the base element is removed (the html files in `/docs` load _everything_ from `/docs`. This `/src` directory is only used for editing & viewing the un-minified source.). Note: placing the base element after the js & css files causes an html validator error. It doesn't matter for this purpose. It's removed when the minified copy is made for `/docs`.
+The base element is placed _after_ the css & java files are loaded. This allows those source files to be edited & tested from `/src` too. When the source file is minified, the base element is removed (the html files in `/docs` load _everything_ from `/docs`. This `/src` directory is only used for editing & viewing the un-minified source.). Note: placing the base element after the js & css files causes an html validator error. It doesn't matter for this purpose. It's removed when the minified version is put in `/docs` to actually be used.
 
-Remember: when viewing a .html file in this directory (to see how the edits render) if you follow a link to another page, that page will load from `/docs` (this is important to remember if you're editing the css or js. Those changes won't apply.).
+Remember: when viewing a .html file in this directory (to see how the edits render) if you follow a link to another page, that page will load from `/docs` (this is important to remember. If you were editing & testing the css or js. Those changes won't apply unless the page is loaded from `/src`.).
 
 ## Minification
 
