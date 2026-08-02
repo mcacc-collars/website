@@ -150,11 +150,11 @@ main nav ul {padding-left: .95rem;} /* left box edge to circle */
 
 
 /* Make the toc text smaller (but wider) */
-main nav ol, main nav ul {font-weight: 600;
-	font-size: .86rem; /* was .92rem */
-	letter-spacing: .2rem; /* was .058rem */
-	word-spacing: .2rem; /* was .04rem */
-	line-height: 1.47rem; /* was 1.4 */
+main nav ol, main nav ul {font-weight: 650;
+	font-size: .85rem; /* was .92rem */
+	letter-spacing: .205rem; /* was .058rem */
+	word-spacing: .18rem; /* was .04rem */
+	line-height: 1.437rem; /* was 1.4 */
 } 
 
 /* Make the markers smaller too */
@@ -162,7 +162,7 @@ main nav ol li::marker {font-size: .94em;}
 
 /* Smallcaps */
 main nav span {text-transform: uppercase;
-	font-size: .74rem;}
+	font-size: .73rem;}
 
 /* Set the distance from number/bullet to text */
 main nav ol li {padding-left: .0rem;} /* distance between number and text */

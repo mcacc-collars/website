@@ -1,7 +1,7 @@
 # This is used only with Cloudflare Workers. 
 #
-# 12hr	1day 	2day	4day
-# 43200	86400	172800	345600
+# 12hr	1day 	2day	3day	4day
+# 43200	86400	172800	259200	345600
 
 ##########
 # SITEWIDE
@@ -68,14 +68,16 @@
 #	Cache-Control: public, max-age=43200
 
 #
-# Cache all image files for two days
+# Cache image files for three days
 /images/*
-	Cache-Control: public, max-age=172800
+	Cache-Control: public, max-age=259200
 
 #
-# Cache files/ index for two days
+# Cache files/ & images/ index for four days
 /files/index.html
-	Cache-Control: public, max-age=172800
+	Cache-Control: public, max-age=345600
+/images/index.html
+	Cache-Control: public, max-age=345600
 
 #
 # Cache css 1 day (I should do 2 days, or 4 eventually)
