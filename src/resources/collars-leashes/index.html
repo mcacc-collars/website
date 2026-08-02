@@ -3,7 +3,7 @@
 <head>
 <title>Making collars & leashes</title>
 <link rel="stylesheet" href="../../css/style.css?v=0.8">
-<script src="../../js/darkmode.js?v=0.1" defer></script>
+<script src="../../js/darkmode.js?v=0.2" defer></script>
 <base href="../../../docs/resources/collars-leashes/">
 <link rel="canonical" href="https://www.mcacc-collars.charity/resources/collars-leashes/">
 <meta name="description" content="How to make collars & leashes for dog shelters.">
@@ -69,29 +69,27 @@ table#sewing-singer201 td:nth-child(2), table#sewing-singer201 td:nth-child(3) {
 </head>
 <body>
 <script>
-// This is only done here because browsers flicker before darkmode is applied.
-// This stuff should be done in the .js file (in the part for the page's initial
-// loading).
+// This is done here because browsers flicker before darkmode is applied. This
+// should be done in the .js file (in the part for the page's initial loading).
 
 let storedDisplay2 = localStorage.getItem("display");
 //console.log('HTML: storedDisplay:', storedDisplay);
 
-// If the visitor hasn't chosen a display mode, use their browser preference.
-// (This same test is in the .js file. It shouldn't exist here if browsers
-// didn't flash.)
+// If the visitor hasn't chosen a display mode, use their browser preference (default dark if
+// no preference).
 if (storedDisplay2 === null) {
+    const prefersLight = window.matchMedia("(prefers-color-scheme: light)");
 
-    // No stored choice. Check if browser preference is dark.
-    const prefersDark = window.matchMedia("(prefers-color-scheme: dark)");
-    if (prefersDark.matches) {
-        //console.log('HTML: no stored value. Browser prefers dark');
-        storedDisplay2 = "darkmode";
-    } else {
-        //console.log('Initial: no stored value. Browser does not prefer dark. Using
-        // light.');
+    if (prefersLight.matches) {
+        //console.log('Initial: no stored choice. Browser prefers light');
         storedDisplay2 = "lightmode";
+    } else {
+        //console.log('Initial: no stored choice. Browser does not prefer light. Using dark.');
+        storedDisplay2 = "darkmode";
     }
 }
+
+// Set the body's class attribute
 document.body.classList.add(storedDisplay2);
 </script>
 	
@@ -175,7 +173,7 @@ document.body.classList.add(storedDisplay2);
 <section id="collars">
 <h2>Collars</h2>
 <div>
-<p>I make collars in five widths. I make each width in two lengths for greater range of fitment:</p>
+<p>I make collars in five widths. I make each width in two lengths for greater range of fit:</p>
 
 <div class="image"><a href="../../images/collar-size-chart.svg">
 <img src="../../images/medium/collar-size-chart.gif"
@@ -458,7 +456,7 @@ sizes="70vmin" alt="Two-dozen 3/4-Long collars packaged using kitchen plastic-wr
 </thead>
 
 <tbody>
-<tr class="row1"><th class="width" rowspan="2" scope="row">3/8"</th><th class="duty" scope="row">light</th><td rowspan="2">14-1/2</td><td>1-7/8<sup role="doc-noteref" aria-label="Inline notes" class="fn" title="Inline note">*</sup></td></tr>
+<tr class="row1"><th class="width" rowspan="2" scope="row">3/8"</th><th class="duty" scope="row">light</th><td rowspan="2">14-1/2</td><td>1-7/8<sup class="fn"><a role="doc-noteref" aria-label="Inline notes" title="Inline note">*</a></sup></td></tr>
 <tr class="row2"><th class="duty" scope="row">regular</th><td>2</td></tr>
 
 <tr class="row1"><th class="width" scope="row">5/8"</th><th class="duty" scope="row">regular</th><td>14-1/4</td><td>2-1/2</td></tr>
@@ -466,13 +464,13 @@ sizes="70vmin" alt="Two-dozen 3/4-Long collars packaged using kitchen plastic-wr
 <tr class="row1"><th class="width" scope="row">3/4"<th class="duty" scope="row">regular</th><td>14-3/4</td><td>2-3/4</td></tr>
 
 <tr class="row1"><th class="width" rowspan="2" scope="row">1"</th><th class="duty" scope="row">regular</th><td rowspan="2">15-1/4</td><td>3-1/4</td></tr>
-<tr class="row2"><th class="duty" scope="row">heavy</th><td>3-3/8<sup role="doc-noteref" aria-label="Inline notes" class="fn" title="Inline note">*</sup></td></tr>
+<tr class="row2"><th class="duty" scope="row">heavy</th><td>3-3/8<sup class="fn"><a role="doc-noteref" aria-label="Inline notes" title="Inline note">*</a></sup></td></tr>
 
 </tbody>
 </table>
 
 <aside class="inline-notes" aria-label="Inline notes">
-<p><sup class="fn" role="note" title="Inline note">*</sup> The 3/8"-Light snaps are thinner. I reduce the overlap length to accommodate that. The 1"-Heavy bolt snaps are thicker. I add a little.</p>
+<p><sup class="fn"><a role="note" title="Inline note">*</a></sup> The 3/8"-Light snaps are thinner. I reduce the overlap length to accommodate that. The 1"-Heavy bolt snaps are thicker. I add a little.</p>
 </aside>
 
 </div></section> <!-- end h4 -->
@@ -625,10 +623,10 @@ sizes="70vmin" alt="4-inch to 6-inch HVAC reducer modified to fit onto the inlin
 
 <li><p>I want the buckle end's exposed cut edge to be fairly smooth. Dogs have a coat. This won't be like it's touching a bare hand (like the leash'es handle-end exposed cut). But, some dogs have short coats, no undercoat. I don't want this edge to be too rough or sharp. Also, I don't want the corners of this end to be too sharp, but they won't be touched often.</p></li>
 
-<li><p>The tri-glide's end gets even <em>less</em> attention. If the exposed cut edge is exceptionally rough/sharp<sup role="doc-noteref" aria-label="Inline note" class="fn" title="Inline note">*</sup> it could abrade the webbing that slides over it (when adjusting the collar's size). Likewise, the tri-glide end's corners need less attention than the buckle end's because they're less exposed to touch (covered by a layer of webbing above &amp; below).</p>
+<li><p>The tri-glide's end gets even <em>less</em> attention. If the exposed cut edge is exceptionally rough/sharp<sup class="fn"><a role="doc-noteref" aria-label="Inline note" title="Inline note">*</a></sup> it could abrade the webbing that slides over it (when adjusting the collar's size). Likewise, the tri-glide end's corners need less attention than the buckle end's because they're less exposed to touch (covered by a layer of webbing above &amp; below).</p>
 
 <aside class="inline-notes" aria-label="Inline notes">
-<p><sup class="fn" role="note" title="Inline note">*</sup>Exception: I don't care if the exposed cut side is rough at the 3/8" tri-glide. The male buckle for these collars doesn't have a "ladder lock" like the larger collars (i.e, the webbing passes through the buckle <em>once</em>. It doesn't contribute to holding the collar's adjusted size.). The tri-glide's exposed cut side will help these collars hold their adjusted length if its rough.</p>
+<p><sup class="fn"><a role="note" title="Inline note">*</a></sup>Exception: I don't care if the exposed cut side is rough at the 3/8"-Small tri-glide. The male buckle for these collars doesn't have a "ladder lock" like the larger collars (i.e, the webbing passes through the buckle <em>once</em>. It doesn't contribute to holding the collar's adjusted size.). The tri-glide's exposed cut side will help these collars hold their adjusted length if its rough.</p>
 </aside></li>
 </ul>
 

@@ -3,7 +3,7 @@
 <head>
 <title>Using a Juki LK-1900BN bartacker to sew collars & leashes faster</title>
 <link rel="stylesheet" href="../../../css/style.css?v=0.8">
-<script src="../../../js/darkmode.js?v=0.1" defer></script>
+<script src="../../../js/darkmode.js?v=0.2" defer></script>
 <base href="../../../../docs/resources/collars-leashes/lk1900bn/">
 <link rel="canonical" href="https://www.mcacc-collars.charity/resources/collars-leashes/lk1900bn/">
 <meta name="description" content="How to make dog collars & leashes faster with a bartacking machine.">
@@ -28,29 +28,27 @@ table#bnw-parts td:nth-child(4) {text-align: right;}
 </head>
 <body>
 <script>
-// This is only done here because browsers flicker before darkmode is applied.
-// This stuff should be done in the .js file (in the part for the page's initial
-// loading).
+// This is done here because browsers flicker before darkmode is applied. This
+// should be done in the .js file (in the part for the page's initial loading).
 
 let storedDisplay2 = localStorage.getItem("display");
 //console.log('HTML: storedDisplay:', storedDisplay);
 
-// If the visitor hasn't chosen a display mode, use their browser preference.
-// (This same test is in the .js file. It shouldn't exist here if browsers
-// didn't flash.)
+// If the visitor hasn't chosen a display mode, use their browser preference (default dark if
+// no preference).
 if (storedDisplay2 === null) {
+    const prefersLight = window.matchMedia("(prefers-color-scheme: light)");
 
-    // No stored choice. Check if browser preference is dark.
-    const prefersDark = window.matchMedia("(prefers-color-scheme: dark)");
-    if (prefersDark.matches) {
-        //console.log('HTML: no stored value. Browser prefers dark');
-        storedDisplay2 = "darkmode";
-    } else {
-        //console.log('Initial: no stored value. Browser does not prefer dark. Using
-        // light.');
+    if (prefersLight.matches) {
+        //console.log('Initial: no stored choice. Browser prefers light');
         storedDisplay2 = "lightmode";
+    } else {
+        //console.log('Initial: no stored choice. Browser does not prefer light. Using dark.');
+        storedDisplay2 = "darkmode";
     }
 }
+
+// Set the body's class attribute
 document.body.classList.add(storedDisplay2);
 </script>
 
@@ -683,8 +681,8 @@ sizes="44vmin" alt="The LK1900's 'lever driving plate' which can increase/decrea
 <tr><th>x</th><th>y</th></tr>
 </thead>
 <tbody>
-<tr><th>3/8"</th><td>P1</td><td>12</td><td>28</td><td>92</td><td>80, 90 &amp; 105<sup role="doc-noteref" aria-label="Inline notes" class="fn" title="Inline note">*</sup></td><td>800</td><td>70-80</td></tr>
-<tr><th>5/8"</th><td>P2</td><td>08</td><td>36</td><td>65</td><td>94 &amp; 100<sup role="doc-noteref" aria-label="Inline notes" class="fn" title="Inline note">&dagger;</sup></td><td>900</td><td>64-74</td></tr>
+<tr><th>3/8"</th><td>P1</td><td>12</td><td>28</td><td>92</td><td>80, 90 &amp; 105<sup class="fn"><a role="doc-noteref" aria-label="Inline notes" title="Inline note">*</a></sup></td><td>800</td><td>70-80</td></tr>
+<tr><th>5/8"</th><td>P2</td><td>08</td><td>36</td><td>65</td><td>94 &amp; 100<sup class="fn"><a role="doc-noteref" aria-label="Inline notes" title="Inline note">&dagger;</a></sup></td><td>900</td><td>64-74</td></tr>
 <tr><th>3/4"</th><td>P3</td><td>03</td><td>42</td><td>95</td><td>113</td><td>1100</td><td>65-80</td></tr>
 <tr><th>1"</th><td>P4</td><td>09</td><td>56</td><td>79</td><td>92</td><td>1100</td><td>72-82</td></tr>
 <tr><th>1-1/2"</th><td>P5</td><td>37</td><td>90</td><td>140</td><td>100</td><td>1100</td><td>75-87</td></tr>
@@ -692,9 +690,9 @@ sizes="44vmin" alt="The LK1900's 'lever driving plate' which can increase/decrea
 </table>
 
 <aside class="inline-notes" aria-label="Inline notes">
-<p><sup class="fn" role="note" title="Inline note">*</sup> All <a href="#collar-0.375">3/8" collars</a> have one bartack at the tri-glide. I set <i>y</i>=105%. The -Short collar uses one bartack each side of the D-ring. I set those to 90%. The -Long uses two bartacks each side of the D-ring. They're 80%.</p>
+<p><sup class="fn"><a role="note" title="Inline note">*</a></sup> All <a href="#collar-0.375">3/8" collars</a> have one bartack at the tri-glide. I set <i>y</i>=105%. The -Short collar uses one bartack each side of the D-ring. I set those to 90%. The -Long uses two bartacks each side of the D-ring. They're 80%.</p>
 
-<p><sup class="fn" role="note" title="Inline note">&dagger;</sup> Only the <a href="#collar-0.625">5/8"</a>-Short collar has one bartack at the triglide. I set <i>y</i>=100%. All the other tacks get 94%, including the -Long triglide's two tacks.</p>
+<p><sup class="fn"><a role="note" title="Inline note">&dagger;</a></sup> Only the <a href="#collar-0.625">5/8"</a>-Short collar has one bartack at the triglide. I set <i>y</i>=100%. All the other tacks get 94%, including the -Long triglide's two tacks.</p>
 </aside>
 
 <p>The <a href="../../../files/instruction_eg-1900bn_ONLY.pdf">instruction manual</a> (pg 27) explains how to register a standard pattern to a "pattern key." While doing that, you'll notice the menu option "standard pattern select." That lets you hide all the standard patterns you don't intend to use. That's useful, reduces unnecessary information/choices.</p>
@@ -1080,7 +1078,7 @@ sizes="25vmin" alt="3/8-inch collar (short) buckle-end's tail clamped." loading=
 <tr><th>x</th><th>y</th></tr>
 </thead>
 <tbody>
-<tr><th>3/8"</th><td>P1<sup class="fn" role="doc-noteref" aria-label="Inline notes" title="Inline notes">*</sup></td><td><span class="smaller">(std pattern)<br></span>12</td><td>28</td><td>92</td><td>120</td><td>800</td><td>66</td></tr>
+<tr><th>3/8"</th><td>P1<sup class="fn"><a role="doc-noteref" aria-label="Inline notes" title="Inline notes">*</a></sup></td><td><span class="smaller">(std pattern)<br></span>12</td><td>28</td><td>92</td><td>120</td><td>800</td><td>66</td></tr>
 <tr><th>5/8"</th><td>P7 (P1+P3)</td><td>153</td><td>67</td><td>75</td><td>83</td><td>900</td><td>88</td></tr>
 <tr><th>3/4"</th><td>P8 (P1+P4)</td><td>154</td><td>84</td><td>75</td><td>87</td><td>1000</td><td>82</td></tr>
 <tr><th>1"</th><td>P9 (P1+P5)</td><td>155</td><td>110</td><td>79</td><td>82</td><td>1100</td><td>66</td></tr>
@@ -1088,7 +1086,7 @@ sizes="25vmin" alt="3/8-inch collar (short) buckle-end's tail clamped." loading=
 </table>
 
 <aside class="inline-notes" aria-label="Notes">
-<p><sup class="fn" role="note" title="Inline note">*</sup> The 3/8" leash uses the same webbing as the collars. Therefore, I use the same bartack (pattern-key P1). But, I enlarge the zig-zag (<i>y</i>-scale) to 120% so the bartacks grab more webbing. I sew two bartacks at each end of the leash, about 1/2" apart.</p>
+<p><sup class="fn"><a role="note" title="Inline note">*</a></sup> The 3/8" leash uses the same webbing as the collars. Therefore, I use the same bartack (pattern-key P1). But, I enlarge the zig-zag (<i>y</i>-scale) to 120% so the bartacks grab more webbing. I sew two bartacks at each end of the leash, about 1/2" apart.</p>
 </aside>
 
 <section id="leashes-box-patterns">

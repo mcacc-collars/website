@@ -2,9 +2,11 @@
 This directory contains the website's source .html, .css & .js files. These files end up being "minified" after editing. The minified version goes into the `/docs` directory (which Cloudflare Workers & Github Pages[1] uses as the source for their static hosting). 
 
 ## HTML base element
-These source .html files contain a `<base href="">` element which causes the browser to display images from `/docs`. This lets you edit these source files and view them in your browser. The base element is _after_ the css & java files are loaded. So, those source files can be edited & tested from here too.
+These source .html files contain a `<base href="">` element which causes the browser to display the images from `/docs`. This lets you edit these source files and easily view them in your browser.
 
-When the source file is minified, the base element is removed. The html files loaded from `/docs` load _everything_ from `/docs`. (This directory is only used for editing & viewing the source.).
+The base element is placed _after_ the css & java files are loaded. So, those source files can be edited & tested from `/src` too. When the source file is minified, the base element is removed (the html files in `/docs` load _everything_ from `/docs`. This `/src` directory is only used for editing & viewing the un-minified source.). Note: placing the base element after the js & css files causes an html validator error. It doesn't matter for this purpose. It's removed when the minified copy is made for `/docs`.
+
+Remember: when viewing a .html file in this directory (to see how the edits render) if you follow a link to another page, that page will load from `/docs` (this is important to remember if you're editing the css or js. Those changes won't apply.).
 
 ## Minification
 
@@ -19,25 +21,27 @@ These are the commands to minify the files:
 `minify src/js/darkmode.js > docs/js/darkmode.js`
 
 ### html
-`minify --html-keep-document-tags --html-keep-quotes --html-keep-whitespace src/index.html | grep -v "<base " > docs/index.html`
+`grep -v "<base " src/index.html | minify --type html --html-keep-document-tags --html-keep-quotes > docs/index.html`
 
-`minify --html-keep-document-tags --html-keep-quotes --html-keep-whitespace src/files/index.html | grep -v "<base " > docs/files/index.html`
+`grep -v "<base " src/files/index.html | minify --type html --html-keep-document-tags --html-keep-quotes > docs/files/index.html`
 
-`minify --html-keep-document-tags --html-keep-quotes --html-keep-whitespace src/images/index.html | grep -v "<base " > docs/images/index.html`
+`grep -v "<base " src/images/index.html | minify --type html --html-keep-document-tags --html-keep-quotes > docs/images/index.html`
 
-`minify --html-keep-document-tags --html-keep-quotes --html-keep-whitespace src/resources/index.html | grep -v "<base " > docs/resources/index.html`
+`grep -v "<base " src/resources/index.html | minify --type html --html-keep-document-tags --html-keep-quotes > docs/resources/index.html`
 
-`minify --html-keep-document-tags --html-keep-quotes --html-keep-whitespace src/resources/collars-leashes/index.html | grep -v "<base " > docs/resources/collars-leashes/index.html`
+`grep -v "<base " src/resources/collars-leashes/index.html | minify --type html --html-keep-document-tags --html-keep-quotes > docs/resources/collars-leashes/index.html`
 
-`minify --html-keep-document-tags --html-keep-quotes --html-keep-whitespace src/resources/collars-leashes/hot-knife/index.html | grep -v "<base " > docs/resources/collars-leashes/hot-knife/index.html`
+`grep -v "<base " src/resources/collars-leashes/hot-knife/index.html | minify --type html --html-keep-document-tags --html-keep-quotes > docs/resources/collars-leashes/hot-knife/index.html`
 
-`minify --html-keep-document-tags --html-keep-quotes --html-keep-whitespace src/resources/collars-leashes/lk1900bn/index.html | grep -v "<base " > docs/resources/collars-leashes/lk1900bn/index.html`
+`grep -v "<base " src/resources/collars-leashes/lk1900bn/index.html | minify --type html --html-keep-document-tags --html-keep-quotes > docs/resources/collars-leashes/lk1900bn/index.html`
 
-`minify --html-keep-document-tags --html-keep-quotes --html-keep-whitespace src/resources/collars-leashes/lk1900bn/bobbin-winder/index.html | grep -v "<base " > docs/resources/collars-leashes/lk1900bn/bobbin-winder/index.html`
+`grep -v "<base " src/resources/collars-leashes/lk1900bn/bobbin-winder/index.html | minify --type html --html-keep-document-tags --html-keep-quotes > docs/resources/collars-leashes/lk1900bn/bobbin-winder/index.html`
 
-`minify --html-keep-document-tags --html-keep-quotes --html-keep-whitespace src/resources/leash-sleeve/index.html | grep -v "<base " > docs/resources/leash-sleeve/index.html`
+`grep -v "<base " src/resources/leash-sleeve/index.html | minify --type html --html-keep-document-tags --html-keep-quotes > docs/resources/leash-sleeve/index.html`
 
 Those must be executed from the parent directory. I use [tdewolff's minify](https://github.com/tdewolff/minify/) command. (I intend to script the above eventually.).
+
+It may be necessary to use the option `--html-keep-whitespace` if minify breaks layout when collapsing whitespace.
 
 --
 [1] GitHub Pages uses `/docs`. Cloudflare Workers more uses `/dist` by convention. I would like to use that (it sounds more semantic about the directory's purpose). But, then a custom workflow has to be used on Github Pages. It seems easier to tell Cloudflare Workers to use "/docs" in `/wrangler.jsonc`.
