@@ -145,8 +145,8 @@ main nav {display: inline-block;
 main nav > ol:first-child {margin: .35rem 0 .65rem 0;
 	padding-left: 1rem;} /* reduce the std 40px indent of the outer list (entire toc) */
 
-/* And set how far the subsections indent */
-main nav ul {padding-left: .95rem;} /* left box edge to circle */
+/* And set how far the ul subsections indent */
+main nav ul {padding-left: .625rem;} /* left box edge dash marker */
 
 
 /* Make the toc text smaller (but wider) */
@@ -157,18 +157,21 @@ main nav ol, main nav ul {font-weight: 650;
 	line-height: 1.437rem; /* was 1.4 */
 } 
 
-/* Make the markers smaller too */
+/* Make the ol (number) markers smaller */
 main nav ol li::marker {font-size: .95em;}
 
 /* Smallcaps */
 main nav span {text-transform: uppercase;
 	font-size: .71rem;}
 
-/* Set the distance from number/bullet to text */
-main nav ol li {padding-left: .0rem;} /* distance between number and text */
+/* Set the distance from ol marker (number) to text */
+main nav ol li {padding-left: .025rem;}
 
+/* Set the chold ul markers to dash, and their distance to text. */
 main nav ul li {list-style-type: "-";
-	padding-left: .5rem;} /* distance between cicrle and text */
+	padding-left: .7rem;} /* distance between dash and text */
+
+
 
 /* undo the large touch area for other links */
 main nav ol a {display: inline-block;
