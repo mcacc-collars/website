@@ -1,5 +1,5 @@
 # mcacc-collars website
-How-to information for people who would like to make & donate collars, leashes, and "adopt me" leash sleeves for homeless dogs.
+How-to information for people who would like to make & donate collars, leashes and "adopt me" leash sleeves for homeless dogs.
 
 This site is hosted as [www.mcacc-collars.charity](https://www.mcacc-collars.charity), with mirrors at `mcacc-collars.github.io/website` (Github Pages) and `website.mcacc-collars.workers.dev` (Cloudflare Workers).
 

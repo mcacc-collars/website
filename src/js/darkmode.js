@@ -1,43 +1,42 @@
 /* *****************************************************************************
  * This script allows for 3 display modes: light, dark or nocturnal (a red-
- * shifted & dim display, friendly to circadian rhythm).
+ * shifted & dim display friendly to circadian rhythm). It operates in two ways:
  *
  * 1. On page load: Retrieve a visitor's previous choice from local-storage. If
- * no previous choice, use the browser preference. If that's dark, use darkmode.
- * But, don't save that as a choice. Likewise, if their browser preference isn't
- * dark, this site will be set to lightmode. This won't be saved as a choice
- * either. (Their browser preference will be used for each visit - until they
- * choose something more specific on this site.).
+ * no previous choice, use the browser preference (if there is none, use dark).
+ * But, don't save that as a choice (keep using the browser preference each
+ * visit, or default dark if no preference).
  *
  * 2. When the visitor chooses a display mode from the dropdown menu: that
- * choice is applied & saved to local storage to be used each time the page
- * loads (#1 above).
+ * choice is applied (the body's class set) & saved to local storage to be used
+ * from in #1 above.
  *
- * FLASHING FIX!!!: All of the above processing should occur in this .js file.
- * But, the pages flash when they load. If you're using darkmode, the default
- * white background appears briefly before black. (If you set the default bg
- * color to black - and you use lightmode - you'll see it flash black.).
+ * PROBLEM: The screen may flash as a page loads (if the browser defaults to a
+ * white background, and dark is chosen for this site. It could flash if your
+ * browser defaults a black background, and light is chosen here.).
  *
- * The fix seems to be moving the "document.body.classList.add" to the html file
- * (inside the <body> element, not the <head>. From what I read, this blocks
- * display until that executes.).
+ * FIX: I could only get this to work (not flash) by moving the #1 (load) part to
+ * the html file's <script> element. Moreover, that element had to be placed just
+ * after the opening <body> tag (not in <head>).
  *
- * That fix requires duplicating the localStorage.getItem operation, and the
- * "if null, if dark, etc" block. That would lead you to think you can move all
- * that to the inline <script>, but that doesn't work because the
- * document.getElementByID isn't ready. (If you move <script> to the bottom of
- * <body> then it's ready. But, then you get flashing because the class isn't
- * set until the page is loaded. There is a "sweet spot" where you want the class
- * set asap, but have to wait to set the dropdown menu item. So, this .js file
- * only does the latter (on load). The logic has to be duplicated to do the
- * former at the top of <body>.
+ * But, I couldn't move the getElementById (sets the menu item to visually
+ * reflect which display mode is being used) to the html <script> element. The
+ * document doesn't at the time that element is processed. So, it had to stay
+ * here in the #1 "Load" section. Which meant all the other stuff (determining
+ * what the display mode should be) has to be here too. Or, put the other way:
+ * just the document.body.classList.add has to be in the html <script> element.
+ * That's the only thing that can't be here. That needs the "if" block there.
  *
- * FWIW: Before I read about that fix, I set the default background color (:root
- * in the style.css file) to #888 (midway between black & white). This seemed
- * to soften the flash. (Downside: you see it in both light & dark modes. But,
- * not as jarring as seeing it in just one). I left that because it seems like a
- * good fallback. (If browsers didnt have this problem, then it would be a
- * little simpler if :root cold be default lightmode.).
+ * FWIW: The variable storedDisplay is global. It can be accessed from the
+ * <script> element. But, I've read globals are discouraged. So, I declare a new
+ * one there. If I recall, the global nature of that variable didn't help there
+ * (in the html <script> element) because it would execute before this .js file.
+ * I.e., the variable contained nothing. It's probably possible to access the
+ * retreived falue from the <script>'s variable here (without declaring a var
+ * here, nor retrieving the local storage here). I assume <script> reliably
+ * executes first and would define the global, and put the value in it. (I got
+ * tired of thinking about. It seems clearer for each one to have it's own var,
+ * set it.).
  *
  * This script was created from the two-mode script shown in:
  *     https://www.youtube.com/watch?v=_gKEUYarehE
@@ -50,12 +49,13 @@
 
 
 /* *****************************************************************************
- * PAGE LOAD:
- * 1. Retrieve the previously-chosen theme (there may not be one)
- * 2. Create an object to set the chosen option (this won't be used if 1) the
- *    visitor never chose anything in the past (nothing retrieved from local
- *    storage. And, 2) if no previous choice, and the user's light/dark browser
- *    preference isn't set to dark. */
+ * 1. PAGE LOAD:
+ * - Retrieve the previously-chosen display mode, or use the browser preference.
+ *   If none of the above, use dark (default).
+ * - Set the dropdown menu to reflect which mode is being used.
+ * - Create an object to be the event handler (if the user changes the drop-down
+ *   choice).
+ * *****************************************************************************/
 let storedDisplay = localStorage.getItem("display");
 const selectDisplay = document.getElementById("display-dropdown");
 
@@ -77,28 +77,30 @@ if (storedDisplay === null) {
     }
 }
 
-// If browsers didn't flash, this should be done here (set the body's class)
-// Instead, it's done at the top of each page's body tag.
+// If browsers didn't flash, this (set the body's class) should be done here.
+// Instead, it's done at the top of each page's body element.
 //     document.body.classList.add(storedDisplay)
 
-// Set the drop-down choice to whatever the display mode is (either what was
-// previously chosen, or the browser preference determined above).
+// Set the drop-down menu to reflect the display mode being used.
 document.getElementById("display-dropdown").value = storedDisplay;
 
 
-
 /* *****************************************************************************
- * EVENT HANDLER:
- * If the visitor selects a display mode, 1) set the body class. And, 2) save
- * that choice to local storage. */
+ * 2. DROPDOWN CHOICE HAS OCCURED:
+ * - Retrieve the chosen value.
+ * - Remove any body class previously set. I don't check to see if anything is
+ * set. I just remove the possibilities. (It may be easier/faster to remove all 3
+ * no matter what was chosen.).
+ * - Set the body class to the chosen mode.
+ * - Save the choice so it can be used if the user returns.
+ * *****************************************************************************/
 selectDisplay.addEventListener("change", function (event) {
 
     // Retrieve the ID value of the selected option
     const selectedValue = event.target.value;
 
-    // Call the function to set remove prior mode's class. (It may be faster to
-    // remove all 3 classes instead of figuring out which two might need
-    // removal.).
+    // Call the function to remove the prior mode's class. (It may be faster to
+    // remove all 3 classes instead of figuring out which two could be present).
     if (selectedValue === "darkmode") {
         document.body.classList.remove("lightmode");
         document.body.classList.remove("noctmode");
