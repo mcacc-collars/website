@@ -10,9 +10,9 @@ Remember: when viewing one of these .html files in your browser (to see how the 
 
 ## Minification
 
-I use [tdewolff's minify](https://github.com/tdewolff/minify/) command. Execute the min.sh script in this project's root directory. It will display the command to use.
+I use [tdewolff's minify](https://github.com/tdewolff/minify/) command. Run the min.sh script in this project's root directory. It will display the command to use.
 
-Note: for html files, I don't use minify's `--html-keep-whitespace`. This can cause problems if certain whitespace is in your file. (I do use `--html-keep-document-tags` and `--html-keep-quotes` so the minified file validates.).
+Note: for html files, I use minify's `--html-keep-document-tags`. Without it, the inline script element loses its context at the start of <body>. That causes problems for darkmode.js. See the comments in that script. I also use `--html-keep-quotes` because I worry unquoted attr values might be too minified.).
 
 --
 [1] GitHub Pages uses `/docs`. Cloudflare Workers uses `/dist` by convention. I would like to use that (it's more semantic about the directory's purpose). But, then a custom workflow has to be used on Github Pages. It seems easier to tell Cloudflare Workers to use "/docs" in `/wrangler.jsonc`.

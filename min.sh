@@ -44,7 +44,7 @@ else
 	echo -e " js:\t$(tput smul)d$(tput sgr0)arkmode"
 	echo ""
 
-	read -p "Type your choice, or q to ${bold}q${normal}uit (default q): " choice
+	read -p "h, f, i or r, c, k, 1, w, s or l, t, d or q to ${bold}q${normal}uit (default q): " choice
 	
 	echo ""
 fi
@@ -137,10 +137,10 @@ echo "!"
 echo "!   ${bold}$cmd${normal}"
 echo ""
 
-read -p "Confirm? y/n (default n): " choice
+read -p "Confirm? y/n (default y): " choice
 
-# If the user pressed enter, or typed anything other than "y", exit.
-if [ -z "$choice" ] || [ $choice != "y" ]; then
+# If the user didn't press enter, or typed anything other than "y", exit.
+if [ ! -z "$choice" ] && [ $choice != "y" ]; then
 	echo 'Canceled.'
 	exit
 fi
