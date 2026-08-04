@@ -1,6 +1,7 @@
 /* *****************************************************************************
  * This script allows for 3 display modes: light, dark or nocturnal (a no-blue &
- * dim display friendly to circadian rhythm). It does two things:
+ * dim display which is friendly to circadian rhythm). This script does two
+ * things:
  *
  * 1. On page load: Retrieve a visitor's previous choice from local-storage, and
  * a) set the body's class to that. And, b) set the pulldown list's selected
@@ -18,21 +19,25 @@
  * white background, and dark is chosen for this site. It could flash if your
  * browser defaults a black background, and light is chosen here.).
  *
- * FIX: I could only get this to work (not flash) by moving the #1-a (set the
- * body's class on page load) to the html file's <script> element. Moreover, that
+ * FIX: I could only get this to work (not flash) by moving #1-a (set the body's
+ * class on page load) to the html file's <script> element. Moreover, that
  * element had to be placed immediately after the opening <body> tag (not in
  * <head>. Being at the top of <body> seems to cause page display to wait until
  * the inline script executes (sets the body's class). There's no flash.
  *
  * After moving 1-a to inline script (in each html file), it seemed like I
- * should move the remaining (1-b, set the pulldown list value to reflect the
- * display mode being used) to the inline script too. But, it executes too soon
- * there (the object wasn't available. I need to confirm this.).  So, it had to
- * stay here in the #1 "Load" section. Which meant all the other stuff
- * (determining what the display mode should be) has to be duplicated here too.
- * I.e., just the document.body.classList.add has to be in the html <script>
- * element. That's the only thing that can't be here. That needs the "if" block
- * duplicated there.
+ * should move the remaining to the inline script too (1-b, set the pulldown list
+ * value to reflect the display mode being used). But, the inline script executes
+ * too soon (the object isn't available.).  So, that had to stay here in the #1
+ * "Load" section. That means all the other stuff (determining which display
+ * mode should be used) has to be duplicated here too. (I.e., only the
+ * document.body.classList.add has to be in the html <script> element. And,
+ * that's the _only_ thing that can be there. It needs the "if" block duplicated
+ * there.).
+ *
+ * Someday, maybe the class can be set here without flashing. That line is
+ * commented out below (>>> <<<). If that could be enabled, then the entire
+ * <script> element could be removed from the html.
  *
  * The variable selectDisplay is the only global.
  *
@@ -82,7 +87,7 @@ function setDisplayMode() {
 
     // If browsers didn't flash, this (set the body's class) should be done here.
     // Instead, it's done at the top of each page's body element.
-    //     document.body.classList.add(storedDisplay)
+    //   >>> >>>  document.body.classList.add(storedDisplay) <<< <<<
 
     // Set the drop-down menu to reflect the display mode being used.
     document.getElementById("display-dropdown").value = storedDisplay;
