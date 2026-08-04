@@ -6,43 +6,14 @@ These source .html files contain an `<base href="">` element which causes the br
 
 The base element is placed _after_ the css & java files are loaded. This allows those source files to be edited & tested from `/src` too. When the source file is minified, the base element is removed (the html files in `/docs` load _everything_ from `/docs`. This `/src` directory is only used for editing & viewing the un-minified source.). Note: placing the base element after the js & css files causes an html validator error. It doesn't matter for this purpose. It's removed when the minified version is put in `/docs` to actually be used.
 
-Remember: when viewing a .html file in this directory (to see how the edits render) if you follow a link to another page, that page will load from `/docs` (this is important to remember. If you were editing & testing the css or js. Those changes won't apply unless the page is loaded from `/src`.).
+Remember: when viewing one of these .html files in your browser (to see how the edits render), if you follow a link to another page, that page will load from `/docs` (this is important to remember. If you were editing & testing the css or js source files. Those changes won't apply unless the page is loaded from `/src`.).
 
 ## Minification
 
-These are the commands to minify the files:
+I use [tdewolff's minify](https://github.com/tdewolff/minify/) command. Execute the min.sh script in this project's root directory. It will display the command to use.
 
-### css
-`minify src/css/style.css > docs/css/style.css`
-
-`minify src/css/files.css > docs/css/files.css`
-
-### js
-`minify src/js/darkmode.js > docs/js/darkmode.js`
-
-### html
-`grep -v "<base " src/index.html | minify --type html --html-keep-document-tags --html-keep-quotes > docs/index.html`
-
-`grep -v "<base " src/files/index.html | minify --type html --html-keep-document-tags --html-keep-quotes > docs/files/index.html`
-
-`grep -v "<base " src/images/index.html | minify --type html --html-keep-document-tags --html-keep-quotes > docs/images/index.html`
-
-`grep -v "<base " src/resources/index.html | minify --type html --html-keep-document-tags --html-keep-quotes > docs/resources/index.html`
-
-`grep -v "<base " src/resources/collars-leashes/index.html | minify --type html --html-keep-document-tags --html-keep-quotes > docs/resources/collars-leashes/index.html`
-
-`grep -v "<base " src/resources/collars-leashes/hot-knife/index.html | minify --type html --html-keep-document-tags --html-keep-quotes > docs/resources/collars-leashes/hot-knife/index.html`
-
-`grep -v "<base " src/resources/collars-leashes/lk1900bn/index.html | minify --type html --html-keep-document-tags --html-keep-quotes > docs/resources/collars-leashes/lk1900bn/index.html`
-
-`grep -v "<base " src/resources/collars-leashes/lk1900bn/bobbin-winder/index.html | minify --type html --html-keep-document-tags --html-keep-quotes > docs/resources/collars-leashes/lk1900bn/bobbin-winder/index.html`
-
-`grep -v "<base " src/resources/leash-sleeve/index.html | minify --type html --html-keep-document-tags --html-keep-quotes > docs/resources/leash-sleeve/index.html`
-
-Those must be executed from the parent directory. I use [tdewolff's minify](https://github.com/tdewolff/minify/) command. (I intend to script the above eventually.).
-
-It may be necessary to use the option `--html-keep-whitespace` if minify breaks layout when collapsing whitespace.
+Note: for html files, I don't use minify's `--html-keep-whitespace`. This can cause problems if certain whitespace is in your file. (I do use `--html-keep-document-tags` and `--html-keep-quotes` so the minified file validates.).
 
 --
-[1] GitHub Pages uses `/docs`. Cloudflare Workers more uses `/dist` by convention. I would like to use that (it sounds more semantic about the directory's purpose). But, then a custom workflow has to be used on Github Pages. It seems easier to tell Cloudflare Workers to use "/docs" in `/wrangler.jsonc`.
+[1] GitHub Pages uses `/docs`. Cloudflare Workers uses `/dist` by convention. I would like to use that (it's more semantic about the directory's purpose). But, then a custom workflow has to be used on Github Pages. It seems easier to tell Cloudflare Workers to use "/docs" in `/wrangler.jsonc`.
 
