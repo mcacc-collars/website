@@ -64,7 +64,7 @@ const selectDisplay = document.getElementById("display-dropdown");
  * This processing is wrapped in a function (an "IIFE") to make the variable
  * storedDisplay local.
  * *****************************************************************************/
-function setDisplayMode() {
+(function () {
     let storedDisplay = localStorage.getItem("display");
 
     //console.log('LOAD entry: storedDisplay:', storedDisplay);
@@ -92,9 +92,7 @@ function setDisplayMode() {
     // Set the drop-down menu to reflect the display mode being used.
     document.getElementById("display-dropdown").value = storedDisplay;
 
-}
-
-setDisplayMode(); /* execute the function, then continue to add the listener: */
+}());
 
 /* *****************************************************************************
  * 2. DROPDOWN CHOICE HAS OCCURED:

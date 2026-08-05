@@ -20,28 +20,33 @@ table td {text-align: left;}
 </head>
 <body>
 <script>
-// This is done here because browsers flicker before darkmode is applied. This
-// should be done in the .js file (in the part for the page's initial loading).
+// This should be done in darkmode.js file (in the part for the page's initial
+// loading). But, browsers flash a white screen before the dark screen. Setting
+// the body's class (display mode) here occurs earlier, and no flash occurs. See
+// the .js file for more info.
+//
+// This processing is performed as an "iife" to keep the variables local.
+(function () {
+    let storedDisplay = localStorage.getItem("display");
+    //console.log('HTML: storedDisplay:', storedDisplay);
 
-let storedDisplay2 = localStorage.getItem("display");
-//console.log('HTML: storedDisplay:', storedDisplay);
+    // If the visitor hasn't chosen a display mode, use their browser preference
+    // (default dark if no preference).
+    if (storedDisplay === null) {
+        const prefersLight = window.matchMedia("(prefers-color-scheme: light)");
 
-// If the visitor hasn't chosen a display mode, use their browser preference (default dark if
-// no preference).
-if (storedDisplay2 === null) {
-    const prefersLight = window.matchMedia("(prefers-color-scheme: light)");
-
-    if (prefersLight.matches) {
-        //console.log('Initial: no stored choice. Browser prefers light');
-        storedDisplay2 = "lightmode";
-    } else {
-        //console.log('Initial: no stored choice. Browser does not prefer light. Using dark.');
-        storedDisplay2 = "darkmode";
+        if (prefersLight.matches) {
+            //console.log('Initial: no stored choice. Browser prefers light');
+            storedDisplay = "lightmode";
+        } else {
+            //console.log('Initial: no stored choice. Browser does not prefer light. Using dark.');
+            storedDisplay = "darkmode";
+        }
     }
-}
 
-// Set the body's class attribute
-document.body.classList.add(storedDisplay2);
+    // Set the body's class attribute
+    document.body.classList.add(storedDisplay);
+}());
 </script>
 
 <header>

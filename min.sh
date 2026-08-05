@@ -88,7 +88,7 @@ case $choice in
 	;;
 	s | html:sleeve)
 		page='html:sleeve'
-		path='resources/collars-leashes/leash-sleeve/index.html'
+		path='resources/leash-sleeve/index.html'
 	;;
 	
 	l | css:files)
