@@ -1,3 +1,4 @@
+/*global storedDisplay*/
 /* *****************************************************************************
  * This script allows for 3 display modes: light, dark or nocturnal (a no-blue &
  * dim display which is friendly to circadian rhythm). This script does two
@@ -60,39 +61,38 @@ const selectDisplay = document.getElementById("display-dropdown");
  * - Set the dropdown menu to reflect which mode is being used.
  * - Create an object to be the event handler (if the user changes the drop-down
  *   choice).
- *
- * This processing is wrapped in a function (an "IIFE") to make the variable
- * storedDisplay local.
  * *****************************************************************************/
-(function () {
-    let storedDisplay = localStorage.getItem("display");
 
-    //console.log('LOAD entry: storedDisplay:', storedDisplay);
+// This variable is declared and initialized within the html's inline script.
+// It's available here if this .js file is loaded with DEFER (executes after the
+// inline script).
+//let storedDisplay = localStorage.getItem("display");
 
-    /* If the visitor hasn't chosen a display mode, use their browser preference.
-     * But, don't save this as a chosen display mode. Just follow their browser
-     * preference until they choose something more specific on this site. (If
-     * there is no preference, default to dark. */
-    if (storedDisplay === null) {
-        const prefersLight = window.matchMedia("(prefers-color-scheme: light)");
+//console.log('LOAD entry: storedDisplay:', storedDisplay);
 
-        if (prefersLight.matches) {
-            //console.log('Initial: no stored choice. Browser prefers light');
-            storedDisplay = "lightmode";
-        } else {
-            //console.log('Initial: no stored choice. Browser does not prefer light. Using dark.');
-            storedDisplay = "darkmode";
-        }
+/* If the visitor hasn't chosen a display mode, use their browser preference.
+ * But, don't save this as a chosen display mode. Just follow their browser
+ * preference until they choose something more specific on this site. (If
+ * there is no preference, default to dark. */
+if (storedDisplay === null) {
+    const prefersLight = window.matchMedia("(prefers-color-scheme: light)");
+
+    if (prefersLight.matches) {
+        //console.log('Initial: no stored choice. Browser prefers light');
+        storedDisplay = "lightmode";
+    } else {
+        //console.log('Initial: no stored choice. Browser does not prefer light. Using dark.');
+        storedDisplay = "darkmode";
     }
+}
 
-    // If browsers didn't flash, this (set the body's class) should be done here.
-    // Instead, it's done at the top of each page's body element.
-    //   >>> >>>  document.body.classList.add(storedDisplay) <<< <<<
+// If browsers didn't flash, this (set the body's class) should be done here.
+// Instead, it's done at the top of each page's body element.
+//   >>> >>>  document.body.classList.add(storedDisplay) <<< <<<
 
-    // Set the drop-down menu to reflect the display mode being used.
-    document.getElementById("display-dropdown").value = storedDisplay;
+// Set the drop-down menu to reflect the display mode being used.
+document.getElementById("display-dropdown").value = storedDisplay;
 
-}());
 
 /* *****************************************************************************
  * 2. DROPDOWN CHOICE HAS OCCURED:
