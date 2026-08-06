@@ -3,7 +3,7 @@
 <head>
 <title>Using a hot knife to cut webbing faster</title>
 <link rel="stylesheet" href="../../../css/style.css?v=0.8">
-<script src="../../../js/darkmode.js?v=0.2a" defer></script>
+<script src="../../../js/darkmode.js?v=0.2b" defer></script>
 <base href="../../../../docs/resources/collars-leashes/hot-knife/">
 <link rel="canonical" href="https://www.mcacc-collars.charity/resources/collars-leashes/hot-knife/">
 <meta name="description" content="How to use a hot-knife to cut webbing faster for collars and leashes.">
@@ -18,13 +18,26 @@
 </head>
 <body>
 <script>
-// This should be done in darkmode.js file (in the part for the page's initial
-// loading). But, browsers flash a white screen before the dark screen. Setting
-// the body's class (display mode) here occurs earlier, and no flash occurs. See
-// the .js file for more info.
+/* This should be done in darkmode.js (in the part for the page's initial
+ * loading). But, browsers flash a white screen before the dark screen because
+ * that's executed too late. Doing it here (inside the *body* element, not head)
+ * results in no flash.
+ *
+ * There is only one page-load operation that still occurs in the .js file:
+ * setting the dropdown-choice value to reflect the display mode in use. (FWIW:
+ * that part can't happen here because this happens too early. The drop-down
+ * object doesn't exist yet.). See the .js file for more info. */
 
-// I should be able to define this variable here, and refer to it in the .js
-// script (as long as it's "defer").
+/* TESTING: To test the logic for no stored choice (using the browser
+ * preference), uncomment the following line to delete any stored value when the
+ * page loads. */
+//localStorage.removeItem('display')
+
+
+/* This is a global variable. It is refered to in the .js file to set the
+ * dropdown value to reflect the display mode being used. (Note: the .js script
+ * is loaded "defer." That may have something to do with this variable being
+ * reliably available to it.) */
 let storedDisplay = localStorage.getItem("display");
 //console.log('HTML: storedDisplay:', storedDisplay);
 
@@ -42,7 +55,9 @@ if (storedDisplay === null) {
     }
 }
 
-// Set the body's class attribute
+// Set the body's class attribute. (This is the only thing that can't be done in
+// the .js file. Someday browsers may handle this better, and it could be done
+// there.)
 document.body.classList.add(storedDisplay);
 </script>
 
