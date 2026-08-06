@@ -18,4 +18,4 @@ This website can be downloaded and browsed locally using your browser. Go to the
 The html source files (`/src`) have a `<base href="">` element which allows them to display in your browser as if they were loaded from `/docs` (so images load normally from there). This allows easy editing & testing (viewing) in `/src`. The element is placed after the js & css directives. Those load from `/src` (so, they can be edited and tested from `/src` too. All source editing and testing should be done from `/src`. Any other files in `/docs` can be edited there.).
 
 # License
-This project is licensed under the MIT License - see the LICENSE file for details. (This is the least restrictive license available.).
+This  project is licensed under the MIT License - see the LICENSE file for details. (This is the least restrictive license available.).
