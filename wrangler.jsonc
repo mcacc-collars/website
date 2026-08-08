@@ -5,7 +5,7 @@
 {
   "$schema": "node_modules/wrangler/config-schema.json",
   "name": "website",
-  "compatibility_date": "2026-07-12",
+  "compatibility_date": "2026-08-07",
   "preview_urls": false,
   "assets": {
     "directory": "./docs",
@@ -27,8 +27,9 @@
 *
 * The following files are also specific to Cloudflare Workers, serving a similar
 * configuration-like purpose:
-*	/docs/.assetsignore
-*	/docs/_headers
+*	./docs/.assetsignore
+*	./docs/_headers
+*   ./docs/_redirects
 *
 * The file "docs/.htaccess" contains more info about Cloudflare features I use:
 *   1. "Bulk redirect" rule to redirect non-www to www.

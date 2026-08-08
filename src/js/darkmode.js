@@ -1,4 +1,4 @@
-/*global storedDisplay*/
+/*global storedDisplay, selectDisplay*/
 /* *****************************************************************************
  * This script allows for 3 display modes: light, dark or nocturnal (a no-blue &
  * dim display which is friendly to circadian rhythm). This script does two

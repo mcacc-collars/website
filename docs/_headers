@@ -63,28 +63,22 @@
 
 
 # I may do this eventually
-# Cache all HTML files for half a day
-#/*.html
-#	Cache-Control: public, max-age=43200
-
-#
-# Cache image files for three days
-/images/*
-	Cache-Control: public, max-age=259200
-
-#
-# Cache files/ & images/ index for four days
-/files/index.html
-	Cache-Control: public, max-age=345600
-/images/index.html
-	Cache-Control: public, max-age=345600
-
-#
-# Cache css 1 day (I should do 2 days, or 4 eventually)
-/css/*
+# Cache all HTML files for one day
+/*.html
 	Cache-Control: public, max-age=86400
+
+#
+# Cache image files for four days
+/images/*
+	Cache-Control: public, max-age=345600
+
+
+#
+# Cache css 2 days (I should do 4 eventually, or a week, then a month. I can bust the cache.)
+/css/*
+	Cache-Control: public, max-age=172800
 	
-	# Don't cache css long while changing style
+	# Don't cache css long if changing style rapidly
 	# Cache-Control: public, max-age=300
 
 # Cache js four weeks (darkmode.js almost never changes. I can bust the cache with the url.)
