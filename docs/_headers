@@ -10,6 +10,7 @@
 # Sitewide: this sets everything for 3 days. But, subsequent rules replace this. In the end, this
 # only applies to the files in the home directory (but not / itself, the html).
 /*
+	! Cache-Control
 	Cache-Control: public, max-age=259200
 
 	#
