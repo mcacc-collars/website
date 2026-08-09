@@ -1,17 +1,19 @@
 # This is used only with Cloudflare Workers. 
 #
-# 12hr	1day 	2day	3day	4day	1wk		2wk		4wk
-# 43200	86400	172800	259200	345600	604800	1209600	2419200
+# 6hr	12hr	1day 	2day	3day	4day	1wk		2wk		4wk
+# 21600	43200	86400	172800	259200	345600	604800	1209600	2419200
 
 ##########
-# SITEWIDE
+# Cache-control
+
+#
+# Sitewide: this sets everything for 3 days. But, subsequent rules replace this. In the end, this
+# only applies to the files in the home directory (but not / itself, the html).
 /*
-	#
-	# Cache everything half a day
-	Cache-Control: public, max-age=43200
+	Cache-Control: public, max-age=259200
 
 	#
-	# Security headers
+	# Set the sitewide security headers too
 	Permissions-Policy: accelerometer=(), camera=(), geolocation=(), gyroscope=(), magnetometer=(), microphone=(), midi=()
 	Referrer-Policy: strict-origin-when-cross-origin
 	X-Content-Type-Options: nosniff
@@ -19,7 +21,51 @@
 	X-XSS-Protection: 1; mode=block
 	Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline';  img-src 'self';  object-src 'none'; frame-ancestors 'none'; base-uri 'self'
 
-# FILES
+# Starting here, the default (3-day) cache is replaced for everything not in the home directory 
+# (and not /index.html)
+
+#
+# Home (html) for 6 hours
+/
+	! Cache-Control
+	Cache-Control: public, max-age=21600
+
+#
+# Resources (html) for 12 hours
+/resources/*
+	! Cache-Control
+	Cache-Control: public, max-age=43200
+
+#
+# Cache image files for four days
+/images/*
+	! Cache-Control
+	Cache-Control: public, max-age=345600
+
+#
+# Cache files for 1 week (I could probably do 4).
+/files/*
+	! Cache-Control
+	Cache-Control: public, max-age=604800
+
+#
+# Cache css 2 days (I should do 4 eventually, or a week, then a month. I can bust the cache.)
+/css/*
+	! Cache-Control
+	Cache-Control: public, max-age=172800
+	
+	# Don't cache css long if changing style rapidly
+	# ! Cache-Control
+	# Cache-Control: public, max-age=300
+
+#
+# Cache js 4 weeks (darkmode.js almost never changes. I can bust the cache with the url.)
+/js/*
+	! Cache-Control
+	Cache-Control: public, max-age=2419200
+
+
+
 #
 # Canonicals for downloadable files
 /files/box_patterns.zip
@@ -60,35 +106,3 @@
 	Link: <https://www.mcacc-collars.charity/resources/collars-leashes/lk1900bn/>; rel="canonical"
 /files/SVG_artwork.zip
 	Link: <https://www.mcacc-collars.charity/resources/leash-sleeve/>; rel="canonical"
-
-
-# I may do this eventually
-# Cache all HTML files for one day
-#/*.html
-	Cache-Control: public, max-age=86400
-
-#
-# Cache image files for four days
-/images/*
-	! Cache-Control
-	Cache-Control: public, max-age=345600
-
-
-#
-# Cache css 2 days (I should do 4 eventually, or a week, then a month. I can bust the cache.)
-/css/*
-	! Cache-Control
-	Cache-Control: public, max-age=172800
-	
-	# Don't cache css long if changing style rapidly
-	# Cache-Control: public, max-age=300
-
-# Cache js four weeks (darkmode.js almost never changes. I can bust the cache with the url.)
-/js/*
-	! Cache-Control
-	Cache-Control: public, max-age=2419200
-
-#====
-# I may do this eventually for css and js
-# Cache all assets in the /css/ and /js/ directory for one year (31536000 seconds)
-#	Cache-Control: public, max-age=31536000, immutable
