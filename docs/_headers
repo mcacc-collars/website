@@ -7,6 +7,13 @@
 # Cache-control
 
 #
+
+#
+# Home (html) for 6 hours
+/
+	! Cache-Control
+	Cache-Control: public, max-age=21600
+
 # Sitewide: this sets everything for 3 days. But, subsequent rules replace this. In the end, this
 # only applies to the files in the home directory (but not / itself, the html. That rule may apply
 # first. So, this one replaces any existing cache-control too.).
@@ -25,12 +32,6 @@
 
 # Starting here, the default (3-day) cache is replaced for everything not in the home directory 
 # (and not /index.html)
-
-#
-# Home (html) for 6 hours
-/
-	! Cache-Control
-	Cache-Control: public, max-age=21600
 
 #
 # Resources (html) for 12 hours
