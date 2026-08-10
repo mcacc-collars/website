@@ -5,12 +5,12 @@
 
 ##########
 # Cache-control
-
 #
+# I might want to use Cache-Control: public, max-age=0, must-revalidate
 
 #
 # Home (html) for 6 hours
-/
+https://www.mcacc-collars.charity/
 	! Cache-Control
 	Cache-Control: public, max-age=21600
 
