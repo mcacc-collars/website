@@ -10,12 +10,8 @@
 #
 # ! Cache-Control to remove/replace value
 
-#
-# Home (html) for 6 hours
-/
-	Cache-Control: public, max-age=21600
 
-# Home (files) for 1 week
+# Home (non-html files) for 1 week
 /ads.txt
 	Cache-Control: public, max-age=604800
 /android-chrome-192x192.png
@@ -42,9 +38,14 @@
 	Cache-Control: public, max-age=604800
 
 #
-# Resources (html) for 12 hours
+# Home (html) for 1 day
+/
+	Cache-Control: public, max-age=86400
+
+#
+# Resources (html) for 1 day
 /resources/*
-	Cache-Control: public, max-age=43200
+	Cache-Control: public, max-age=86400
 
 #
 # Cache image files for four days
