@@ -1,1 +1,0 @@
-let storedDisplay=localStorage.getItem("display");if(storedDisplay===null){const e=window.matchMedia("(prefers-color-scheme: light)");e.matches?storedDisplay="lightmode":storedDisplay="darkmode"}document.body.classList.add(storedDisplay)
