@@ -3,13 +3,25 @@
 # 6hr	12hr	1day 	2day	3day	4day	1wk		2wk		4wk
 # 21600	43200	86400	172800	259200	345600	604800	1209600	2419200
 
+#
+# Sitewide (security headers)
+/*
+	Referrer-Policy: strict-origin-when-cross-origin
+	X-Content-Type-Options: nosniff
+
+# 1 day
+# Strict-Transport-Security: max-age=86400; includeSubDomains
+
+# fallback: script-src 'unsafe-inline'
+#		Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline';  img-src 'self';  object-src 'none'; frame-ancestors 'none'; base-uri 'self'
+
+
 #**************
 # Cache-control
 #
 # I might want to use Cache-Control: public, max-age=0, must-revalidate
 #
 # ! Cache-Control to remove/replace value
-
 
 # Home (non-html files) for 1 week
 /ads.txt
@@ -41,21 +53,49 @@
 # Home (html) for 1 day
 /
 	Cache-Control: public, max-age=86400
+	Permissions-Policy: accelerometer=(), camera=(), geolocation=(), gyroscope=(), magnetometer=(), microphone=(), midi=()
+	X-Frame-Options: DENY
+	Content-Security-Policy: default-src 'self'; script-src 'self' 'sha256-rEaXJQujwFig9Fiflr+rVPy+GReId/T8HZe8r6+AzqE='; style-src 'self' 'unsafe-inline';  img-src 'self';  object-src 'none'; frame-ancestors 'none'; base-uri 'self'
 
 #
 # Resources (html) for 1 day
 /resources/*
 	Cache-Control: public, max-age=86400
+	Permissions-Policy: accelerometer=(), camera=(), geolocation=(), gyroscope=(), magnetometer=(), microphone=(), midi=()
+	X-Frame-Options: DENY
+	Content-Security-Policy: default-src 'self'; script-src 'self' 'sha256-rEaXJQujwFig9Fiflr+rVPy+GReId/T8HZe8r6+AzqE='; style-src 'self' 'unsafe-inline';  img-src 'self';  object-src 'none'; frame-ancestors 'none'; base-uri 'self'
 
 #
 # Cache image files for four days
 /images/*
 	Cache-Control: public, max-age=345600
 
+/images/*.jpg
+	Content-Type: image/jpeg
+/images/*.webp
+	Content-Type: image/webp
+/images/*.gif
+	Content-Type: image/gif
+/images/*.svg
+	Content-Type: image/svg+xml; charset=utf-8
+	Content-Security-Policy: default-src 'none'; frame-ancestors 'none'; sandbox;
+
+# (html)
+/images/
+	Permissions-Policy: accelerometer=(), camera=(), geolocation=(), gyroscope=(), magnetometer=(), microphone=(), midi=()
+	X-Frame-Options: DENY
+	Content-Security-Policy: default-src 'self'; script-src 'self' 'sha256-rEaXJQujwFig9Fiflr+rVPy+GReId/T8HZe8r6+AzqE='; style-src 'self' 'unsafe-inline';  img-src 'self';  object-src 'none'; frame-ancestors 'none'; base-uri 'self'
+
 #
 # Cache files for 1 week (I could probably do 4).
 /files/*
 	Cache-Control: public, max-age=604800
+# (html)
+/files/
+	Permissions-Policy: accelerometer=(), camera=(), geolocation=(), gyroscope=(), magnetometer=(), microphone=(), midi=()
+	X-Frame-Options: DENY
+	Content-Security-Policy: default-src 'self'; script-src 'self' 'sha256-rEaXJQujwFig9Fiflr+rVPy+GReId/T8HZe8r6+AzqE='; style-src 'self' 'unsafe-inline';  img-src 'self';  object-src 'none'; frame-ancestors 'none'; base-uri 'self'
+
 
 #
 # Cache css 2 days (I should do 4 eventually, or a week, then a month. I can bust the cache.)
@@ -64,26 +104,17 @@
 	
 	# Don't cache css long if changing style rapidly
 	# Cache-Control: public, max-age=300
+/css/*.css
+	Content-Type: text/css; charset=utf-8
 
 #
 # Cache js 4 weeks (darkmode.js almost never changes. I can bust the cache with the url.)
 /js/*
 	Cache-Control: public, max-age=2419200
+/js/*.js
+	Content-Type: text/javascript; charset=utf-8
 
 
-#
-# Security headers (sitewide)
-/*
-	Permissions-Policy: accelerometer=(), camera=(), geolocation=(), gyroscope=(), magnetometer=(), microphone=(), midi=()
-	Referrer-Policy: strict-origin-when-cross-origin
-	X-Content-Type-Options: nosniff
-	X-Frame-Options: DENY
-	X-XSS-Protection: 1; mode=block
-	Content-Security-Policy: default-src 'self'; script-src 'self' 'sha256-rEaXJQujwFig9Fiflr+rVPy+GReId/T8HZe8r6+AzqE='; style-src 'self' 'unsafe-inline';  img-src 'self';  object-src 'none'; frame-ancestors 'none'; base-uri 'self'
-
-# fallback: script-src 'unsafe-inline'
-#		Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline';  img-src 'self';  object-src 'none'; frame-ancestors 'none'; base-uri 'self'
-	
 
 #
 # Canonicals for downloadable files
@@ -125,3 +156,15 @@
 	Link: <https://www.mcacc-collars.charity/resources/collars-leashes/lk1900bn/>; rel="canonical"
 /files/SVG_artwork.zip
 	Link: <https://www.mcacc-collars.charity/resources/leash-sleeve/>; rel="canonical"
+
+# Display pdf in tab (use 'attachment' for download)
+/files/*.pdf
+	Content-Disposition: inline
+	Content-Security-Policy: frame-ancestors 'self'
+
+/files/*.zip
+	Content-Type: application/zip
+	Content-Disposition: attachment
+	Content-Security-Policy: default-src 'none'; frame-ancestors 'none';
+	
+	
