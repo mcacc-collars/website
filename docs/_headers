@@ -1,14 +1,20 @@
-# This is used only with Cloudflare Workers. 
+# This file is used only with Cloudflare Workers. 
 #
-# 3hr	6hr		12hr	1day 	2day	3day	4day	1wk		2wk		4wk
-# 10800	21600	43200	86400	172800	259200	345600	604800	1209600	2419200
+# 3hr	6hr		12hr	1day 	2day	3day	4day	
+# 10800	21600	43200	86400	172800	259200	345600
+#
+# 1wk		2wk		4wk		8wk
+# 604800	1209600	2419200	4838400
+#
+# 1mo		1yr 
+# 2628000	31536000
 
 #------------------------
 # Sitewide (security headers)
 /*
 	Referrer-Policy: strict-origin-when-cross-origin
 	X-Content-Type-Options: nosniff
-	Strict-Transport-Security: max-age=86400; includeSubDomains
+	Strict-Transport-Security: max-age=172800; includeSubDomains
 
 # fallback: script-src 'unsafe-inline'
 #		Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline';  img-src 'self';  object-src 'none'; frame-ancestors 'none'; base-uri 'self'
