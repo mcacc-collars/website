@@ -8,8 +8,7 @@
 /*
 	Referrer-Policy: strict-origin-when-cross-origin
 	X-Content-Type-Options: nosniff
-	Strict-Transport-Security: max-age=10800; includeSubDomains
-
+	Strict-Transport-Security: max-age=86400; includeSubDomains
 
 # fallback: script-src 'unsafe-inline'
 #		Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline';  img-src 'self';  object-src 'none'; frame-ancestors 'none'; base-uri 'self'
@@ -103,23 +102,20 @@
 
 #------------------------
 # Cache css 2 days (I should do 4 eventually, or a week, then a month. I can bust the cache.)
-/css/*
+/css/*.css
 	Cache-Control: public, max-age=172800
 	Cross-Origin-Resource-Policy: same-site
+	Content-Type: text/css; charset=utf-8
 
 	# Don't cache css long if changing style rapidly
 	# Cache-Control: public, max-age=300
 
-/css/*.css
-	Content-Type: text/css; charset=utf-8
 
 #------------------------
 # Cache js 4 weeks (darkmode.js almost never changes. I can bust the cache with the url.)
-/js/*
+/js/*.js
 	Cache-Control: public, max-age=2419200
 	Cross-Origin-Resource-Policy: same-site
-
-/js/*.js
 	Content-Type: text/javascript; charset=utf-8
 
 
