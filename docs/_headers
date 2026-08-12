@@ -3,19 +3,19 @@
 # 3hr	6hr		12hr	1day 	2day	3day	4day	1wk		2wk		4wk
 # 10800	21600	43200	86400	172800	259200	345600	604800	1209600	2419200
 
-#
+#------------------------
 # Sitewide (security headers)
 /*
 	Referrer-Policy: strict-origin-when-cross-origin
 	X-Content-Type-Options: nosniff
-#	Strict-Transport-Security: max-age=10800; includeSubDomains
+	Strict-Transport-Security: max-age=10800; includeSubDomains
 
 
 # fallback: script-src 'unsafe-inline'
 #		Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline';  img-src 'self';  object-src 'none'; frame-ancestors 'none'; base-uri 'self'
 
 
-#**************
+#------------------------
 # Cache-control
 #
 # I might want to use Cache-Control: public, max-age=0, must-revalidate
@@ -41,6 +41,7 @@
 	Cache-Control: public, max-age=604800
 /icon.svg
 	Cache-Control: public, max-age=604800
+	Content-Security-Policy: default-src 'none'; script-src 'none'; style-src 'unsafe-inline'
 /LICENSE.txt
 	Cache-Control: public, max-age=604800
 /llms.txt
@@ -48,7 +49,7 @@
 /site.webmanifest
 	Cache-Control: public, max-age=604800
 
-#
+#------------------------
 # Home (html) for 1 day
 /
 	Cache-Control: public, max-age=86400
@@ -77,7 +78,7 @@
 	Content-Security-Policy: default-src 'self'; script-src 'self' 'sha256-rEaXJQujwFig9Fiflr+rVPy+GReId/T8HZe8r6+AzqE='; style-src 'self' 'unsafe-inline';  img-src 'self';  object-src 'none'; frame-ancestors 'none'; base-uri 'self'
 
 
-#------------------------------------------------------
+#------------------------
 # Cache /image files for four days
 /images/*
 	Cache-Control: public, max-age=345600
@@ -94,13 +95,13 @@
 	Content-Disposition: inline
 	Content-Security-Policy: default-src 'none'; img-src 'self'; style-src 'unsafe-inline'; frame-ancestors 'none'; sandbox;
 
-#
+#------------------------
 # Cache files for 1 week (I could probably do 4).
 /files/*
 	Cache-Control: public, max-age=604800
 
 
-#
+#------------------------
 # Cache css 2 days (I should do 4 eventually, or a week, then a month. I can bust the cache.)
 /css/*
 	Cache-Control: public, max-age=172800
@@ -112,7 +113,7 @@
 /css/*.css
 	Content-Type: text/css; charset=utf-8
 
-#
+#------------------------
 # Cache js 4 weeks (darkmode.js almost never changes. I can bust the cache with the url.)
 /js/*
 	Cache-Control: public, max-age=2419200
@@ -122,8 +123,7 @@
 	Content-Type: text/javascript; charset=utf-8
 
 
-
-#
+#------------------------
 # Canonicals for downloadable files
 /files/box_patterns.zip
 	Link: <https://www.mcacc-collars.charity/resources/collars-leashes/lk1900bn/>; rel="canonical"
@@ -166,10 +166,12 @@
 
 # Display pdf in tab (use 'attachment' for download)
 /files/*.pdf
+	Content-Type: application/pdf
 	Content-Disposition: inline
 	Content-Security-Policy: frame-ancestors 'self'
 	Cross-Origin-Resource-Policy: same-site
 
+# Require zip files to download
 /files/*.zip
 	Content-Type: application/zip
 	Content-Disposition: attachment
