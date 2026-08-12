@@ -91,9 +91,8 @@
 	Content-Type: image/gif
 /images/*.svg
 	Content-Type: image/svg+xml; charset=utf-8
-	Content-Security-Policy: default-src 'none'; style-src 'unsafe-inline'; frame-ancestors 'none'; sandbox;
-
-
+	Content-Disposition: inline
+	Content-Security-Policy: default-src 'none'; img-src 'self'; style-src 'unsafe-inline'; frame-ancestors 'none'; sandbox;
 
 #
 # Cache files for 1 week (I could probably do 4).
