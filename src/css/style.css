@@ -507,56 +507,57 @@ table#files-index tbody {border-top: 2px solid var(--table-border-color);
 	border-bottom: 2px solid var(--table-border-color);}
 
 
-/* ################################# PAGE SPECIFIC ################################# */
+/* ################################# PAGE SPECIFIC ################################# 
+ * When @scope is official, enable it (and remove all the body# selectors) */
 
 /* HOME */
-@scope (body#home) {
-h2 a {
+/* @scope (body#home) { */
+body#home h2 a {
 text-decoration-line: underline;
 text-decoration-thickness: .05em;
 text-underline-offset: .2em;}
 
 /* no borders for the lengths */
-table#cost-collars tr.short td, table#cost-collars tr.short th,
-table#cost-leashes tr.short td, table#cost-leashes tr.short th {border-bottom-style: none;}
-table#cost-collars tr.long td, table#cost-collars tr.long th,
-table#cost-leashes tr.long td, table#cost-leashes tr.long th {border-top-style: none;}
+body#home table#cost-collars tr.short td, body#home table#cost-collars tr.short th,
+body#home table#cost-leashes tr.short td, body#home table#cost-leashes tr.short th {border-bottom-style: none;}
+body#home table#cost-collars tr.long td, body#home table#cost-collars tr.long th,
+body#home table#cost-leashes tr.long td, body#home table#cost-leashes tr.long th {border-top-style: none;}
 
-table#cost-collars th.len,
-table#cost-leashes td.len {border-right-style: none;}
+body#home table#cost-collars th.len,
+body#home table#cost-leashes td.len {border-right-style: none;}
 
-table#cost-collars td.len-from,
-table#cost-leashes td.len-fromto {border-left-style: none;}
+body#home table#cost-collars td.len-from,
+body#home table#cost-leashes td.len-fromto {border-left-style: none;}
 
 /* remove the border both sides of "to" */
-table#cost-collars td.len-from {border-right-style: none; white-space: nowrap;}
-table#cost-collars td.len-to {border-left-style: none; white-space: nowrap;}
-table#cost-collars td.len-from + td {border-left-style: none;
+body#home table#cost-collars td.len-from {border-right-style: none; white-space: nowrap;}
+body#home table#cost-collars td.len-to {border-left-style: none; white-space: nowrap;}
+body#home table#cost-collars td.len-from + td {border-left-style: none;
 	border-right-style: none;
 	font-size: 0.92rem;
 	font-style: italic;}
 
 /* no borders between (leash) width and duty */
-table#cost-leashes th.width {border-right-style: none;}
-table#cost-leashes th.duty, table#cost-leashes thead th.width + th {border-left-style: none;}
+body#home table#cost-leashes th.width {border-right-style: none;}
+body#home table#cost-leashes th.duty, body#home table#cost-leashes thead th.width + th {border-left-style: none;}
 
 /* nowrap some columns */
-table#cost-collars tbody th.size, table#cost-collars tbody td,
-table#cost-leashes tbody th.width, table#cost-leashes tbody td {white-space: nowrap;}
+body#home table#cost-collars tbody th.size, body#home table#cost-collars tbody td,
+body#home table#cost-leashes tbody th.width, body#home table#cost-leashes tbody td {white-space: nowrap;}
 
 /* Format */
-table#cost-collars th.len, table#cost-collars td.pct, table#cost-collars td.cost,
-table#cost-leashes td.len, table#cost-leashes tbody th.duty, table#cost-leashes td.load, table#cost-leashes td.cost {text-align: right;}
+body#home table#cost-collars th.len, body#home table#cost-collars td.pct, body#home table#cost-collars td.cost,
+body#home table#cost-leashes td.len, body#home table#cost-leashes tbody th.duty, body#home table#cost-leashes td.load, body#home table#cost-leashes td.cost {text-align: right;}
 
-table#cost-collars th.len,
-table#cost-leashes th.len {font-style: italic;}
-table#cost-collars td.len-from, table#cost-collars td.len-to,
-table#cost-leashes td.len-fromto {font-size: 0.94rem;}
+body#home table#cost-collars th.len,
+body#home table#cost-leashes th.len {font-style: italic;}
+body#home table#cost-collars td.len-from, body#home table#cost-collars td.len-to,
+body#home table#cost-leashes td.len-fromto {font-size: 0.94rem;}
 
 /* Make collar row heading left-justified */
-table#cost-collars th.size {text-align: left;}
+body#home table#cost-collars th.size {text-align: left;}
 /* Make leash row heading centered */
-table#cost-leashes th.width {text-align: center;}
+body#home table#cost-leashes th.width {text-align: center;}
 
 /* anti-ocr images */
 /* section.fn a.hint {
@@ -567,109 +568,109 @@ border: 2px solid blue;}
 section.fn a.hint:hover {
 border: 2px solid red;} */
 
-} /* END HOME */
+/* } */ /* END HOME */
 
 
 /* RESOURCES */
-@scope (body#resources) {
+/* @scope (body#resources) { */
 
-ul.res > li::marker {content: "➤"; font-size: .96rem;}
-ul.supp li::marker {content: "-"; font-size: .95rem;}
-ul.res li {padding-left: .7rem;}
-ul.res > li:not(:first-child) {margin-top: .33rem;}
+body#resources ul.res > li::marker {content: "➤"; font-size: .96rem;}
+body#resources ul.supp li::marker {content: "-"; font-size: .95rem;}
+body#resources ul.res li {padding-left: .7rem;}
+body#resources ul.res > li:not(:first-child) {margin-top: .33rem;}
 /* ➤ ★ ☀︎ ✷ ✴︎ ▸ */
-footer aside u {text-decoration-line: underline;
+body#resources footer aside u {text-decoration-line: underline;
 /* text-decoration-style: dashed; */
 text-decoration-thickness: .5px;
 text-underline-offset: .2em;}
 
-} /* END RESOURCES */
+/* } */ /* END RESOURCES */
 
 
 /* COLLARS-LEASHES */
-@scope (body#collars-leashes) {
+/* @scope (body#collars-leashes) { */
 
 /* Don't show the Length heading */
-table#collars-materials thead th.len,
-table#collars-lengths thead th.len {visibility: collapse;}
+body#collars-leashes table#collars-materials thead th.len,
+body#collars-leashes table#collars-lengths thead th.len {visibility: collapse;}
 
 /* nowrap some columns */
-table#collars-materials tbody th.width, table#collars-materials tbody td,
-table#collars-lengths tbody th.width, table#collars-lengths tbody td,
-table#leashes-materials tbody td {white-space: nowrap;}
+body#collars-leashes table#collars-materials tbody th.width, body#collars-leashes table#collars-materials tbody td,
+body#collars-leashes table#collars-lengths tbody th.width, body#collars-leashes table#collars-lengths tbody td,
+body#collars-leashes table#leashes-materials tbody td {white-space: nowrap;}
 
 /* no borders for the short/long collar lengths (row1/2 leash duties) */
-table#collars-materials tr.short td, table#collars-materials tr.short th,
-table#collars-lengths tr.short td, table#collars-lengths tr.short th,
+body#collars-leashes table#collars-materials tr.short td, body#collars-leashes table#collars-materials tr.short th,
+body#collars-leashes table#collars-lengths tr.short td, body#collars-leashes table#collars-lengths tr.short th,
 
-table#leashes-materials tr.row1 td, table#leashes-materials tr.row1 th,
-table#leashes-lengths tr.row1 td, table#leashes-lengths tr.row1 th {border-bottom-style: none;}
+body#collars-leashes table#leashes-materials tr.row1 td, body#collars-leashes table#leashes-materials tr.row1 th,
+body#collars-leashes table#leashes-lengths tr.row1 td, body#collars-leashes table#leashes-lengths tr.row1 th {border-bottom-style: none;}
 
 
-table#collars-materials tr.long td, table#collars-materials tr.long th,
-table#collars-lengths tr.long td, table#collars-lengths tr.long th,
+body#collars-leashes table#collars-materials tr.long td, body#collars-leashes table#collars-materials tr.long th,
+body#collars-leashes table#collars-lengths tr.long td, body#collars-leashes table#collars-lengths tr.long th,
 
-table#leashes-materials tr.row2 td, table#leashes-materials tr.row2 th,
-table#leashes-lengths tr.row2 td, table#leashes-lengths tr.row2 th {border-top-style: none;}
+body#collars-leashes table#leashes-materials tr.row2 td, body#collars-leashes table#leashes-materials tr.row2 th,
+body#collars-leashes table#leashes-lengths tr.row2 td, body#collars-leashes table#leashes-lengths tr.row2 th {border-top-style: none;}
 
 
 /* no borders between widths and lengths (duties for leashes) */
-table#collars-materials th.width, table#collars-lengths th.width,
-table#leashes-materials th.width, table#leashes-lengths th.width {border-right-style: none;}
+body#collars-leashes table#collars-materials th.width, body#collars-leashes table#collars-lengths th.width,
+body#collars-leashes table#leashes-materials th.width, body#collars-leashes table#leashes-lengths th.width {border-right-style: none;}
 
-table#collars-materials th.len, table#collars-lengths th.len,
-table#leashes-materials th.duty, table#leashes-lengths th.duty {border-left-style: none;}
+body#collars-leashes table#collars-materials th.len, body#collars-leashes table#collars-lengths th.len,
+body#collars-leashes table#leashes-materials th.duty, body#collars-leashes table#leashes-lengths th.duty {border-left-style: none;}
 
 /* remove the border both sides of "to" */
-table#collars-lengths td.from {border-right-style: none; white-space: nowrap;}
-table#collars-lengths td.to {border-left-style: none; white-space: nowrap;}
-table#collars-lengths td.from + td {border-left-style: none;
+body#collars-leashes table#collars-lengths td.from {border-right-style: none; white-space: nowrap;}
+body#collars-leashes table#collars-lengths td.to {border-left-style: none; white-space: nowrap;}
+body#collars-leashes table#collars-lengths td.from + td {border-left-style: none;
 	border-right-style: none;
 	font-size: 0.92rem;
 	font-style: italic;}
 
 /* Format */
-table#collars-materials th.width,
-table#collars-lengths th.width {padding-right: 0.5rem;}
-table#collars-materials tbody th.width,
-table#collars-lengths tbody th.width {text-align: left;}
-table#collars-materials tbody th.len,
-table#collars-lengths tbody th.len,
-table#leashes-materials tbody th.duty {text-align: left;}
-table#collars-lengths td.tacks {text-align: center;}
+body#collars-leashes table#collars-materials th.width,
+body#collars-leashes table#collars-lengths th.width {padding-right: 0.5rem;}
+body#collars-leashes table#collars-materials tbody th.width,
+body#collars-leashes table#collars-lengths tbody th.width {text-align: left;}
+body#collars-leashes table#collars-materials tbody th.len,
+body#collars-leashes table#collars-lengths tbody th.len,
+body#collars-leashes table#leashes-materials tbody th.duty {text-align: left;}
+body#collars-leashes table#collars-lengths td.tacks {text-align: center;}
 
-table#sewing-singer201 td:nth-child(2), table#sewing-singer201 td:nth-child(3) {text-align: center;}
+body#collars-leashes table#sewing-singer201 td:nth-child(2), body#collars-leashes table#sewing-singer201 td:nth-child(3) {text-align: center;}
 
-img#box-x-pattern {aspect-ratio: 680 / 221;}
+body#collars-leashes img#box-x-pattern {aspect-ratio: 680 / 221;}
 
-} /* END COLLARS */
+/* } */ /* END COLLARS */
 
 
 /* LK1900 */
-@scope (body#lk1900) {
+/* @scope (body#lk1900) { */
 
-table#settings-collars td:nth-child(2), table#settings-leashes td:nth-child(2) {text-align: center;}
-table#settings-collars td:nth-child(3), table#settings-leashes td:nth-child(3) {text-align: center;}
-table#settings-collars td:nth-child(4), table#settings-leashes td:nth-child(4) {text-align: center;}
-table#settings-collars td:nth-child(5), table#settings-leashes td:nth-child(5) {text-align: right;}
-table#settings-collars td:nth-child(6), table#settings-leashes td:nth-child(6) {text-align: right;}
-table#settings-collars td:nth-child(7), table#settings-leashes td:nth-child(7) {text-align: right;}
-table#settings-collars td:nth-child(8), table#settings-leashes td:nth-child(8) {text-align: center;}
-table#bnw-parts td:nth-child(1) {text-align: center;}
-table#bnw-parts td:nth-child(4) {text-align: right;}
+body#lk1900 table#settings-collars td:nth-child(2), body#lk1900 table#settings-leashes td:nth-child(2) {text-align: center;}
+body#lk1900 table#settings-collars td:nth-child(3), body#lk1900 table#settings-leashes td:nth-child(3) {text-align: center;}
+body#lk1900 table#settings-collars td:nth-child(4), body#lk1900 table#settings-leashes td:nth-child(4) {text-align: center;}
+body#lk1900 table#settings-collars td:nth-child(5), body#lk1900 table#settings-leashes td:nth-child(5) {text-align: right;}
+body#lk1900 table#settings-collars td:nth-child(6), body#lk1900 table#settings-leashes td:nth-child(6) {text-align: right;}
+body#lk1900 table#settings-collars td:nth-child(7), body#lk1900 table#settings-leashes td:nth-child(7) {text-align: right;}
+body#lk1900 table#settings-collars td:nth-child(8), body#lk1900 table#settings-leashes td:nth-child(8) {text-align: center;}
+body#lk1900 table#bnw-parts td:nth-child(1) {text-align: center;}
+body#lk1900 table#bnw-parts td:nth-child(4) {text-align: right;}
 
-span.return-button {font-size: 114%; line-height: 1.0;}
+body#lk1900 span.return-button {font-size: 114%; line-height: 1.0;}
 
-} /* END LK1900 */
+/* } */ /* END LK1900 */
 
 
 /* SLEEVE */
-@scope (body#sleeve) {
+/* @scope (body#sleeve) { */
 
-table th {text-align: right;}
-table td {text-align: left;}
+body#sleeve table th {text-align: right;}
+body#sleeve table td {text-align: left;}
 
-img#dim-quick-ref {aspect-ratio: 680 / 446;}
-img#paper-template {aspect-ratio: 520 / 282;}
+body#sleeve img#dim-quick-ref {aspect-ratio: 680 / 446;}
+body#sleeve img#paper-template {aspect-ratio: 520 / 282;}
 
-} /* END SLEEVE */
+/* } */ /* END SLEEVE */
