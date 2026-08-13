@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <title>Making stuff for homeless dogs</title>
-<link rel="stylesheet" href="./css/style.css?v=0.8">
+<link rel="stylesheet" href="./css/style.css?v=0.9">
 <script src="./js/darkmode.js?v=0.2b" defer></script>
 <base href="../docs/">
 <link rel="canonical" href="https://www.mcacc-collars.charity/">
@@ -17,66 +17,8 @@
 <link rel="manifest" type="application/manifest+json" href="./site.webmanifest">
 <meta name="msvalidate.01" content="5CA5B66611C4C8767EB9AAD44F75127C">
 <meta name="google-site-verification" content="YQEw6VIHJ2EEV1CLJVYL1es65SsPgSbAYPO17okBaOU">
-<style>
-h2 a {
-text-decoration-line: underline;
-text-decoration-thickness: .05em;
-text-underline-offset: .2em;}
-
-/* no borders for the lengths */
-table#cost-collars tr.short td, table#cost-collars tr.short th,
-table#cost-leashes tr.short td, table#cost-leashes tr.short th {border-bottom-style: none;}
-table#cost-collars tr.long td, table#cost-collars tr.long th,
-table#cost-leashes tr.long td, table#cost-leashes tr.long th {border-top-style: none;}
-
-table#cost-collars th.len,
-table#cost-leashes td.len {border-right-style: none;}
-
-table#cost-collars td.len-from,
-table#cost-leashes td.len-fromto {border-left-style: none;}
-
-/* remove the border both sides of "to" */
-table#cost-collars td.len-from {border-right-style: none; white-space: nowrap;}
-table#cost-collars td.len-to {border-left-style: none; white-space: nowrap;}
-table#cost-collars td.len-from + td {border-left-style: none;
-	border-right-style: none;
-	font-size: 0.92rem;
-	font-style: italic;}
-
-
-/* no borders between (leash) width and duty */
-table#cost-leashes th.width {border-right-style: none;}
-table#cost-leashes th.duty, table#cost-leashes thead th.width + th {border-left-style: none;}
-
-/* nowrap some columns */
-table#cost-collars tbody th.size, table#cost-collars tbody td,
-table#cost-leashes tbody th.width, table#cost-leashes tbody td {white-space: nowrap;}
-
-/* Format */
-table#cost-collars th.len, table#cost-collars td.pct, table#cost-collars td.cost,
-table#cost-leashes td.len, table#cost-leashes tbody th.duty, table#cost-leashes td.load, table#cost-leashes td.cost {text-align: right;}
-
-table#cost-collars th.len,
-table#cost-leashes th.len {font-style: italic;}
-table#cost-collars td.len-from, table#cost-collars td.len-to,
-table#cost-leashes td.len-fromto {font-size: 0.94rem;}
-
-/* Make collar row heading left-justified */
-table#cost-collars th.size {text-align: left;}
-/* Make leash row heading centered */
-table#cost-leashes th.width {text-align: center;}
-
-/* anti-ocr images */
-/* section.fn a.hint {
-display: inline-block;
-text-decoration: underline;}
-section.fn a.hint:link {
-border: 2px solid blue;}
-section.fn a.hint:hover {
-border: 2px solid red;} */
-</style>
 </head>
-<body>
+<body id="home">
 <script>
 /* This should be done in darkmode.js (in the part for the page's initial
  * loading). But, browsers flash a white screen before the dark screen because
