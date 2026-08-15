@@ -12,7 +12,9 @@ Remember: when viewing one of these .html files in your browser (to see how the 
 
 I use [tdewolff's minify](https://github.com/tdewolff/minify/) command. Run the min.sh script in this project's root directory. It will display the command to use.
 
-Note: for html files, I use minify's `--html-keep-document-tags`. Without it, the inline script element loses its context at the start of <body>. That causes problems for darkmode.js. See the comments in that script. I also use `--html-keep-quotes` because I worry unquoted attr values might be too minified.).
+Note: for html files I use minify's `--html-keep-document-tags`. Without it, the inline script element loses its context at the start of <body>. That causes problems for darkmode.js. See the comments in that script. I also use `--html-keep-quotes` because I worry unquoted attr values might be too minified.).
+
+The inline <script> is csp-whitelisted in docs/_headers using its hash value. The minify script alerts if that changes. You'll need to change the hash value in _headers. Then re-run minify (it leaves a .TMP file you can rename into .html, and not have to re-run the command. Or, re-run the command it will complete what was left undone.).
 
 --
 [1] GitHub Pages uses `/docs`. Cloudflare Workers uses `/dist` by convention. I would like to use that (it's more semantic about the directory's purpose). But, then a custom workflow has to be used on Github Pages. It seems easier to tell Cloudflare Workers to use "/docs" in `/wrangler.jsonc`.
