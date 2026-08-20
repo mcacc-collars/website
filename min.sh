@@ -3,17 +3,23 @@
 # This command will minify a src/file into its corresponding docs/file. (If the
 # file is html, the <base element is removed too.).
 #
-# The script prompts for which src file to minify. You can pass any of the words
+# The script must be executed from the parent directory of /docs & /src. It
+# prompts for which src file to minify. Or, you can pass any of the words
 # seen there (the prompt) on the command line. Example:
 #
 #   ./min.sh html:resources (processes as if you chose "r")
-#   ./min.sh css:style (processes as if you chose "t")
+#   ./min.sh r (processes as if you chose "r")
 #
 # Or, you can just pass the single character.
 #
+# IMPORTANT: This script calculates the sha256 hash for the <script> content. If
+# that changes, you MUST update /docs/_headers with the new value. Also, change
+# this script too, then re-run the script to finish the minimized file which was
+# partially created in /docs.
+#
 # This script uses tdewolff's minify (https://github.com/tdewolff/minify/)
-# command. Important, for html "--html-keep-whitespace" is not used. This can be
-# a problem if used for other html files. (You have to investigate this if you
+# command. Important for html: "--html-keep-whitespace" is not used. This can be
+# a problem if used for other html files. (You have to investigate further if you
 # use this command with other html files.).
 # *******************************************************************************
 

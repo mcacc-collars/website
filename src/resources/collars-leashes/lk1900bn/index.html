@@ -18,14 +18,22 @@
 </head>
 <body id="lk1900">
 <script>
-/* This should be done in darkmode.js (in the part for the page's initial
+/* IMPORTANT: This inline script is whitelisted in /_headers. If darkmode stops
+ * working, check if the sha256 hash changed. The ../min.sh (in the github 
+ * repo) will tell you the hash value (and alerts if it changes. The /docs
+ * directory should only contain the minified version of this file which min.sh
+ * produces. If you copy this unminified source file there, the hash will be
+ * different than what is whitelisted in /_headers.).
+ * 
+ * This should be done in darkmode.js (in the part for the page's initial
  * loading). But, browsers flash a white screen before the dark screen because
- * that's executed too late. Doing it here (inside the *body* element, not head)
- * results in no flash.
+ * that's executed too late there. Doing it here (inside the *body* element, not
+ * head) results in no flash. (But, inline script is a security risk, must be
+ * whitelisted in /_headers.).
  *
- * There is only one page-load operation that still occurs in the .js file:
- * setting the dropdown-choice value to reflect the display mode in use. (FWIW:
- * that part can't happen here because this happens too early. The drop-down
+ * There is only one operation that occurs at page-load which still occurs in the
+ * .js file: setting the dropdown-choice value to reflect the display mode in
+ * use. (That can't happen here because this happens too early; the drop-down
  * object doesn't exist yet.). See the .js file for more info. */
 
 /* TESTING: To test the logic for no stored choice (using the browser
@@ -691,7 +699,7 @@ sizes="44vmin" alt="The LK1900's 'lever driving plate' which can increase/decrea
 </thead>
 <tbody>
 <tr><th>3/8"</th><td>P1</td><td>12</td><td>28</td><td>92</td><td>80, 90 &amp; 105<sup class="fn"><a role="doc-noteref" aria-label="See inline note">*</a></sup></td><td>800</td><td>70-80</td></tr>
-<tr><th>5/8"</th><td>P2</td><td>08</td><td>36</td><td>65</td><td>94 &amp; 100<sup class="fn"><a role="doc-noteref" aria-label="See inline note">&dagger;</a></sup></td><td>900</td><td>64-74</td></tr>
+<tr><th>5/8"</th><td>P2</td><td>08</td><td>36</td><td>66</td><td>94 &amp; 100<sup class="fn"><a role="doc-noteref" aria-label="See inline note">&dagger;</a></sup></td><td>900</td><td>64-74</td></tr>
 <tr><th>3/4"</th><td>P3</td><td>03</td><td>42</td><td>95</td><td>113</td><td>1100</td><td>65-80</td></tr>
 <tr><th>1"</th><td>P4</td><td>09</td><td>56</td><td>79</td><td>92</td><td>1100</td><td>72-82</td></tr>
 <tr><th>1-1/2"</th><td>P5</td><td>37</td><td>90</td><td>140</td><td>100</td><td>1100</td><td>75-87</td></tr>
@@ -1040,7 +1048,7 @@ srcset="../../../images/small/lk1900-collar-xsmall-long-ring-buckleside-clamped.
 sizes="25vmin" alt="3/8-inch collar (long) clamped on the buckle-side of the ring" loading="lazy"></a>
 </div>
 
-<p>I use set the zig-zag (<i>y</i>-scale) to 80% for those.</p>
+<p>I set the zig-zag (<i>y</i>-scale) to 80% for those.</p>
 
 </div></section> <!-- end h4 -->
 

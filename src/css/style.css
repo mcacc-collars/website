@@ -566,6 +566,10 @@ body#home table#cost-collars th.size {text-align: left;}
 /* Make leash row heading centered */
 body#home table#cost-leashes th.width {text-align: center;}
 
+/* Add margin at the bottom of the page.
+ * This is the only page without a notes footer. It needs more space. */
+body#home main {margin-bottom: 1.5rem;}
+
 /* anti-ocr images */
 /* section.fn a.hint {
 display: inline-block;
