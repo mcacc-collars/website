@@ -23,6 +23,7 @@
 # /.well-known gets no hsts. (It gets no http nor apex redirect either. 
 # This directory "is what it is." I block .php & query strings.)
 /.well-known*
+	! Strict-Transport-Security
 	Strict-Transport-Security: max-age=0; includeSubDomains
 
 
