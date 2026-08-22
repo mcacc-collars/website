@@ -19,6 +19,12 @@
 # fallback: script-src 'unsafe-inline'
 #		Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline';  img-src 'self';  object-src 'none'; frame-ancestors 'none'; base-uri 'self'
 
+#------------------------
+# /.well-known gets no hsts. (It gets no http nor apex redirect either. 
+# This directory "is what it is." I block .php & query strings.)
+/.well-known*
+	Strict-Transport-Security: max-age=0; includeSubDomains
+
 
 #------------------------
 # Cache-control
