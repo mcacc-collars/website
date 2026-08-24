@@ -98,13 +98,17 @@
 	Cache-Control: public, max-age=345600
 	Cross-Origin-Resource-Policy: same-site
 
-/images/*.jpg
+/images-ref/*
+	Cache-Control: public, max-age=345600
+	Cross-Origin-Resource-Policy: same-site
+
+/images*.jpg
 	Content-Type: image/jpeg
-/images/*.webp
+/images*.webp
 	Content-Type: image/webp
-/images/*.gif
+/images*.gif
 	Content-Type: image/gif
-/images/*.svg
+/images*.svg
 	Content-Type: image/svg+xml; charset=utf-8
 	Content-Disposition: inline
 	Content-Security-Policy: default-src 'none'; img-src 'self'; style-src 'unsafe-inline'; frame-ancestors 'none'; sandbox;
