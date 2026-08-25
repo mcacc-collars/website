@@ -71,7 +71,7 @@
 	Content-Type: text/plain; charset=utf-8
 /site.webmanifest
 	Cache-Control: public, max-age=604800
-	Content-Type: text/plain; charset=utf-8
+	Content-Type: application/json
 
 #------------------------
 # Home (html) 2 days
