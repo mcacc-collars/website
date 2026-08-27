@@ -196,6 +196,12 @@ text-decoration-line: underline;
 text-decoration-thickness: .05em;
 text-underline-offset: .2em;}
 
+/* Turn off link styling for inline notes */
+sup.fn.inline a {
+all: unset;
+}
+
+
 a:link {color: var(--a-link);}
 a:visited {color: var(--a-visited);}
 a:hover {color: var(--a-hover);}
@@ -206,6 +212,7 @@ a:active {color: var(--a-active);}
  * li by itself is too tight. Using p makes it too spaced. This is something
  * in between. */
 ol p, ul p {margin-top: .55em; margin-bottom: .55em;}
+
 
 /* misc style */
 .center {text-align: center;}
