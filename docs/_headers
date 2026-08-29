@@ -108,13 +108,13 @@
 
 
 #------------------------
-# Cache /image files four days
+# Cache /image files 1 week
 /images/*
-	Cache-Control: public, max-age=345600
+	Cache-Control: public, max-age=604800
 	Cross-Origin-Resource-Policy: same-site
 
 /images-ref/*
-	Cache-Control: public, max-age=345601
+	Cache-Control: public, max-age=604800
 	Cross-Origin-Resource-Policy: same-site
 
 /images*.jpg
