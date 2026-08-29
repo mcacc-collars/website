@@ -1,8 +1,8 @@
 # Source html, css & js files (not minified)
-This directory contains the website's source .html, .css & .js files. These files end up "minified" after editing. The minified version goes into the `/docs` directory (which Cloudflare Workers & Github Pages[1] uses as the source for static hosting). 
+This directory contains the website's source .html, .css & .js files. These files end up "minified" after editing. The minified version goes into the `/docs` directory (which Cloudflare Workers & Github Pages[1] use as the source for static hosting). 
 
 ## HTML base element
-These source .html files contain an `<base href="">` element which causes the browser to display images from `/docs`. This lets you edit these source files and view them in your browser as if they were in the actual site directory. (But, if you click anything, you'll then be in `/docs`.).
+These source .html files contain an `<base href="">` element which causes the browser to display images from `/docs`. This lets you edit these source files and view them in your browser as if they were in the actual site directory. (But, if you click anything, you'll then be in `/docs`. Clicking internal links like the table of contents won't work either. If you want to click those to test they land where expected, you'll need to comment out `<base`, or browse the `/docs` version.).
 
 The base element is placed _after_ the css & java files are loaded. This allows those source files to be edited & tested from `/src` too. When the source file is minified, the base element is removed (the html files in `/docs` load _everything_ from `/docs`. This `/src` directory is only used for editing & viewing the un-minified source.). Note: placing the base element after the js & css isn't valid html (but, it's removed when the minified for actual use).
 
