@@ -1,3 +1,7 @@
+User-agent: Meta-ExternalAgent
+Disallow: /
+
+
 User-agent: *
 Crawl-delay: 2
 
@@ -5,3 +9,4 @@ Crawl-delay: 2
 Disallow:
 
 Sitemap: https://www.mcacc-collars.charity/sitemap.xml.gz
+
