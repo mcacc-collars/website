@@ -47,12 +47,13 @@ else
 	echo -e "\t\t\tlk$(tput smul)1$(tput sgr0)900bn"
 	echo -e "\t\t\t\t$(tput smul)w$(tput sgr0)inder"
 	echo -e "\t\t$(tput smul)s$(tput sgr0)leeve"
+	echo -e "\t\t\tt$(tput smul)e$(tput sgr0)mplate"
 	echo ""
 	echo -e " css:\tfi$(tput smul)l$(tput sgr0)es\ts$(tput smul)t$(tput sgr0)yle"
 	echo -e " js:\t$(tput smul)d$(tput sgr0)arkmode"
 	echo ""
 
-	read -p "h, f, i, r or c, k, 1, w, s or l, t, d or q to ${bold}q${normal}uit (default q): " choice
+	read -p "h, f, i, r or c, k, 1, w, s, e or l, t, d or q to ${bold}q${normal}uit (default q): " choice
 	
 	echo ""
 fi
@@ -97,6 +98,10 @@ case $choice in
 	s | html:sleeve)
 		page='html:sleeve'
 		path='resources/leash-sleeve/index.html'
+	;;
+	e | html:template)
+		page='html:sleeve'
+		path='resources/leash-sleeve/template/index.html'
 	;;
 
 	l | css:files)

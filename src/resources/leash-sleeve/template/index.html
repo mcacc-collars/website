@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>How to make the snap-hole template (for leash sleeves for dogs)</title>
+<link rel="stylesheet" href="../../../css/style.css?v=0.9a">
+<script src="../../../js/darkmode.js?v=0.2b" defer></script>
+<base href="../../../../docs/resources/leash-sleeve/template/">
+<link rel="canonical" href="https://www.mcacc-collars.charity/resources/leash-sleeve/template/">
+<meta name="description" content="How to make the snap-hole marking template (for making leash sleeves for dogs).">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="apple-touch-icon" sizes="180x180" href="../../../apple-touch-icon.png">
+<link rel="icon" type="image/x-icon" href="../../../favicon.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="../../../favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="../../../favicon-16x16.png">
+<link rel="icon" type="image/svg+xml" href="../../../icon.svg">
+<link rel="manifest" type="application/manifest+json" href="../../../site.webmanifest">
+</head>
+<body id="sleeve-template">
+<script>
+/* IMPORTANT: This inline script is whitelisted in /_headers. If darkmode stops
+ * working, check if the sha256 hash changed. The ../min.sh (in the github 
+ * repo) will tell you the hash value (and alerts if it changes. The /docs
+ * directory should only contain the minified version of this file which min.sh
+ * produces. If you copy this unminified source file there, the hash will be
+ * different than what is whitelisted in /_headers.).
+ * 
+ * This should be done in darkmode.js (in the part for the page's initial
+ * loading). But, browsers flash a white screen before the dark screen because
+ * that's executed too late there. Doing it here (inside the *body* element, not
+ * head) results in no flash. (But, inline script is a security risk, must be
+ * whitelisted in /_headers.).
+ *
+ * There is only one operation that occurs at page-load which still occurs in the
+ * .js file: setting the dropdown-choice value to reflect the display mode in
+ * use. (That can't happen here because this happens too early; the drop-down
+ * object doesn't exist yet.). See the .js file for more info. */
+
+/* TESTING: To test the logic for no stored choice (using the browser
+ * preference), uncomment the following line to delete any stored value when the
+ * page loads. */
+//localStorage.removeItem('display')
+
+
+/* This is a global variable. It is refered to in the .js file to set the
+ * dropdown value to reflect the display mode being used. (Note: the .js script
+ * is loaded "defer." That may have something to do with this variable being
+ * reliably available to it.) */
+let storedDisplay = localStorage.getItem("display");
+//console.log('HTML: storedDisplay:', storedDisplay);
+
+// If the visitor hasn't chosen a display mode, use their browser preference
+// (default dark if no preference).
+if (storedDisplay === null) {
+    const prefersLight = window.matchMedia("(prefers-color-scheme: light)");
+
+    if (prefersLight.matches) {
+        //console.log('Initial: no stored choice. Browser prefers light');
+        storedDisplay = "lightmode";
+    } else {
+        //console.log('Initial: no stored choice. Browser does not prefer light. Using dark.');
+        storedDisplay = "darkmode";
+    }
+}
+
+// Set the body's class attribute. (This is the only thing that can't be done in
+// the .js file. Someday browsers may handle this better, and it could be done
+// there.)
+document.body.classList.add(storedDisplay);
+</script>
+
+<header>
+<nav aria-label="Breadcrumbs"><ul>
+<li><a href="../../../">Home</a></li>
+<li><a href="../../">Resources</a></li>
+<li><a href="../">Leash Sleeves</a></li>
+</ul></nav>
+<div id="display-mode">
+<label for="display-dropdown">Display:</label>
+<select name="mode" id="display-dropdown" size="1" >
+	<option id="dd-light" value="lightmode">Light</option>
+	<option id="dd-dark" value="darkmode">Dark</option>
+	<option id="dd-nocturnal" value="noctmode">Nocturnal</option>
+</select>
+</div>
+</header>
+
+<main>
+<h1>How to make the snap-hole marking template for making leash sleeves</h1>
+
+<p>This page describes how to make this 4" x 8" plastic template for marking the snap-hole locations when <a href="../">making "adopt me" leash sleeves</a>:</p>
+
+<div class="image"><a href="../../../images/leash_sleeve-plastic-template-for-marking-snap-holes.jpg">
+<img src="../../../images/medium/leash_sleeve-plastic-template-for-marking-snap-holes.webp"
+srcset="../../../images/small/leash_sleeve-plastic-template-for-marking-snap-holes.webp 400w,
+../../../images/medium/leash_sleeve-plastic-template-for-marking-snap-holes.webp 680w,
+../../../images/leash_sleeve-plastic-template-for-marking-snap-holes.jpg 1600w"
+sizes="70vmin" alt="A plastic template for marking the snap holes perfectly square" loading="lazy"></a></div>
+
+<p>This topic is tedious because those holes <em>must</em> be drilled 1) square to each other. If not, the sleeve's long edge can pucker when snapped together. 2) Perfectly straight. If not, the marker will exit out the hole a little off, as if the holes weren't square to each other. And, 3) centered &amp; and square on the template itself. This aids positioning the template on the sleeve. If the holes aren't centered &amp; square on the template, the sleeve's long edges might overhang each other when snapped together.</p>
+
+<section id="materials">
+<h2>Materials</h2>
+<div>
+
+<p>To make the template shown above, I used a sheet of 8" square clear-plastic, .035" thick (a <em>little</em> thicker than 1/32". Amazon ASIN: <a rel="nofollow" href="https://www.amazon.com/dp/B0CG8PLF3N">B0CG8PLF3N</a>). This is almost too thin. But, it's easier to cut, and less expensive to practice with (make mistakes).</p>
+
+<p>I made a new template using a sheet of 1/8"-thick (.125", 8x12". Amazon ASIN: <a rel="nofollow" href="https://www.amazon.com/dp/B0CQYS1RN6">B0CQYS1RN6</a>). That's as thick as 3.6 thin sheets stacked together. It's harder to cut, and more problematic if the drill isn't perfectly vertical (the hole will exit at a different location than where it entered). More reason to use a drill-press.</p>
+
+</div></section> <!-- end h2 -->
+
+<section id="cut_template">
+<h2>Cut the plastic to size</h2>
+<div>
+
+<p>First: mark the plastic using a fine-point Sharpie pen (a traditional Sharpie is too thick.). Mark the lines to cut to get 4" wide pieces. (They can be longer than 8". That direction doesn't matter. But, they should be very close to 4" wide.). Use a T-square to draw the line across the plastic. (It's <em>very</em> important that the cut piece be <em>square.</em> Don't just mark 4" along both edges &amp; lay the straight edge across the plastic from mark to mark. Use the t-square against one edge. If that doesn't align perfectly with the 4" marks you made, split the difference. It's less important to be precisely 4" than it is to be <em>square</em>.) This photo shows the thicker 8x12 plastic:</p>
+
+<div class="images"><a href="../../../images/leash_sleeve-make_template-marked-and-scored.jpg">
+<img src="../../../images/medium/leash_sleeve-make_template-marked-and-scored.webp"
+srcset="../../../images/small/leash_sleeve-make_template-marked-and-scored.webp 360w,
+../../../images/medium/leash_sleeve-make_template-marked-and-scored.webp 520w,
+../../../images/leash_sleeve-make_template-marked-and-scored.jpg 1200w"
+sizes="44vmin" alt="The plastic sheet marked and scored for cutting" loading="lazy"></a></div>
+
+<p>The plastic will probably have a protective film. Don't remove it yet. But, the acrylic cutter may snag it. You should use a razor blade &amp; straight edge to cut the film along that line. You can also continue dragging the razor blade to score the plastic. That can help the cutting tool get started. But, the more you score the plastic, the more you should have the straight edge clamped down (the next step). If all you do is cut the film, you don't need the straight edge clamped down for that. You can hold that down firmly enough just for that. (If you score the plastic, don't press too hard. Start with a few light scores. That will create a track for the blade to stay in. Then you can press harder to score deeper. But still, it's better to do more medium-pressure scores than one hard one.).</p>
+
+<p>Before or after cutting the protective film, firmly clamp the straight edge to the plastic using C-clamps:</p>
+
+<div class="images"><a href="../../../images/leash_sleeve-make_template-clamped.jpg">
+<img src="../../../images/medium/leash_sleeve-make_template-clamped.webp"
+srcset="../../../images/small/leash_sleeve-make_template-clamped.webp 360w,
+../../../images/medium/leash_sleeve-make_template-clamped.webp 520w,
+../../../images/leash_sleeve-make_template-clamped.jpg 1200w"
+sizes="44vmin" alt="The plastic sheet clamped to straight-edge for cutting" loading="lazy"></a></div>
+
+<p>Use a thin piece of wood or plastic so the C-clamp's foot (underneath) won't mar the plastic. Set the plastic on a piece of wood that's tall enough so the c-clamps are suspended freely. You want a solid, sturdy surface to press against.</p>
+
+<p>For the 1/8"-thick plastic, it may be better to use a jig saw or band saw. It's very slow cutting with the acrylic cutting tool. You need to start light (like you did scoring with the razor blade above). It will enlarge the score. The deeper that cut becomes, the harder you can press to take more material. But, you can't press too hard or you'll get a rough surface inside the cut which will be hard to go over with the next cut. More passes with medium-to-hard pressure is better.</p>
+
+<p>It's important to <em>change direction</em> every 5-6 cuts. That's because: when you start each stroke, you don't start exactly at the edge. Changing directions lets you drag the cutter through the edge which had previously been the starting edge. The edges are most prone to cracking. It's better to work more on the edges that way so they cut deeper than the middle. Also, avoid the temptation to fold it too soon (break it along the cut). It'll probably crack (and especially at the edges unless you worked harder on cutting those deeper than the rest of the cut.). I keep cutting until I can feel it coming though on the other side. Then I look more closely at the edges to make sure they're down low (they're they most vulnerable to cracking). If you get it all down low, it will fold over by itself when it's ready. You can flex it a little to test it. But, don't force it. Eventually it will "give."</p>
+
+<p>After the cut is halfway through the plastic, you can remove the straight edge. The cutter should stay in the groove without the need for the guide. (The thicker plastic is hard to cut after you get to a certain depth. Removing the straight edge helps.).</p>
+
+<p>If you're not handy with things like this, there's probably sellers online who will sell you 4x8" pieces (custom cut, perhaps).</p>
+
+</div></section> <!-- end h2 -->
+
+<section id="mark_template">
+<h2>Marking the holes to drill</h2>
+<div>
+
+<p>Now you need to mark where to drill the holes. The very first thing to do is mark the word "top" on one side. Make that side the <em>bottom</em> side when you drill the holes. The side marked "top" will be the top side when you use the template to mark sleeves. The reason for this is that you're going to go to great lengths to start the hole exactly positioned. If the drill isn't perfectly straight, it will exit the other side not exactly in that same position where it started. If the top side (when drilling) faces the fabric, then the pen will contact the fabric exactly where you started the hole. It doesn't matter if the pen enters the plastic a little off.<sup class="fn"><a role="doc-noteref" aria-label="Notes" id="s1" href="#n1">[1]</a></sup></p>
+
+<p>You need these holes to be perfectly square to each other (and to the edges of the plastic template, centered within the template's edges). I drew the hole locations in <a rel="nofollow" href="https://www.libreoffice.org/discover/draw/">LibreOffice Draw</a> so I can print it &amp; drill through it:</p>
+
+<div class="image"><a href="../../../images/leash_sleeve-paper-template-for-making-plastic-template.svg">
+<img src="../../../images/medium/leash_sleeve-paper-template-for-making-plastic-template.gif"
+srcset="../../../images/small/leash_sleeve-paper-template-for-making-plastic-template.gif 360w,
+../../../images/medium/leash_sleeve-paper-template-for-making-plastic-template.gif 520w,
+../../../images/leash_sleeve-paper-template-for-making-plastic-template.svg 1200w"
+sizes="44vmin" alt="A printable paper template to make the plastic template with exact & square dimensions" loading="lazy"
+id="paper-template"></a></div>
+
+<p>You can download that as a printable PDF (<a href="../../files/leash_sleeve-paper-template-for-making-plastic-template-w-dimensions.pdf">with</a> or <a href="../../files/leash_sleeve-paper-template-for-making-plastic-template-wo-dimensions.pdf">without dimensions</a> shown). If you need different dimensions, you can <a href="../../files/leash_sleeve-paper-template-for-making-plastic-template.odg-source.zip">download the source</a> and edit that. Using a program ensures <em>perfectly</em> drawn holes. For some people (if they need different distances), it may be easier to draw this the old-fashioned way (graph paper &amp; pencil). If you do that, do your best to make the dots perfectly square to each other. Photocopy your drawing before going further (you may wreck your first attempt. You don't want to have to draw it again.).</p>
+
+<p>When you print the template, use a ruler to check if the printed dots are the distances they should be. Printers usually have an option to "scale to fit." See if that's enabled. (You want "100%" or "actual size").</p>
+
+<p>Cut the printed template along the dashed line (which is halfway between the edge of the plastic &amp; the centers of the holes). Cut as close as you can to the dashed line while leaving it visible. That dashed line will help you visually align &amp; center the holes to the plastic sheet's edges. (That's important because not only should the holes be square to each other, but they should also be square with &amp; centered within the plastic sheet.). But, don't leave too much paper. You're going to tape this to the template. If there's too much paper past the dashed line, then the tape won't adhere until it folds over the edge of the plastic. That could allow the paper to move. The tape should adhere to about 3/16" of the plastic surface, then fold over and adhere to the back of the plastic. The more front surface the tape adheres to, the less risk of the paper shifting while you work with it. (But, you need to keep the dashed line to help centering the template squarely within the plastic's edges.).</p>
+
+<p>Tape the paper template to the plastic (using scotch tape). You don't want <em>any</em> movement. The paper should not fold over the edges of the plastic. There should be some plastic surface for the tape to adhere to before folding over the edge, and adhering to the back side too. After it's taped, treat it gently. Any movement will wreck this. Use a lot of tape to be sure.</p>
+
+<p>Note: In the how-to for <a href="../#measure">making the leash sleeves</a>, I said I shrank my "adopt me" artwork 4% for printing, but not the distance between the snap holes in the <i>y</i> (vertical) dimension (because I don't want to change how the sleeve grips around the leash). The above paper template shows that. The <i>x</i> (horizontal) distance between corner snaps is 7-3/8". The  <a href="../../../images/leash_sleeve-dimensions-quick-ref.svg">quick-ref dimension</a> is 7-3/4 (3/8 (.375)" longer). But, my <i>y</i> distance between snap holes remains 3-1/4" (same as thequick-ref dimension).</p>
+
+</div></section> <!-- end h2 -->
+
+<section id="drill_template">
+<h2>Drilling the holes</h2>
+<div>
+
+<p>The diameter of the holes should match the marking pen you use. For the pen I use (<a href="../#use-template">discussed in the making sleeve's how-to "how to mark" section</a>) I used a size #43 (.089") wire-size drill bit. A common 3/32" (0.094") bit would've worked. It's important to not have too loose of a fit between hole and pen. But, not too tight either (removing the pen can pull the plastic template up if the fit is too tight, causing it to move). Wire-size (or "wire gauge," or "numbered") bits give you <em>a lot</em> more sizes to choose from than ordinary fractional-size drill bits. Harbor Freight sells <a rel="nofollow" href="https://www.harborfreight.com/titanium-high-speed-steel-numbered-drill-bit-set-60-piece-59319.html">a set</a>.</p>
+	
+<p>The best way to drill these holes is a drill press. You can find small (8") drill presses that aren't very expensive. (Harbor Freight <a rel="nofollow" href="https://www.harborfreight.com/8-in-5-speed-bench-drill-press-with-light-58780.html">sells one</a>.). A drill press lets you put the hole exactly where it needs to be, and drill a straight hole (which is more important if the plastic is thick).</p>
+
+<p>The steps are pretty simple:</p>
+
+<ol>
+<li>Start with a small-diameter bit to drill a pilot hole. It could be half the diameter of the size you want to end up with, or even smaller. You could start tiny and drill a 2nd pilot hole through it (work your way up to the final-size hole. The way the hole locations are drawn on the paper template, you can see if the hole was drilled in the center. You could make corrections a larger bit. This is where wire-size bits are useful for more steps from pilot to final size.).</li>
+<li>Without the drill spinning, lower the bit to the paper template. Move the plastic so the bit touches the center of the printed location.</li>
+<li>Holding the plastic piece securely in place, raise the bit, start the drill, and lower it again to drill through (don't push hard. The plastic cracks easily).</li>
+<li>Repeat the above for all the holes.</li>
+<li>Replace the bit with one that's larger. Repeat the above.</li>
+</ol>
+
+<p>Things to keep in mind:</p>
+
+<ul>
+<li>Don't press hard when drilling (the plastic will crack)</li>
+<li>I think a higher speed works better because the drill will melt its way through while cutting.</li>
+<li>Drilling a pilot hole gives you an opportunity to correct the hole position with a larger drill (if the first hole isn't centered perfectly in the paper template's dot.)</li>
+<li>After drilling the pilot holes, you could enlarge them with a bit half the size you want to end up at. Or, you can drill the final size. But, it's important to always lower the bit (without the drill spinning) and make sure it will be centered in the prior hole. Don't try to judge this while it's spinning. Figure it out first, then turn the press on (without moving the plastic).</li>
+<li>When you're done, you can lay the plastic template on another printed paper template to see how the holes align with the printed locations.</li>
+</ul>
+
+<section id="no_drill_press">
+<h3>Without a drill press</h3>
+<div>
+
+<p>If you don't have a drill press (don't want to spend the money to do this just once), I suggest not even trying to use a handheld drill. It won't come out well; won't be square. You can't control a handheld drill enough for this. But, you can drill the holes manually the following way. It's tedious. But, breaking it down into gradual steps to get to the final hole size ensures the holes will be where they should be. They won't be as straight as a drill press. But, you're going to use the template with the side that the hole <em>started</em> from facing the fabric. (That should correct for the hole being less than straight).</p>
+
+<p><b>1.</b> Before taping the paper template to the plastic, use a straight pin to poke a hole exactly in the center of each printed location. To do this, I laid the paper on an ironing board. (You want a firm, solid surface, but something that will let the pin push through.). This hole will help you do the next step quickly, without having to judge if you're in the center of the printed dot. You can drop into the pierced hole quickly.).</p>
+
+<p>I wore a hands-free magnifying glasses to do this so I could use both hands while seeing a closeup to make sure the pin was in the center of the dot. Harbor Freight sells those kinds of magnifiers (clip on your glasses. If you don't wear glasses, buy some cheap reading glasses at the drug store. They're good for seeing close up too. They might be all you need.).</p>
+
+<p><b>2.</b> Use a lighter to heat the end of a straight pin. (Wear a glove so it doesn't get too hot to hold.). The end of the pin will glow red pretty quickly. Push that hot pin through the pierced hole in the paper. It will melt into the plastic. The pin will cool in 5 seconds, so you have to go fast (or heat it again. This is the reason to pierce the center of the paper dots first. You can hit the center quickly without having to judge it. You'll be in a hurry because the pin cools fast.</p>
+
+<p>Don't rush at first. Go a little, re-heat the pin, go further. This melted hole will be your pilot hole. Doing it this way (with the paper pre-punctured, looking at it closely with hands-free magnifying glasses), will be perfectly positioned compared to a handheld drill. Try to hold the pin straight so you get a vertically straight hole. (But, straightness doesn't matter with thin plastic. And, it matters less if you make the side you start the hole from the <em>bottom</em> of the template when you mark the sleeve. I.e., if your hole isn't vertical, it should at least <em>start</em> at the correct location. If that side is against the fabric, then the pen may enter the template "off" a little, but exit onto the fabric where it should. With thin plastic this shouldn't amount to much difference. With thicker plastic it could - and more reason to use a drill press.).</p>
+
+<p>You may find that the needle cools and sticks in the hole. Using a "T-pin" gives you some leverage to rotate it free. If you don't use one of those, if you feel the pin start getting stiff/stuck, pull it out immediately (heat it again). Don't wait to see what happens, it can get stuck. (Also, you don't have to go <em>all</em> the way through the plastic. You just need something to guide your first drill bit - the next step.).</p>
+
+<p><b>3.</b> Remove the paper template. Using the smallest drill-bit size (that's larger than the pin hole): rotate the bit between your index finger &amp; thumb to slowly "drill" through the melted hole, enlarging it. Try to hold the bit straight. Then do it again with a larger size (then the final size). The straightness of the hole doesn't matter as much as starting the hole exactly where it should be. (You'll end up using the starting side as the side facing the fabric when you mark. I.e, the pen will exit the hole where it should be, and touch the fabric there.).</p>
+
+<p>As you go, you can set the template on another printed paper template, confirm how the drilled holes align with the printed dots.</p>
+
+</div></section> <!-- end h3 -->
+</div></section> <!-- end h2 -->
+
+<p>The above is a little tedious (especially if you don't use a drill press). But, you'll probably only need to do this once. It's worth getting it right. If the snaps aren't perfectly positioned, it won't look right when snapped together.</p>
+
+</main>
+
+<footer>
+<section aria-label="Footnotes" role="doc-endnotes" id="notes">
+<hr>
+<h2>Notes</h2>
+
+<aside id="n1" role="note">
+<p><sup><a href="#s1" role="doc-backlink" aria-label="Return to content">[1]</a></sup> Using the top-side of the plastic (when drilling) as the bottom side (when marking) isn't as helpful if you use a drill-press to drill the holes. This is more of a remedy to drilling the holes without a drill press. But, it's still a good thing to do even if you use a drill press. (No matter how you drill it, the location where it starts drilling should be the most accurate. Face that side to the fabric when marking.).</p>
+</aside>
+
+</section> <!-- end notes -->
+
+</footer>
+
+</body>
+</html>

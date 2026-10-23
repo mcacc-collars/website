@@ -11,7 +11,7 @@
 
 <url>
 	<loc>https://www.mcacc-collars.charity/resources/</loc>
-	<lastmod>2026-07-12</lastmod>
+	<lastmod>2026-10-23</lastmod>
 	<changefreq>never</changefreq>
 	<priority>0.6</priority>
 </url>
@@ -491,7 +491,7 @@
 
 <url>
 	<loc>https://www.mcacc-collars.charity/resources/leash-sleeve/</loc>
-	<lastmod>2026-06-30</lastmod>
+	<lastmod>2026-10-23</lastmod>
 	<changefreq>monthly</changefreq>
 	<priority>0.8</priority>
 
@@ -546,11 +546,6 @@
 	<image:title>Turned Inside Out</image:title>
 	</image:image>
 	<image:image>
-	<image:loc>https://www.mcacc-collars.charity/images/leash_sleeve-plastic-template-for-marking-snap-holes.jpg</image:loc>
-	<image:caption>A plastic template you must make to mark snap hole locations squarly.</image:caption>
-	<image:title>Plastic Template for Marking Snap Holes (you'll make this)</image:title>
-	</image:image>
-	<image:image>
 	<image:loc>https://www.mcacc-collars.charity/images/leash_sleeve-step7-use-template-to-mark-snap-holes.jpg</image:loc>
 	<image:caption>Making the leash sleeve. Step 7 start: The plastic template positioned on the sleeve (to mark snap holes).</image:caption>
 	<image:title>Template Positioned to Mark Snap Holes</image:title>
@@ -561,6 +556,34 @@
 	<image:title>Snap Hole Positions Marked</image:title>
 	</image:image>
 
+	<image:image>
+	<image:loc>https://www.mcacc-collars.charity/images/leash_sleeve-step8-bagged-individually.jpg</image:loc>
+	<image:caption>Packaging: one sleeve bagged.</image:caption>
+	<image:title>One Sleeve Packaged</image:title>
+	</image:image>
+	<image:image>
+	<image:loc>https://www.mcacc-collars.charity/images/leash_sleeve-step9-bagged-dozen.jpg</image:loc>
+	<image:caption>Packaging: a dozen sleeves bagged.</image:caption>
+	<image:title>Twelve Sleeves Packaged</image:title>
+	</image:image>
+	<image:image>
+	<image:loc>https://www.mcacc-collars.charity/images/leash_sleeve-step8-bagged-individually-ziplock-holes.jpg</image:loc>
+	<image:caption>Packaging: Preparing to punch 1/8" vent holes in a 10x15" zip-lock bag.</image:caption>
+	<image:title>Zip-lock bags need vent holes</image:title>
+	</image:image>
+</url>
+
+<url>
+	<loc>https://www.mcacc-collars.charity/resources/leash-sleeve/template/</loc>
+	<lastmod>2026-10-23</lastmod>
+	<changefreq>monthly</changefreq>
+	<priority>0.7</priority>
+
+	<image:image>
+	<image:loc>https://www.mcacc-collars.charity/images/leash_sleeve-plastic-template-for-marking-snap-holes.jpg</image:loc>
+	<image:caption>A plastic template you must make to mark snap hole locations squarly.</image:caption>
+	<image:title>Plastic Template for Marking Snap Holes (you'll make this)</image:title>
+	</image:image>
 	<image:image>
 	<image:loc>https://www.mcacc-collars.charity/images/leash_sleeve-make_template-marked-and-scored.jpg</image:loc>
 	<image:caption>Making the plastic template: marking &amp; scoring before cutting the plastic sheet.</image:caption>
@@ -575,17 +598,6 @@
 	<image:loc>https://www.mcacc-collars.charity/images/leash_sleeve-paper-template-for-making-plastic-template.svg</image:loc>
 	<image:caption>Making the plastic template: diagram to print &amp; transfer hole locations to plastic.</image:caption>
 	<image:title>Diagram of Template To Make</image:title>
-	</image:image>
-
-	<image:image>
-	<image:loc>https://www.mcacc-collars.charity/images/leash_sleeve-step8-bagged-individually.jpg</image:loc>
-	<image:caption>Packaging: one sleeve bagged.</image:caption>
-	<image:title>One Sleeve Packaged</image:title>
-	</image:image>
-	<image:image>
-	<image:loc>https://www.mcacc-collars.charity/images/leash_sleeve-step9-bagged-dozen.jpg</image:loc>
-	<image:caption>Packaging: a dozen sleeves bagged.</image:caption>
-	<image:title>Twelve Sleeves Packaged</image:title>
 	</image:image>
 </url>
 
