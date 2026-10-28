@@ -1,6 +1,8 @@
 User-agent: Meta-ExternalAgent
 Disallow: /
 
+User-agent: SemrushBot
+Disallow: /
 
 User-agent: *
 Crawl-delay: 2
