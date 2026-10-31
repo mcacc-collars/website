@@ -21,28 +21,55 @@ filter: invert(70%) opacity(68%);}
 </head>
 <body>
 <script>
-// This is only done here because browsers flicker before darkmode is applied.
-// This stuff should be done in the .js file (in the part for the page's initial loading).
+/* IMPORTANT: This inline script is whitelisted in /_headers. If darkmode stops
+ * working, check if the sha256 hash changed. The ../min.sh (in the github 
+ * repo) will tell you the hash value (and alerts if it changes. The /docs
+ * directory should only contain the minified version of this file which min.sh
+ * produces. If you copy this unminified source file there, the hash will be
+ * different than what is whitelisted in /_headers.).
+ * 
+ * This should be done in darkmode.js (in the part for the page's initial
+ * loading). But, browsers flash a white screen before the dark screen because
+ * that's executed too late there. Doing it here (inside the *body* element, not
+ * head) results in no flash. (But, inline script is a security risk, must be
+ * whitelisted in /_headers.).
+ *
+ * There is only one operation that occurs at page-load which still occurs in the
+ * .js file: setting the dropdown-choice value to reflect the display mode in
+ * use. (That can't happen here because this happens too early; the drop-down
+ * object doesn't exist yet.). See the .js file for more info. */
 
-storedDisplay = localStorage.getItem('display')
+/* TESTING: To test the logic for no stored choice (using the browser
+ * preference), uncomment the following line to delete any stored value when the
+ * page loads. */
+//localStorage.removeItem('display')
+
+
+/* This is a global variable. It is refered to in the .js file to set the
+ * dropdown value to reflect the display mode being used. (Note: the .js script
+ * is loaded "defer." That may have something to do with this variable being
+ * reliably available to it.) */
+let storedDisplay = localStorage.getItem("display");
 //console.log('HTML: storedDisplay:', storedDisplay);
 
-// If the visitor hasn't chosen a display mode, use their browser preference.
-// (This same test is in the .js file. It shouldn't exist here if browsers didn't flash.)
+// If the visitor hasn't chosen a display mode, use their browser preference
+// (default dark if no preference).
 if (storedDisplay === null) {
-	
-	// No stored choice. Check if browser preference is dark.
-	const prefersDark = window.matchMedia('(prefers-color-scheme: dark)');
-	if (prefersDark.matches) {
-		//console.log('HTML: no stored value. Browser prefers dark');
-		storedDisplay = "darkmode"
-	}
-	else {
-		//console.log('Initial: no stored value. Browser does not prefer dark. Using light.');
-		storedDisplay = "lightmode"
-	}
+    const prefersLight = window.matchMedia("(prefers-color-scheme: light)");
+
+    if (prefersLight.matches) {
+        //console.log('Initial: no stored choice. Browser prefers light');
+        storedDisplay = "lightmode";
+    } else {
+        //console.log('Initial: no stored choice. Browser does not prefer light. Using dark.');
+        storedDisplay = "darkmode";
+    }
 }
-document.body.classList.add(storedDisplay)
+
+// Set the body's class attribute. (This is the only thing that can't be done in
+// the .js file. Someday browsers may handle this better, and it could be done
+// there.)
+document.body.classList.add(storedDisplay);
 </script>
 
 <header>
