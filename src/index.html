@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Making stuff for homeless dogs</title>
+<link rel="stylesheet" href="./css/style.css?v=0.9a">
+<script src="./js/darkmode.js?v=0.2b" defer></script>
+<base href="../docs/">
+<link rel="canonical" href="https://www.mcacc-collars.charity/">
+<meta name="description" content="Making collars, leashes & 'Adopt Me' leash sleeves for dog shelters.">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="apple-touch-icon" sizes="180x180" href="./apple-touch-icon.png">
+<link rel="icon" type="image/x-icon" href="./favicon.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="./favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="./favicon-16x16.png">
+<link rel="icon" type="image/svg+xml" href="./icon.svg">
+<link rel="manifest" type="application/manifest+json" href="./site.webmanifest">
+</head>
+<body id="home">
+<script>
+/* IMPORTANT: This inline script is whitelisted in /_headers. If darkmode stops
+ * working, check if the sha256 hash changed. The ../min.sh (in the github 
+ * repo) will tell you the hash value (and alerts if it changes. The /docs
+ * directory should only contain the minified version of this file which min.sh
+ * produces. If you copy this unminified source file there, the hash will be
+ * different than what is whitelisted in /_headers.).
+ * 
+ * This should be done in darkmode.js (in the part for the page's initial
+ * loading). But, browsers flash a white screen before the dark screen because
+ * that's executed too late there. Doing it here (inside the *body* element, not
+ * head) results in no flash. (But, inline script is a security risk, must be
+ * whitelisted in /_headers.).
+ *
+ * There is only one operation that occurs at page-load which still occurs in the
+ * .js file: setting the dropdown-choice value to reflect the display mode in
+ * use. (That can't happen here because this happens too early; the drop-down
+ * object doesn't exist yet.). See the .js file for more info. */
+
+/* TESTING: To test the logic for no stored choice (using the browser
+ * preference), uncomment the following line to delete any stored value when the
+ * page loads. */
+//localStorage.removeItem('display')
+
+
+/* This is a global variable. It is refered to in the .js file to set the
+ * dropdown value to reflect the display mode being used. (Note: the .js script
+ * is loaded "defer." That may have something to do with this variable being
+ * reliably available to it.) */
+let storedDisplay = localStorage.getItem("display");
+//console.log('HTML: storedDisplay:', storedDisplay);
+
+// If the visitor hasn't chosen a display mode, use their browser preference
+// (default dark if no preference).
+if (storedDisplay === null) {
+    const prefersLight = window.matchMedia("(prefers-color-scheme: light)");
+
+    if (prefersLight.matches) {
+        //console.log('Initial: no stored choice. Browser prefers light');
+        storedDisplay = "lightmode";
+    } else {
+        //console.log('Initial: no stored choice. Browser does not prefer light. Using dark.');
+        storedDisplay = "darkmode";
+    }
+}
+
+// Set the body's class attribute. (This is the only thing that can't be done in
+// the .js file. Someday browsers may handle this better, and it could be done
+// there.)
+document.body.classList.add(storedDisplay);
+</script>
+
+<header>
+<nav aria-label="breadcrumbs"></nav> <!-- empty. Needed for flex -->
+<div id="display-mode">
+<label for="display-dropdown">Display:</label>
+<select name="mode" id="display-dropdown" size="1" >
+	<option id="dd-light" value="lightmode">Light</option>
+	<option id="dd-dark" value="darkmode">Dark</option>
+	<option id="dd-nocturnal" value="noctmode">Nocturnal</option>
+</select>
+</div>
+</header>
+
+<main>
+<h1>mcacc-collars</h1>
+
+<p>I make collars, leashes &amp; "adopt me" leash sleeves for homeless dogs. I created this site to share how-to <a href="resources/">resources</a> for others who may want to do this too. The "value proposition" (making ten for the cost of buying one at retail to donate) can be a compelling reason. The following describes my material costs (mid-2026):</p>
+
+<section id="collars">
+<h2><a href="resources/collars-leashes/#collars">Collars</a></h2>
+<div>
+
+<p>I make collars in five widths, and two lengths of each width (for more range of fitment. The how-to page for <a href="resources/collars-leashes/#collars">making collars</a> explains how I arrived at those lengths, and has a chart to help visualize their overlaps.).</p>
+
+
+<table id="cost-collars">
+<thead>
+<tr><th scope="col">Width</th><th scope="col" colspan="4">Length <span class="smaller">(in)</span></th><th scope="col">Proportion<br>made</th><th>Materials<br>cost<span class="smaller"> (usd)</span></th></tr>
+</thead>
+
+<tbody>
+<tr class="short"><th class="size" rowspan="2" scope="row">X-Small <span class="smaller">(3/8”)</span></th>
+	<th class="len">short:</th><td class="len-from">5-7/8</td><td>&ndash;</td><td class="len-to">9</td><td class="pct">6%</td><td class="cost">$0.26</td></tr>
+<tr class="long"><th class="len">long:</th><td class="len-from">7-5/8<td>&ndash;</td><td class="len-to">12-1/4</td><td class="pct">8%</td><td class="cost">$0.36</td></tr>
+
+<tr class="short"><th class="size" rowspan="2" scope="row">Small <span class="smaller">(5/8”)</span></th>
+	<th class="len">short:</th><td class="len-from">8-3/4<td>&ndash;</td><td class="len-to">13-1/8</td><td class="pct">11%</td><td class="cost">$0.31</td></tr>
+<tr class="long"><th class="len">long:</th><td class="len-from">10-1/8<td>&ndash;</td><td class="len-to">15-3/4</td><td class="pct">14%</td><td class="cost">$0.33</td></tr>
+
+<tr class="short"><th class="size" rowspan="2" scope="row">Medium <span class="smaller">(3/4”)</span></th>
+	<th class="len">short:</th><td class="len-from">11-1/4<td>&ndash;</td><td class="len-to">17-3/8</td><td class="pct">14%</td><td class="cost">$0.42</td></tr>
+<tr class="long"><th class="len">long:</th><td class="len-from">13-1/4<td>&ndash;</td><td class="len-to">21-3/8</td><td class="pct">14%</td><td class="cost">$0.45</td></tr>
+
+<tr class="short"><th class="size" rowspan="2" scope="row">Large <span class="smaller">(1”)</span></th>
+	<th class="len">short:</th><td class="len-from">14-3/8<td>&ndash;</td><td class="len-to">23</td><td class="pct">14%</td><td class="cost">$0.69</td></tr>
+<tr class="long"><th class="len">long:</th><td class="len-from">17<td>&ndash;</td><td class="len-to">28</td><td class="pct">14%</td><td class="cost">$0.74</td></tr>
+
+<tr class="short"><th class="size" rowspan="2" scope="row">X-Large <span class="smaller">(1-1/2”)</span></th>
+	<th class="len">short:</th><td class="len-from">17-3/8<td>&ndash;</td><td class="len-to">27-5/8</td><td class="pct">3%</td><td class="cost">$1.28</td></tr>
+<tr class="long"><th class="len">long:</th><td class="len-from">19-1/4<td>&ndash;</td><td class="len-to">31-1/2</td><td class="pct">2%</td><td class="cost">$1.36</td></tr>
+</tbody>
+</table>
+
+</div></section> <!-- end h2 -->
+
+<section id="leashes">
+<h2><a href="resources/collars-leashes/#leashes">Leashes</a></h2>
+<div>
+	
+<p>I make 5-foot leashes in four widths, in quantities that pair with the above collars.</p>
+
+<table id="cost-leashes">
+<thead>
+<tr><th class="width" scope="col">Width</th><th class="duty" scope="col">Duty</th><th class="load" scope="col">Breaking<br>load <span class="smaller">(lbs)</span></th><th scope="col" colspan="2">Pair with<br>collar</th><th>Materials<br>cost<span class="smaller"> (usd)</span></th></tr>
+</thead>
+
+<tbody>
+<tr class="short"><th class="width" rowspan="2" scope="row">3/8"</th><th class="duty" scope="row">Light</th>
+	<td class="load">77</td>
+	<td class="len">3/8</td><td class="len-fromto">Long</td><td class="cost">$0.53</td></tr>
+<tr class="long"><th class="duty" scope="row">Regular</th>
+	<td class="load">254</td>
+<td class="len">5/8</td><td class="len-fromto">Short</td><td class="cost">$0.57</td></tr>
+
+<tr class="short"><th class="width" rowspan="2" scope="row">5/8"</th><th class="duty" rowspan="2" scope="row">Regular</th>
+	<td class="load" rowspan="2">366</td>
+	<td class="len">5/8</td><td class="len-fromto">Long</td><td class="cost" rowspan="2">$0.63</td></tr>
+<tr class="long"><td class="len">3/4</td><td class="len-fromto">Short</td></tr>
+
+<tr class="short"><th class="width" rowspan="2" scope="row">3/4"</th><th class="duty" rowspan="2" scope="row">Regular</th>
+	<td class="load" rowspan="2">342</td>
+	<td class="len">3/4</td><td class="len-fromto">Long</td><td class="cost" rowspan="2">$0.68</td></tr>
+<tr class="long"><td class="len">1</td><td class="len-fromto">Short</td></tr>
+
+<tr class="short"><th class="width" rowspan="2" scope="row">1"</th><th class="duty" scope="row">Regular</th>
+	<td class="load">276</td>
+	<td class="len">1</td><td class="len-fromto">Long</td><td class="cost">$0.96</td></tr>
+<tr class="long"><th class="duty" scope="row">Heavy</th>
+	<td class="load">434</td>
+<td class="len">1-1/2</td><td class="len-fromto">Short &amp; Long</td><td class="cost">$1.02</td></tr>
+</tbody>
+</table>
+
+<p>I don't make leashes for 3/8-Short collars.</p>
+
+</div></section> <!-- end h2 -->
+
+<section id="leash-sleeves">
+<h2><a href="resources/leash-sleeve/">Leash sleeves</a></h2>
+<div>
+	
+<p>Materials cost $0.78 each. But, $0.31 of that has been locked in at 2023 prices (fabric &amp; silkscreening), enough to last many years. Now, they cost $0.47 each for the remaining materials (batting, interfacing, stabilizer, snaps &amp; packaging at 2026 prices.).</p>
+
+</div></section> <!-- end h2 -->
+
+<p>If the above sounds like something you'd like to do, proceed to the <a href="resources/">how-to resources</a> page.</p>
+
+</main>
+
+</body>
+</html>

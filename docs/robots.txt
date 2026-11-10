@@ -1,0 +1,17 @@
+User-agent: Meta-ExternalAgent
+Disallow: /
+
+User-agent: SemrushBot
+Disallow: /
+
+User-agent: AhrefsBot
+Disallow: /
+
+User-agent: *
+Crawl-delay: 2
+
+# Allow everything.
+Disallow:
+
+Sitemap: https://www.mcacc-collars.charity/sitemap.xml.gz
+

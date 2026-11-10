@@ -1,0 +1,22 @@
+/* This .jsonc file is used with the worker/return-410.js (to return 410 gone
+ * status when a path has a "route" to it).
+ *
+ * For this to work, the worker (return-410) settings must have:
+ * 
+ *   Deploy command:
+ *     npx wrangler deploy --config wrangler-workers-return-410.jsonc
+ * 
+ *   Root directory:
+ *     /
+ *
+ *   Build watch paths (include paths)
+ *     workers/return-410.js
+ */
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "return-410-new",
+  "compatibility_date": "2026-11-06",
+  "preview_urls": false,
+  "main": "workers/return-410.js"
+}
+

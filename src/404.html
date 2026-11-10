@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Oops... page not found</title>
+<link rel="stylesheet" href="/css/style.css?v=0.9a">
+<script src="/js/darkmode.js?v=0.2b" defer></script>
+<base href="../docs/">
+<meta name="description" content="404 Not Found.">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="icon" type="image/svg+xml" href="/icon.svg">
+<link rel="manifest" type="application/manifest+json" href="/site.webmanifest">
+<style>
+h1 {text-align: center;}
+main div {text-align: center;}
+img {border: none;
+width: 45%; height: auto;
+filter: invert(70%) opacity(68%);}
+</style>
+</head>
+<body>
+<script>
+/* IMPORTANT: This inline script is whitelisted in /_headers. If darkmode stops
+ * working, check if the sha256 hash changed. The ../min.sh (in the github 
+ * repo) will tell you the hash value (and alerts if it changes. The /docs
+ * directory should only contain the minified version of this file which min.sh
+ * produces. If you copy this unminified source file there, the hash will be
+ * different than what is whitelisted in /_headers.).
+ * 
+ * This should be done in darkmode.js (in the part for the page's initial
+ * loading). But, browsers flash a white screen before the dark screen because
+ * that's executed too late there. Doing it here (inside the *body* element, not
+ * head) results in no flash. (But, inline script is a security risk, must be
+ * whitelisted in /_headers.).
+ *
+ * There is only one operation that occurs at page-load which still occurs in the
+ * .js file: setting the dropdown-choice value to reflect the display mode in
+ * use. (That can't happen here because this happens too early; the drop-down
+ * object doesn't exist yet.). See the .js file for more info. */
+
+/* TESTING: To test the logic for no stored choice (using the browser
+ * preference), uncomment the following line to delete any stored value when the
+ * page loads. */
+//localStorage.removeItem('display')
+
+
+/* This is a global variable. It is refered to in the .js file to set the
+ * dropdown value to reflect the display mode being used. (Note: the .js script
+ * is loaded "defer." That may have something to do with this variable being
+ * reliably available to it.) */
+let storedDisplay = localStorage.getItem("display");
+//console.log('HTML: storedDisplay:', storedDisplay);
+
+// If the visitor hasn't chosen a display mode, use their browser preference
+// (default dark if no preference).
+if (storedDisplay === null) {
+    const prefersLight = window.matchMedia("(prefers-color-scheme: light)");
+
+    if (prefersLight.matches) {
+        //console.log('Initial: no stored choice. Browser prefers light');
+        storedDisplay = "lightmode";
+    } else {
+        //console.log('Initial: no stored choice. Browser does not prefer light. Using dark.');
+        storedDisplay = "darkmode";
+    }
+}
+
+// Set the body's class attribute. (This is the only thing that can't be done in
+// the .js file. Someday browsers may handle this better, and it could be done
+// there.)
+document.body.classList.add(storedDisplay);
+</script>
+
+<header>
+<nav aria-label="Breadcrumbs"><ul>
+<li><a href="/">Home</a></li>
+</ul></nav>
+<div id="display-mode">
+<label for="display-dropdown">Display:</label>
+<select name="mode" id="display-dropdown" size="1" >
+	<option id="dd-light" value="lightmode">Light</option>
+	<option id="dd-dark" value="darkmode">Dark</option>
+	<option id="dd-nocturnal" value="noctmode">Nocturnal</option>
+</select>
+</div>
+</header>
+
+<main>
+<h1>Page not found</h1>
+
+<div>
+<img src="/404.svg" alt="Unhappy broken sewing machine with an ouchie." width="600" height="438">
+</div>
+
+<p>The page you tried to visit wasn't found. Try again, or go to the <a href="/">home</a> page.</p>
+
+</main>
+</body>
+</html>

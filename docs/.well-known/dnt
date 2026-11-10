@@ -1,0 +1,9 @@
+{
+    "tracking": "N",
+    "same-party": [
+        "mcacc-collars.charity",
+        "mcacc-collars.github.io",
+        "website.mcacc-collars.workers.dev"
+    ],
+    "policy": "/dnt-policy.txt"
+}

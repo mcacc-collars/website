@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Index of /files</title>
+<link rel="stylesheet" href="../css/style.css?v=0.9a">
+<link rel="stylesheet" href="../css/files.css?v=0.9a">
+<script src="../js/darkmode.js?v=0.2b" defer></script>
+<base href="../../docs/files/">
+<link rel="canonical" href="https://www.mcacc-collars.charity/files/">
+<meta name="description" content="Index of directory (/files)">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png">
+<link rel="icon" type="image/x-icon" href="../favicon.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
+<link rel="icon" type="image/svg+xml" href="../icon.svg">
+<link rel="manifest" type="application/manifest+json" href="../site.webmanifest">
+</head>
+<body>
+<script>
+/* IMPORTANT: This inline script is whitelisted in /_headers. If darkmode stops
+ * working, check if the sha256 hash changed. The ../min.sh (in the github 
+ * repo) will tell you the hash value (and alerts if it changes. The /docs
+ * directory should only contain the minified version of this file which min.sh
+ * produces. If you copy this unminified source file there, the hash will be
+ * different than what is whitelisted in /_headers.).
+ * 
+ * This should be done in darkmode.js (in the part for the page's initial
+ * loading). But, browsers flash a white screen before the dark screen because
+ * that's executed too late there. Doing it here (inside the *body* element, not
+ * head) results in no flash. (But, inline script is a security risk, must be
+ * whitelisted in /_headers.).
+ *
+ * There is only one operation that occurs at page-load which still occurs in the
+ * .js file: setting the dropdown-choice value to reflect the display mode in
+ * use. (That can't happen here because this happens too early; the drop-down
+ * object doesn't exist yet.). See the .js file for more info. */
+
+/* TESTING: To test the logic for no stored choice (using the browser
+ * preference), uncomment the following line to delete any stored value when the
+ * page loads. */
+//localStorage.removeItem('display')
+
+
+/* This is a global variable. It is refered to in the .js file to set the
+ * dropdown value to reflect the display mode being used. (Note: the .js script
+ * is loaded "defer." That may have something to do with this variable being
+ * reliably available to it.) */
+let storedDisplay = localStorage.getItem("display");
+//console.log('HTML: storedDisplay:', storedDisplay);
+
+// If the visitor hasn't chosen a display mode, use their browser preference
+// (default dark if no preference).
+if (storedDisplay === null) {
+    const prefersLight = window.matchMedia("(prefers-color-scheme: light)");
+
+    if (prefersLight.matches) {
+        //console.log('Initial: no stored choice. Browser prefers light');
+        storedDisplay = "lightmode";
+    } else {
+        //console.log('Initial: no stored choice. Browser does not prefer light. Using dark.');
+        storedDisplay = "darkmode";
+    }
+}
+
+// Set the body's class attribute. (This is the only thing that can't be done in
+// the .js file. Someday browsers may handle this better, and it could be done
+// there.)
+document.body.classList.add(storedDisplay);
+</script>
+
+<header>
+<nav aria-label="Breadcrumbs"><ul>
+<li><a href="../">Home</a></li>
+</ul></nav>
+<div id="display-mode">
+<label for="display-dropdown">Display:</label>
+<select name="mode" id="display-dropdown" size="1" >
+	<option id="dd-light" value="lightmode">Light</option>
+	<option id="dd-dark" value="darkmode">Dark</option>
+	<option id="dd-nocturnal" value="noctmode">Nocturnal</option>
+</select>
+</div>
+</header>
+
+<main>
+<h1>Index of /files</h1>
+
+<table id="files-index">
+<thead>
+<tr><th>Name</th><th>Last modified</th><th>Size</th><th>Description</th></tr>
+</thead>
+<tbody>
+
+<tr><td><a href="box_patterns.zip" title="box_patterns.zip">box_patterns.zip</a></td><td>2026-02-16 12:26:16</td><td>75K</td><td>Juki LK-1900 box patterns</td></tr>
+<tr><td><a href="clarendon-bt.zip" title="clarendon-bt.zip">clarendon-bt.zip</a></td><td>2019-04-21 01:11:06</td><td>63K</td><td>Font used for "adopt me" leash sleeve</td></tr>
+<tr><td><a href="du1181n.pdf" title="du1181n.pdf">du1181n.pdf</a></td><td>2026-11-07 12:44:38</td><td>195K</td><td>Juki DU-1181N brochure</td></tr>
+<tr><td><a href="instruction_7K_english.pdf" title="instruction_7K_english.pdf">instruction_7K_english.pdf</a></td><td>2026-11-07 14:27:52</td><td>763K</td><td>Juki DU-1181N instruction manual (english)</td></tr>
+<tr><td><a href="instruction_eg-1900bn_ONLY.pdf" title="instruction_eg-1900bn_ONLY.pdf">instruction_eg-1900bn_ONLY.pdf</a></td><td>2026-11-07 16:29:09</td><td>2.5M</td><td>Juki LK-1900BN instruction manual (other models removed)</td></tr>
+<tr><td><a href="juki-du1181-manual.pdf" title="juki-du1181-manual.pdf">juki-du1181-manual.pdf</a></td><td>2026-11-07 15:25:33</td><td>765K</td><td>Juki DU-1181N engineers manual</td></tr>
+<tr><td><a href="leash_sleeve-paper-template-for-making-plastic-template.odg-source.zip" title="leash_sleeve-paper-template-for-making-plastic-template.odg-source.zip">leash_sleeve-paper-template-for-making-plastic-template.odg-source.zip</a></td><td>2026-10-23 06:18:47</td><td>36K</td><td>Hole template source (for leash sleeve snaps)</td></tr>
+<tr><td><a href="leash_sleeve-paper-template-for-making-plastic-template-w-dimensions.pdf" title="leash_sleeve-paper-template-for-making-plastic-template-w-dimensions.pdf">leash_sleeve-paper-template-for-making-plastic-template-w-dimensions.pdf</a></td><td>2026-11-07 11:26:05</td><td>28K</td><td>Printable hole template (w/dimensions)</td></tr>
+<tr><td><a href="leash_sleeve-paper-template-for-making-plastic-template-wo-dimensions.pdf" title="leash_sleeve-paper-template-for-making-plastic-template-wo-dimensions.pdf">leash_sleeve-paper-template-for-making-plastic-template-wo-dimensions.pdf</a></td><td>2026-11-07 11:28:00</td><td>26K</td><td>Printable hole template (wo/dimensions)</td></tr>
+<tr><td><a href="LK1900BN_P12_1910_Catalog-bn_series.pdf" title="LK1900BN_P12_1910_Catalog-bn_series.pdf">LK1900BN_P12_1910_Catalog-bn_series.pdf</a></td><td>2026-11-07 12:59:13</td><td>1.2M</td><td>Juki LK-1900BN brochure</td></tr>
+<tr><td><a href="LK-1900BN_parts.pdf" title="LK-1900BN_parts.pdf">LK-1900BN_parts.pdf</a></td><td>2026-11-07 13:45:36</td><td>5.0M</td><td>Juki LK-1900BN parts list</td></tr>
+<tr><td><a href="LK-1900BN_Series-Engineer_Manual.pdf" title="LK-1900BN_Series-Engineer_Manual.pdf">LK-1900BN_Series-Engineer_Manual.pdf</a></td><td>2026-11-07 16:43:18</td><td>15M</td><td>Juki LK-1900BN engineers manual</td></tr>
+<tr><td><a href="lk1900-bobbin-winder-new-platform.pdf" title="lk1900-bobbin-winder-new-platform.pdf">lk1900-bobbin-winder-new-platform.pdf</a></td><td>2026-11-07 17:46:04</td><td>38K</td><td>Design for improved standalone bobbin winder</td></tr>
+<tr><td><a href="packing-labels_collars.zip" title="packing-labels_collars.zip">packing-labels_collars.zip</a></td><td>2026-03-21 15:37:20</td><td>237K</td><td>Packing labels for collars</td></tr>
+<tr><td><a href="packing-labels_leashes.zip" title="packing-labels_leashes.zip">packing-labels_leashes.zip</a></td><td>2026-03-21 15:38:27</td><td>469K</td><td>Packing labels for leashes</td></tr>
+<tr><td><a href="Parts_List-JUKI_DU-1181N.pdf" title="Parts_List-JUKI_DU-1181N.pdf">Parts_List-JUKI_DU-1181N.pdf</a></td><td>2026-11-07 15:21:16</td><td>866K</td><td>Juki DU-1181N parts list</td></tr>
+<tr><td><a href="Pethardware_cost_calculator.zip" title="Pethardware_cost_calculator.zip">Pethardware_cost_calculator.zip</a></td><td>2025-04-25 18:22:27</td><td>22K</td><td>Spreadsheet to allocate shipping & import costs</td></tr>
+<tr><td><a href="stitches_calculator.zip" title="stitches_calculator.zip">stitches_calculator.zip</a></td><td>2025-12-05 18:51:31</td><td>55K</td><td>Spreadsheet to calculate stitches sewn (when to replace needle)</td></tr>
+<tr><td><a href="SVG_artwork.zip" title="SVG_artwork.zip">SVG_artwork.zip</a></td><td>2025-04-13 17:31:38</td><td>20K</td><td>.svg artwork for leash sleeves</td></tr>
+
+</tbody>
+</table>
+
+</main>
+</body>
+</html>

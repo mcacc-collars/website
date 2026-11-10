@@ -1,0 +1,8 @@
+# This is used when hosting on Cloudflare Workers. This instructs the worker
+# build to not include things as public assets (everything in /docs is unless
+# specified here).
+
+# Ignore .htaccess (only used for traditional web hosting. But, contains some
+# useful comments about accomplishing the same thing with Cloudflare Workers
+# "Rules.).
+.htaccess

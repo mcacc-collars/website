@@ -1,0 +1,33 @@
+/* This stylesheet is only used for directory listings on Cloudflare.
+ * (Cloudflare Workers doesn't display a directory list. I made my index.html
+ * for /files (and then /css, /js & /images too.).
+ */
+h1 {text-align: left}
+	
+/* !!! Border color is set in style.css !!! */
+
+/* No borders */
+table#files-index, th, td {border-style: none !important; border-width: 0px; border-collapse: collapse;}
+
+/* Space the horizontal line (created in style.css) above/below listing, and below headings */
+table#files-index thead tr th {padding-bottom: 0.5em;}
+table#files-index tbody tr:first-child td {padding-top: 0.5em;}
+table#files-index tbody tr:last-child td {padding-bottom: .9em;}
+
+/* Format columns */
+table#files-index tbody tr td:nth-child(2) {text-align: left; padding-right: 0.5em;}
+table#files-index tbody tr td:nth-child(3) {text-align: right; padding-right: 0.5em;}
+table#files-index tbody tr td:nth-child(4) {text-align: left;}
+
+/* Make the filename truncate with ellipsis (tooltip "title" shows full name)
+from: https://www.geeksforgeeks.org/css/how-to-use-text-overflow-in-a-table-cell/ */
+table#files-index tbody tr td {white-space: nowrap;}
+table#files-index tbody tr td:nth-child(1) {width: 33%; position: relative;}
+table#files-index tbody tr td:nth-child(1):before {content: '&nbsp;'; visibility: hidden;}
+table#files-index tbody tr td:nth-child(1) a {
+	position: absolute;
+	left: 0;
+	right: 0;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;}

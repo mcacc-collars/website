@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Resources for making collars, leashes and leash sleeves for dogs</title>
+<link rel="stylesheet" href="../css/style.css?v=0.9a">
+<script src="../js/darkmode.js?v=0.2b" defer></script>
+<base href="../../docs/resources/">
+<link rel="canonical" href="https://www.mcacc-collars.charity/resources/">
+<meta name="description" content="How-to documentation for making collars, leashes and 'adopt me' leash sleeves for homeless dogs.">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png">
+<link rel="icon" type="image/x-icon" href="../favicon.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
+<link rel="icon" type="image/svg+xml" href="../icon.svg">
+<link rel="manifest" type="application/manifest+json" href="../site.webmanifest">
+</head>
+<body id="resources">
+<script>
+/* IMPORTANT: This inline script is whitelisted in /_headers. If darkmode stops
+ * working, check if the sha256 hash changed. The ../min.sh (in the github 
+ * repo) will tell you the hash value (and alerts if it changes. The /docs
+ * directory should only contain the minified version of this file which min.sh
+ * produces. If you copy this unminified source file there, the hash will be
+ * different than what is whitelisted in /_headers.).
+ * 
+ * This should be done in darkmode.js (in the part for the page's initial
+ * loading). But, browsers flash a white screen before the dark screen because
+ * that's executed too late there. Doing it here (inside the *body* element, not
+ * head) results in no flash. (But, inline script is a security risk, must be
+ * whitelisted in /_headers.).
+ *
+ * There is only one operation that occurs at page-load which still occurs in the
+ * .js file: setting the dropdown-choice value to reflect the display mode in
+ * use. (That can't happen here because this happens too early; the drop-down
+ * object doesn't exist yet.). See the .js file for more info. */
+
+/* TESTING: To test the logic for no stored choice (using the browser
+ * preference), uncomment the following line to delete any stored value when the
+ * page loads. */
+//localStorage.removeItem('display')
+
+
+/* This is a global variable. It is refered to in the .js file to set the
+ * dropdown value to reflect the display mode being used. (Note: the .js script
+ * is loaded "defer." That may have something to do with this variable being
+ * reliably available to it.) */
+let storedDisplay = localStorage.getItem("display");
+//console.log('HTML: storedDisplay:', storedDisplay);
+
+// If the visitor hasn't chosen a display mode, use their browser preference
+// (default dark if no preference).
+if (storedDisplay === null) {
+    const prefersLight = window.matchMedia("(prefers-color-scheme: light)");
+
+    if (prefersLight.matches) {
+        //console.log('Initial: no stored choice. Browser prefers light');
+        storedDisplay = "lightmode";
+    } else {
+        //console.log('Initial: no stored choice. Browser does not prefer light. Using dark.');
+        storedDisplay = "darkmode";
+    }
+}
+
+// Set the body's class attribute. (This is the only thing that can't be done in
+// the .js file. Someday browsers may handle this better, and it could be done
+// there.)
+document.body.classList.add(storedDisplay);
+</script>
+
+<header>
+<nav aria-label="Breadcrumbs"><ul>
+<li><a href="../">Home</a></li>
+</ul></nav>
+<div id="display-mode">
+<label for="display-dropdown">Display:</label>
+<select name="mode" id="display-dropdown" size="1" >
+	<option id="dd-light" value="lightmode">Light</option>
+	<option id="dd-dark" value="darkmode">Dark</option>
+	<option id="dd-nocturnal" value="noctmode">Nocturnal</option>
+</select>
+</div>
+</header>
+
+<main>
+<h1>Resources</h1>
+
+<p>If anyone would like to do this too, the following how-to resources are provided:</p>
+
+<ul class="res">
+<li>Making <a href="collars-leashes/">collars &amp; leashes</a>
+	<ul class="supp">
+	<li>Sewing faster with a <a href="collars-leashes/lk1900bn/">Juki LK-1900 bartacking machine</a>
+		<ul>
+		<li>Standalone <a href="collars-leashes/lk1900bn/bobbin-winder/">bobbin winder</a> for the LK-1900</li>
+		</ul>
+	</li>
+	<li>Cutting webbing faster with a <u>hot knife</u> (coming soon)</li>
+	</ul>
+</li>
+<li>Making "adopt me" <a href="leash-sleeve/">leash sleeves</a>
+	<ul class="supp">
+	<li>How to make the <a href="collars-leashes/lk1900bn/bobbin-winder/">plastic template</a> for marking snap holes</li>
+	</ul>
+</li>
+</ul>
+
+</main>
+
+<footer>
+
+<section aria-label="Endnotes" role="doc-endnotes" id="notes">
+<hr>
+<h2>Notes</h2>
+
+<aside id="n1" role="note">
+<p><sup><span>[*]</span></sup> Alternate Access: this site (mcacc-collars.charity) is mirrored at 
+<a rel="nofollow" href="https://website.mcacc-collars.workers.dev">website.mcacc-collars.workers.dev</a> and <a rel="nofollow" href="https://mcacc-collars.github.io/website">mcacc-collars.github.io/website</a>. The site's files are kept in Github repository <a rel="nofollow" href="https://github.com/mcacc-collars/website">mcacc-collars/website</a>. All of those should exist indefinitely (if this site were down, the domain name expired, etc.). This (resources) page is archived on <a rel="nofollow" href="https://web.archive.org/web/20260810192942/https://www.mcacc-collars.charity/resources/">the Wayback Machine</a>, providing access to those links.</p>
+
+<p>You can browse this site offline by downloading the repository as a <a rel="nofollow" href="https://github.com/mcacc-collars/website/archive/refs/heads/main.zip">.zip file</a>. (To know if your .zip file is outdated, look for the small "Deployments" section on the repository page. You can be notified when the repository changes using the "watch" feature there.).</p>
+</aside>
+
+<aside id="n2" role="note">
+<p><sup><span>[†]</span></sup> Do Not Track Disclosure: this site does not track your use. (If you choose a display mode, that choice is saved to your local storage to be applied when you return.).</p>
+</aside>
+
+</section> <!-- end notes -->
+
+</footer>
+
+</body>
+</html>
