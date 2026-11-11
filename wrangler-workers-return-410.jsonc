@@ -10,12 +10,13 @@
  *     /
  *
  *   Build watch paths (include paths)
- *     workers/return-410.js
+ *     workers/return-410.js 
+ *     wrangler-workers-return-410.jsonc
  */
 {
   "$schema": "node_modules/wrangler/config-schema.json",
   "name": "return-410",
-  "compatibility_date": "2026-11-11",
+  "compatibility_date": "2026-11-10",
   "preview_urls": false,
   "main": "workers/return-410.js"
 }
