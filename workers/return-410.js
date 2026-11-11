@@ -27,13 +27,23 @@ export default {
     '/donors',
     '/donors/',
     '/shelter',
-    '/shelter/'];
+    '/shelter/',
+    '/resources/leash_sleeve/',
+    '/resources/leash_sleeve/template/',
+    '/resources/collars_leashes/',
+    '/resources/collars_leashes/lk1900bn/',
+    '/resources/collars_leashes/lk1900bn/bobbin-winder/'];
 
   const suggestPaths = [
     '/',
     '/',
     '/',
-    '/'];
+    '/'
+    '/resources/leash-sleeve/',
+    '/resources/leash-sleeve/template/',
+    '/resources/collars-leashes/',
+    '/resources/collars-leashes/lk1900bn/',
+    '/resources/collars-leashes/lk1900bn/bobbin-winder/'];
   
   const displayHost = 'www.mcacc-collars.charity';
   /* You don't have to do the above. If the path routed to this worker isn't
