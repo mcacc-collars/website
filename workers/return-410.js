@@ -38,7 +38,7 @@ export default {
     '/',
     '/',
     '/',
-    '/'
+    '/',
     '/resources/leash-sleeve/',
     '/resources/leash-sleeve/template/',
     '/resources/collars-leashes/',
