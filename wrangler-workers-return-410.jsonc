@@ -14,8 +14,8 @@
  */
 {
   "$schema": "node_modules/wrangler/config-schema.json",
-  "name": "return-410-new",
-  "compatibility_date": "2026-11-06",
+  "name": "return-410",
+  "compatibility_date": "2026-11-11",
   "preview_urls": false,
   "main": "workers/return-410.js"
 }
