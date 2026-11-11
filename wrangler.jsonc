@@ -23,6 +23,16 @@
 * non-production branches."). It had to be set "false" here or a dev URL would
 * be created.
 *
+* 4. My worker settings are
+*      Build command: (none)
+*      Deploy command: npx wrangler deploy
+*      Root directory: /
+*
+*      Build watch paths - Include paths:
+*        docs/
+*        wrangler.jsonc (if you want changes to the config to cause build)
+*
+*
 * ADDITIONAL INFO:
 *
 * The following files are also specific to Cloudflare Workers, serving a similar
