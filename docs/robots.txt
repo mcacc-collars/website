@@ -1,8 +1,8 @@
-# User-agent: Meta-ExternalAgent
-# Disallow: /
+User-agent: Meta-ExternalAgent
+Disallow: /
 
-# User-agent: SemrushBot
-# Disallow: /
+User-agent: SemrushBot
+Disallow: /
 
 User-agent: AhrefsBot
 Disallow: /
