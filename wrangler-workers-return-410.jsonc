@@ -20,7 +20,7 @@
   "preview_urls": false,
   "main": "workers/return-410.js"
 
-# See Workers & Pages > Observability
+// See Workers & Pages > Observability
   "observability": {
     "logs": {
       "enabled": false,
