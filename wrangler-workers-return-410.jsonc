@@ -21,12 +21,26 @@
   "main": "workers/return-410.js",
 
 // See Workers & Pages > Observability
+
   "observability": {
-    "logs": {
-      "enabled": false,
-      "invocation_logs": false
-    }
+    "enabled": false
   }
+
+/*  "observability": {
+    "logs": {
+      "enabled": true,
+      "head_sampling_rate": 1,
+      "invocation_logs": true,
+      "persist": true
+    },
+    "traces": {
+      "enabled": false,
+      "head_sampling_rate": 1,
+      "persist": true
+    },
+    "issue_detection": {
+      "enabled": false
+    }
+  } */
   
 }
-
