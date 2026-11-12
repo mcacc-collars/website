@@ -1,7 +1,7 @@
 #--------------------------------------
 # These redirects are expected to stop occurring, replaced with 410-gone
-# eventually. (Other redirects are that will last forever are in cloudflare's
-# Rules > Overview > Redirect rules (and Bulk Redirects linked there).
+# eventually. (Other redirects that will last forever are in cloudflare's
+# Rules > Overview > Redirect rules (and Bulk Redirects linked from there).
 
 /images/collar-size-chart.gif /images/collar-size-chart.svg 301
 
