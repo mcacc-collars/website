@@ -28,10 +28,15 @@ export default {
     '/donors/',
     '/shelter',
     '/shelter/',
+    '/resources/leash_sleeve',
     '/resources/leash_sleeve/',
+    '/resources/leash_sleeve/template',
     '/resources/leash_sleeve/template/',
+    '/resources/collars_leashes',
     '/resources/collars_leashes/',
+    '/resources/collars_leashes/lk1900bn',
     '/resources/collars_leashes/lk1900bn/',
+    '/resources/collars_leashes/lk1900bn/bobbin-winder/',
     '/resources/collars_leashes/lk1900bn/bobbin-winder/'];
 
   const suggestPaths = [
@@ -40,14 +45,20 @@ export default {
     '/',
     '/',
     '/resources/leash-sleeve/',
+    '/resources/leash-sleeve/',
+    '/resources/leash-sleeve/template/',
     '/resources/leash-sleeve/template/',
     '/resources/collars-leashes/',
+    '/resources/collars-leashes/',
     '/resources/collars-leashes/lk1900bn/',
+    '/resources/collars-leashes/lk1900bn/',
+    '/resources/collars-leashes/lk1900bn/bobbin-winder/',
     '/resources/collars-leashes/lk1900bn/bobbin-winder/'];
   
-  const displayHost = 'www.mcacc-collars.charity';
+  const displayHost = 'www.mcacc-collars.charity'; // displays in output html
+  
   /* You don't have to do the above. If the path routed to this worker isn't
-   * defined above, then a simple text 310-gone is retured.
+   * defined above, then a simple text 310-gone is returned.
    * END OPTIONAL */
 
 /* PROCESSING

@@ -19,5 +19,14 @@
   "compatibility_date": "2026-11-10",
   "preview_urls": false,
   "main": "workers/return-410.js"
+
+# See Workers & Pages > Observability
+  "observability": {
+    "logs": {
+      "enabled": false,
+      "invocation_logs": false
+    }
+  }
+  
 }
 
