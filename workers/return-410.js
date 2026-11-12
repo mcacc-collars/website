@@ -37,12 +37,12 @@ export default {
     '/resources/collars_leashes/lk1900bn',
     '/resources/collars_leashes/lk1900bn/',
     '/resources/collars_leashes/lk1900bn/bobbin-winder',
-    '/resources/collars_leashes/lk1900bn/bobbin-winder/'
+    '/resources/collars_leashes/lk1900bn/bobbin-winder/',
 
-// do these eventually    
-//    '/images/collar-size-chart.gif',
-//    '/images/leash_sleeve-dimensions-quick-ref.gif',
-//    '/images/leash_sleeve-paper-template-for-making-plastic-template.gif'
+// ready, waiting for routes    
+    '/images/collar-size-chart.gif',
+    '/images/leash_sleeve-dimensions-quick-ref.gif',
+    '/images/leash_sleeve-paper-template-for-making-plastic-template.gif'
 
     ];
 
@@ -60,12 +60,12 @@ export default {
     '/resources/collars-leashes/lk1900bn/',
     '/resources/collars-leashes/lk1900bn/',
     '/resources/collars-leashes/lk1900bn/bobbin-winder/',
-    '/resources/collars-leashes/lk1900bn/bobbin-winder/'
+    '/resources/collars-leashes/lk1900bn/bobbin-winder/',
 
-// do these eventually    
-//    '/images/collar-size-chart.svg',    
-//    '/images/leash_sleeve-dimensions-quick-ref.svg',
-//    '/images/leash_sleeve-paper-template-for-making-plastic-template.svg'
+// ready, waiting for routes
+    '/images/collar-size-chart.svg',    
+    '/images/leash_sleeve-dimensions-quick-ref.svg',
+    '/images/leash_sleeve-paper-template-for-making-plastic-template.svg'
     
     ];
   

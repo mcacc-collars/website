@@ -20,13 +20,13 @@
   "preview_urls": false,
   "main": "workers/return-410.js",
 
-// See Workers & Pages > Observability
-
-  "observability": {
-    "enabled": false
-  }
+// See Workers & Pages > return-410 > Observability
 
 /*  "observability": {
+    "enabled": false
+  } */
+
+  "observability": {
     "logs": {
       "enabled": true,
       "head_sampling_rate": 1,
@@ -41,6 +41,6 @@
     "issue_detection": {
       "enabled": false
     }
-  } */
+  }
   
 }
