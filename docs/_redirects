@@ -3,22 +3,25 @@
 # eventually. (Other redirects that will last forever are in cloudflare's
 # Rules > Overview > Redirect rules (and Bulk Redirects linked from there).
 
-/images/collar-size-chart.gif /images/collar-size-chart.svg 301
 
-
-/images/leash_sleeve-dimensions-quick-ref.gif /images/leash_sleeve-dimensions-quick-ref.svg 301
-
-/images/leash_sleeve-paper-template-for-making-plastic-template.gif /images/leash_sleeve-paper-template-for-making-plastic-template.svg 301
 
 #--------------------------------------
 # These return 410-gone now (see workers/return-410.js in the repo)
+
+
+#/images/collar-size-chart.gif /images/collar-size-chart.svg 301
+#
+#/images/leash_sleeve-dimensions-quick-ref.gif /images/leash_sleeve-dimensions-quick-ref.svg 301
+#
+#/images/leash_sleeve-paper-template-for-making-plastic-template.gif /images/leash_sleeve-paper-template-for-making-plastic-template.svg 301
+
 
 #/resources/leash_sleeve /resources/leash-sleeve/ 301
 #/resources/leash_sleeve/ /resources/leash-sleeve/ 301
 #
 #/resources/collars_leashes* /resources/collars-leashes:splat 301
-#
-#
+
+
 #/donors / 301
 #/donors/ / 301
 #
