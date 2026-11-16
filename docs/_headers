@@ -165,8 +165,12 @@
 #	Link: <https://www.mcacc-collars.charity/resources/leash-sleeve/>; rel="canonical"
 #/files/instruction_eg-1900bn_ONLY.pdf
 #	Link: <https://www.mcacc-collars.charity/resources/collars-leashes/lk1900bn/>; rel="canonical"
-#/files/juki-du1181-manual.pdf
-#	Link: <https://www.mcacc-collars.charity/resources/leash-sleeve/>; rel="canonical"
+
+
+/files/juki-du1181-manual.pdf
+	Link: <https://www.mcacc-collars.charity/files/juki-du1181-manual.pdf>; rel="canonical"
+
+
 #/files/leash_sleeve-paper-template-for-making-plastic-template.odg-source.zip
 #	Link: <https://www.mcacc-collars.charity/resources/leash-sleeve/>; rel="canonical"
 #/files/leash_sleeve-paper-template-for-making-plastic-template-w-dimensions.pdf
