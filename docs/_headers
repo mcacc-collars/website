@@ -14,7 +14,7 @@
 /*
 	Referrer-Policy: strict-origin-when-cross-origin
 	X-Content-Type-Options: nosniff
-	Strict-Transport-Security: max-age=2628000; includeSubDomains
+	Strict-Transport-Security: max-age=5256000; includeSubDomains
 
 # fallback: script-src 'unsafe-inline'
 #		Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline';  img-src 'self';  object-src 'none'; frame-ancestors 'none'; base-uri 'self'
@@ -155,18 +155,22 @@
 
 #------------------------
 # Canonicals for downloadable files
-#/files/box_patterns.zip
-#	Link: <https://www.mcacc-collars.charity/resources/collars-leashes/lk1900bn/>; rel="canonical"
-
-#/files/clarendon-bt.zip
-#	Link: <https://www.mcacc-collars.charity/resources/leash-sleeve/>; rel="canonical"
+# - zips fon't get this.
+# - I serve some pdfs made by Juki. If they're indexed, google complains there's
+#   no cannonical. I don't want to say my copies are cannonical, nor do I want to
+#   keep up with changes to Juki's served location. So, I say noindex.
 
 /files/du1181n.pdf
 	X-Robots-Tag: noindex
 
+# This is a Juki manual I heavily modified to make english-only, more readible. I 
+# think it's fair to index and make mine canonical.
 /files/instruction_7K_english.pdf
 	Link: <https://www.mcacc-collars.charity/files/instruction_7K_english.pdf>; rel="canonical"
 
+# This is a Juki manual I edited to remove variations of the bn machine for
+# simplicity. But, I don't think that's substantial enough to index and claim
+# mine is canonical.
 /files/instruction_eg-1900bn_ONLY.pdf
 	 X-Robots-Tag: noindex
 
@@ -174,8 +178,8 @@
 	X-Robots-Tag: noindex
 
 
-#/files/leash_sleeve-paper-template-for-making-plastic-template.odg-source.zip
-#	Link: <https://www.mcacc-collars.charity/resources/leash-sleeve/>; rel="canonical"
+# Not sure what to do with these yet. I don't think they should be indexed.
+#
 #/files/leash_sleeve-paper-template-for-making-plastic-template-w-dimensions.pdf
 #	Link: <https://www.mcacc-collars.charity/resources/leash-sleeve/>; rel="canonical"
 #/files/leash_sleeve-paper-template-for-making-plastic-template-wo-dimensions.pdf
@@ -184,8 +188,8 @@
 /files/LK1900BN_P12_1910_Catalog-bn_series.pdf
 	X-Robots-Tag: noindex
 
-#/files/lk1900-bobbin-winder-new-platform.pdf
-#	Link: <https://www.mcacc-collars.charity/resources/collars-leashes/lk1900bn/bobbin-winder/>; rel="canonical"
+/files/lk1900-bobbin-winder-new-platform.pdf
+	Link: <https://www.mcacc-collars.charity/files/lk1900-bobbin-winder-new-platform.pdf>; rel="canonical"
 
 /files/LK-1900BN_parts.pdf
 	X-Robots-Tag: noindex
@@ -193,20 +197,8 @@
 /files/LK-1900BN_Series-Engineer_Manual.pdf
 	X-Robots-Tag: noindex
 
-#/files/packing-labels_collars.zip
-#	Link: <https://www.mcacc-collars.charity/resources/collars-leashes/>; rel="canonical"
-#/files/packing-labels_leashes.zip
-#	Link: <https://www.mcacc-collars.charity/resources/collars-leashes/>; rel="canonical"
-
 /files/Parts_List-JUKI_DU-1181N.pdf
 	X-Robots-Tag: noindex
-
-#/files/Pethardware_cost_calculator.zip
-#	Link: <https://www.mcacc-collars.charity/resources/collars-leashes/>; rel="canonical"
-#/files/stitches_calculator.zip
-#	Link: <https://www.mcacc-collars.charity/resources/collars-leashes/lk1900bn/>; rel="canonical"
-#/files/SVG_artwork.zip
-#	Link: <https://www.mcacc-collars.charity/resources/leash-sleeve/>; rel="canonical"
 
 
 # Display pdf in tab (use 'attachment' for download)
