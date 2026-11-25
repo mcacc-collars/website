@@ -89,7 +89,7 @@ export default {
   if (idx >= 0) {
     const html = `<!DOCTYPE html>
       <html>
-      <head><title>410-Page gone</title></head>
+      <head><title>410-Gone</title></head>
       <body>
         <h1>Gone (410)</h1>
         <p>The requested URL "${url.pathname}" has been permanently removed or renamed.<br><br>
