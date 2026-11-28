@@ -1,17 +1,35 @@
-#User-agent: Meta-ExternalAgent
-#Disallow: /
+#  Meta
+user-agent: Meta-WebIndexer
+crawl-delay: 8
+disallow:
 
-User-agent: SemrushBot
-Disallow: /
+user-agent: Meta-ExternalAds
+crawl-delay: 30
+disallow:
 
-User-agent: AhrefsBot
-Disallow: /
+user-agent: Meta-ExternalAgent
+crawl-delay: 10
+disallow:
 
-User-agent: *
-Crawl-delay: 2
+# Semrush
+user-agent: SemrushBot
+disallow: /
 
-# Allow everything.
-Disallow:
+user-agent: SiteAuditBot
+disallow: /
 
-Sitemap: https://www.mcacc-collars.charity/sitemap.xml.gz
+# Ahrefs
+user-agent: AhrefsBot
+disallow: /
+
+user-agent: MJ12bot
+crawl-delay: 4
+disallow:
+
+#
+user-agent: *
+crawl-delay: 2
+disallow:
+
+sitemap: https://www.mcacc-collars.charity/sitemap.xml.gz
 
